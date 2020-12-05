@@ -1,3 +1,5 @@
+<?php include 'header.php'; ?>
+
 <body>
      <style media="screen">
             .figure {display: table;margin-right: auto;margin-left: auto;}
@@ -125,3 +127,5 @@
   
   
 </body>
+
+<?php include 'footer.php'; ?>
