@@ -1,4 +1,6 @@
 <?php include_once '../header.php'; ?>
+<?php include_once '../libraries/chocolates.php'; ?>
+<?php session_start(); ?>
 
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -13,8 +15,6 @@
             <a href="about.php" class="nav-item nav-link">About</a>
         </div>
         <div class="navbar-nav ml-auto">
-            <!--<a href="register/register.php" class="nav-item nav-link">Register</a>
-            <a href="login/login.php" class="nav-item nav-link">Login</a>&nbsp;&nbsp;-->
             <?php if(isset($_SESSION['user_name'])){
                     echo '<a href="#" class="nav-item nav-link active"><i class="fa fa-user-o">  '.$_SESSION['user_name'].'</i></a>';
                     echo '<a href="product/cart_display.php" class="nav-item nav-link active"><i class="fa fa-shopping-cart"></i></a>';
@@ -34,17 +34,17 @@
     <div class="jumbotron">
         <div class="text-center">
             <?php if(isset($_SESSION['user_name'])&&$_SESSION['user_name']=="root"){
-                        //if($_SESSION['user_name']=="root"){
+                        
                             header("Location:login/admin_enter.php");
                             die();
-                        //}
+                        
                     }
                     else if(isset($_SESSION['user_name'])){ 
                         echo '<h1 class="display-4"> username : '.$_SESSION['user_name'].'</h1>';
                     }
                     else
                     {
-                        header("Location:index.php");
+                        header("Location:../index.php");
                         die();
                     }
             ?>
