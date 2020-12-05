@@ -1,4 +1,4 @@
-<?php include_once 'header.php'; ?>
+<?php include_once '../header.php'; ?>
 
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -72,4 +72,4 @@
     </body>
 
 
-<?php include_once 'footer.php'; ?>
+<?php include_once '../footer.php'; ?>
