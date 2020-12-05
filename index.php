@@ -35,7 +35,7 @@
 </nav>
   
   <!--Search bar-->
-<div class="row p-4" style="background-color:#000">
+<div class="p-4" style="background-color:#000">
   <div class="container">
     <form  method="GET" action="search.php">
       <div class="text-center">
@@ -46,15 +46,7 @@
   </div>
 </div>
   
- 
-<!--main card
-  <div class="card m-4">
-  <img class="card-img-top" src="black.png" alt="Card image top" style="height:12rem;">
-  <div class="card-body text-center"> 
-    <h3 class="card-title">Get Everything</h3>
-    <button type="submit" class="btn btn-outline-dark">Explore</button>
-  </div>
-</div> -->
+
  
     
     
