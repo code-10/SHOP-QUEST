@@ -32,7 +32,7 @@
                 			}
                 			else{
                     				echo '<a href="register/register.php" class="nav-item nav-link">Register</a>
-                            			<a href="login/login.php" class="nav-item nav-link">Login</a>&nbsp';
+                            			<a href="login/login.php" class="nav-item nav-link">Login</a>';
                 			}?> 
 				</div>
 			</div>
