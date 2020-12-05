@@ -91,7 +91,7 @@
 					<div class="card-deck m-2">
 						<? for($i=1;$i<=4;$i++){ ?>
 							<div class="card m-4">
-								<figure class="figure"> <img src="cats/rcat<?=$c?>.jpg" class="img-fluid" alt="image">
+								<figure class="figure"> <img src="assets/categories/rcat<?=$c?>.jpg" class="img-fluid" alt="image">
 									<figcaption class="figure-caption text-center"><a href='categories/category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link"><h5><?=$categories[$c-1];?></h5></a></figcaption>
 								</figure>
 							</div>
