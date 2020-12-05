@@ -18,23 +18,27 @@
 			border: none;
 		}
 		</style>
+		
+		<!--Navigation Bar-->
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark"> <a href="#" class="navbar-brand">ShopShop</a>
 			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"> <span class="navbar-toggler-icon"></span> </button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<div class="navbar-nav"> <a href="#" class="nav-item nav-link active">Home</a> <a href="about.php" class="nav-item nav-link">About</a> <a href="#" class="nav-item nav-link">Products</a> </div>
 				<div class="navbar-nav ml-auto">
 					<?php if(isset($_SESSION['user_name'])) {
-                    echo '<a href="profile.php" class="nav-item nav-link active"><i class="fa fa-user-o">  '.$_SESSION['user_name'].'</i></a>';
-                    echo '<a href="product/cart_display.php" class="nav-item nav-link active"><i class="fa fa-shopping-cart style="font-size:36px""></i></a>';
-                    echo '<a href="login/logout.php" class="nav-item nav-link">Logout</a>';
-                }
-                else{
-                    echo '<a href="register/register.php" class="nav-item nav-link">Register</a>
-                            <a href="login/login.php" class="nav-item nav-link">Login</a>&nbsp';
-                }
-            ?> </div>
+                    				echo '<a href="profile.php" class="nav-item nav-link active"><i class="fa fa-user-o">  '.$_SESSION['user_name'].'</i></a>';
+                    				echo '<a href="product/cart_display.php" class="nav-item nav-link active"><i class="fa fa-shopping-cart style="font-size:36px""></i></a>';
+                    				echo '<a href="login/logout.php" class="nav-item nav-link">Logout</a>';
+                			}
+                			else{
+                    				echo '<a href="register/register.php" class="nav-item nav-link">Register</a>
+                            			<a href="login/login.php" class="nav-item nav-link">Login</a>&nbsp';
+                			}?> 
+				</div>
 			</div>
 		</nav>
+		
+		
 		<!--Search bar-->
 		<div class="p-4" style="background-color:#000">
 			<div class="container">
@@ -47,6 +51,8 @@
 				</form>
 			</div>
 		</div>
+		
+		
 		<!--main card carousel-->
 		<div id="main-card" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
@@ -62,20 +68,23 @@
           
 		   <?php
   
-                $con = getCon();
-                $categories=Array();
-                $res = $con->query("select * from categories");
-                while($ele = $res->fetch_assoc()){
-                    $categories[]=$ele['cat_name'];
-                }
+                	$con = getCon();
+                	$categories=Array();
+                	$res = $con->query("select * from categories");
+                	
+			while($ele = $res->fetch_assoc()){
+                    		$categories[]=$ele['cat_name'];
+                	}
   
-            ?>
+            	   ?>
         
         
 			<br>
 			<br>
-			<!--Loop category-->
-			<p class="display-4 text-center">Categories</p>
+		
+		<!--Loop category-->
+		<p class="display-4 text-center">Categories</p>
+		<div id="category">
 			<?$c=1; for($j=1;$j<=2;$j++){ ?>
 				<div class="container" id="category">
 					<div class="card-deck m-2">
@@ -85,13 +94,13 @@
 									<figcaption class="figure-caption text-center"><a href='categories/category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link"><h5><?=$categories[$c-1];?></h5></a></figcaption>
 								</figure>
 							</div>
-							<? $c++;} ?>
+						<? $c++;} ?>
 					</div>
 				</div>
-				<? } ?>
-        
+			<? } ?>
+		</div>
         
 	</body>
 
 
-	<?php include_once 'footer.php'; ?>
+<?php include_once 'footer.php'; ?>
