@@ -15,7 +15,7 @@
 					</div>
 					<div class="navbar-nav ml-auto">
 						<a href="#" class="nav-item nav-link active">Register</a>
-						<a href="../login/login.php" class="nav-item nav-link">Login</a>&nbsp;
+						<a href="../login/login.php" class="nav-item nav-link">Login</a>
 					</div>
 				</div>
 			</nav>
