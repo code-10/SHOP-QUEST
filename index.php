@@ -1,5 +1,6 @@
 <?php include_once 'header.php'; ?>
 <?php include_once 'libraries/chocolates.php' ?>
+<?php session_start(); ?>
 
 	<body>
 		<style media="screen">
