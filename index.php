@@ -81,9 +81,11 @@
         
 		<!--just space-->
         	<div class="mt-2 mb-2">
+			<a href="#category" class="btn btn-outline-dark active" role="button" aria-pressed="true">Explore</a>
 		</div>
 		
 		<!--Loop category-->
+		<div id="category">
 		<p class="display-4 text-center">Categories</p>
 		<div id="category">
 			<?$c=1; for($j=1;$j<=2;$j++){ ?>
