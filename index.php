@@ -81,7 +81,7 @@
         
 		<!--just space-->
         	<div class="mt-4 mb-4 text-center">
-			<a href="#category" class="btn btn-outline-dark" role="button" aria-pressed="true">Explore</a>
+			<a href="#category" class="btn btn-outline-dark btn-lg" role="button" aria-pressed="true">Explore</a>
 		</div>
 		
 		<!--Loop category-->
