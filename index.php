@@ -79,9 +79,9 @@
   
             	   ?>
         
-        
-			<br>
-			<br>
+		<!--just space-->
+        	<div class="mt-2 mb-2">
+		</div>
 		
 		<!--Loop category-->
 		<p class="display-4 text-center">Categories</p>
