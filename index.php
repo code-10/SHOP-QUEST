@@ -80,7 +80,7 @@
             	   ?>
         
 		<!--just space-->
-        	<div class="mt-2 mb-2">
+        	<div class="mt-5 mb-5" style="margin-top:120px;margin-bottom:120px;">
 		</div>
 		
 		<!--Loop category-->
