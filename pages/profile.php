@@ -18,11 +18,11 @@
             <?php if(isset($_SESSION['user_name'])){
                     echo '<a href="#" class="nav-item nav-link active"><i class="fa fa-user-o">  '.$_SESSION['user_name'].'</i></a>';
                     echo '<a href="product/cart_display.php" class="nav-item nav-link active"><i class="fa fa-shopping-cart"></i></a>';
-                    echo '<a href="login/logout.php" class="nav-item nav-link">Logout</a>';
+                    echo '<a href="../login/logout.php" class="nav-item nav-link">Logout</a>';
                 }
                 else{
-                    echo '<a href="register/register.php" class="nav-item nav-link">Register</a>
-                            <a href="login/login.php" class="nav-item nav-link">Login</a>';
+                    echo '<a href="../register/register.php" class="nav-item nav-link">Register</a>
+                            <a href="../login/login.php" class="nav-item nav-link">Login</a>';
                 }
             ?>
         </div>
