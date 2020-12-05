@@ -1,4 +1,5 @@
 <?php include_once 'header.php'; ?>
+<?php include_once 'libraries/chocolates.php' ?>
 
 	<body>
 		<style media="screen">
