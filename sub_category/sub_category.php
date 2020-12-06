@@ -67,7 +67,7 @@
       $sub_cat_id[]=$ele['sub_cat_id'];
     }
     
-    
+    $n = count($sub_cat_id);
    
      
   ?>
