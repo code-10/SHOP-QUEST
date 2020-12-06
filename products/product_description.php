@@ -142,7 +142,7 @@
 			<i class="fa fa-star" style="color:#ffa700"></i>
 		    <? } ?>
 		    <?php if($product_rating_star>0) { ?>
-			<i class="fa fa-star-half-full"></i>
+			<i class="fa fa-star-half-full" style="color:#ffa700"></i>
 		    <? } ?>
 		    <?php for($j=0;$j<5-$product_rating_star;$j++) { ?>
 			<i class="fa fa-star"></i>
