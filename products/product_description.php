@@ -143,7 +143,7 @@
 		    <? } ?>
 			<i class="fa fa-star-half-alt"></i>
 		    <?php for($i=0;$i<5-$product_rating_star;$i++) { ?>
-			<i class="fa fa-star"></i>
+			<i class="far fa-star"></i>
 		    <? } ?>
 		    <!--star rating end-->
 				
