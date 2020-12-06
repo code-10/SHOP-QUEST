@@ -8,8 +8,9 @@
   $cat_id = $_GET['cat_id']; 
   $cat_name = $_GET['cat_name']; 
 
-  echo $_SERVER['REQUEST_URI'];
-  echo $_SERVER['QUERY_STRING'];
+  $link = $_SERVER['REQUEST_URI']. $_SERVER['QUERY_STRING'];
+
+  echo $link;
 
 ?>
 
