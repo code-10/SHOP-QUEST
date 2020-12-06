@@ -82,20 +82,14 @@
     <? for($i=1;$i<=4;$i++){ ?> 
     <? if(4*($j-1)+$i>$n) break; ?>
    <div class="col-md-3">
-     <!--<a href='../product/product_description.php?product_id=<?=$prod_id[$c-1]?>&&product_name=<?=$sub_name[$c-1]?>'>-->
       <figure class="figure">
-        <!--<a href='../product/products.php?sub_cat_id=?=$sub_id[$c-1]?>&&sub_cat_name=?=$prod_name[$c-1]?>'>
-        <a href='../product/products.php?sub_cat_id=<?=$sub_cat_id[$c-1]?>&&sub_cat_name=<?=$sub_cat_name[$c-1]?>'>-->
         <a href='../product/products.php?sub_cat_id=<?=$sub_cat_id[$c-1]?>&&sub_cat_name=<?=$sub_cat_name[$c-1]?>&&id_s=1'>
           <img src="../cats/<?=$cat_name?>/sbct<?=$c?>.jpg" class="img-fluid" onerror="this.src='../assets/black.png';">
         </a>
         <figcaption class="figure-caption text-center">
           <h5><?=$sub_cat_name[$c-1]?></h5>   
-          <!--<a href='../product/product_buy.php?product_id=<?=$prod_id[$c-1]?>&&product_name=<?=$prod_name[$c-1]?>' class="btn btn-dark mb-4 text-center" role="button">Explore</a>-->
-          <!--<button type="button" class="btn btn-dark mb-4">Buy</button>-->
            </figcaption>
       </figure>
-       <!--</a>-->
     </div>
   <? $c++;} ?>
       </div> 
