@@ -8,7 +8,7 @@
   $cat_id = $_GET['cat_id']; 
   $cat_name = $_GET['cat_name']; 
 
-  $visit = $_SERVER['QUERY_STRING'];
+  $visit = $_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING'];
 
   echo $visit;
 
