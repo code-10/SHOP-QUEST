@@ -118,7 +118,7 @@
   
   <div class="container m-2">
   <div class="text-center">
-    <img src="..." class="img-fluid" alt="product" onerror="this.src='../black.png';">
+    <img src="..." class="img-fluid" alt="product" onerror="this.src='../assets/black.png';">
   </div>
   <div class="row m-4">
     <div class="col">
