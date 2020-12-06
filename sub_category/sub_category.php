@@ -74,27 +74,29 @@
  
  
 
-  <p class="display-4 text-center"><?=$cat_name;?></p>
+    <p class="display-4 text-center"><?=$cat_name;?></p>
     <br>
+    
     <?$c=1; $lim=$n/4+1; for($j=1;$j<=$lim;$j++){ ?>
     <div class="container">
-  <div class="row p-2">
-    <? for($i=1;$i<=4;$i++){ ?> 
-    <? if(4*($j-1)+$i>$n) break; ?>
-   <div class="col-md-3">
-      <figure class="figure">
-        <a href='../product/products.php?sub_cat_id=<?=$sub_cat_id[$c-1]?>&&sub_cat_name=<?=$sub_cat_name[$c-1]?>&&id_s=1'>
-          <img src="../cats/<?=$cat_name?>/sbct<?=$c?>.jpg" class="img-fluid" onerror="this.src='../assets/black.png';">
-        </a>
-        <figcaption class="figure-caption text-center">
-          <h5><?=$sub_cat_name[$c-1]?></h5>   
-           </figcaption>
-      </figure>
+      <div class="row p-2">
+        <? for($i=1;$i<=4;$i++){ ?> 
+        <? if(4*($j-1)+$i>$n) break; ?>
+        <div class="col-md-3 text-center">
+            <figure class="figure">
+                <a href='../product/products.php?sub_cat_id=<?=$sub_cat_id[$c-1]?>&&sub_cat_name=<?=$sub_cat_name[$c-1]?>&&id_s=1'>
+                  <img src="../cats/<?=$cat_name?>/sbct<?=$c?>.jpg" class="img-fluid" onerror="this.src='../assets/black.png';">
+                </a>
+                <figcaption class="figure-caption text-center">
+                    <h5><?=$sub_cat_name[$c-1]?></h5>
+                </figcaption>
+            </figure>
+        </div>
+        <? $c++;} ?>
+      </div>
     </div>
-  <? $c++;} ?>
-      </div> 
-     </div>
-    <? } ?>
+<? } ?>
+  
   
   
 </body>
