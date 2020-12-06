@@ -85,12 +85,12 @@
 	
 	if($product_rating_star == round($product_rating))
 	{
-		$whole=true;
+		$whole=True;
 	}
 	else
 	{
 		$product_rating_star=round($product_rating);
-		$whole=false;
+		$whole=False;
 	}
 	
 	
@@ -157,7 +157,7 @@
 		    	<? } ?>	
 		    <? } ?>   
 				
-		    <?php if(!$whole) { ?>
+		    <?php if($whole==False) { ?>
 			<i class="fa fa-star-half-full" style="color:#ffa700"></i>
 		    <? } ?>
 				
