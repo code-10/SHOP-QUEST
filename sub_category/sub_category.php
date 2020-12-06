@@ -10,6 +10,8 @@
 
   $visit = $_SERVER['QUERY_STRING'];
 
+  echo $visit;
+
 ?>
 
 
