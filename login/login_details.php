@@ -38,7 +38,7 @@ if (isset($_POST['login_user'])) {
             //echo "Yes";
             
             $_SESSION['user_name'] = $user_name;
-            header("Location:../".$visit.);
+            header("Location:../".$visit);
             die();
         } else {
             $wrongpassword = true;
