@@ -76,7 +76,7 @@
         
     while($ele = $res->fetch_assoc())
     {
-        $product_description=$ele['description'];
+        $product_description=$ele['product_description'];
         $product_seller=$ele['seller'];
         $product_price=$ele['price'];
         $product_rating=$ele['rating'];
