@@ -5,6 +5,7 @@ session_start();
 include '../libraries/chocolates.php';
 
 $visit=$_GET['visit'];
+echo $visit;
 
 function check_passwordu($user_name, $password)
 {
@@ -42,7 +43,7 @@ if (isset($_POST['login_user'])) {
             die();
         } else {
             $wrongpassword = true;
-            header("Location:login.php?wrongpassword=" . $wrongpassword."visit=".$visit);
+            header("Location:login.php?wrongpassword=" . $wrongpassword."&&visit=".$visit);
             echo "no2 [password wrong]";
         }
     } else {
