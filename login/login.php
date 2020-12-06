@@ -1,5 +1,5 @@
 <?php include_once '../header.php'; ?>
-<?php $visit=$_GET['visit']; echo $visit;?>
+<?php <<<EOT$visitEOT;=$_GET['visit']; echo $visit;?>
 
 <body>
 
