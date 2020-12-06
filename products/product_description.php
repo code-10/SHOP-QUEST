@@ -138,6 +138,17 @@
                     <h5 class="card-title text-center"><?=$product_name;?></h5><br>
 			
 		    
+		    <!--start rating-->
+		    <?php for($i=0;$i<$product_rating_star-1;$i++) { ?>
+			<i class="fa fa-star" style="color:#ffa700"></i>
+		    <? } ?>
+		    <?php if($product_rating_star>0) { ?>
+			<i class="fa fa-star-half-full" style="color:#ffa700"></i>
+		    <? } ?>
+		    <?php for($j=0;$j<5-$product_rating_star;$j++) { ?>
+			<i class="fa fa-star-o" style="color:#ffa700"></i>
+		    <? } ?>
+		    <!--star rating end-->
 				
                     <p class="card-text m-4">Rating : <?=$product_rating;?></p>
                     <p class="card-text m-4">Brand : <?=$product_brand;?></p>
