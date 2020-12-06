@@ -34,8 +34,8 @@
                     echo '<a href="../login/logout.php" class="nav-item nav-link">Logout</a>';
                 }
                 else{
-                    echo '<a href="../register/register.php?visit=".$visit."" class="nav-item nav-link">Register</a>
-                            <a href="../login/login.php?visit=".$visit."" class="nav-item nav-link">Login</a>';
+                    echo '<a href="../register/register.php?visit="'.$visit.'" class="nav-item nav-link">Register</a>
+                            <a href="../login/login.php?visit="'.$visit.'" class="nav-item nav-link">Login</a>';
                 }
             ?>
         </div>
