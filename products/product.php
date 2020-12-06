@@ -160,7 +160,7 @@
    <div class="col-md-3 text-center">
       <figure class="figure">
         <a href='../product/product_description.php?product_id=<?=$product_id[$c-1]?>&&product_name=<?=$product_name[$c-1]?>'>
-          <img src="../assets/<?=$product_id[$c-1]?>.jpeg" class="figure-img img-fluid rounded mx-auto d-block" style="width:40%;height:50%;" alt="product" onerror="this.src='../assets/black.png';">
+          <img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:40%;height:50%;" alt="product" onerror="this.src='../assets/black.png';">
         </a>
         <figcaption class="figure-caption text-center">
           <h5><?=$product_name[$c-1]?> 
