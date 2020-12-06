@@ -142,11 +142,6 @@
     }
    
     $n=count($prod_id);
-
-    print_r($product_id);echo "<br>";
-    print_r($product_name);echo "<br>";
-    print_r($product_price);echo "<br>";
-    print_r($product_rating);echo "<br>";
     
   ?>   
     
