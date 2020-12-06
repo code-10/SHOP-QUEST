@@ -1,5 +1,5 @@
 <?php include_once '../header.php'; session_start(); ?>
-<?php $visit = $_SESSION['visit']; echo $visit; ?>
+<?php $visit = $_SESSION['visit']; ?>
 
 <body>
 
