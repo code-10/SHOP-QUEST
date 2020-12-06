@@ -128,25 +128,25 @@
   
     
     
-    $prod_id=Array();
-    $prod_name=Array();
-    $prod_price=Array();
-    $prod_rating=Array();
+    $product_id=Array();
+    $product_name=Array();
+    $product_price=Array();
+    $product_rating=Array();
     
     while($ele = $res->fetch_assoc())
     {
-        $prod_id[]=$p['product_id'];
-        $prod_name[]=$p['product_name'];
-        $prod_price[]=$p['price'];
-        $prod_rating[]=$p['rating'];
+        $product_id[]=$ele['product_id'];
+        $product_name[]=$ele['product_name'];
+        $product_price[]=$ele['price'];
+        $product_rating[]=$ele['rating'];
     }
    
     $n=count($prod_id);
 
-    print_r($prod_id);echo "<br>";
-    print_r($prod_name);echo "<br>";
-    print_r($prod_price);echo "<br>";
-    print_r($prod_rating);echo "<br>";
+    print_r($product_id);echo "<br>";
+    print_r($product_name);echo "<br>";
+    print_r($product_price);echo "<br>";
+    print_r($product_rating);echo "<br>";
     
   ?>   
     
