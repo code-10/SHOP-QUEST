@@ -127,10 +127,10 @@
     else
       $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by rating desc");
   
-    $prod_id=array();
-    $prod_name=array();
-    $prod_price=array();
-    $prod_rating=array();
+    $product_id=array();
+    $product_name=array();
+    $product_price=array();
+    $product_rating=array();
     
     while($ele = $res->fetch_assoc())
     {
