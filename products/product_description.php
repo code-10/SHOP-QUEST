@@ -82,9 +82,7 @@
     }
     
     	$n=count($product_description);
-        
-	
-	$product_rating=$ele['rating'];
+       
 	$product_rating_star=round($product_rating);
 	
 	
