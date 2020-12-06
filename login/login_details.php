@@ -4,6 +4,8 @@ session_start();
 
 include '../libraries/chocolates.php';
 
+$visit=$_GET['visit'];
+
 function check_passwordu($user_name, $password)
 {
     
@@ -36,16 +38,16 @@ if (isset($_POST['login_user'])) {
             //echo "Yes";
             
             $_SESSION['user_name'] = $user_name;
-            header("Location:../index.php");
+            header("Location:'.$visit.'");
             die();
         } else {
             $wrongpassword = true;
-            header("Location:login.php?wrongpassword=" . $wrongpassword);
+            header("Location:login.php?wrongpassword=" . $wrongpassword."visit=".$visit);
             echo "no2 [password wrong]";
         }
     } else {
         //echo "no1 [user doesn't exist]";
-        header("Location:../register/register.php");
+        header("Location:../register/register.php?'.$visit.'");
         die();
     }
 }
