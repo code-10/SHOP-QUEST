@@ -1,6 +1,15 @@
 <?php include_once 'header.php'; ?>
 <?php include_once 'libraries/chocolates.php' ?>
-<?php session_start(); ?>
+<?php 
+	
+	session_start(); 
+	
+	$visit = $_SERVER['REQUEST_URI'];
+  	$visit = substr($visit,1);
+
+  	$_SESSION['visit'] = $visit;
+
+?>
 
 	<body>
 		<style media="screen">
