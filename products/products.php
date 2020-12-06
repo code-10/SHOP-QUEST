@@ -63,10 +63,10 @@
  <form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
      <div class="container">
   <div class="row text-center">
-    <div class="col">
+    <div class="col-md-3">
       <p>Sort</p>
     </div>
-    <div class="col">
+    <div class="col-md-6">
     <div class="form-group">
       <select id="inputState" class="form-control" name="id_s">
         <?php if($id_s==1) { ?>
@@ -98,7 +98,7 @@
     </div>
     <input type='hidden' name='sub_cat_id' value='<?php echo "$sub_cat_id";?>'> 
     <input type='hidden' name='sub_cat_name' value='<?php echo "$sub_cat_name";?>'>
-    <div class="col">
+    <div class="col-md-3">
       <button type="submit" name="sort" class="btn btn-dark">Sort</button>
     </div>
   </div>
