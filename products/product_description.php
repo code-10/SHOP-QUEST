@@ -89,11 +89,11 @@
 	}
 	else
 	{
+		$product_rating_star=round($product_rating);
 		$whole=false;
 	}
 	
 	
-	$product_rating_star=round($product_rating);
 	
 	
 	
