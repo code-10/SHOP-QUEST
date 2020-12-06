@@ -16,7 +16,7 @@
         </div>
         <div class="navbar-nav ml-auto">
             <?php if(isset($_SESSION['user_name'])){
-                    echo '<a href="#" class="nav-item nav-link active"><i class="fa fa-user-o">  '.$_SESSION['user_name'].'</i></a>';
+                    echo '<a href="#" class="nav-item nav-link active"><i class="fa fa-user-o"> '.$_SESSION['user_name'].'</i></a>';
                     echo '<a href="product/cart_display.php" class="nav-item nav-link active"><i class="fa fa-shopping-cart"></i></a>';
                     echo '<a href="../login/logout.php" class="nav-item nav-link">Logout</a>';
                 }
@@ -40,7 +40,7 @@
                         
                     }
                     else if(isset($_SESSION['user_name'])){ 
-                        echo '<h1 class="display-4"> username : '.$_SESSION['user_name'].'</h1>';
+                        echo '<h1 class="display-6"> <i class="fas fa-user-circle"></i> : '.$_SESSION['user_name'].'</h1>';
                     }
                     else
                     {
