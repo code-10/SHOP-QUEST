@@ -142,8 +142,8 @@
 			<i class="fa fa-star"></i>
 		    <? } ?>
 			<i class="fa fa-star-half-alt"></i>
-		    <?php for($i=0;$i<5-$product_rating_star;$i++) { ?>
-			<i class="far fa-star"></i>
+		    <?php for($j=0;$j<5-$product_rating_star;$j++) { ?>
+			<i class="fa fa-star"></i>
 		    <? } ?>
 		    <!--star rating end-->
 				
