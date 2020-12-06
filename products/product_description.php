@@ -90,9 +90,10 @@
 	else
 	{
 		$whole=false;
-		$product_rating_star=round($product_rating);
 	}
 	
+	
+	$product_rating_star=round($product_rating);
 	
 	
 	
@@ -151,7 +152,7 @@
 				<i class="fa fa-star" style="color:#ffa700"></i>
 		    	<? } ?>
 		    <? }else{ ?>
-			<?php for($i=0;$i<$product_rating_star-1;$i++) { ?>
+			<?php for($i=0;$i<$product_rating_star;$i++) { ?>
 				<i class="fa fa-star" style="color:#ffa700"></i>
 		    	<? } ?>	
 		    <? } ?>   
