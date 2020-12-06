@@ -40,7 +40,7 @@
                         
                     }
                     else if(isset($_SESSION['user_name'])){ 
-                        echo '<h1 class="display-6"> <i class="fas fa-user-circle"></i> : '.$_SESSION['user_name'].'</h1>';
+                        echo '<h1 class="display-6"> <i class="fa fa-user-circle"></i>  '.$_SESSION['user_name'].'</h1>';
                     }
                     else
                     {
@@ -49,11 +49,14 @@
                     }
             ?>
         </div>
+      
+         <div class="text-center">
+            <a href="product/wishlist_display.php"><button type="button" class="btn btn-dark">Wishlist</button></a><br><br>    
+            <a href="product/order_display.php"><button type="button" class="btn btn-dark">orders</button></a><br><br>
+        </div>
+      
     </div>
-    <div class="text-center">
-    <a href="product/wishlist_display.php"><button type="button" class="btn btn-dark">Wishlist</button></a><br><br>    
-    <a href="product/order_display.php"><button type="button" class="btn btn-dark">orders</button></a><br><br>
-    </div>
+   
     
     <br><hr><br>
     
