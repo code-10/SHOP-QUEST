@@ -139,7 +139,7 @@
 			
 		    <!--start rating-->
 		    <?php for($i=0;$i<$product_rating_star-1;$i++) { ?>
-			<i class="fa fa-star" style="background-color:yellow"></i>
+			<i class="fa fa-star" style="color:yellow"></i>
 		    <? } ?>
 			<i class="fa fa-star-half-full"></i>
 		    <?php for($j=0;$j<5-$product_rating_star;$j++) { ?>
