@@ -4,7 +4,7 @@ session_start();
 
 include '../libraries/chocolates.php';
 
-$visit=$_GET['visit'];
+$visit=$_POST['visit'];
 echo $visit;
 
 function check_passwordu($user_name, $password)
