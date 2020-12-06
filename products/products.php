@@ -156,7 +156,7 @@
     <br>
     <?$c=1; $lim=$n/4+1; for($j=1;$j<=$lim;$j++){ ?>
     <div class="container">
-  <div id="product">
+  <div class="row p-2">
     <? for($i=1;$i<=4;$i++){ ?> 
     <? if(4*($j-1)+$i>$n) break; ?>
    <div class="col-md-3">
