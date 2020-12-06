@@ -8,7 +8,7 @@
   $cat_id = $_GET['cat_id']; 
   $cat_name = $_GET['cat_name']; 
 
-  $link = "http://" .  $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+  $link = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);  
 
 ?>
 
