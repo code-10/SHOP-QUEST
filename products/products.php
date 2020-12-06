@@ -61,6 +61,7 @@
   
   
  <form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+     <div class="container">
   <div class="row text-center">
     <div class="col">
       <p>Sort</p>
@@ -101,6 +102,7 @@
       <button type="submit" name="sort" class="btn btn-dark">Sort</button>
     </div>
   </div>
+     </div>
   </form>
   
   <?php
