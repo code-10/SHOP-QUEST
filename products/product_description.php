@@ -131,9 +131,16 @@
                     <p class="card-text m-4">Rating : <?=$product_rating[0];?></p>
                     <p class="card-text m-4">Brand : <?=$product_brand[0];?></p>
                     
+                    
+                    
                     <div class="text-center"><br>
                         <a href='wishlist.php?product_id=<?=$product_id?>&&product_name=<?=$product_name?>' class="btn btn-dark mb-4 text-center" role="button">Wishlist</a>
                     </div>
+                    
+                    <div class="row m-4">
+                        <p class="p-4">Description : <?=$product_description[0];?></p>
+                    </div>
+                    
                  </div>
             </div>
         </div>
@@ -145,9 +152,7 @@
   
  
   
-  <div class="row m-4">
-      <p class="p-4">Description : <?=$product_description[0];?></p>
-  </div>
+  
 
   
   </body>
