@@ -12,6 +12,8 @@
   $visit = substr($visit,1);
 
   $_SESSION['visit_it'] = $visit;
+
+  echo $_SESSION['visit_it'];
  
 ?>
 
