@@ -1,5 +1,5 @@
 <?php include_once '../header.php'; ?>
-<?php $visit=$_GET['visit']; echo $visit;?>
+<?php $visit=$_GET['visit'];?>
 
 <body>
 
@@ -48,6 +48,7 @@
 			<label for="inputPassword">Password</label>
 			<input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" required>
 		</div>
+		<input type="hidden" name="visit" value="<?php echo $visit ?>" />
 		<button type="submit" name="login_user" class="btn btn-dark">Sign in</button>
 	</form>
 </body>
