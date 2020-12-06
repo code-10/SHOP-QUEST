@@ -59,26 +59,16 @@
     
     $res = $con->query("select * from sub_categories where cat_id = '$cat_id'");
     
-    $sub = Array();
-    while($ele = $res->fetch_assoc())
-      $sub[]=$ele;
-    
-    $sub_id= array();
-    foreach($sub as $s)
-      $sub_id[]=$s['sub_cat_id'];
-    
-    $n = count($sub_id);
-    
-    $sub_name= array();
-    foreach($sub as $s)
-      $sub_name[]=$s['sub_cat_name'];
-    
-    
+    $sub_cat_name= array();
     $sub_cat_id= array();
-    foreach($sub as $s)
-      $sub_cat_id[]=$s['sub_cat_id'];
-    //print_r($sub_name);
-    //print_r($sub_cat_id);
+  
+    while($ele = $res->fetch_assoc()){
+      $sub_cat_name[]=$ele['sub_cat_name'];
+      $sub_cat_id[]=$ele['sub_cat_id'];
+    }
+    
+    
+   
      
   ?>
  
@@ -92,14 +82,20 @@
     <? for($i=1;$i<=4;$i++){ ?> 
     <? if(4*($j-1)+$i>$n) break; ?>
    <div class="col-md-3">
+     <!--<a href='../product/product_description.php?product_id=<?=$prod_id[$c-1]?>&&product_name=<?=$sub_name[$c-1]?>'>-->
       <figure class="figure">
-        <a href='../product/products.php?sub_cat_id=<?=$sub_cat_id[$c-1]?>&&sub_cat_name=<?=$sub_name[$c-1]?>&&id_s=1'>
+        <!--<a href='../product/products.php?sub_cat_id=?=$sub_id[$c-1]?>&&sub_cat_name=?=$prod_name[$c-1]?>'>
+        <a href='../product/products.php?sub_cat_id=<?=$sub_cat_id[$c-1]?>&&sub_cat_name=<?=$sub_cat_name[$c-1]?>'>-->
+        <a href='../product/products.php?sub_cat_id=<?=$sub_cat_id[$c-1]?>&&sub_cat_name=<?=$sub_cat_name[$c-1]?>&&id_s=1'>
           <img src="../cats/<?=$cat_name?>/sbct<?=$c?>.jpg" class="img-fluid" onerror="this.src='../black.png';">
         </a>
         <figcaption class="figure-caption text-center">
-          <h5><?=$sub_name[$c-1]?></h5>   
+          <h5><?=$sub_cat_name[$c-1]?></h5>   
+          <!--<a href='../product/product_buy.php?product_id=<?=$prod_id[$c-1]?>&&product_name=<?=$prod_name[$c-1]?>' class="btn btn-dark mb-4 text-center" role="button">Explore</a>-->
+          <!--<button type="button" class="btn btn-dark mb-4">Buy</button>-->
            </figcaption>
       </figure>
+       <!--</a>-->
     </div>
   <? $c++;} ?>
       </div> 
