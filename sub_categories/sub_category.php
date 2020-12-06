@@ -77,8 +77,8 @@
      
   ?>
  
- 
-
+  
+  
     <p class="display-4 text-center"><?=$cat_name;?></p>
     <br>
     
@@ -89,8 +89,8 @@
         <? if(4*($j-1)+$i>$n) break; ?>
         <div class="col-md-3 text-center">
             <figure class="figure">
-                <a href='../product/products.php?sub_cat_id=<?=$sub_cat_id[$c-1]?>&&sub_cat_name=<?=$sub_cat_name[$c-1]?>&&id_s=1'>
-                  <img src="../cats/<?=$cat_name?>/sbct<?=$c?>.jpg" class="img-fluid" onerror="this.src='../assets/black.png';">
+                <a href='../products/product.php?sub_cat_id=<?=$sub_cat_id[$c-1]?>&&sub_cat_name=<?=$sub_cat_name[$c-1]?>&&id_s=1'>
+                  <img src="..." class="img-fluid" onerror="this.src='../assets/black.png';">
                 </a>
                 <figcaption class="figure-caption text-center">
                     <h5><?=$sub_cat_name[$c-1]?></h5>
@@ -105,9 +105,6 @@
   
   
 </body>
-
-
-
 
 
 <?php include_once '../footer.php'; ?>
