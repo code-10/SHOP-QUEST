@@ -81,8 +81,18 @@
         $product_brand=$ele['product_brand'];
     }
     
-    $n=count($product_description);
+    	$n=count($product_description);
         
+	
+	$product_rating=$ele['rating'];
+	$product_rating_star=round($product_rating);
+	
+	
+	
+	
+	
+	
+	
     
      $wstate=$_GET['wstate'];
      $astate=$_GET['astate'];                                         
@@ -123,10 +133,22 @@
 			<div class="col-lg-6 col-xs-2 col-sm-2 col-md-2">
 				<img src="..." class="img-fluid" alt="product" onerror="this.src='../assets/black.png';">
 			</div>
+			
 			<div class="col-lg-6 col-xs-2 col-sm-2 col-md-2">
 				
-                <div class="card-body p-1 m-1">
+                	<div class="card-body p-1 m-1">
                     <h5 class="card-title text-center"><?=$product_name;?></h5><br>
+			
+		    <!--start rating-->
+		    <?php for($i=0;$i<$product_rating_star-1;$i++) { ?>
+			<i class="fa fa-star"></i>
+		    <? } ?>
+			<i class="fa fa-star-half-alt"></i>
+		    <?php for($i=0;$i<5-$product_rating_star;$i++) { ?>
+			<i class="fa fa-star"></i>
+		    <? } ?>
+		    <!--star rating end-->
+				
                     <p class="card-text m-4">Rating : <?=$product_rating;?></p>
                     <p class="card-text m-4">Brand : <?=$product_brand;?></p>
                     
