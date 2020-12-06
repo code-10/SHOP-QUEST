@@ -60,7 +60,56 @@
   
   
   
- 
+ <form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+  <div class="row text-center">
+    <div class="col">
+      <p>Sort</p>
+    </div>
+    <div class="col">
+    <div class="form-group">
+      <select id="inputState" class="form-control" name="id_s">
+        <?php if($id_s==1) { ?>
+        <option value="1" selected>Default</option>
+        <? } else { ?>
+        <option value="1">Default</option>
+        <? } ?>
+        
+        <?php if($id_s==2) { ?>
+        <option value="2" selected>Price : Low to High</option>
+        <? } else { ?>
+        <option value="2">Price : Low to High</option>
+        <? } ?>
+        
+        <?php if($id_s==3) { ?>
+        <option value="3" selected>Price : High to low</option>
+        <? } else {?>
+        <option value="3">Price : High to low</option>
+        <? } ?>
+        
+        <?php if($id_s==4) { ?>
+        <option value="4" selected>popular</option>
+        <? } else {?>
+        <option value="4">popular</option>
+        <? } ?>
+        
+      </select>
+    </div>
+    </div>
+    <input type='hidden' name='sub_cat_id' value='<?php echo "$sub_cat_id";?>'> 
+    <input type='hidden' name='sub_cat_name' value='<?php echo "$sub_cat_name";?>'>
+    <div class="col">
+      <button type="submit" name="sort" class="btn btn-dark">Sort</button>
+    </div>
+  </div>
+  </form>
+  
+  <?php
+    // for the above form
+    $sub_cat_id=$_GET['sub_cat_id'];
+    $sub_cat_name=$_GET['sub_cat_name'];
+    $id_s=$_GET['id_s'];
+    
+  ?>
    
     
     
