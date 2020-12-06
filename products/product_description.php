@@ -72,7 +72,7 @@
     $product_seller=Array();
     $product_price=Array();
     $product_rating=array();
-    $product_brand=array();
+    $product_brand=Array();
         
     while($ele = $res->fetch_assoc())
     {
@@ -88,7 +88,7 @@
     print_r($product_name); echo "<br>";
     print_r($product_rating); echo "<br>";
     print_r($product_brand); echo "<br>";
-    print_r($product_selelr); echo "<br>";
+    print_r($product_seller); echo "<br>";
     print_r($product_description); echo "<br>";
   
 
