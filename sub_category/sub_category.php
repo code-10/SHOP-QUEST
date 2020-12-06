@@ -8,6 +8,8 @@
   $cat_id = $_GET['cat_id']; 
   $cat_name = $_GET['cat_name']; 
 
+  $link = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
 ?>
 
 
@@ -30,8 +32,8 @@
                     echo '<a href="../login/logout.php" class="nav-item nav-link">Logout</a>';
                 }
                 else{
-                    echo '<a href="../register/register.php?visit=<?$_SERVER['HTTP_HOST'];?>" class="nav-item nav-link">Register</a>
-                            <a href="../login/login.php?visit=<?$_SERVER['HTTP_HOST'];?>" class="nav-item nav-link">Login</a>';
+                    echo '<a href="../register/register.php?visit=<?echo $link;?>" class="nav-item nav-link">Register</a>
+                            <a href="../login/login.php?visit=<?echo $link;?>" class="nav-item nav-link">Login</a>';
                 }
             ?>
         </div>
