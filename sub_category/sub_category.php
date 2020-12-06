@@ -9,6 +9,7 @@
   $cat_name = $_GET['cat_name']; 
 
   $visit = $_SERVER['REQUEST_URI'];
+  $visit = substr($visit,1);
 
 ?>
 
