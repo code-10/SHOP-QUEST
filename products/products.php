@@ -32,7 +32,7 @@
         </div>
          <div class="navbar-nav ml-auto">
             <?php if(isset($_SESSION['user_name'])) {
-                    echo '<a href="../profile.php" class="nav-item nav-link active"><i class="fa fa-user-o">  '.$_SESSION['user_name'].'</i></a>';
+                    echo '<a href="../pages/profile.php" class="nav-item nav-link active"><i class="fa fa-user-o">  '.$_SESSION['user_name'].'</i></a>';
                     echo '<a href="cart_display.php" class="nav-item nav-link active"><i class="fa fa-shopping-cart"></i></a>';
                     echo '<a href="../login/logout.php" class="nav-item nav-link">Logout</a>';
                 }
