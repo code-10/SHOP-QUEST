@@ -66,10 +66,9 @@
   
     
     $con = getCon();
-    $res= $con->query("select * from products where product_id='$product_id' and product_name='$product_name'");
+    $res= $con->query("select * from products where product_id='$product_id'");
   
     $product_description=Array();
-    $product_seller=Array();
     $product_price=Array();
     $product_rating=array();
     $product_brand=Array();
@@ -77,22 +76,13 @@
     while($ele = $res->fetch_assoc())
     {
         $product_description=$ele['product_description'];
-        $product_seller=$ele['seller'];
         $product_price=$ele['price'];
         $product_rating=$ele['rating'];
         $product_brand=$ele['product_brand'];
     }
     
     $n=count($product_description);
-      
-    print_r($product_name); echo "<br>";
-    print_r($product_rating); echo "<br>";
-    print_r($product_brand); echo "<br>";
-    print_r($product_seller); echo "<br>";
-    print_r($product_description); echo "<br>";
-  
-
-  
+        
     
      $wstate=$_GET['wstate'];
      $astate=$_GET['astate'];                                         
