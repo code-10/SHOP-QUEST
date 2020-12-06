@@ -8,7 +8,7 @@
   $cat_id = $_GET['cat_id']; 
   $cat_name = $_GET['cat_name']; 
 
-  $link = $_SERVER['REQUEST_URI']. $_SERVER['QUERY_STRING'];
+  $visit = $_SERVER['REQUEST_URI']. $_SERVER['QUERY_STRING'];
 
 ?>
 
@@ -32,8 +32,8 @@
                     echo '<a href="../login/logout.php" class="nav-item nav-link">Logout</a>';
                 }
                 else{
-                    echo '<a href="../register/register.php?visit='.$link.'" class="nav-item nav-link">Register</a>
-                            <a href="../login/login.php?visit='.$link.'" class="nav-item nav-link">Login</a>';
+                    echo '<a href="../register/register.php?visit='.$visit.'" class="nav-item nav-link">Register</a>
+                            <a href="../login/login.php?visit='.$visit.'" class="nav-item nav-link">Login</a>';
                 }
             ?>
         </div>
