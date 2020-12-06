@@ -113,6 +113,45 @@
     
   ?>
    
+ 
+ <?php
+  
+    $con = getCon();
+    if($id_s==1)
+      $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id");
+    else if($id_s==2)
+        $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price");
+    else if($id_s==3)
+      $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price desc");
+    else
+      $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by rating desc");
+  
+    
+    
+    $prod_id=Array();
+    $prod_name=Array();
+    $prod_price=Array();
+    $prod_rating=Array();
+    
+    while($ele = $res->fetch_assoc())
+    {
+        $prod_id[]=$p['product_id'];
+        $prod_name[]=$p['product_name'];
+        $prod_price[]=$p['price'];
+        $prod_rating[]=$p['rating'];
+    }
+   
+    $n=count($prod_id);
+
+    print_r($prod_id);echo "<br>";
+    print_r($prod_name);echo "<br>";
+    print_r($prod_price);echo "<br>";
+    print_r($prod_rating);echo "<br>";
+    
+  ?>   
+    
+    
+    
     
     
 
