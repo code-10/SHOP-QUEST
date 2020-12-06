@@ -141,7 +141,7 @@
         $product_rating[]=$ele['rating'];
     }
    
-    $n=count($prod_id);
+    $n=count($product_id);
     
   ?>   
     
