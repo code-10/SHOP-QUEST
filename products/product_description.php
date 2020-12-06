@@ -129,10 +129,6 @@
     <div class="text-center m-4">
 	
 	
-		<div class="m-4">
-			<h4><span class="badge badge-dark">points</span> : '.$points.'</h4>
-		</div>
-	
 		<div class="row">
 			<div class="col-lg-6 col-xs-2 col-sm-2 col-md-2">
 				<img src="..." class="img-fluid" alt="product" onerror="this.src='../assets/black.png';">
@@ -141,8 +137,8 @@
 				
                 <div class="card-body p-1 m-1">
                     <h5 class="card-title text-center"><?=$product_name;?></h5><br>
-                    <p class="card-text m-4">Rating : <?=$product_rating[0];?></p>
-                    <p class="card-text m-4">Brand : <?=$product_brand[0];?></p>
+                    <p class="card-text m-4">Rating : <?=$product_rating;?></p>
+                    <p class="card-text m-4">Brand : <?=$product_brand;?></p>
                     
                     
                     
@@ -151,7 +147,7 @@
                     </div>
                     
                     <div class="row m-4">
-                        <p class="p-4">Description : <?=$product_description[0];?></p>
+                        <p class="p-4">Description : <?=$product_description;?></p>
                     </div>
                     
                  </div>
