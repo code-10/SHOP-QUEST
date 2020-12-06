@@ -116,7 +116,7 @@
   
   
   
-  <div class="container m-2">
+  <div class="container">
   <div class="text-center">
     <img src="..." class="img-fluid" alt="product" onerror="this.src='../assets/black.png';">
   </div>
