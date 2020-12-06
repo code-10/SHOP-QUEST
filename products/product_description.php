@@ -71,12 +71,16 @@
     $product_description=Array();
     $product_seller=Array();
     $product_price=Array();
+    $product_rating=array();
+    $product_brand=array();
         
     while($ele = $res->fetch_assoc())
     {
         $product_description=$ele['description'];
         $product_seller=$ele['seller'];
         $product_price=$ele['price'];
+        $product_rating=$ele['rating'];
+        $product_brand=$ele['product_brand'];
     }
     
     $n=count($product_description);
@@ -124,11 +128,11 @@
     <div class="col">
                 <div class="card-body p-1 m-1">
                     <h5 class="card-title text-center"><?=$product_name;?></h5><br>
-                    <p class="card-text m-4">Rating : <?=$rating[0];?></p>
-                    <p class="card-text m-4">Brand : <?=$brand[0];?></p>
+                    <p class="card-text m-4">Rating : <?=$product_rating[0];?></p>
+                    <p class="card-text m-4">Brand : <?=$product_brand[0];?></p>
                     
                     <div class="text-center"><br>
-                    <a href='wishlist.php?product_id=<?=$product_id?>&&product_name=<?=$product_name?>' class="btn btn-dark mb-4 text-center" role="button">Wishlist</a>
+                        <a href='wishlist.php?product_id=<?=$product_id?>&&product_name=<?=$product_name?>' class="btn btn-dark mb-4 text-center" role="button">Wishlist</a>
                     </div>
                  </div>
             </div>
