@@ -144,13 +144,13 @@
 				
                 	<div class="card-body p-1 m-1">
                     <h5 class="card-title text-center"><?=$product_name;?></h5><br>
-			
-		    
-		    
-				
                     <p class="card-text m-4">Rating : <?=$product_rating;?></p>
                     <p class="card-text m-4">Brand : <?=$product_brand;?></p>
                     
+                    <div class="text-center"><br>
+                        <a href='wishlist.php?product_id=<?=$product_id?>&&product_name=<?=$product_name?>' class="btn btn-dark mb-4 text-center" role="button">Wishlist</a>
+                    </div>		
+				
                     <!--variants-->
 		    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     			Variants
@@ -180,10 +180,6 @@
   			</div>
 		    </div>
 		    <!--variants-->		
-                    
-                    <div class="text-center"><br>
-                        <a href='wishlist.php?product_id=<?=$product_id?>&&product_name=<?=$product_name?>' class="btn btn-dark mb-4 text-center" role="button">Wishlist</a>
-                    </div>
                     
                     <div class="row m-4">
                         <p class="p-4">Description : <?=$product_description;?></p>
