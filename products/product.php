@@ -7,7 +7,8 @@
     $sub_cat_id = $_GET['sub_cat_id']; 
     $sub_cat_name = $_GET['sub_cat_name']; 
     $id_s=$_GET['id_s'];
-  
+    $q=$_GET['q'];  
+
     $visit = $_SERVER['REQUEST_URI'];
   	$visit = substr($visit,1);
 
@@ -62,6 +63,37 @@
   
 	<br><br>
   
+	<?php  
+	
+		$con=getCon();
+	
+		$res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id");
+		
+		$product_id=Array();
+    $product_name=Array();
+    $product_price=Array();
+    $product_rating=Array();
+    
+    while($ele = $res->fetch_assoc())
+    {
+        $product_id[]=$ele['product_id'];
+        $product_name[]=$ele['product_name'];
+        $product_price[]=$ele['price'];
+        $product_rating[]=$ele['rating'];
+    }
+   
+    $n=count($product_id);
+	
+	
+	echo $product_name;
+	echo $product_price;
+	echo $product_rating;
+	
+	?>
+	
+	
+	
+	
 	
 	<script>
 function showUser(str) {
@@ -75,7 +107,7 @@ function showUser(str) {
         document.getElementById("txtHint").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET","filter.php?q="+str,true);
+    xmlhttp.open("GET","<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>?q="+str,true);
     xmlhttp.send();
   }
 }
