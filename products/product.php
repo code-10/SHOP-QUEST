@@ -20,9 +20,6 @@
 
   	$_SESSION['visit'] = $visit;
   
-
-	
-	echo $_SESSION['done'];
 ?>
 
 
@@ -142,11 +139,11 @@ function showUser(str) {
 
 	<?php
 	
-	
+		
 		$done=$_SESSION['done'];
 		if($done!=100)
 		{
-			
+			$_SESSION['done']=0;
 	
 	?>
 	
@@ -178,7 +175,7 @@ function showUser(str) {
  
     
     
-    <?php } $_SESSION['done']=0; ?>
+    <?php }; ?>
    
     
     
