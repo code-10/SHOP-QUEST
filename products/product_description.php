@@ -146,14 +146,10 @@
 			<div class="col-lg-6 col-xs-2 col-sm-2 col-md-2">
 				
                 	<div class="card-body p-1 m-1">
-                    <h5 class="card-title text-center"><?=$product_name;?></h5><br>
+                    <h5 class="card-title text-center mr-4"><?=$product_name;?></h5><i class="fas fa-heart"></i>><i class="fas fa-heart-o"></i><br>
                     <p class="card-text ml-4 mr-4">Rating : <?=$product_rating;?></p>
                     <p class="card-text ml-4 mr-4">Brand : <?=$product_brand;?></p>
-                    
-                    <div class="text-center"><br>
-                        <a href='wishlist.php?product_id=<?=$product_id?>&&product_name=<?=$product_name?>' class="btn btn-dark mb-4 text-center" role="button">Wishlist</a>
-                    </div>		
-				
+                    		
 		    
                     <!--variants-->
 		    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
