@@ -46,18 +46,19 @@
 </nav>
   
   
-  <!--Search bar-->
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <form  method="GET" action="../search.php">
-      <div class="text-center">
-            <input type="text" class="form-control mr-sm-2" placeholder="Search" name="search_product" required><br>
-            <button type="submit" class="btn btn-outline-dark my-sm-0">Search</button>
-      </div>
-    </form>
-  </div>
-</div>
-  
+  <!--search bar-->
+					<div id="search" style="background-color:black;">
+						<div class="text-center">
+						<form method="GET" action="search.php" class="form-inline input-group p-4">
+      							<div class="input-group">
+  								<input type="text" class="form-control" name="search_product" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+  								<div class="input-group-append">
+    									<button class="btn btn-outline-light" type="submit">Search</button>
+  								</div>
+							</div>
+    						</form>
+						</div>
+					</div>
   
   
  <form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
