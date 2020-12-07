@@ -45,7 +45,7 @@
   
   
 <!--search bar-->
-					<div id="search" style="background-color:black;">
+					<div id="search" class="mb-2" style="background-color:black;">
 						<div class="text-center">
 						<form method="GET" action="search.php" class="form-inline input-group p-4">
       							<div class="input-group">
