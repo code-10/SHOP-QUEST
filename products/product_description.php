@@ -87,13 +87,7 @@
     	$n=count($product_description);
 	
 	
-	
-	
-	
-	
-	
-	
-	
+
     
      $wstate=$_GET['wstate'];                                       
      $nolog=$_GET['nolog'];
@@ -101,7 +95,10 @@
      $cartd=$_GET['cartd'];
      $carta=$_GET['carta'];
 	
-     
+     if(isset($_SESSION['user_name']))
+     {
+	$nolog=False;     
+     }
   
   ?>
   
