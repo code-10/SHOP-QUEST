@@ -88,10 +88,10 @@ function showUser(str) {
 	
  <form>
 <select name="users" onchange="showUser(this.value)">
-  <option value="1">Peter Griffin</option>
-  <option value="2">Lois Griffin</option>
-  <option value="3">Joseph Swanson</option>
-  <option value="4">Glenn Quagmire</option>
+  <option value="1">Default</option>
+  <option value="2">Price : Low to High</option>
+  <option value="3">Price : High to Low</option>
+  <option value="4">Popular</option>
   </select>
 </form>
 	
