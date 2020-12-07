@@ -56,7 +56,7 @@
 		
 		<!--search bar-->
 					<div id="search" style="background-color:black;">
-						<form method="GET" action="search.php" class="input-group p-4">
+						<form method="GET" action="search.php" class="form-inline input-group p-4">
       							<div class="input-group-btn">
                                                             <input type="text" name="search_product" class="form-control" placeholder="Search">
                                                             <span><button type="submit" class="btn-u"><i class="fa fa-search"></i></button></span>
