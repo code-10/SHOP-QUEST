@@ -64,6 +64,8 @@
   
 	
 	<script>
+		var sub_cat_id = "<?php echo $sub_cat_id; ?>";
+		
 function showUser(str) {
   if (str == "") {
     document.getElementById("txtHint").innerHTML = "";
@@ -75,7 +77,7 @@ function showUser(str) {
         document.getElementById("txtHint").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET","filter.php?q="+str,true);
+    xmlhttp.open("GET","filter.php?q="+str+"sub_Cat_id="+sub_cat_id,true);
     xmlhttp.send();
   }
 }
