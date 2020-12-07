@@ -178,7 +178,7 @@ function showUser(str) {
  
     
     
-    <?php } ?>
+    <?php } $_SESSION['done']=0; ?>
    
     
     
