@@ -3,7 +3,7 @@
 <?php
 
     session_start();
-    include '../libraries/chocolates.php';
+    include_once '../libraries/chocolates.php';
     
     $product_id=$_GET['product_id'];
     $product_name=$_GET['product_name'];
