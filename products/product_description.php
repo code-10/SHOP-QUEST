@@ -130,10 +130,10 @@
   <div class="text-center">
     <? if($nolog)
           echo "<h4>You are not logged in</h4>";
-      else if($wstate==True)
+      /*else if($wstate==True)
           echo "<h4 class='animate__animated animate__fadeOut'>Wishlisted</h4>";
       else if($wstate==False)
-          echo "<h4>Removed from Wishlist</h4>";
+          echo "<h4 class='animate__animated animate__fadeOut'>Removed from Wishlist</h4>";*/
       else if($nostock)
           echo "<h4>Out of Stock</h4>";
       else if($cartd)
@@ -163,8 +163,14 @@
 					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no"><i class="fa fa-heart" style="color:#ff008a"></i></a>';
 			    	else
 					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes"> <i class="fa fa-heart-o" style="color:#ff008a"></i></a>';
+			    
+			    if($wstate==True)
+          			echo "<h4 class='animate__animated animate__fadeOut'>Wishlisted</h4>";
+      			    else if($wstate==False)
+          			echo "<h4 class='animate__animated animate__fadeOut'>Removed from Wishlist</h4>";
 			    ?>
-		    </h5><br>
+		    </h5>
+				
                     <p class="card-text ml-4 mr-4">Rating : <?=$product_rating;?></p>
                     <p class="card-text ml-4 mr-4">Brand : <?=$product_brand;?></p>
                     		
