@@ -3,8 +3,6 @@
 session_start();
 $sub_cat_id=$_SESSION['sub_cat_id_show'];
 $sub_cat_name=$_SESSION['sub_cat_name_show'];
-
-$_SESSION['done']=True;
     
 $id_s = intval($_GET['q']);
 
