@@ -78,7 +78,7 @@ function showUser(str) {
         document.getElementById("txtHint").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET","filter.php?q="+str+"sub_Cat_id="+sub_cat_id,true);
+    xmlhttp.open("GET","filter.php?q="+str,true);
     xmlhttp.send();
   }
 }
