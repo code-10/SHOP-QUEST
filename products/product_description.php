@@ -140,7 +140,7 @@
 					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no"><i class="fa fa-heart" style="color:#ff008a"></i></a>';
 			    	else
 					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes"> <i class="fa fa-heart-o" style="color:#ff008a"></i></a>';
-			    if(isset($_SESSION['user_name']){
+			    if(isset($_SESSION['user_name'])){
 			    	if($wstate==True)
           				echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Wishlisted</h4>";
       			    	else if($wstate==False)
