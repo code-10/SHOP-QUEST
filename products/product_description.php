@@ -129,7 +129,7 @@
 <div class="container">
   <div class="text-center">
     <? if($nolog)
-          echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 10s;'>You are not logged in</h4>";
+          echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 5s;'>You are not logged in</h4>";
       /*else if($wstate==True)
           echo "<h4 class='animate__animated animate__fadeOut'>Wishlisted</h4>";
       else if($wstate==False)
@@ -165,9 +165,9 @@
 					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes"> <i class="fa fa-heart-o" style="color:#ff008a"></i></a>';
 			    
 			    if($wstate==True)
-          			echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 10s;'>Wishlisted</h4>";
+          			echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 5s;'>Wishlisted</h4>";
       			    else if($wstate==False)
-          			echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 10s;'>Removed from Wishlist</h4>";
+          			echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 5s;'>Removed from Wishlist</h4>";
 			    ?>
 		    </h5>
 				
