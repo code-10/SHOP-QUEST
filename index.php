@@ -49,17 +49,13 @@
                             			<a href="login/login.php" class="nav-item nav-link">Login</a>';
                 			}?> 
 					
-					<!--Search bar-->
-					<div class="p-4"  id="search" style="background-color:#000">
-						<div class="container">
-							<form method="GET" action="search.php">
-								<div class="text-center">
-									<input type="text" class="form-control mr-sm-2" placeholder="Search" name="search_product" required>
-									<br>
-									<button type="submit" class="btn btn-outline-light my-sm-0">Search</button>
-								</div>
-							</form>
-						</div>
+					
+					<!--search bar-->
+					<div id="search">
+						<form method="GET" action="search.php" class="form-inline my-2 my-lg-0">
+      							<input type="text" class="form-control mr-sm-2" placeholder="Search" name="search_product" required>
+      							<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    						</form>
 					</div>
 				</div>
 			</div>
