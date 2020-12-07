@@ -1,19 +1,12 @@
 <?php include_once '../header.php'; ?>
 
-
-
 <?php
 
     session_start();
     include '../libraries/chocolates.php';
-    $_SESSION['sub_cat_id_show']=$_GET['sub_cat_id'];
-    $_SESSION['sub_cat_name_show']=$_GET['sub_cat_name'];
-	
     $sub_cat_id = $_GET['sub_cat_id']; 
     $sub_cat_name = $_GET['sub_cat_name']; 
     $id_s=$_GET['id_s'];
-
-    $q=$_GET['id_s'];
 
     $visit = $_SERVER['REQUEST_URI'];
   	$visit = substr($visit,1);
@@ -70,42 +63,53 @@
 	<br><br>
   
 	
-	<script>
-		
-function showUser(str) {
-  if (str == "") {
-    document.getElementById("txtHint").innerHTML = "";
-    return;
-  } else {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("txtHint").innerHTML = this.responseText;
-      }
-    };
-    xmlhttp.open("GET","filter.php?q="+str,true);
-    xmlhttp.send();
-  }
-}
-</script>
 	
- <form class="text-center">
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" onchange="showUser(this.value)" style="width:24%;">
+	
+ <form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+     <div class="container">
+  <div class="row text-center">
+    <div class="col-md-3">
+      <p>Sort</p>
+    </div>
+    <div class="col-md-6">
+    <div class="form-group">
+      <select id="inputState" class="form-control" name="id_s">
+        <?php if($id_s==1) { ?>
+        <option value="1" selected>Default</option>
+        <? } else { ?>
         <option value="1">Default</option>
-  	<option value="2">Price : Low to High</option>
-  	<option value="3">Price : High to Low</option>
-  	<option value="4">Popular</option>
+        <? } ?>
+        
+        <?php if($id_s==2) { ?>
+        <option value="2" selected>Price : Low to High</option>
+        <? } else { ?>
+        <option value="2">Price : Low to High</option>
+        <? } ?>
+        
+        <?php if($id_s==3) { ?>
+        <option value="3" selected>Price : High to low</option>
+        <? } else {?>
+        <option value="3">Price : High to low</option>
+        <? } ?>
+        
+        <?php if($id_s==4) { ?>
+        <option value="4" selected>popular</option>
+        <? } else {?>
+        <option value="4">popular</option>
+        <? } ?>
+        
       </select>
-</form>
-	
-	
-<div id="txtHint"></div>
-
-
+    </div>
+    </div>
+    <input type='hidden' name='sub_cat_id' value='<?php echo "$sub_cat_id";?>'> 
+    <input type='hidden' name='sub_cat_name' value='<?php echo "$sub_cat_name";?>'>
+    <div class="col-md-3">
+      <button type="submit" name="sort" class="btn btn-dark">Sort</button>
+    </div>
+  </div>
+     </div>
+  </form>
   
- <br><br>	
-	
-	
   <?php
     // for the above form
     $sub_cat_id=$_GET['sub_cat_id'];
@@ -113,13 +117,23 @@ function showUser(str) {
     $id_s=$_GET['id_s'];
     
   ?>
-   <?php
-	
-	$con=getCon();
-	 $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id");	
-	
-	
-	 $product_id=Array();
+   
+ 
+ <?php
+  
+    $con = getCon();
+    if($id_s==1)
+      $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id");
+    else if($id_s==2)
+        $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price");
+    else if($id_s==3)
+      $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price desc");
+    else
+      $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by rating desc");
+  
+    
+    
+    $product_id=Array();
     $product_name=Array();
     $product_price=Array();
     $product_rating=Array();
@@ -134,26 +148,12 @@ function showUser(str) {
    
     $n=count($product_id);
     
-	
-	?>
-	
-	
-	<?php
-	
-		if($_SESSION['done']==100){
-				$_SESSION['done']=99;
-			}
-	
-		if($_SESSION['done']!=100)
-		{
-			
-		
-	
-	?>
-
-	
-	
-	<!--code from index.php card decks logic added-->
+  ?>   
+    
+    
+    
+    
+  <!--code from index.php card decks logic added-->
    <p class="display-4 text-center"><?=$cat_name;?></p>
     <br>
     <?$c=1; $lim=$n/4+1; for($j=1;$j<=$lim;$j++){ ?>
@@ -177,10 +177,6 @@ function showUser(str) {
       </div> 
      </div>
     <? } ?>  
-	
- 
-    <?php } 
-	?>
     
     
     
@@ -200,3 +196,5 @@ function showUser(str) {
   
 
 <?php include_once '../footer.php'; ?>
+
+
