@@ -89,7 +89,7 @@ function showUser(str) {
 </script>
 	
  <form class="text-center">
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" onchange="showUser(this.value)">
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" onchange="showUser(this.value)" style="width:24%;">
         <option value="1">Default</option>
   	<option value="2">Price : Low to High</option>
   	<option value="3">Price : High to Low</option>
