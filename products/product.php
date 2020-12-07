@@ -4,7 +4,9 @@
 
     session_start();
     include '../libraries/chocolates.php';
-    $_SESSION['sub_cat_id_show']=$_GET['sub_cat_id']; ;
+    $_SESSION['sub_cat_id_show']=$_GET['sub_cat_id'];
+    $_SESSION['sub_cat_name_show']=$_GET['sub_cat_name'];
+	
     $sub_cat_id = $_GET['sub_cat_id']; 
     $sub_cat_name = $_GET['sub_cat_name']; 
     $id_s=$_GET['id_s'];
