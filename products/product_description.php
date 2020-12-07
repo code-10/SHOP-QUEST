@@ -169,7 +169,7 @@
         							</a>
         							<figcaption class="figure-caption text-center">
 									<p></p>
-									<a href="#" class="badge badge-success">Select</a>
+									<h6><a href="#" class="badge badge-success">Select</a></h6>
          							</figcaption>
       							</figure>	
 							
