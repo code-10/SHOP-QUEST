@@ -142,12 +142,13 @@ function showUser(str) {
 	
 	
 	<?php
+		if($_SESSION['done']==100){
+				$_SESSION['done']=99;
+			}
 	
 		if($_SESSION['done']!=100)
 		{
-			if($_SESSION['done']==100){
-				$_SESSION['done']=99;
-			}
+			
 		
 	
 	?>
