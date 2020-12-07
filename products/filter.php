@@ -34,7 +34,7 @@ $lim=$n/4+1;
     
     echo '
       <!--code from index.php card decks logic added-->
-   <p class="display-4 text-center"><?=$cat_name;?></p>
+   <p class="display-4 text-center">'.$cat_name.'</p>
     <br>
      '.for($j=1;$j<=$lim;$j++){.'
     <div class="container">
