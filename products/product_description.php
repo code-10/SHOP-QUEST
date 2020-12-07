@@ -86,15 +86,7 @@
     
     	$n=count($product_description);
 	
-	if($product_rating_star == round($product_rating))
-	{
-		$whole=True;
-	}
-	else
-	{
-		$product_rating_star=round($product_rating);
-		$whole=False;
-	}
+	
 	
 	
 	
