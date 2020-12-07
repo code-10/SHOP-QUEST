@@ -1,6 +1,6 @@
 <?php
 
-$sub_cat_id=$_GET['sub_cat_id'];
+$sub_cat_id=$_SESSION['sub_cat_id'];
 
 $id_s = intval($_GET['q']);
 
