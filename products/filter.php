@@ -32,11 +32,7 @@ $con = getCon();
     $c=1;
 $lim=$n/4+1; 
     
-    echo '
-      <!--code from index.php card decks logic added-->
-   <p class="display-4 text-center">'.$cat_name.'</p>
-    <br>
-     '.for($j=1;$j<=$lim;$j++){.'
+    echo for($j=1;$j<=$lim;$j++){.'
     <div class="container">
   <div class="row p-2">'.
    for($i=1;$i<=4;$i++) { 
