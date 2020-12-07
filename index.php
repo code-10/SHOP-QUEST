@@ -56,7 +56,7 @@
 		
 		<!--search bar-->
 					<div id="search" style="background-color:black;">
-						<form method="GET" action="search.php" class="form-inline p-2">
+						<form method="GET" action="search.php" class="form-inline p-4">
       							<input type="text" class="form-control mr-sm-2" placeholder="Search" name="search_product" required>
       							<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
     						</form>
