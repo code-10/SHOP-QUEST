@@ -168,7 +168,7 @@
 							
 							<figure class="figure">
         							<a href='../product/product_description.php?product_id=<?=$prod_id[$c-1]?>&&product_name=<?=$prod_name[$c-1]?>'>
-          								<img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:40%;height:50%;" alt="product" onerror="this.src='../assets/black.png';">
+          								<img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:60%;height:50%;" alt="product" onerror="this.src='../assets/black.png';">
         							</a>
         							<figcaption class="figure-caption text-center">
 									<p></p>
