@@ -163,7 +163,7 @@
         <a href='../products/product_description.php?product_id=<?=$product_id[$c-1]?>&&product_name=<?=$product_name[$c-1]?>'>
           <img src="../assets/<?=$product_id[$c-1]?>.jpeg" class="figure-img img-fluid rounded mx-auto d-block" alt="product" onerror="this.src='../assets/black.png';">
         </a>
-        <figcaption class="figure-caption text-center">
+        <figcaption class="text-center">
             <h5><?=$product_name[$c-1]?></h5>
           <h5>Rating : <?=$product_rating[$c-1]?>&nbsp;&nbsp;</h5>
            <h5>Price : <?=$product_price[$c-1]?>&nbsp;&nbsp;</h5> 
