@@ -7,7 +7,6 @@
     $sub_cat_id = $_GET['sub_cat_id']; 
     $sub_cat_name = $_GET['sub_cat_name']; 
     $id_s=$_GET['id_s'];
-    $q=$_GET['q'];  
 
     $visit = $_SERVER['REQUEST_URI'];
   	$visit = substr($visit,1);
@@ -63,90 +62,7 @@
   
 	<br><br>
   
-	<?php  
 	
-		$con=getCon();
-	
-		$res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id");
-		
-		$product_id=Array();
-    $product_name=Array();
-    $product_price=Array();
-    $product_rating=Array();
-    
-    while($ele = $res->fetch_assoc())
-    {
-        $product_id[]=$ele['product_id'];
-        $product_name[]=$ele['product_name'];
-        $product_price[]=$ele['price'];
-        $product_rating[]=$ele['rating'];
-    }
-   
-    $n=count($product_id);
-	
-	echo '
-	<?$c=1; $lim=$n/4+1; for($j=1;$j<=$lim;$j++){ ?>
-    <div class="container">
-  <div class="row p-2">
-    <? for($i=1;$i<=4;$i++){ ?> 
-    <? if(4*($j-1)+$i>$n) break; ?>
-   <div class="col-sm-6 col-lg-3 text-center">
-      <figure class="figure">
-        <a href="../products/product_description.php?product_id=<?=$product_id[$c-1]?>&&product_name=<?=$product_name[$c-1]?>">
-          <img src="../assets/<?=$product_id[$c-1]?>.jpeg" class="figure-img img-fluid rounded mx-auto d-block" alt="product" onerror="this.src="../assets/black.png";">
-        </a>
-        <figcaption class="text-center">
-            <h5><?=$product_name[$c-1]?></h5>
-          <h5>Rating : <?=$product_rating[$c-1]?>&nbsp;&nbsp;</h5>
-           <h5>Price : <?=$product_price[$c-1]?>&nbsp;&nbsp;</h5> 
-           </figcaption>
-      </figure>
-       <!--</a>-->
-    </div>
-  <? $c++;} ?>
-      </div> 
-     </div>
-    <? } ?>  
-	';
-	
-	
-	?>
-	
-	
-	
-	
-	
-	<script>
-function showUser(str) {
-  if (str == "") {
-    document.getElementById("txtHint").innerHTML = "";
-    return;
-  } else {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("txtHint").innerHTML = this.responseText;
-      }
-    };
-    xmlhttp.open("GET","<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>?q="+str,true);
-    xmlhttp.send();
-  }
-}
-</script>
-	<form>
-<select name="users" onchange="showUser(this.value)">
-  <option value="">Select a person:</option>
-  <option value="1">Peter Griffin</option>
-  <option value="2">Lois Griffin</option>
-  <option value="3">Joseph Swanson</option>
-  <option value="4">Glenn Quagmire</option>
-  </select>
-</form>
-<br>
-<div id="txtHint"><b>Person info will be listed here...</b></div>
-	
-	
-	<br><br>
 	
 	
  <form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
