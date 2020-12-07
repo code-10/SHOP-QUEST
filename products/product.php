@@ -19,6 +19,11 @@
   	$visit = substr($visit,1);
 
   	$_SESSION['visit'] = $visit;
+
+	
+	echo $_SESSION['done'];
+	$_SESSION['done']=99;
+	echo $_SESSION['done'];
   
 ?>
 
