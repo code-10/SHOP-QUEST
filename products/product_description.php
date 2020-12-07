@@ -162,9 +162,9 @@
                 	<div class="card-body p-1 m-1">
                     <h5 class="card-title text-center mt-2"><?=$product_name;?>
 			    <?php if($wstate||$astate) 
-					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'"><i class="fa fa-heart"></i></a>';
+					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no"><i class="fa fa-heart"></i></a>';
 			    	else
-					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'"> <i class="fa fa-heart-o"></i></a>';
+					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes"> <i class="fa fa-heart-o"></i></a>';
 			    ?>
 		    </h5><br>
                     <p class="card-text ml-4 mr-4">Rating : <?=$product_rating;?></p>
