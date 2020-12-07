@@ -57,9 +57,6 @@
     						</form>
 						</div>
 					</div>
- 
-	
-	<br><br>
   
   
   <?php
