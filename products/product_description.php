@@ -103,8 +103,7 @@
 	
 	
     
-     $wstate=$_GET['wstate'];
-     $astate=$_GET['astate'];                                         
+     $wstate=$_GET['wstate'];                                       
      $nolog=$_GET['nolog'];
      $nostock=$_GET['nostock'];
      $cartd=$_GET['cartd'];
@@ -115,8 +114,7 @@
 	 $res=$con->query("select * from wishlist where user_name='$user' and product_id='$product_id'");
 		if ($res->num_rows > 0)
 		{
-				$wstate=True;
-			    $astate=True;
+			$wstate=True;
 		}
 	
 		if(isset($_SESSION['user_name']))
@@ -132,10 +130,10 @@
   <div class="text-center">
     <? if($nolog)
           echo "<h4>You are not logged in</h4>";
-      else if($wstate)
+      else if($wstate==True)
           echo "<h4>Wishlisted</h4>";
-      else if($astate)
-          echo "<h4>Already Wishlisted</h4>";
+      else if($wstate==False)
+          echo "<h4>Removed from Wishlist</h4>";
       else if($nostock)
           echo "<h4>Out of Stock</h4>";
       else if($cartd)
