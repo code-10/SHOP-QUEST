@@ -161,7 +161,7 @@
 				<div class="row">
 					<? for($i=1;$i<=4;$i++){ ?> 
     					<? if(4*($j-1)+$i>$n) break; ?>
-						<div class="col">
+						<div class="col-md-6 col-lg col-xl">
 							
 							<figure class="figure">
         							<a href='../product/product_description.php?product_id=<?=$prod_id[$c-1]?>&&product_name=<?=$prod_name[$c-1]?>'>
