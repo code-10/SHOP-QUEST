@@ -57,10 +57,12 @@
 		<!--search bar-->
 					<div id="search" style="background-color:black;">
 						<form method="GET" action="search.php" class="form-inline input-group p-4">
-      							<div class="text-center">
-                                                            <input type="text" name="search_product" class="form-control" placeholder="Search">
-                                                            <span><button type="submit" class="btn-u"><i class="fa fa-search"></i></button></span>
-                                                        </div>
+      							<div class="input-group">
+  								<input type="text" class="form-control" name="search_product" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+  								<div class="input-group-append">
+    									<button class="btn btn-outline-success" type="submit">Button</button>
+  								</div>
+							</div>
     						</form>
 					</div>
 		
