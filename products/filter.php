@@ -48,10 +48,13 @@ $lim=$n/4+1;
            <h5>Price : '.$product_price[$c-1].'&nbsp;&nbsp;</h5> 
            </figcaption>
       </figure>
-    </div>'.$c++;}.'
+    </div>';
+       $c++;}
+        
+       echo '
       </div> 
-     </div>'.
-    };
+     </div>';
+    }
 
 
 ?>
