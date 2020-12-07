@@ -148,9 +148,9 @@
                 	<div class="card-body p-1 m-1">
                     <h5 class="card-title text-center mr-4"><?=$product_name;?>
 			    <?php if($wstate||$astate) 
-					echo '<a href="wishlist.php?product_id='.$product_id.'" <i class="fas fa-heart"></i></a>';
+					echo '<a href="wishlist.php?product_id='.$product_id.'" <i class="fa fa-heart"></i></a>';
 			    	else
-					echo '<a href="wishlist.php?product_id='.$product_id.'"><i class="fas fa-heart-o"></i></a>';
+					echo '<a href="wishlist.php?product_id='.$product_id.'"><i class="fa fa-heart-o"></i></a>';
 			    ?>
 		    </h5><br>
                     <p class="card-text ml-4 mr-4">Rating : <?=$product_rating;?></p>
