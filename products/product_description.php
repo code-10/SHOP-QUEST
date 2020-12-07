@@ -168,9 +168,8 @@
           								<img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:40%;height:50%;" alt="product" onerror="this.src='../assets/black.png';">
         							</a>
         							<figcaption class="figure-caption text-center">
-									<p><?=$prod_name[$c-1]?></p>
-          								<p>Rating : <?=$prod_rating[$c-1]?>&nbsp;&nbsp;</p>
-           								<p>Price : <?=$prod_price[$c-1]?>&nbsp;&nbsp;</p> 
+									<p></p>
+									<a href="#" class="badge badge-success">Select</a>
          							</figcaption>
       							</figure>	
 							
