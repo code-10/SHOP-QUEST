@@ -146,7 +146,7 @@
 			<div class="col-lg-6 col-xs-2 col-sm-2 col-md-2">
 				
                 	<div class="card-body p-1 m-1">
-                    <h5 class="card-title text-center mr-4"><?=$product_name;?>
+                    <h5 class="card-title text-center mt-2"><?=$product_name;?>
 			    <?php if($wstate||$astate) 
 					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'"><i class="fa fa-heart"></i></a>';
 			    	else
