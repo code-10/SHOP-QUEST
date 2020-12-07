@@ -109,6 +109,20 @@
      $nostock=$_GET['nostock'];
      $cartd=$_GET['cartd'];
      $carta=$_GET['carta'];
+	
+     $user=$_SESSION['user_name'];
+     $con=getCon();
+	 $res=$con->query("select * from wishlist where user_name='$user' and product_id='$product_id'");
+		if ($res->num_rows > 0)
+		{
+				$wstate=True;
+			    $astate=True;
+		}
+	
+		if(isset($_SESSION['user_name']))
+		{
+			$nolog=False;	
+		}
   
   ?>
   
