@@ -31,7 +31,7 @@
 		</style>
 		
 		<!--Navigation Bar-->
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark"> <a href="#" class="navbar-brand">ShopQuest <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></a>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark"> <a href="#" class="navbar-brand">ShopQuest <a href="#search"><i class="fa fa-search" aria-hidden="true" style="color:white;margin-left:100px;"></i></a></a>
 			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"> <span class="navbar-toggler-icon"></span> </button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<div class="navbar-nav">
@@ -48,23 +48,25 @@
                     				echo '<a href="register/register.php" class="nav-item nav-link">Register</a>
                             			<a href="login/login.php" class="nav-item nav-link">Login</a>';
                 			}?> 
+					
+					<!--Search bar-->
+					<div class="p-4"  id="search" style="background-color:#000">
+						<div class="container">
+							<form method="GET" action="search.php">
+								<div class="text-center">
+									<input type="text" class="form-control mr-sm-2" placeholder="Search" name="search_product" required>
+									<br>
+									<button type="submit" class="btn btn-outline-light my-sm-0">Search</button>
+								</div>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 		</nav>
 		
 		
-		<!--Search bar-->
-		<div class="p-4" style="background-color:#000">
-			<div class="container">
-				<form method="GET" action="search.php">
-					<div class="text-center">
-						<input type="text" class="form-control mr-sm-2" placeholder="Search" name="search_product" required>
-						<br>
-						<button type="submit" class="btn btn-outline-light my-sm-0">Search</button>
-					</div>
-				</form>
-			</div>
-		</div>
+		
 		
 		
 		<!--main card carousel-->
