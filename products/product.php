@@ -20,9 +20,9 @@
 
   	$_SESSION['visit'] = $visit;
 
-	
-	echo $_SESSION['done'];
-	$_SESSION['done']=99;
+	if($_SESSION['done']==100){
+		$_SESSION['done']=99;
+	}
 	echo $_SESSION['done'];
   
 ?>
