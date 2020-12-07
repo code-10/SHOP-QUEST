@@ -140,7 +140,7 @@ function showUser(str) {
 	
 	$done = $_SESSION['done'];	
 	
-	if($done)
+	if($done==false)
 	{
 	
 	?>	
