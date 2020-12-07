@@ -154,13 +154,13 @@
                         <a href='wishlist.php?product_id=<?=$product_id?>&&product_name=<?=$product_name?>' class="btn btn-dark mb-4 text-center" role="button">Wishlist</a>
                     </div>		
 				
-				
+		    
                     <!--variants-->
-		    <a href="#here"><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+		    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     			PURCHASE
-		    </button></a>
+		    </button>
 				
-		    <div id="here"></div>
+		    
 				
 		    <div class="collapse ml-2 mr-2 mt-4 mb-4" id="collapseExample">
   			<div id="here" class="card card-body">
