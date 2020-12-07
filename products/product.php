@@ -3,9 +3,6 @@
 
 
 <?php
-	
-	echo $_SESSION['done'];
-
 
     session_start();
     include '../libraries/chocolates.php';
@@ -23,6 +20,9 @@
 
   	$_SESSION['visit'] = $visit;
   
+
+	
+	echo $_SESSION['done'];
 ?>
 
 
