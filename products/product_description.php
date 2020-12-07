@@ -156,7 +156,7 @@
     			Variants
   		    </button>	
 				
-		    <div class="collapse" id="collapseExample">
+		    <div class="collapse m-4" id="collapseExample">
   			<div class="card card-body">
 				<div class="row">
 					<? for($i=1;$i<=4;$i++){ ?> 
