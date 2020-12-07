@@ -31,21 +31,13 @@
 		</style>
 		
 		<!--Navigation Bar-->
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark"> <a href="#" class="navbar-brand">ShopQuest <a href="#search"><i class="fa fa-search" aria-hidden="true" style="color:white;margin-left:96px;"></i></a></a>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark"> <a href="#" class="navbar-brand">ShopQuest</a>
 			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"> <span class="navbar-toggler-icon"></span> </button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<div class="navbar-nav">
 					<a href="#" class="nav-item nav-link active">Home</a>
 					<a href="pages/about.php" class="nav-item nav-link">About</a>
 				</div>
-					
-					<!--search bar-->
-					<div id="search">
-						<form method="GET" action="search.php" class="form-inline my-2 my-lg-0">
-      							<input type="text" class="form-control mr-sm-2" placeholder="Search" name="search_product" required>
-      							<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-    						</form>
-					</div>
 				
 				<div class="navbar-nav ml-auto">
 					<?php if(isset($_SESSION['user_name'])) {
@@ -62,7 +54,13 @@
 		</nav>
 		
 		
-		
+		<!--search bar-->
+					<div id="search">
+						<form method="GET" action="search.php" class="form-inline my-2 my-lg-0">
+      							<input type="text" class="form-control mr-sm-2" placeholder="Search" name="search_product" required>
+      							<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    						</form>
+					</div>
 		
 		
 		<!--main card carousel-->
