@@ -155,13 +155,13 @@
                     </div>		
 				
                     <!--variants-->
-		    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+		    <a href="#here"><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     			PURCHASE
-  		    </button>	
+  		    </button></a>	
 				
 		    <div class="collapse ml-2 mr-2 mt-4 mb-4" id="collapseExample">
   			<div class="card card-body">
-				<div class="row">
+				<div class="row" id="here">
 					<? for($i=1;$i<=4;$i++){ ?> 
     					<? if(4*($j-1)+$i>$n) break; ?>
 						<div class="col-md-6 col-lg col-xl">
