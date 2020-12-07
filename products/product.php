@@ -63,53 +63,40 @@
 	<br><br>
   
 	
+	<script>
+function showUser(str) {
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET","filter.php?q="+str,true);
+    xmlhttp.send();
+  }
+}
+</script>
+	
+ <form>
+<select name="users" onchange="showUser(this.value)">
+  <option value="1">Peter Griffin</option>
+  <option value="2">Lois Griffin</option>
+  <option value="3">Joseph Swanson</option>
+  <option value="4">Glenn Quagmire</option>
+  </select>
+</form>
 	
 	
- <form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-     <div class="container">
-  <div class="row text-center">
-    <div class="col-md-3">
-      <p>Sort</p>
-    </div>
-    <div class="col-md-6">
-    <div class="form-group">
-      <select id="inputState" class="form-control" name="id_s">
-        <?php if($id_s==1) { ?>
-        <option value="1" selected>Default</option>
-        <? } else { ?>
-        <option value="1">Default</option>
-        <? } ?>
-        
-        <?php if($id_s==2) { ?>
-        <option value="2" selected>Price : Low to High</option>
-        <? } else { ?>
-        <option value="2">Price : Low to High</option>
-        <? } ?>
-        
-        <?php if($id_s==3) { ?>
-        <option value="3" selected>Price : High to low</option>
-        <? } else {?>
-        <option value="3">Price : High to low</option>
-        <? } ?>
-        
-        <?php if($id_s==4) { ?>
-        <option value="4" selected>popular</option>
-        <? } else {?>
-        <option value="4">popular</option>
-        <? } ?>
-        
-      </select>
-    </div>
-    </div>
-    <input type='hidden' name='sub_cat_id' value='<?php echo "$sub_cat_id";?>'> 
-    <input type='hidden' name='sub_cat_name' value='<?php echo "$sub_cat_name";?>'>
-    <div class="col-md-3">
-      <button type="submit" name="sort" class="btn btn-dark">Sort</button>
-    </div>
-  </div>
-     </div>
-  </form>
+<div id="txtHint"></div>
+	
   
+ <br><br>	
+	
+	
   <?php
     // for the above form
     $sub_cat_id=$_GET['sub_cat_id'];
@@ -118,66 +105,15 @@
     
   ?>
    
+
+	
+	
  
- <?php
-  
-    $con = getCon();
-    if($id_s==1)
-      $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id");
-    else if($id_s==2)
-        $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price");
-    else if($id_s==3)
-      $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price desc");
-    else
-      $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by rating desc");
-  
     
     
-    $product_id=Array();
-    $product_name=Array();
-    $product_price=Array();
-    $product_rating=Array();
     
-    while($ele = $res->fetch_assoc())
-    {
-        $product_id[]=$ele['product_id'];
-        $product_name[]=$ele['product_name'];
-        $product_price[]=$ele['price'];
-        $product_rating[]=$ele['rating'];
-    }
+    
    
-    $n=count($product_id);
-    
-  ?>   
-    
-    
-    
-    
-  <!--code from index.php card decks logic added-->
-   <p class="display-4 text-center"><?=$cat_name;?></p>
-    <br>
-    <?$c=1; $lim=$n/4+1; for($j=1;$j<=$lim;$j++){ ?>
-    <div class="container">
-  <div class="row p-2">
-    <? for($i=1;$i<=4;$i++){ ?> 
-    <? if(4*($j-1)+$i>$n) break; ?>
-   <div class="col-sm-6 col-lg-3 text-center">
-      <figure class="figure">
-        <a href='../products/product_description.php?product_id=<?=$product_id[$c-1]?>&&product_name=<?=$product_name[$c-1]?>'>
-          <img src="../assets/<?=$product_id[$c-1]?>.jpeg" class="figure-img img-fluid rounded mx-auto d-block" alt="product" onerror="this.src='../assets/black.png';">
-        </a>
-        <figcaption class="text-center">
-            <h5><?=$product_name[$c-1]?></h5>
-          <h5>Rating : <?=$product_rating[$c-1]?>&nbsp;&nbsp;</h5>
-           <h5>Price : <?=$product_price[$c-1]?>&nbsp;&nbsp;</h5> 
-           </figcaption>
-      </figure>
-       <!--</a>-->
-    </div>
-  <? $c++;} ?>
-      </div> 
-     </div>
-    <? } ?>  
     
     
     
