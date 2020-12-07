@@ -131,7 +131,7 @@
     <? if($nolog)
           echo "<h4>You are not logged in</h4>";
       else if($wstate==True)
-          echo "<h4 class="animate__animated animate__fadeOut">Wishlisted</h4>";
+          echo "<h4 class='animate__animated animate__fadeOut'>Wishlisted</h4>";
       else if($wstate==False)
           echo "<h4>Removed from Wishlist</h4>";
       else if($nostock)
