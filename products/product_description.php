@@ -151,7 +151,35 @@
                     <p class="card-text m-4">Rating : <?=$product_rating;?></p>
                     <p class="card-text m-4">Brand : <?=$product_brand;?></p>
                     
-                    
+                    <!--variants-->
+		    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    			Variants
+  		    </button>	
+				
+		    <div class="collapse" id="collapseExample">
+  			<div class="card card-body">
+				<div class="row">
+					<? for($i=1;$i<=4;$i++){ ?> 
+    					<? if(4*($j-1)+$i>$n) break; ?>
+						<div class="col">
+							
+							<figure class="figure">
+        							<a href='../product/product_description.php?product_id=<?=$prod_id[$c-1]?>&&product_name=<?=$prod_name[$c-1]?>'>
+          								<img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:40%;height:50%;" alt="product" onerror="this.src='../assets/black.png';">
+        							</a>
+        							<figcaption class="figure-caption text-center">
+          								<h5><?=$prod_name[$c-1]?>
+          								<h5>Rating : <?=$prod_rating[$c-1]?>&nbsp;&nbsp;</h5>
+           								<h5>Price : <?=$prod_price[$c-1]?>&nbsp;&nbsp;</h5> 
+         							</figcaption>
+      							</figure>	
+							
+						</div>
+   					<? } ?>
+				</div>
+  			</div>
+		    </div>
+		    <!--variants-->		
                     
                     <div class="text-center"><br>
                         <a href='wishlist.php?product_id=<?=$product_id?>&&product_name=<?=$product_name?>' class="btn btn-dark mb-4 text-center" role="button">Wishlist</a>
