@@ -2,7 +2,7 @@
 
 $id_s = intval($_GET['q']);
 
-inlcude_once '../libraries/chocolates.php';
+include_once '../libraries/chocolates.php';
 $con = getCon();
     if($id_s==1)
       $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id");
