@@ -74,7 +74,6 @@
   
 	
 	<script>
-		var sub_cat_id = "<?php echo $sub_cat_id; ?>";
 		
 function showUser(str) {
   if (str == "") {
