@@ -32,8 +32,8 @@ $con = getCon();
     $c=1;
 $lim=$n/4+1; 
     
-    echo for($j=1;$j<=$lim;$j++){.'
-    <div class="container">
+    for($j=1;$j<=$lim;$j++){
+    echo '<div class="container">
   <div class="row p-2">'.
    for($i=1;$i<=4;$i++) { 
     if(4*($j-1)+$i>$n) break; .'
@@ -51,10 +51,7 @@ $lim=$n/4+1;
     </div>.'$c++;}.'
       </div> 
      </div>'.
-    } .'
-    
-    
-    ';
+    };
 
 
 ?>
