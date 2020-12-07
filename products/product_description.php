@@ -62,7 +62,8 @@
 						</div>
 					</div>
   
-  
+  <br><br>
+	
   <?php
   
   
