@@ -2,7 +2,8 @@
 
 session_start();
 $sub_cat_id=$_SESSION['sub_cat_id_show'];
-
+$sub_cat_name=$_SESSION['sub_cat_name_show'];
+    
 $id_s = intval($_GET['q']);
 
 include_once '../libraries/chocolates.php';
@@ -35,6 +36,11 @@ $con = getCon();
     $c=1;
 $lim=$n/4+1; 
     
+    echo '
+        <p class="display-4 text-center"><?=$cat_name;?></p>
+    <br>
+    ';
+
     for($j=1;$j<=$lim;$j++){
     echo '<div class="container">
   <div class="row p-2">';
