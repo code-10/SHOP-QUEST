@@ -34,10 +34,10 @@ $lim=$n/4+1;
     
     for($j=1;$j<=$lim;$j++){
     echo '<div class="container">
-  <div class="row p-2">'.
+  <div class="row p-2">';
    for($i=1;$i<=4;$i++) { 
-    if(4*($j-1)+$i>$n) break; .'
-   <div class="col-sm-6 col-lg-3 text-center">
+    if(4*($j-1)+$i>$n) break; 
+   echo '<div class="col-sm-6 col-lg-3 text-center">
       <figure class="figure">
         <a href="../products/product_description.php?product_id='.$product_id[$c-1].'&&product_name='.$product_name[$c-1].'">
           <img src="../assets/'.$product_id[$c-1].'.jpeg" class="figure-img img-fluid rounded mx-auto d-block" alt="product" onerror="this.src="../assets/black.png";">
