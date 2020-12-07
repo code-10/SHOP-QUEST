@@ -7,7 +7,6 @@ $sub_cat_name=$_SESSION['sub_cat_name_show'];
 $id_s = intval($_GET['q']);
 
 $_SESSION['done']=100;
-echo $_SESSION['done'];
 
 
 include_once '../libraries/chocolates.php';
