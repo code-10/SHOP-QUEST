@@ -144,7 +144,6 @@ function showUser(str) {
 		if($done!=100)
 		{
 			$_SESSION['done']=0;
-			unset($_SESSION['done']);
 	
 	?>
 	
