@@ -38,6 +38,15 @@
 					<a href="#" class="nav-item nav-link active">Home</a>
 					<a href="pages/about.php" class="nav-item nav-link">About</a>
 				</div>
+					
+					<!--search bar-->
+					<div id="search">
+						<form method="GET" action="search.php" class="form-inline my-2 my-lg-0">
+      							<input type="text" class="form-control mr-sm-2" placeholder="Search" name="search_product" required>
+      							<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    						</form>
+					</div>
+				
 				<div class="navbar-nav ml-auto">
 					<?php if(isset($_SESSION['user_name'])) {
                     				echo '<a href="pages/profile.php" class="nav-item nav-link active"><i class="fa fa-user-o">  '.$_SESSION['user_name'].'</i></a>';
@@ -48,15 +57,6 @@
                     				echo '<a href="register/register.php" class="nav-item nav-link">Register</a>
                             			<a href="login/login.php" class="nav-item nav-link">Login</a>';
                 			}?> 
-					
-					
-					<!--search bar-->
-					<div id="search">
-						<form method="GET" action="search.php" class="form-inline my-2 my-lg-0">
-      							<input type="text" class="form-control mr-sm-2" placeholder="Search" name="search_product" required>
-      							<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-    						</form>
-					</div>
 				</div>
 			</div>
 		</nav>
