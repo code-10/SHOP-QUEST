@@ -153,7 +153,7 @@
 				
                     <!--variants-->
 		    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    			Variants
+    			PURCHASE
   		    </button>	
 				
 		    <div class="collapse ml-2 mr-2 mt-4 mb-4" id="collapseExample">
