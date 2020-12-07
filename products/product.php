@@ -60,6 +60,7 @@
 						</div>
 					</div>
   
+	<br><br><br><br>
   
  <form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
      <div class="container">
