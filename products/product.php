@@ -1,6 +1,11 @@
 <?php include_once '../header.php'; ?>
 
+
+
 <?php
+	
+	echo $_SESSION['done'];
+
 
     session_start();
     include '../libraries/chocolates.php';
