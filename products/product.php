@@ -137,15 +137,7 @@ function showUser(str) {
 	
 	?>
 
-	<?php
 	
-		
-		$done=$_SESSION['done'];
-		if($done!=100)
-		{
-			$_SESSION['done']=0;
-	
-	?>
 	
 	<!--code from index.php card decks logic added-->
    <p class="display-4 text-center"><?=$cat_name;?></p>
@@ -174,9 +166,6 @@ function showUser(str) {
 	
  
     
-    
-    <?php }; ?>
-   
     
     
     
