@@ -111,6 +111,7 @@
 	$product_color=Array();
 	$product_size=Array();
 	$unique_type_id=Array();
+	$product_seller=Array();
 	
 	while($ele = $res->fetch_assoc())
 	{
@@ -118,6 +119,7 @@
 		$product_color[]=$ele['color'];
 		$product_size[]=$ele['size'];
 		$unique_type_id[]=$ele['unique_type_id'];
+		$product_seller[]=$ele['seller_user_name'];
 	}
 	
 	$show=0;
@@ -172,8 +174,8 @@
 			<h4 class="text-center mt-2" style="font-size:24px;"><?=$product_color[$show]?>, <?=$product_size[$show]?></h4>
 				
                     <h5 class="card-text ml-4 mr-4">Rating : <?=$product_rating;?></h5>
-		    <h4 class="card-text ml-4 mr-4 mb-2">Price : Rs<?=$product_price[$show];?></h4>	
-                    <p class="card-text ml-4 mr-4">Brand : <?=$product_brand;?></p>
+		    <h4 class="card-text ml-4 mr-4 mb-4">Price : Rs<?=$product_price[$show];?></h4>	
+                    <p class="card-text ml-4 mr-4">Brand : <?=$product_brand;?> - Seller : <?=$product_seller[$show]?></p>
                     		
 		    
                     <!--variants-->
