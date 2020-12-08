@@ -119,7 +119,7 @@
 					</div>
 				</div>
 				<div class="col-lg-6 col-xs-6 col-sm-6 col-md-6">
-					<div class="card">
+					<div class="card text-center">
 						<a href='sub_categories/sub_category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link">
   						<img class="card-img-top" src="assets/categories/cat<?=$i+2?>.png" alt="Card image cap" style="width:16%;height:16%;">
   							<div class="card-body">
