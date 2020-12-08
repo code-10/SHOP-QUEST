@@ -17,7 +17,7 @@
     if($wishdo=="yes"){
       if(($con->query("insert into wishlist(user_name,product_id) values('$user','$product_id');"))===True)
       {
-        header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."show=0");
+        header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&show=0");
         die();
       }
      }
@@ -29,7 +29,7 @@
    
            if($con->query($sql)===True)
            {    
-                  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."show=0");
+                  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&show=0");
                   die();
            }
   
@@ -38,7 +38,7 @@
 else
 {
   $nolog=true;
-  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&nolog=".$nolog."show=0");
+  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&nolog=".$nolog."&&show=0");
         die();
 }
     
