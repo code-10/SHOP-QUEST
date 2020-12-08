@@ -98,25 +98,39 @@
         	<div class="mt-2 mb-2 text-center">
 		</div>
 		
+		<!--<a href='sub_categories/sub_category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link"><h5><?=$categories[$c-1];?></h5></a>-->
+		
 		<!--Loop category-->
 		<div id="category">
 		<p class="display-4 text-center">Categories</p>
-		<div id="category">
-			<?$c=1; for($j=1;$j<=2;$j++){ ?>
-				<div class="container" id="category">
-					<div class="card-deck m-2">
-						<? for($i=1;$i<=4;$i++){ ?>
-							<div class="card m-4">
-								<figure class="figure"> <img src="assets/categories/rcat<?=$c?>.jpg" class="img-fluid" alt="image">
-									<figcaption class="figure-caption text-center"><a href='sub_categories/sub_category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link"><h5><?=$categories[$c-1];?></h5></a></figcaption>
-								</figure>
-							</div>
-						<? $c++;} ?>
+		
+        
+			
+		<div class="row">
+			<?php for($i=0;$i<8;$i=$i+2) { ?>
+				<div class="col-lg-6 col-xs-6 col-sm-6 col-md-6">
+					<div class="card">
+						<a href='sub_categories/sub_category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link">
+  						<img class="card-img-top" src="assets/categories/cat<?=$i+1?>.png" alt="Card image cap">
+  							<div class="card-body">
+    								<h5 class="card-title"><?=$categories[$i];?></h5>
+  							</div>
+						</a>
 					</div>
 				</div>
-			<? } ?>
+				<div class="col-lg-6 col-xs-6 col-sm-6 col-md-6">
+					<div class="card">
+						<a href='sub_categories/sub_category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link">
+  						<img class="card-img-top" src="assets/categories/cat<?=$i+2?>.png" alt="Card image cap">
+  							<div class="card-body">
+    								<h5 class="card-title"><?=$categories[$i+1];?></h5>
+  							</div>
+						</a>
+					</div>
+				</div>
+			<?php } ?>
 		</div>
-        
+			
 	</body>
 
 
