@@ -40,7 +40,10 @@
                         
                     }
                     else if(isset($_SESSION['user_name'])){ 
-                        echo '<h1 class="display-6 mb-5"> <i class="fa fa-user-circle"></i>  '.$_SESSION['user_name'].'</h1>';
+                        $user=$_SESSION['user_name'];
+                        $user[0]=strtoupper($user[0]);
+                        
+                        echo '<h1 class="display-6 mb-5"> <i class="fa fa-user-circle"></i>  '.$user.'</h1>';
                     }
                     else
                     {
