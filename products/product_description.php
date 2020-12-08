@@ -201,22 +201,39 @@
   			</div>
 		    </div>
 		    <!--variants-->
-				
-		<!--buy and add to cart-->		
+			
+		<form method="POST" action="">
+		<!--buy and add to cart-->
 		    <div class="row">
 			    <div class="col-3"></div>
 			    <div class="col-6">
-				    <a class="btn btn-dark btn-block mb-4" href="#" role="button">Buy</a>
+				    <div class="form-group">
+    					<label for="exampleFormControlSelect1">Example select</label>
+    						<select class="form-control" id="qty" name="quantity">
+      							<option value="1" selected>1</option>
+      							<option value="2">2</option>
+      							<option value="3">3</option>
+      							<option value="4">4</option>
+    						</select>
+  				    </div>
 			    </div>
 			    <div class="col-3"></div>
 		    </div>
 		    <div class="row">
 			    <div class="col-3"></div>
 			    <div class="col-6">
-				    <a class="btn btn-dark btn-block mb-4" href="#" role="button">Add to cart</a>
+				    <a class="btn btn-dark btn-block mb-4" href="#" role="button" name="buy">Buy</a>
+			    </div>
+			    <div class="col-3"></div>
+		    </div>
+		    <div class="row">
+			    <div class="col-3"></div>
+			    <div class="col-6">
+				    <a class="btn btn-dark btn-block mb-4" href="#" role="button" name="addtocart">Add to cart</a>
 			    </div>
 			    <div class="col-3"></div>
 		    </div>	
+				</form>
 		<!--buy and add to cart end-->
 				
                     
