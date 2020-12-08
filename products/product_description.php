@@ -107,7 +107,7 @@
 <div class="container">
   <div class="text-center">
     <? if($nolog)
-          echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 8s;'><div class='alert alert-warning' role='alert'>You are not logged in</div></h4>";
+          echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-warning' role='alert'>You are not logged in&nbsp&;nbsp;<a href='../login/login.php'>Click here to login</a></div></h4>";
       else if($nostock)
           echo "<h4>Out of Stock</h4>";
       else if($cartd)
