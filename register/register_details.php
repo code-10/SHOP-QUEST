@@ -38,7 +38,7 @@ if (isset($_POST['register_user']))
         if (($con->query("insert into user(user_name,email,password) values('$u','$e','$p');")) === True)
         {
             //echo "YES";
-            header("Location:../login/login.php");
+            header("Location:../login/login.php?loginnow=yes");
             die();
         }
         else
