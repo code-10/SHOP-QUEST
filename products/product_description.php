@@ -178,24 +178,6 @@
     			Options
 		    </button>
 			
-		    <div class="row">
-			    <div class="col-3"></div>
-			    <div class="col-6">
-				    <a class="btn btn-dark btn-block mb-4" href="#" role="button">Buy</a>
-			    </div>
-			    <div class="col-3"></div>
-		    </div>
-		    <div class="row">
-			    <div class="col-3"></div>
-			    <div class="col-6">
-				    <a class="btn btn-dark btn-block mb-4" href="#" role="button">Add to cart</a>
-			    </div>
-			    <div class="col-3"></div>
-		    </div>
-			
-		    
-				
-		    
 				
 		    <div class="collapse ml-2 mr-2 mt-4 mb-4" id="collapseExample">
   			<div id="here" class="card card-body">
@@ -217,7 +199,25 @@
 				</div>
   			</div>
 		    </div>
-		    <!--variants-->		
+		    <!--variants-->
+				
+		<!--buy and add to cart-->		
+		    <div class="row">
+			    <div class="col-3"></div>
+			    <div class="col-6">
+				    <a class="btn btn-dark btn-block mb-4" href="#" role="button">Buy</a>
+			    </div>
+			    <div class="col-3"></div>
+		    </div>
+		    <div class="row">
+			    <div class="col-3"></div>
+			    <div class="col-6">
+				    <a class="btn btn-dark btn-block mb-4" href="#" role="button">Add to cart</a>
+			    </div>
+			    <div class="col-3"></div>
+		    </div>	
+		<!--buy and add to cart end-->
+				
                     
                     <div class="row m-4">
                         <p class="p-4">Description : <?=$product_description;?></p>
