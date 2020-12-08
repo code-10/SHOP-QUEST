@@ -190,6 +190,9 @@
 							<figure class="figure">
         							<a href='product_description.php?product_id=<?=$product_id?>&&product_name=<?=$product_name?>&&show=<?=$c?>'>
           								<img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:60%;height:50%;" alt="product" onerror="this.src='../assets/black.png';">
+									<p><?=$product_size[$show];?></p>
+									<p><?=$product_color[$show];?></p>
+									<p><?=$product_price[$show];?></p>
         							</a>
       							</figure>	
 							
