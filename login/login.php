@@ -38,7 +38,7 @@
 		<div class="text-center">
 			<?php 
 				if($wrongpassword)
-					echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Your user_name or password is wrong</div></h4>";
+					echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Your user_name/email or password is wrong</div></h4>";
 				else if($loginnow)
 					echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-primary' role='danger'>Login to continue</div></h4>";
 			?>
@@ -49,7 +49,7 @@
   <!--Login form-->
 	<form class="jumbotron m-4" method="POST" action="login_details.php">
 		<div class="form-group">
-			<label for="inputEmail">Username</label>
+			<label for="inputEmail">Username/email</label>
 			<input type="text" class="form-control" id="inputuser_name" placeholder="username" name="user_name" required>
 		</div>
 		<div class="form-group">
