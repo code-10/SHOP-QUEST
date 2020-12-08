@@ -71,7 +71,7 @@
    
 	
 	
-	<h5 class="mb-4 mt-4 mr-2 ml-2">Search Results</h5>
+	<h5 class="mb-4 mt-4 mr-2 ml-2 text-center">Search Results</h5>
 	
     <?$c=1; $lim=$n/4+1; for($j=1;$j<=$lim;$j++){ ?>
     <div class="container">
