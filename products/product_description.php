@@ -178,7 +178,7 @@
     			Options
 		    </button>
 			
-		    <div class="row container">
+		    <div class="row">
 			    <div class="col-12">
 				    <a class="btn btn-dark btn-block mb-2" href="#" role="button">Buy</a>
 			    </div>
