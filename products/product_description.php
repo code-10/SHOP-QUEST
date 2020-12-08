@@ -69,14 +69,14 @@
   
     
     $con = getCon();
-    $res= $con->query("select * from products where product_id='$product_id'");
+    $res1= $con->query("select * from products where product_id='$product_id'");
   
     $product_description=Array();
     $product_price=Array();
     $product_rating=array();
     $product_brand=Array();
         
-    while($ele = $res->fetch_assoc())
+    while($ele = $res1->fetch_assoc())
     {
         $product_description=$ele['product_description'];
         $product_price=$ele['price'];
@@ -100,12 +100,12 @@
 	
      //to check if wishlisted
 	$user=$_SESSION['user_name'];
-	$res=$con->query("select user_name from wishlist where product_id='$product_id' and user_name='$user'");
+	$wish=$con->query("select user_name from wishlist where product_id='$product_id' and user_name='$user'");
 
   
 	
 	//to display unique_products
-	$res=$con->query("select * from unique_product where product_id='$product_id'");
+	$res2=$con->query("select * from unique_product where product_id='$product_id'");
 	
 	$product_price=Array();
 	$product_color=Array();
@@ -113,7 +113,7 @@
 	$unique_type_id=Array();
 	$product_seller=Array();
 	
-	while($ele = $res->fetch_assoc())
+	while($ele = $res2->fetch_assoc())
 	{
 		$product_price[]=$ele['price'];
 		$product_color[]=$ele['color'];
@@ -160,12 +160,12 @@
 				
                 	<div class="card-body p-1 m-1">
                     	<h5 class="card-title text-center mt-2" style="font-size:40px;"><?=$product_name;?>
-			    <?php if($res->num_rows>0) 
+			    <?php if($wish->num_rows>0) 
 					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no"><i class="fa fa-heart" style="color:#ff008a"></i></a>';
 			    	else
 					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes"> <i class="fa fa-heart-o" style="color:#a9a9a9"></i></a>';
 			    if(isset($_SESSION['user_name'])){
-			    	if($res->num_rows>0)
+			    	if($wish->num_rows>0)
           				echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Wishlisted</h4>";
       			    	else
           				echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Not in Wishlist</h4>";
