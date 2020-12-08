@@ -8,6 +8,7 @@
     $product_id=$_GET['product_id'];
     $product_name=$_GET['product_name'];
     $itsprice=$_GET['price'];
+    $show = $_GET['show'];
   
     $visit = $_SERVER['REQUEST_URI'];
   	$visit = substr($visit,1);
@@ -122,7 +123,6 @@
 		$product_seller[]=$ele['seller_user_name'];
 	}
 	
-	$show=0;
 	$t=count($unique_type_id);
 	
 	
