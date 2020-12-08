@@ -38,6 +38,7 @@ if (isset($_POST['login_user'])) {
         if (check_passwordu($user_name, $password)) {
             //echo "Yes";
             
+            $user_name=strtolower($user_name);
             $_SESSION['user_name'] = $user_name;
             header("Location:../".$visit);
             die();
