@@ -107,7 +107,7 @@
         
 			
 		<div class="row m-4">
-			<?php for($i=0;$i<8;$i=$i+2) { ?>
+			<?php $c=1; for($i=0;$i<8;$i=$i+2) { ?>
 				<div class="col-lg-6 col-xs-6 col-sm-6 col-md-6">
 					<div class="card text-center">
 						<a href='sub_categories/sub_category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link">
@@ -128,7 +128,7 @@
 						</a>
 					</div>
 				</div>
-			<?php } ?>
+			<?php $c++; } ?>
 		</div>
 			
 	</body>
