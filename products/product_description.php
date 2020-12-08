@@ -144,7 +144,7 @@
 			    	if($res->num_rows>0)
           				echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Wishlisted</h4>";
       			    	else
-          				echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Removed from Wishlist</h4>";
+          				echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Not in Wishlist</h4>";
 			    }
 			    ?>
 		    </h5>
