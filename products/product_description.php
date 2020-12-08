@@ -208,7 +208,6 @@
 			    <div class="col-4">Quantity</div>
 			    <div class="col-5">
 				    <div class="form-group">
-    					<label for="qty"></label>
     						<select class="form-control" id="qty" name="quantity">
       							<option value="1" selected>1</option>
       							<option value="2">2</option>
