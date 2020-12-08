@@ -88,8 +88,8 @@
 	
 	
 
-    
-     $wstate=$_GET['wstate'];                                       
+    $wstate=$_SESSION['wstate'];
+     /*$wstate=$_GET['wstate'];*/                                     
      $nolog=$_GET['nolog'];
      $nostock=$_GET['nostock'];
      $cartd=$_GET['cartd'];
@@ -133,7 +133,7 @@
 				
                 	<div class="card-body p-1 m-1">
                     <h5 class="card-title text-center mt-2" style="font-size:40px;"><?=$product_name;?>
-			    <?php if($wstate||$astate) 
+			    <?php if($wstate) 
 					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no"><i class="fa fa-heart" style="color:#ff008a"></i></a>';
 			    	else
 					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes"> <i class="fa fa-heart-o" style="color:#ff008a"></i></a>';
