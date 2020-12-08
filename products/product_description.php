@@ -193,7 +193,7 @@
 						<div class="col-md-6 col-lg col-xl">
 							
 							<figure class="figure">
-        							<a href='product_description.php?show=<?=$c?>'>
+        							<a href='product_description.php?product_id=<?=$product_id?>&&product_name=<?$product_name?>&&show=<?=$c?>'>
           								<img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:60%;height:50%;" alt="product" onerror="this.src='../assets/black.png';">
         							</a>
       							</figure>	
