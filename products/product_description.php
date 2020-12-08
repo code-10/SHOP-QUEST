@@ -103,6 +103,27 @@
 	$res=$con->query("select user_name from wishlist where product_id='$product_id' and user_name='$user'");
 
   
+	
+	//to display unique_products
+	$res=$con->query("select * from unique_product where product_id='$product_id'");
+	
+	$product_price=Array();
+	$product_color=Array();
+	$product_size=Array();
+	$unique_type_id=Array();
+	
+	while($ele = $res->fetch_assoc())
+	{
+		$product_price[]=$ele['price'];
+		$product_color[]=$ele['color'];
+		$product_size[]=$ele['size'];
+		$unique_type_id[]=$ele['unique_type_id'];
+	}
+	
+	$show=0;
+	
+	
+	
   ?>
   
   
@@ -135,7 +156,8 @@
 			<div class="col-lg-6 col-xs-2 col-sm-2 col-md-2">
 				
                 	<div class="card-body p-1 m-1">
-                    <h5 class="card-title text-center mt-2" style="font-size:40px;"><?=$product_name;?>
+                    	<h5 class="card-title text-center mt-2" style="font-size:40px;"><?=$product_name;?></h5>
+			<h4 class="text-center mt-2" style="font-size:24px;"><?=$product_color[$show]?>, <?=$product_size[$show]?></h4>
 			    <?php if($res->num_rows>0) 
 					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no"><i class="fa fa-heart" style="color:#ff008a"></i></a>';
 			    	else
@@ -147,9 +169,10 @@
           				echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Not in Wishlist</h4>";
 			    }
 			    ?>
-		    </h5>
+		    
 				
                     <p class="card-text ml-4 mr-4">Rating : <?=$product_rating;?></p>
+		    <p class="card-text ml-4 mr-4 mb-2">Price : Rs<?=$product_price[$show];?></p>	
                     <p class="card-text ml-4 mr-4">Brand : <?=$product_brand;?></p>
                     		
 		    
