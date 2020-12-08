@@ -123,6 +123,7 @@
 	}
 	
 	$show=0;
+	$t=count($unique_type_id);
 	
 	
 	
@@ -199,7 +200,7 @@
       							</figure>	
 							
 						</div>
-   					<? $c++; } ?>
+   					<? $c++; if($c>=$t) break; } ?>
 				</div>
   			</div>
 		    </div>
