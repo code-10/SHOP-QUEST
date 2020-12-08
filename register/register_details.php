@@ -5,6 +5,7 @@ if (isset($_POST['register_user']))
     $con = getCon();
 
     $u = $_POST['user_name'];
+    $u = str_replace(' ', '', $u);
     $e = $_POST['email'];
     $p = $_POST['password'];
     $u=strtolower($u);
