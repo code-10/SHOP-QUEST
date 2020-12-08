@@ -206,9 +206,9 @@
 		<!--buy and add to cart-->
 		    <div class="row">
 			    <div class="col-3"></div>
-			    <div class="col-4 text-right">Quantity</div>
-			    <div class="col-5 text-left">
-				    <div class="form-group">
+			    <div class="col-5 text-right">
+				    Quantity : 
+			    	    <div class="form-group">
     						<select class="form-control" id="qty" name="quantity">
       							<option value="1" selected>1</option>
       							<option value="2">2</option>
@@ -217,6 +217,7 @@
     						</select>
   				    </div>
 			    </div>
+			    <div class="col-4"></div>
 		    </div>
 		    <div class="row">
 			    <div class="col-3"></div>
