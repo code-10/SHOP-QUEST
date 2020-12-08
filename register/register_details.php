@@ -7,6 +7,7 @@ if (isset($_POST['register_user']))
     $u = $_POST['user_name'];
     $e = $_POST['email'];
     $p = $_POST['password'];
+    $u=strtolower($u);
 
     
     if (rowExists('commonpasswords', 'possible_password', $p) || $u == $p)
