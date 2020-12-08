@@ -161,9 +161,9 @@
                 	<div class="card-body p-1 m-1">
                     	<h5 class="card-title text-center mt-2" style="font-size:40px;"><?=$product_name;?>
 			    <?php if($wish->num_rows>0) 
-					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no"><i class="fa fa-heart" style="color:#ff008a"></i></a>';
+					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no&&show=0"><i class="fa fa-heart" style="color:#ff008a"></i></a>';
 			    	else
-					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes"> <i class="fa fa-heart-o" style="color:#a9a9a9"></i></a>';
+					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes&&show=0"> <i class="fa fa-heart-o" style="color:#a9a9a9"></i></a>';
 			    ?>
 		    	</h5>	
 			<h4 class="text-center mt-2" style="font-size:24px;"><?=$product_color[$show]?>, <?=$product_size[$show]?></h4>
