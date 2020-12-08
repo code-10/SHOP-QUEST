@@ -153,11 +153,11 @@
 	
 	
 		<div class="row">
-			<div class="col-lg-6 col-xs-2 col-sm-2 col-md-2">
+			<div class="col-lg-6 col-xs-2 col-sm-2 col-md-6">
 				<img src="..." class="img-fluid" alt="product" onerror="this.src='../assets/black.png';">
 			</div>
 			
-			<div class="col-lg-6 col-xs-2 col-sm-2 col-md-2">
+			<div class="col-lg-6 col-xs-2 col-sm-2 col-md-6">
 				
                 	<div class="card-body p-1 m-1">
                     	<h5 class="card-title text-center mt-2" style="font-size:40px;"><?=$product_name;?>
