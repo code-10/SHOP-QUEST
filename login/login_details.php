@@ -47,7 +47,7 @@ if (isset($_POST['login_user'])) {
         }
     } else {
         //echo "no1 [user doesn't exist]";
-        header("Location:../register/register.php?".$visit);
+        header("Location:../register/register.php?".$visit."&&user=no");
         die();
     }
 }
