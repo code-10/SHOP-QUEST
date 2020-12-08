@@ -8,6 +8,7 @@
   $product_id=$_GET['product_id'];
   $user=$_SESSION['user_name'];
   $product_name=$_GET['product_name'];
+  $user=strtolower($user);
   
 
   
