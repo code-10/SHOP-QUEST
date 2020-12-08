@@ -106,12 +106,12 @@
 		
         
 			
-		<div class="row">
+		<div class="row m-4">
 			<?php for($i=0;$i<8;$i=$i+2) { ?>
 				<div class="col-lg-6 col-xs-6 col-sm-6 col-md-6">
-					<div class="card">
+					<div class="card text-center">
 						<a href='sub_categories/sub_category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link">
-  						<img class="card-img-top" src="assets/categories/cat<?=$i+1?>.png" alt="Card image cap">
+  						<img class="card-img-top" src="assets/categories/cat<?=$i+1?>.png" alt="Card image cap" style="width:16%;height:16%;">
   							<div class="card-body">
     								<h5 class="card-title"><?=$categories[$i];?></h5>
   							</div>
@@ -121,7 +121,7 @@
 				<div class="col-lg-6 col-xs-6 col-sm-6 col-md-6">
 					<div class="card">
 						<a href='sub_categories/sub_category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link">
-  						<img class="card-img-top" src="assets/categories/cat<?=$i+2?>.png" alt="Card image cap">
+  						<img class="card-img-top" src="assets/categories/cat<?=$i+2?>.png" alt="Card image cap" style="width:16%;height:16%;">
   							<div class="card-body">
     								<h5 class="card-title"><?=$categories[$i+1];?></h5>
   							</div>
