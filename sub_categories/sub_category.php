@@ -88,7 +88,7 @@
       <div class="row p-2">
         <? for($i=1;$i<=4;$i++){ ?> 
         <? if(4*($j-1)+$i>$n) break; ?>
-        <div class="col-md-3 text-center">
+        <div class="col-md-3 col-6 text-center">
             <figure class="figure">
                 <a href='../products/product.php?sub_cat_id=<?=$sub_cat_id[$c-1]?>&&sub_cat_name=<?=$sub_cat_name[$c-1]?>&&id_s=1'>
                   <img src="..." class="img-fluid" onerror="this.src='../assets/black.png';">
