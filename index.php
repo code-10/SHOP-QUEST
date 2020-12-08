@@ -56,7 +56,7 @@
 		
 		<!--search bar-->
 					<div id="search" style="background-color:black;">
-						<div class="text-center">
+						<div class="d-flex justify-content-center">
 						<form method="GET" action="pages/search.php" class="form-inline input-group" style="padding:0.60rem!important">
       							<div class="input-group">
   								<input type="text" class="form-control" name="search_product" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
