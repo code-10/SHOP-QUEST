@@ -46,9 +46,10 @@
           $con = getCon();
   
      $search_prod = mysqli_real_escape_string($con,$_GET['search_product']);
-     
-     $res = $con->query("select * from products where product_name like '%$search_prod%' or product_brand like '%$search_prod%' or product_description like '%$search_prod%'");
-    
+      
+     $sql="select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where product_name like '%$search_prod%' or product_brand like '%$search_prod%' or product_description like '%$search_prod%' group by products.product_id";
+     //$res = $con->query("select * from products where product_name like '%$search_prod%' or product_brand like '%$search_prod%' or product_description like '%$search_prod%'");
+    $res=$con->query($sql);
     
     $product_id=array();
     $product_name=array();
@@ -79,7 +80,7 @@
    <div class="col-sm-6 col-lg-3 text-center">
       <figure class="figure">
         <a href='products/product_description.php?product_id=<?=$product_id[$c-1]?>&&product_name=<?=$product_name[$c-1]?>&&show=0'>
-          <img src="..." class="figure-img img-fluid rounded mx-auto d-block" alt="product" onerror="this.src='assets/black.png';">
+          <img src="..." class="figure-img img-fluid rounded mx-auto d-block" alt="product" onerror="this.src='../assets/black.png';">
         </a>
         <figcaption class="text-center">
             <h5><?=$product_name[$c-1]?></h5>
