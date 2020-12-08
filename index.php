@@ -102,7 +102,7 @@
 		
 		<!--Loop category-->
 		<div id="category">
-		<p class="display-4 text-center">Categories</p>
+		<h5 class="text-center">Categories</h5>
 		
         
 			
