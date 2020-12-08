@@ -31,7 +31,7 @@ function check_passwordu($user_name, $password)
 
 if (isset($_POST['login_user'])) {
     $user_name = $_POST['user_name'];
-    $user_name = str_replace(' ', '', $user_name);
+    //$user_name = str_replace(' ', '', $user_name);
     $user_name = strtolower($user_name);
     $password  = $_POST['password'];
     
