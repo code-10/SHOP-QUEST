@@ -30,10 +30,18 @@
   
   
   <!--display messages-->
-	<?php $wrongpassword=$_GET[ 'wrongpassword']; ?>
+	<?php 
+		$wrongpassword=$_GET[ 'wrongpassword']; 
+		$loginnow=$_GET['loginnow'];
+	?>
 	<div class="container">
 		<div class="text-center">
-			<?php if($wrongpassword) echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Your user_name or password is wrong Wrong password</div></h4>";?>
+			<?php 
+				if($wrongpassword)
+					echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Your user_name or password is wrong</div></h4>";
+				else if($loginnow)
+					echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-primary' role='danger'>Login to continue</div></h4>";
+			?>
 		</div>
 	</div>
   
