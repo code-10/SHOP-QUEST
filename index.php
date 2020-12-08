@@ -107,7 +107,7 @@
         
 			
 		<div class="row m-4 d-flex justify-content-center">
-			<?php $c=1; for($i=0;$i<8;$i=$i+2) { ?>
+			<?php $c=1; for($i=0;$i<8;$i++) { ?>
 				<div class="col-lg-1">
 					<div class="card text-center">
 						<a href='sub_categories/sub_category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link">
