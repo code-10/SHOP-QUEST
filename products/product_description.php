@@ -179,13 +179,20 @@
 		    </button>
 			
 		    <div class="row">
-			    <div class="col-12">
-				    <a class="btn btn-dark btn-block mb-2" href="#" role="button">Buy</a>
+			    <div class="col-3"></div>
+			    <div class="col-6">
+				    <a class="btn btn-dark btn-block mb-4" href="#" role="button">Buy</a>
 			    </div>
-			    <div class="col-12">
-				    <a class="btn btn-dark btn-block mb-2" href="#" role="button">Add to cart</a>
-			    </div>
+			    <div class="col-3"></div>
 		    </div>
+		    <div class="row">
+			    <div class="col-3"></div>
+			    <div class="col-6">
+				    <a class="btn btn-dark btn-block mb-4" href="#" role="button">Add to cart</a>
+			    </div>
+			    <div class="col-3"></div>
+		    </div>
+			
 		    
 				
 		    
