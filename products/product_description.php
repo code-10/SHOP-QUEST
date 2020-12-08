@@ -237,7 +237,18 @@
 	
 	<?php
 	
-		$currentproduct=$product_id;
+		$res3= $con->query("select * from products where product_id='$product_id'");
+  
+    $product_price=Array();
+    $product_rating=array();
+    $product_name=Array();
+        
+    while($ele = $res3->fetch_assoc())
+    {
+        $product_price=$ele['price'];
+        $product_rating=$ele['rating'];
+        $product_name=$ele['product_name'];
+    }
 	
 	?>
 	
@@ -262,7 +273,7 @@
            </figcaption>
       </figure>
     </div>
-  <? $c++; if($c==$currentproduct) $c++; } ?>
+  <? $c++; if($c==$product_id) $c++; } ?>
       </div> 
      </div>
     <? } ?> 
