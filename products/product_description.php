@@ -180,10 +180,10 @@
 			
 		    <div class="row">
 			    <div class="col-12">
-				    <a class="btn btn-dark btn-block m-2" href="#" role="button">Buy</a>
+				    <a class="btn btn-dark btn-block" href="#" role="button">Buy</a>
 			    </div>
 			    <div class="col-12">
-				    <a class="btn btn-dark btn-block m-2" href="#" role="button">Add to cart</a>
+				    <a class="btn btn-dark btn-block" href="#" role="button">Add to cart</a>
 			    </div>
 		    </div>
 		    
