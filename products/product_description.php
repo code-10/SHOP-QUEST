@@ -174,16 +174,16 @@
                     		
 		    
                     <!--variants-->
-		    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+		    <button class="btn btn-primary mb-4" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     			Options
 		    </button>
 			
 		    <div class="row">
-			    <div class="col">
-				    <a class="btn btn-dark" href="#" role="button">Buy</a>
+			    <div class="col-12">
+				    <a class="btn btn-dark btn-block" href="#" role="button">Buy</a>
 			    </div>
-			    <div class="col">
-				    <a class="btn btn-dark" href="#" role="button">Add to cart</a>
+			    <div class="col-12">
+				    <a class="btn btn-dark btn-block" href="#" role="button">Add to cart</a>
 			    </div>
 		    </div>
 		    
