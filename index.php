@@ -106,7 +106,7 @@
 		
         
 			
-		<div class="row m-4">
+		<div class="row m-4 d-flex justify-content-center">
 			<?php $c=1; for($i=0;$i<8;$i=$i+2) { ?>
 				<div class="col-lg-1">
 					<div class="card text-center">
