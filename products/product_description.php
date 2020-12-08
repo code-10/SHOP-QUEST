@@ -135,12 +135,12 @@
   <div class="text-center">
     <? if($nolog)
           echo "<h5 class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-warning' role='alert'>You are not logged in &nbsp;&nbsp;<a href='../login/login.php' style='font-size:16px;'>login</a></div></h4>";
-      else if($nostock)
-          echo "<h4>Out of Stock</h4>";
-      else if($cartd)
-          echo "<h4>added to cart</h4>";
-      else if($carta)
-          echo "<h4>Already in cart</h4>";
+       if(isset($_SESSION['user_name'])){
+		if($wish->num_rows>0)
+          		echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Wishlisted</h4>";
+      		else
+          		echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Not in Wishlist</h4>";
+      }
     ?>
   </div>
 </div>
@@ -164,12 +164,6 @@
 					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no"><i class="fa fa-heart" style="color:#ff008a"></i></a>';
 			    	else
 					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes"> <i class="fa fa-heart-o" style="color:#a9a9a9"></i></a>';
-			    if(isset($_SESSION['user_name'])){
-			    	if($wish->num_rows>0)
-          				echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Wishlisted</h4>";
-      			    	else
-          				echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Not in Wishlist</h4>";
-			    }
 			    ?>
 		    	</h5>	
 			<h4 class="text-center mt-2" style="font-size:24px;"><?=$product_color[$show]?>, <?=$product_size[$show]?></h4>
