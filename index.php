@@ -11,7 +11,7 @@
 
 ?>
 
-	<body style="background-color:#4B0082" >
+	<body>
 		<style media="screen">
 		.figure {
 			display: table;
@@ -100,7 +100,7 @@
 		
 		<!--Loop category-->
 		<div id="category">
-		<p class="display-4 text-center" style="color: white;">Categories</p>
+		<p class="display-4 text-center">Categories</p>
 		<div id="category">
 			<?$c=1; for($j=1;$j<=2;$j++){ ?>
 				<div class="container" id="category">
