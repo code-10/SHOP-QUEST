@@ -33,7 +33,7 @@
 	<?php $wrongpassword=$_GET[ 'wrongpassword']; ?>
 	<div class="container">
 		<div class="text-center">
-			<?php if($wrongpassword) echo "<h5>You have entered wrong password</h5>";?>
+			<?php if($wrongpassword) echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Your user_name or password is wrong Wrong password</div></h4>";?>
 		</div>
 	</div>
   
