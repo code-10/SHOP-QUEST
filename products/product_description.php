@@ -171,8 +171,8 @@
 		    	</h5>	
 			<h4 class="text-center mt-2" style="font-size:24px;"><?=$product_color[$show]?>, <?=$product_size[$show]?></h4>
 				
-                    <p class="card-text ml-4 mr-4">Rating : <?=$product_rating;?></p>
-		    <p class="card-text ml-4 mr-4 mb-2">Price : Rs<?=$product_price[$show];?></p>	
+                    <h5 class="card-text ml-4 mr-4">Rating : <?=$product_rating;?></h5>
+		    <h4 class="card-text ml-4 mr-4 mb-2">Price : Rs<?=$product_price[$show];?></h4>	
                     <p class="card-text ml-4 mr-4">Brand : <?=$product_brand;?></p>
                     		
 		    
@@ -186,22 +186,18 @@
 		    <div class="collapse ml-2 mr-2 mt-4 mb-4" id="collapseExample">
   			<div id="here" class="card card-body">
 				<div class="row">
-					<? for($i=1;$i<=4;$i++){ ?> 
+					<? $c=0; for($i=1;$i<=4;$i++){ ?> 
     					<? if(4*($j-1)+$i>$n) break; ?>
 						<div class="col-md-6 col-lg col-xl">
 							
 							<figure class="figure">
-        							<a href='../product/product_description.php?product_id=<?=$prod_id[$c-1]?>&&product_name=<?=$prod_name[$c-1]?>'>
+        							<a href='../product/product_description.php?show=<?=$c?>'>
           								<img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:60%;height:50%;" alt="product" onerror="this.src='../assets/black.png';">
         							</a>
-        							<figcaption class="figure-caption text-center">
-									<p></p>
-									<h5><a href="#" class="badge badge-success">BUY</a></h5>
-         							</figcaption>
       							</figure>	
 							
 						</div>
-   					<? } ?>
+   					<? $c++; } ?>
 				</div>
   			</div>
 		    </div>
