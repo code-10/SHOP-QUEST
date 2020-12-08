@@ -137,9 +137,9 @@
                 	<div class="card-body p-1 m-1">
                     <h5 class="card-title text-center mt-2" style="font-size:40px;"><?=$product_name;?>
 			    <?php if($res->num_rows>0) 
-					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no"><i class="fa fa-heart" style="color:#ff008a"></i></a>';
+					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no"><i class="fa fa-heart" style="color:#a9a9a9"></i></a>';
 			    	else
-					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes"> <i class="fa fa-heart-o" style="color:#ff008a"></i></a>';
+					echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes"> <i class="fa fa-heart-o" style="color:#a9a9a9"></i></a>';
 			    if(isset($_SESSION['user_name'])){
 			    	if($res->num_rows>0)
           				echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Wishlisted</h4>";
