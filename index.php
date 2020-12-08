@@ -11,7 +11,7 @@
 
 ?>
 
-	<body>
+	<body style="background-color:#9400d3" >
 		<style media="screen">
 		.figure {
 			display: table;
