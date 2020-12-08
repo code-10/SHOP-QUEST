@@ -108,20 +108,20 @@
 			
 		<div class="row m-4">
 			<?php $c=1; for($i=0;$i<8;$i=$i+2) { ?>
-				<div class="col-lg-4 col-xs-6 col-sm-6 col-md-6">
+				<div class="col-lg-2 col-xs-6 col-sm-6 col-md-6">
 					<div class="card text-center">
 						<a href='sub_categories/sub_category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c+1-1];?>' class="stretched-link">
-  						<img class="card-img-top" src="assets/categories/cat<?=$i+1?>.png" alt="Category" style="width:16%;height:16%;" onerror="this.src='assets/black.png';">
+  						<img class="card-img-top" src="assets/categories/cat<?=$i+1?>.png" alt="Category" style="width:72%;height:8%;" onerror="this.src='assets/black.png';">
   							<div class="card-body">
     								<h5 class="card-title"><?=$categories[$i];?></h5>
   							</div>
 						</a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-xs-6 col-sm-6 col-md-6">
+				<div class="col-lg-2 col-xs-6 col-sm-6 col-md-6">
 					<div class="card text-center">
 						<a href='sub_categories/sub_category.php?cat_id=<?=$c+1;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link">
-  						<img class="card-img-top" src="assets/categories/cat<?=$i+2?>.png" alt="Category" style="width:16%;height:16%;" onerror="this.src='assets/black.png';">
+  						<img class="card-img-top" src="assets/categories/cat<?=$i+2?>.png" alt="Category" style="width:72%;height:8%;" onerror="this.src='assets/black.png';">
   							<div class="card-body">
     								<h5 class="card-title"><?=$categories[$i+1];?></h5>
   							</div>
