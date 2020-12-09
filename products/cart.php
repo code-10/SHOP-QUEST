@@ -7,10 +7,10 @@
       $con=getCon();
 
       $user=$_SESSION['user_name'];
-      $show=$_GET['show'];
-      $unique_type_id=$_GET['unique_type_id'];
-      $product_id=$_GET['product_id'];
-      $product_name=$_GET['product_name'];
+      $show=$_POST['show'];
+      $unique_type_id=$_POST['unique_type_id'];
+      $product_id=$_POST['product_id'];
+      $product_name=$_POST['product_name'];
       $quantity=$_POST['quantity'];
 
       echo "i am in";
