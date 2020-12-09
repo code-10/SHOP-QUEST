@@ -18,7 +18,7 @@
     if($wishdo=="yes"){
       if(($con->query("insert into wishlist(user_name,product_id) values('$user','$product_id');"))===True)
       {
-        header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&show=".$show);
+        header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&show=".$show."&&wish=yes");
         die();
       }
      }
@@ -30,7 +30,7 @@
    
            if($con->query($sql)===True)
            {    
-                  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&show=".$show);
+                  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&show=".$show."wish=no");
                   die();
            }
   
