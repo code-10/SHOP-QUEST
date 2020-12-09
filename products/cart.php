@@ -87,10 +87,6 @@
                   header("Location:cart.php?unique_type_id=".$unique_type_id."&&quantity=".$quantity);
                  die();
             }
-            
- ?>
-                        
- <?php
       
       } 
       }
@@ -104,10 +100,5 @@
       {
 ?>
    
-
-//normal cart
-
-     
-<?php } ?>
 
 <?php include_once '../footer.php'; ?>
