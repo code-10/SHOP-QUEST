@@ -49,14 +49,14 @@
 
 <div class="container">
     	<div class="row">
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-md-6 col-md-3">
 				<div class="panel panel-login">
 					<div class="panel-heading">
 						<div class="row d-flex justify-content-center">
-							<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6 col-6 m-2">
+							<div class="col-xs-6 col-lg-5 col-md-5 col-sm-5 col-5 m-2">
 								<a href="#" class="active" id="login-form-link">Login</a>
 							</div>
-							<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6 col-6 m-2">
+							<div class="col-xs-6 col-lg-5 col-md-5 col-sm-5 col-5 m-2">
 								<a href="#" id="register-form-link">Register</a>
 							</div>
 						</div>
