@@ -70,6 +70,7 @@
      $nostock=$_GET['nostock'];
      $buy=$_GET['buy'];
      $addtocart=$_GET['addtocart'];
+     $wish=$_GET['wish'];
   
     
     $con = getCon();
@@ -139,9 +140,9 @@
        if(isset($_SESSION['user_name'])){
 	        if($addtocart=="yes")
 			 echo "<h5 id='addedtocart' class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'><div class='alert alert-success' role='alert'>Added to cart</div></h4>"; 
-		if($wishlisted==1){
+		if($wish=="yes")
           		echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Wishlisted</h4>";
-		}
+		
       		else
           		echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Not in Wishlist</h4>";
 	      	           
