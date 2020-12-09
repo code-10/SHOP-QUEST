@@ -14,7 +14,7 @@ if (isset($_POST['register_user']))
     if (rowExists('commonpasswords', 'possible_password', $p) || $u == $p)
     {
         $commonpassword = true;
-        header("Location:signin.php?signinwhich=register&&commonpassword=" . $commonpassword . "user_name=" . $u . "email=" . $e);
+        header("Location:sign_in.php?signinwhich=register&&commonpassword=" . $commonpassword . "user_name=" . $u . "email=" . $e);
         die();
     }
     
@@ -23,14 +23,14 @@ if (isset($_POST['register_user']))
     if (rowExists('user', 'user_name', $u))
     {
         $userexists = true;
-        header("Location:signin.php?signinwhich=register&&userexists=" . $userexists);
+        header("Location:sign_in.php?signinwhich=register&&userexists=" . $userexists);
         die();
 
     }
     else if (rowExists('user', 'email', $e))
     {
         $emailexists = true;
-        header("Location:signin.php?signinwhich=register&&emailexists=" . $emailexists);
+        header("Location:sign_in.php?signinwhich=register&&emailexists=" . $emailexists);
         die();
 
     }
