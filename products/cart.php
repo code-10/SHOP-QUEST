@@ -3,7 +3,9 @@
       include_once '../header.php';
       include_once '../libraries/chocolates.php';
       session_start();
-      
+
+      $con=getCon();
+
       $user=$_SESSION['user_name'];
       $show=$_GET['show'];
       $unique_type_id=$_GET['unique_type_id'];
