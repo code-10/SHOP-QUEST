@@ -133,10 +133,13 @@
     <? if($nolog)
           echo "<h5 class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-warning' role='alert'>You are not logged in &nbsp;&nbsp;<a href='../sign_in/sign_in.php' style='font-size:16px;'>login</a></div></h4>";
        if(isset($_SESSION['user_name'])){
+	        if($addtocart=="yes")
+			 echo "<h5 id='addedtocart' class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-success' role='alert'>Added to cart</div></h4>"; 
 		if($wish->num_rows>0)
           		echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Wishlisted</h4>";
       		else
           		echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Not in Wishlist</h4>";
+	      	           
       }
     ?>
   </div>
@@ -233,10 +236,6 @@
 		    <div class="row">
 			    <div class="col-3"></div>
 			    <div class="col-6">
-				    <?php 
-					if($addtocart=="yes")
-						 echo "<h5 id='addedtocart' class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-success' role='alert'>Added to cart</div></h4>"; 
-          		            ?>
 				    <button class="btn btn-dark btn-block mb-4" type="submit" name="addtocart" class="btn btn-dark">Add to cart</button>
 			    </div>
 			    <div class="col-3"></div>
