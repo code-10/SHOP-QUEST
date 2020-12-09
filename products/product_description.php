@@ -205,20 +205,21 @@
 		<!--buy and add to cart-->
 		    <div class="row">
 			    <div class="col-3"></div>
+			    <?php if($remaining_quantity==0) { ?>
+				<h4 class="card-text ml-4 mr-4 mb-4">OUT OF STOCK</h4>
+			    <?php } else { ?>
 			    <div class="col-6 text-left">
 				    Quantity
 			    	    <div class="form-group">
     						<select class="form-control" id="qty" name="quantity">
-							<?php if($remaining_quantity==0) { ?>
-								<h4 class="card-text ml-4 mr-4 mb-4">OUT OF STOCK</h4>
-							<?php } else { ?>
 							<option value="1" selected>1</option>
 							<?php $loop=min($remaining_quantity,4); for($i=1;$i<$loop;$i++) { ?>
       								<option value="<?=$i+1?>"><?=$i+1?></option>
-					    		<?php } } ?>
+					    		<?php } ?>
     						</select>
   				    </div>
 			    </div>
+			    <? } ?>
 			    <div class="col-3"></div>
 		    </div>
 		    
