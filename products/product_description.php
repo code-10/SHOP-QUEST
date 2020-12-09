@@ -99,6 +99,8 @@
      //to check if wishlisted
 	$user=$_SESSION['user_name'];
 	$wish=$con->query("select user_name from wishlist where product_id='$product_id' and user_name='$user'");
+	if($wish->num_rows>0)
+		$wishlisted=1;
 
   
 	
@@ -135,8 +137,10 @@
        if(isset($_SESSION['user_name'])){
 	        if($addtocart=="yes")
 			 echo "<h5 id='addedtocart' class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'><div class='alert alert-success' role='alert'>Added to cart</div></h4>"; 
-		if($wish->num_rows>0)
+		if($wishlisted==1){
           		echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Wishlisted</h4>";
+			$wishlisted=0;
+		}
       		else
           		echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Not in Wishlist</h4>";
 	      	           
