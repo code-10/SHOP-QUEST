@@ -156,6 +156,7 @@
 		
 	$(function() {
     		$('#login-form-link').click(function(e) {
+		document.getElementById("login-form-link").style.background = blue;
 		$("#login-form").delay(100).fadeIn(100);
  		$("#register-form").fadeOut(100);
 		$('#register-form-link').removeClass('active');
@@ -163,6 +164,7 @@
 		e.preventDefault();
 	});
 		$('#register-form-link').click(function(e) {
+		document.getElementById("register-form-link").style.background = blue;
 		$("#register-form").delay(100).fadeIn(100);
  		$("#login-form").fadeOut(100);
 		$('#login-form-link').removeClass('active');
