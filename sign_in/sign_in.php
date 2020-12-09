@@ -134,9 +134,9 @@
   
 	<script>
 		
-		var signin = " <? php echo $signinwhich ?>
+		var signin = <? php echo $signinwhich ?>
 	
-		if(signin==login)
+		if(signin=="login")
 		{
 			$("#login-form").delay(100).fadeIn(100);
  			$("#register-form").fadeOut(100);
@@ -144,7 +144,7 @@
 			$(this).addClass('active');
 			e.preventDefault();
 		}
-		else if(signin==register)
+		else if(signin=="register")
 		{
 			$("#register-form").delay(100).fadeIn(100);
  			$("#login-form").fadeOut(100);
