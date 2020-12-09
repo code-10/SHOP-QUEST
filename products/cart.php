@@ -37,7 +37,7 @@
                   die();
             }
       }
-      if(isset($_POST['buy']))
+      else if(isset($_POST['buy']))
       {
             if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
             {
@@ -50,11 +50,7 @@
                   die();
             }
             
-      }
-      else
-      {
-            
-      }
+      }   
 ?>
       
 
