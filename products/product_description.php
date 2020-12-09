@@ -134,7 +134,7 @@
           echo "<h5 class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-warning' role='alert'>You are not logged in &nbsp;&nbsp;<a href='../sign_in/sign_in.php' style='font-size:16px;'>login</a></div></h4>";
        if(isset($_SESSION['user_name'])){
 	        if($addtocart=="yes")
-			 echo "<h5 id='addedtocart' class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-success' role='alert'>Added to cart</div></h4>"; 
+			 echo "<h5 id='addedtocart' class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'><div class='alert alert-success' role='alert'>Added to cart</div></h4>"; 
 		if($wish->num_rows>0)
           		echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Wishlisted</h4>";
       		else
