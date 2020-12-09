@@ -23,7 +23,7 @@
             header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&nolog=".$nolog."&&show=".$show);
             die(); 
       } 
-      else if(isset($_POST['addtocart']))
+      if(isset($_POST['addtocart']))
       {
             if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
             {
@@ -36,7 +36,7 @@
                   die();
             }
       }
-      else if(isset($_POST['buy']))
+      if(isset($_POST['buy']))
       {
             if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
             {
