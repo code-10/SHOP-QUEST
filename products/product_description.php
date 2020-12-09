@@ -124,7 +124,7 @@
 	
 	$t=count($unique_type_id);
 	
-	
+	$remaining_quantity=$con->query("select quantity from unique_product where unique_type_id='$unique_type_id[$show]'")->fetch_assoc()['quantity'];
 	
   ?>
   
@@ -209,15 +209,20 @@
 				    Quantity
 			    	    <div class="form-group">
     						<select class="form-control" id="qty" name="quantity">
-      							<option value="1" selected>1</option>
-      							<option value="2">2</option>
-      							<option value="3">3</option>
-      							<option value="4">4</option>
+							<?php if($remaining_quantity==0) { ?>
+								<h4 class="card-text ml-4 mr-4 mb-4">OUT OF STOCK</h4>
+							<?php } ?>
+							<option value="1" selected>1</option>
+							<?php $loop=min($remaining_quantity,4) for($i=0;$i<$loop;$i++) { ?>
+      								<option value="<?=$i+1?>">$i+1</option>
+					    		<?php } ?>
     						</select>
   				    </div>
 			    </div>
 			    <div class="col-3"></div>
 		    </div>
+		    
+		    <?php if($remaining_quantity>0) { ?>
 		    <div class="row">
 			    <div class="col-3"></div>
 			    <div class="col-6">
@@ -232,6 +237,7 @@
 			    </div>
 			    <div class="col-3"></div>
 		    </div>	
+			<?php } ?>
 				</form>
 		<!--buy and add to cart end-->
 				
