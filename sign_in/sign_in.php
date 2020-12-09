@@ -23,7 +23,7 @@
   <!--heading-->
 	<div class="jumbotron">
 		<div class="text-center">
-			<p class="display-4">Login</p>
+			<p class="display-4">Sign in</p>
 		</div>
 	</div>
   
@@ -66,7 +66,7 @@
 						<div class="row">
 							<div class="col-lg-12">
 								
-								<form  id="login-form" method="POST" action="login_details.php">
+								<form  id="login-form" method="POST" action="login_details.php" style="display: block;">
 									<div class="form-group">
 			              <label for="inputEmail">Username/email</label>
 			                <input type="text" class="form-control" id="inputuser_name" placeholder="username" name="user_name" required>
@@ -78,7 +78,7 @@
 		                  <button type="submit" name="login_user" class="btn btn-dark">Sign in</button>
 								</form>
 								
-								<form method="POST" action="register_details.php" id="register-form">
+								<form method="POST" action="register_details.php" id="register-form" style="display: none;">
 									<div class="form-group">
 					          <label for="inputuser">Username</label>
 					            <input type="text" class="form-control" id="inputuser_name" placeholder="username" name="user_name" value="<?=$userfill?>" required>
