@@ -76,7 +76,7 @@
 					<div class="panel-heading">
 						<div class="row d-flex justify-content-center">
 							<div class="col-xs-6 col-lg-5 col-md-5 col-sm-5 col-5 m-2 text-center">
-								<a href="#" class="active" id="login-form-link" style="color:black;">Login</a>
+								<a href="#" class="active" id="login-form-link" style="color:blue;">Login</a>
 							</div>
 							<div class="col-xs-6 col-lg-5 col-md-5 col-sm-5 col-5 m-2 text-center">
 								<a href="#" id="register-form-link" style="color:black;">Register</a>
