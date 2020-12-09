@@ -206,7 +206,9 @@
 		    <div class="row">
 			    <div class="col-3"></div>
 			    <?php if($remaining_quantity==0) { ?>
-				<h4 class="card-text ml-4 mr-4 mb-4">OUT OF STOCK</h4>
+			    	<div class="text-center">
+					<h4 class="card-text ml-4 mr-4">OUT OF STOCK, Choose other Options</h4>
+			    	</div>
 			    <?php } else { ?>
 			    <div class="col-6 text-left">
 				    Quantity
