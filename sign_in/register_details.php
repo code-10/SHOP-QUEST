@@ -14,7 +14,7 @@ if (isset($_POST['register_user']))
     if (rowExists('commonpasswords', 'possible_password', $p) || $u == $p)
     {
         $commonpassword = true;
-        header("Location:register.php?commonpassword=" . $commonpassword . "user_name=" . $u . "email=" . $e);
+        header("Location:signin.php?signinwhich=register&&commonpassword=" . $commonpassword . "user_name=" . $u . "email=" . $e);
         die();
     }
     
@@ -23,14 +23,14 @@ if (isset($_POST['register_user']))
     if (rowExists('user', 'user_name', $u))
     {
         $userexists = true;
-        header("Location:register.php?userexists=" . $userexists);
+        header("Location:signin.php?signinwhich=register&&userexists=" . $userexists);
         die();
 
     }
     else if (rowExists('user', 'email', $e))
     {
         $emailexists = true;
-        header("Location:register.php?emailexists=" . $emailexists);
+        header("Location:signin.php?signinwhich=register&&emailexists=" . $emailexists);
         die();
 
     }
@@ -39,13 +39,13 @@ if (isset($_POST['register_user']))
         if (($con->query("insert into user(user_name,email,password) values('$u','$e','$p');")) === True)
         {
             //echo "YES";
-            header("Location:../login/login.php?loginnow=yes");
+            header("Location:signin.php?singinwhich=login&&loginnow=yes");
             die();
         }
         else
         {
             $error = true;
-            header("Location:register.php?emailexists=" . $error);
+            header("Location:signin.php?signinwhich=register&&emailexists=" . $error);
             die();
         }
     }
