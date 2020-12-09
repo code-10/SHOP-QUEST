@@ -21,7 +21,7 @@
   
   
   <!--heading-->
-	<div class="container" style="background-color:black;">
+	<div class="p-4" style="background-color:black;">
 		<div class="text-center">
 			<h2 style="color:white;">Sign in</h2>
 		</div>
