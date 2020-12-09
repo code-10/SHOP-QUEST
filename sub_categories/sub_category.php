@@ -80,7 +80,7 @@
  
   
   
-    <h4 class="text-center"><?=$cat_name;?></h4>
+    <h3 class="text-center"><?=$cat_name;?></h3>
     <br>
     
     <?$c=1; $lim=$n/4+1; for($j=1;$j<=$lim;$j++){ ?>
