@@ -237,7 +237,7 @@
 			    <div class="col-6">
 				    <?php 
 					if($addtocart=="yes")
-						 echo "<h5 class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-warning' role='alert'>Added to cart</div></h4>"; 
+						 echo "<h5 class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-success' role='alert'>Added to cart</div></h4>"; 
           		            ?>
 				    <button class="btn btn-dark btn-block mb-4" type="submit" name="addtocart" class="btn btn-dark">Add to cart</button>
 			    </div>
