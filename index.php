@@ -113,7 +113,7 @@
 						<a href='sub_categories/sub_category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link">
   						<img class="card-img-top" src="assets/categories/cat<?=$i+1?>.png" alt="Category" onerror="this.src='assets/black.png';">
   							<div class="text-center">
-    								<p class="card-title mob"><?=$categories[$i];?></p>
+    								<p class="card-title mob" style="color:black;"><?=$categories[$i];?></p>
   							</div>
 						</a>
 					</div>
