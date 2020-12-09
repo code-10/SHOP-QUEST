@@ -28,32 +28,6 @@ function check_passwordu($user_name, $password)
 }
 
 
-function check_passworde($email, $password)
-{
-    
-    $con = getCon();
-    
-    $user = $con->query("select * from user where email='$email';");
-    $res  = $user->fetch_assoc();
-    
-    echo var_dump($res) . "<br>";
-    
-    $password_hash = $res['password'];
-    
-    if (password_verify($password, $password_hash)) {
-        echo "password verified<br>";
-        return True;
-    } else {
-        echo "password not verified<br>";
-        return False;
-    }
-}
-
-
-
-
-
-
 
 
 
@@ -64,8 +38,8 @@ if (isset($_POST['login_user'])) {
     $user_name = strtolower($user_name);
     $password  = $_POST['password'];
     
-    if (rowExists('user', 'user_name', $user_name)||rowExists('user','email',$email)) {
-        if (check_passwordu($user_name, $password)||check_passworde($email,$password)) {
+    if (rowExists('user', 'user_name', $user_name)) {
+        if (check_passwordu($user_name, $password)) {
             //echo "Yes";
             
             $_SESSION['user_name'] = $user_name;
