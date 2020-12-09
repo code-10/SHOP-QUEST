@@ -13,9 +13,38 @@
       $product_name=$_POST['product_name'];
       $quantity=$_POST['quantity'];
 
-?>
 
-<body>
+      if(isset($_SESSION['user_name']))
+      {
+      if(isset($_POST['addtocart']))
+      {
+            if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
+            {
+                header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&addtocart=yes&&show=".$show);
+                die();
+            }
+            else
+            {
+                  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&addtocart=yes&&show=".$show);
+                  die();
+            }
+      }
+      else if(isset($_POST['buy']))
+      {
+            if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
+            {
+                 header("Location:cart.php?unique_type_id=".$unique_type_id."&&quantity=".$quantity);
+                 die();
+            }
+            else
+            {
+                  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&buy=no&&show=".$show);
+                  die();
+            }
+            
+ ?>
+            
+ <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a href="../index.php" class="navbar-brand">ShopQuest</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -55,43 +84,7 @@
     						</form>
 						</div>
 					</div>
-      
-      
-
-<?php
-
-
-      if(isset($_SESSION['user_name']))
-      {
-      if(isset($_POST['addtocart']))
-      {
-            if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
-            {
-                header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&addtocart=yes&&show=".$show);
-                die();
-            }
-            else
-            {
-                  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&addtocart=yes&&show=".$show);
-                  die();
-            }
-      }
-      else if(isset($_POST['buy']))
-      {
-            if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
-            {
-                 header("Location:cart.php?unique_type_id=".$unique_type_id."&&quantity=".$quantity);
-                 die();
-            }
-            else
-            {
-                  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&buy=no&&show=".$show);
-                  die();
-            }
-            
- ?>
-            
- //buy cart         
+             
             
  <?php
       
