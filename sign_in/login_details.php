@@ -78,7 +78,7 @@ if (isset($_POST['login_user'])) {
         }
     } else {
         //echo "no1 [user doesn't exist]";
-        header("Location:sign_in.php?signinwhich=register&&".$visit."&&user=no");
+        header("Location:sign_in.php?signinwhich=register&&visit=".$visit."&&user=no");
         die();
     }
 }
