@@ -96,8 +96,6 @@
             header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&nolog=".$nolog."&&show=".$show);
             die(); 
       } 
-      else
-      {
 ?>
    
 
