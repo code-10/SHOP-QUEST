@@ -23,7 +23,7 @@
   <!--heading-->
 	<div class="container">
 		<div class="text-center">
-			<h4>Sign in</h4>
+			<h2 style="color:white;background-color:black;">Sign in</h2>
 		</div>
 	</div>
   
