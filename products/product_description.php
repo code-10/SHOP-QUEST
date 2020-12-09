@@ -185,7 +185,7 @@
 				<div class="row">
 					<? $c=0; for($i=1;$i<=4;$i++){ ?> 
     					<? if(4*($j-1)+$i>$n) break; ?>
-						<div class="col-md-6 col-lg col-xl">
+						<div class="col-md-6 col-lg col-xl col-6">
 							
 							<figure class="figure">
         							<a href='product_description.php?product_id=<?=$product_id?>&&product_name=<?=$product_name?>&&show=<?=$c?>'>
