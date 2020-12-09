@@ -21,7 +21,7 @@
   
   
   <!--heading-->
-	<div class="row">
+	<div class="container">
 		<div class="text-center">
 			<h4>Sign in</h4>
 		</div>
