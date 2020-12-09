@@ -228,7 +228,7 @@
 		    <div class="row">
 			    <div class="col-3"></div>
 			    <div class="col-6">
-				    <a class="btn btn-dark btn-block mb-4" href="cart.php?unique_type_id=<?=$unique_type_id[$show]?>" role="button" name="buy">Buy</a>
+				    <a class="btn btn-dark btn-block mb-4" href="cart.php?unique_type_id=<?=$unique_type_id[$show]?>&&show=<?=$show?>" role="button" name="buy">Buy</a>
 			    </div>
 			    <div class="col-3"></div>
 		    </div>
