@@ -14,6 +14,8 @@
       $quantity=$_POST['quantity'];
 
 
+      if(isset($_SESSION['user_name']))
+      {
       if(isset($_POST['addtocart']))
       {
             if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
@@ -40,8 +42,9 @@
                   die();
             }
             
-      }   
-      else if(!(isset($_SESSION['user_name'])))
+      } 
+      }
+      else
       {
             $nolog=true;
             header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&nolog=".$nolog."&&show=".$show);
