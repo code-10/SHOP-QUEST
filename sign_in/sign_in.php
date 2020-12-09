@@ -46,38 +46,6 @@
 	</div>
   
   
-  <!--Login form-->
-	<form class="jumbotron m-4" method="POST" action="login_details.php">
-		<div class="form-group">
-			<label for="inputEmail">Username/email</label>
-			<input type="text" class="form-control" id="inputuser_name" placeholder="username" name="user_name" required>
-		</div>
-		<div class="form-group">
-			<label for="inputPassword">Password</label>
-			<input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" required>
-		</div>
-		<button type="submit" name="login_user" class="btn btn-dark">Sign in</button>
-	</form>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
 <div class="container">
     	<div class="row">
@@ -97,7 +65,8 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form method="POST" action="login_details.php">
+								
+								<form  id="login-form" method="POST" action="login_details.php">
 									<div class="form-group">
 			              <label for="inputEmail">Username/email</label>
 			                <input type="text" class="form-control" id="inputuser_name" placeholder="username" name="user_name" required>
@@ -108,7 +77,8 @@
 		              </div>
 		                  <button type="submit" name="login_user" class="btn btn-dark">Sign in</button>
 								</form>
-								<form method="POST" action="register_details.php">
+								
+								<form method="POST" action="register_details.php" id="register-form">
 									<div class="form-group">
 					          <label for="inputuser">Username</label>
 					            <input type="text" class="form-control" id="inputuser_name" placeholder="username" name="user_name" value="<?=$userfill?>" required>
@@ -123,6 +93,7 @@
 				          </div>
 					            <button type="submit" name="register_user" class="btn btn-dark">Register</button>
 								</form>
+								
 							</div>
 						</div>
 					</div>
@@ -138,7 +109,30 @@
   
   
   
-  
+	<script>
+	
+	$(function() {
+
+    $('#login-form-link').click(function(e) {
+		$("#login-form").delay(100).fadeIn(100);
+ 		$("#register-form").fadeOut(100);
+		$('#register-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+	$('#register-form-link').click(function(e) {
+		$("#register-form").delay(100).fadeIn(100);
+ 		$("#login-form").fadeOut(100);
+		$('#login-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+
+});
+
+	
+	
+	</script>
   
   
   
