@@ -31,7 +31,7 @@
       {
             if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
             {
-                 header("Location:cart.php?unique_type_id=".$unique_type_id);
+                 header("Location:cart.php?unique_type_id=".$unique_type_id."&&quantity=".$quantity);
                  die();
             }
             else
