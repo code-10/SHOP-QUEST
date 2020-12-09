@@ -101,8 +101,7 @@
        
 	$user=$_SESSION['user_name'];
 	$wish=$con->query("select user_name from wishlist where product_id='$product_id' and user_name='$user'");
-	if($wish->num_rows>0)
-		$wishlisted=1;
+
        
 
   
