@@ -141,7 +141,6 @@
 			 echo "<h5 id='addedtocart' class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'><div class='alert alert-success' role='alert'>Added to cart</div></h4>"; 
 		if($wish=="yes")
           		echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Wishlisted</h4>";
-		
       		else
           		echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Not in Wishlist</h4>";
 	      	           
