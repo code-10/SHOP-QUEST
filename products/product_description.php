@@ -205,12 +205,10 @@
 		<!--buy and add to cart-->
 		    <div class="row">
 			    <div class="col-3"></div>
-			    <?php if($remaining_quantity==0) { ?>
-			    	<div class="text-center">
-					<h5 class="card-text ml-4 mr-4">OUT OF STOCK, Choose other Options</h5>
-			    	</div>
-			    <?php } else { ?>
 			    <div class="col-6 text-left">
+				    <?php if($remaining_quantity==0) { ?>
+					<h4 class="card-text ml-4 mr-4">OUT OF STOCK, Choose other Options</h4>
+			    	    <?php } else { ?>
 				    Quantity
 			    	    <div class="form-group">
     						<select class="form-control" id="qty" name="quantity">
@@ -220,8 +218,8 @@
 					    		<?php } ?>
     						</select>
   				    </div>
+			    	    <?php } ?>
 			    </div>
-			    <? } ?>
 			    <div class="col-3"></div>
 		    </div>
 		    
