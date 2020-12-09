@@ -21,8 +21,7 @@
                     echo '<a href="../sign_in/logout.php" class="nav-item nav-link">Logout</a>';
                 }
                 else{
-                    echo '<a href="../register/register.php" class="nav-item nav-link">Register</a>
-                            <a href="../login/login.php" class="nav-item nav-link">Login</a>';
+                    echo '<a href="../sign_in/sign_in.php" class="nav-item nav-link">Sign in</a>';
                 }
             ?>
         </div>
