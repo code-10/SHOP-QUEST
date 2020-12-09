@@ -228,7 +228,7 @@
 		    <div class="row">
 			    <div class="col-3"></div>
 			    <div class="col-6">
-				    <a class="btn btn-dark btn-block mb-4" href="cart.php?unique_type_id=<?=$unique_type_id[$show]?>&&show=<?=$show?>&&product_id=<?=$product_id?>&&product_name=<?=$product_name?>" type="submit" name="buy">Buy</a>
+				    <button class="btn btn-dark btn-block mb-4" type="submit" name="buy" class="btn btn-dark">Buy</button>
 			    </div>
 			    <div class="col-3"></div>
 		    </div>
@@ -240,11 +240,15 @@
 					  else if($addtocart=="no")
           					echo "<p class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-warning' role='alert'>Not added to cart, try again</div></p>";
        				    ?>
-				    <a class="btn btn-dark btn-block mb-4" href="cart.php?unique_type_id=<?=$unique_type_id[$show]?>&&show=<?=$show?>&&product_id=<?=$product_id?>&&product_name=<?=$product_name?>" type="submit" name="addtocart">Add to cart</a>
+				    <button class="btn btn-dark btn-block mb-4" type="submit" name="addtocart" class="btn btn-dark">Add to cart</button>
 			    </div>
 			    <div class="col-3"></div>
 		    </div>	
 			<?php } ?>
+			<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$show]?>" />
+			<input type="hidden" name="show" value="<?=$show?>" />
+			<input type="hidden" name="product_id" value="<?=$product_id?>" />
+			<input type="hidden" name="product_name" value="<?=$product_name?>" />
 				</form>
 		<!--buy and add to cart end-->
 				
