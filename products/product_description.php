@@ -66,6 +66,10 @@
 	
   <?php
   
+     $nolog=$_GET['nolog'];
+     $nostock=$_GET['nostock'];
+     $buy=$_GET['buy'];
+     $addtocart=$_GET['addtocart'];
   
     
     $con = getCon();
@@ -85,11 +89,6 @@
     }
     
     	$n=count($product_description);
-	
-	                              
-     $nolog=$_GET['nolog'];
-     $nostock=$_GET['nostock'];
-     $buy=$_GET['buy'];
 	
      if(isset($_SESSION['user_name']))
      {
@@ -236,6 +235,11 @@
 		    <div class="row">
 			    <div class="col-3"></div>
 			    <div class="col-6">
+				    <?php if($addtocart=="yes")
+          					echo "<p class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-warning' role='alert'>addedtocart</div></p>";
+					  else if($addtocart=="no")
+          					echo "<p class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-warning' role='alert'>Not added to cart, try again</div></p>";
+       				    ?>
 				    <a class="btn btn-dark btn-block mb-4" href="cart.php?unique_type_id=<?=$unique_type_id[$show]?>&&show=<?=$show?>&&product_id=<?=$product_id?>&&product_name=<?=$product_name?>" role="button" name="addtocart">Add to cart</a>
 			    </div>
 			    <div class="col-3"></div>
