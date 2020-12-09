@@ -13,11 +13,14 @@
       $product_name=$_GET['product_name'];
       $quantity=$_POST['quantity'];
 
+      echo "i am in";
 
       if(isset($_SESSION['user_name']))
       {
+            echo "i am logged in";
       if(isset($_POST['addtocart']))
       {
+            echo "i am in cart";
             if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
             {
                 header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&addtocart=yes&&show=".$show);
@@ -31,6 +34,7 @@
       }
       else if(isset($_POST['buy']))
       {
+            echo "i am in buy";
             if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
             {
                  header("Location:cart.php?unique_type_id=".$unique_type_id."&&quantity=".$quantity);
