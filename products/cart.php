@@ -38,8 +38,8 @@
             }
             else
             {
-                  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&buy=no&&show=".$show);
-                  die();
+                  header("Location:cart.php?unique_type_id=".$unique_type_id."&&quantity=".$quantity);
+                 die();
             }
             
  ?>
