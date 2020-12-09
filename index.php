@@ -72,9 +72,9 @@
 		<!--main card carousel-->
 		<div id="main-card" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
-				<div class="carousel-item active" data-interval="10000"> <img src="assets/caro1.jpg" class="img-fluid" alt="..." style="width:100%;"> </div>
-				<div class="carousel-item" data-interval="2000"> <img src="assets/caro2.jpg" class="img-fluid" alt="..." style="width:100%;"> </div>
-				<div class="carousel-item"> <img src="assets/caro3.jpg" class="img-fluid" alt="..." style="width:100%;"> </div>
+				<div class="carousel-item active caro" data-interval="10000"> <img src="assets/caro1.jpg" class="img-fluid" alt="..."> </div>
+				<div class="carousel-item caro" data-interval="2000"> <img src="assets/caro2.jpg" class="img-fluid" alt="..."> </div>
+				<div class="carousel-item caro"> <img src="assets/caro3.jpg" class="img-fluid" alt="..."> </div>
 			</div>
 			<a class="carousel-control-prev" href="#main-card" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
 			<a class="carousel-control-next" href="#main-card" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
@@ -126,12 +126,12 @@
 		
 <style>
     /*Media Queries*/
-	@media (min-width:320px)  { .mob{font-size:8px;} /* smartphones, iPhone, portrait 480x320 phones */ }
-	@media (min-width:481px)  { .mob{font-size:16px;}/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
-    	@media (min-width:641px)  { .mob{font-size:16px;}/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
-	@media (min-width:961px)  { .mob{font-size:16px;} /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-	@media (min-width:1025px) { .mob{font-size:16px;} /* big landscape tablets, laptops, and desktops */ }
-	@media (min-width:1281px) { .mob{font-size:16px;} /* hi-res laptops and desktops */ }
+	@media (min-width:320px)  { .mob{font-size:8px;} .caro{width:100%;} /* smartphones, iPhone, portrait 480x320 phones */ }
+	@media (min-width:481px)  { .mob{font-size:16px;} .caro{width:100%;height:72%;} /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+    	@media (min-width:641px)  { .mob{font-size:16px;} .caro{width:100%;height:72%;} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+	@media (min-width:961px)  { .mob{font-size:16px;} .caro{width:100%;height:72%;} /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+	@media (min-width:1025px) { .mob{font-size:16px;} .caro{width:100%;height:72%;} /* big landscape tablets, laptops, and desktops */ }
+	@media (min-width:1281px) { .mob{font-size:16px;} .caro{width:100%;height:72%;} /* hi-res laptops and desktops */ }
 	
 </style>		
 
