@@ -73,12 +73,12 @@ if (isset($_POST['login_user'])) {
             die();
         } else {
             $wrongpassword = true;
-            header("Location:signin.php?signin=login&&wrongpassword=" . $wrongpassword."&&visit=".$visit);
+            header("Location:signin.php?signinwhich=login&&wrongpassword=" . $wrongpassword."&&visit=".$visit);
             echo "no2 [password wrong]";
         }
     } else {
         //echo "no1 [user doesn't exist]";
-        header("Location:signin.php?signin=register&&".$visit."&&user=no");
+        header("Location:signin.php?signinwhich=register&&".$visit."&&user=no");
         die();
     }
 }
