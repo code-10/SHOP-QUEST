@@ -17,7 +17,7 @@
         <div class="navbar-nav ml-auto">
             <?php if(isset($_SESSION['user_name'])){
                     echo '<a href="#" class="nav-item nav-link active"><i class="fa fa-user-o"> '.$_SESSION['user_name'].'</i></a>';
-                    echo '<a href="product/cart_display.php" class="nav-item nav-link active"><i class="fa fa-shopping-cart"></i></a>';
+                    echo '<a href="../products/cart.php" class="nav-item nav-link active"><i class="fa fa-shopping-cart"></i></a>';
                     echo '<a href="../sign_in/logout.php" class="nav-item nav-link">Logout</a>';
                 }
                 else{
