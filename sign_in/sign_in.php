@@ -21,9 +21,9 @@
   
   
   <!--heading-->
-	<div class="jumbotron">
+	<div class="row">
 		<div class="text-center">
-			<p class="display-4">Sign in</p>
+			<h4>Sign in</h4>
 		</div>
 	</div>
   
