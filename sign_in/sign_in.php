@@ -52,18 +52,18 @@
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-login">
 					<div class="panel-heading">
-						<div class="row">
-							<div class="col-xs-6">
+						<div class="row d-flex justify-content-center">
+							<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6 col-6 m-2">
 								<a href="#" class="active" id="login-form-link">Login</a>
 							</div>
-							<div class="col-xs-6">
+							<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6 col-6 m-2">
 								<a href="#" id="register-form-link">Register</a>
 							</div>
 						</div>
 						<hr>
 					</div>
 					<div class="panel-body">
-						<div class="row">
+						<div class="row d-flex justify-content-center">
 							<div class="col-lg-12">
 								
 								<form  id="login-form" method="POST" action="login_details.php" style="display: block;">
