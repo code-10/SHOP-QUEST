@@ -13,9 +13,6 @@
       $product_name=$_GET['product_name'];
       $quantity=$_POST['quantity'];
 
-?>
-
-<?php
 
       if(!(isset($_SESSION['user_name'])))
       {
@@ -23,9 +20,9 @@
             header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&nolog=".$nolog."&&show=".$show);
             die(); 
       } 
+
       if(isset($_POST['addtocart']))
       {
-            echo "i am in";
             if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
             {
                 header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&addtocart=yes&&show=".$show);
