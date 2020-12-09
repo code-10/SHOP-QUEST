@@ -31,8 +31,18 @@
   
   <!--display messages-->
 	<?php 
+	
+		$signin = $_GET['signinwhich'];
+	
 		$wrongpassword=$_GET[ 'wrongpassword']; 
 		$loginnow=$_GET['loginnow'];
+		$nouser=$_GET['user'];
+		$userexists=$_GET['userexists'];
+		$emailexists=$_GET['emailexists'];
+		$error=$_GET['error'];
+		$commonpassword=$_GET['commonpassword'];
+		$invalidusername=$_GET['invalidusername'];
+	
 	?>
 	<div class="container">
 		<div class="text-center">
@@ -41,6 +51,19 @@
 					echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Your user_name/email or password is wrong</div></h4>";
 				else if($loginnow)
 					echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-primary' role='danger'>Login to continue</div></h4>";
+				else if($invalidusername)
+					echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Username shouldn't contain special characters</div></h4>";
+		            	else if($commonpassword)
+		                 	echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Try Entering a secure password</div></h4>";
+		            	else if($userexists)
+		                	echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>User Already exists</div></h4>";
+		            	else if($emailexists)
+		                	echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Email is already registered</div></h4>";
+		            	else if($nouser)
+					echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>You don't have a Shopquest Account, Kindly Register</div></h4>";
+				else if($error)
+		                	echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Something happened try again</div></h4>";
+						
 			?>
 		</div>
 	</div>
@@ -110,17 +133,37 @@
   
   
 	<script>
+		
+		var signin = " <? php echo $signinwhich ?>
 	
-	$(function() {
+		if(signin==login)
+		{
+			$("#login-form").delay(100).fadeIn(100);
+ 			$("#register-form").fadeOut(100);
+			$('#register-form-link').removeClass('active');
+			$(this).addClass('active');
+			e.preventDefault();
+		}
+		else if(signin==register)
+		{
+			$("#register-form").delay(100).fadeIn(100);
+ 			$("#login-form").fadeOut(100);
+			$('#login-form-link').removeClass('active');
+			$(this).addClass('active');
+			e.preventDefault();
+		}
 
-    $('#login-form-link').click(function(e) {
+		
+		
+	$(function() {
+    		$('#login-form-link').click(function(e) {
 		$("#login-form").delay(100).fadeIn(100);
  		$("#register-form").fadeOut(100);
 		$('#register-form-link').removeClass('active');
 		$(this).addClass('active');
 		e.preventDefault();
 	});
-	$('#register-form-link').click(function(e) {
+		$('#register-form-link').click(function(e) {
 		$("#register-form").delay(100).fadeIn(100);
  		$("#login-form").fadeOut(100);
 		$('#login-form-link').removeClass('active');
