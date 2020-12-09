@@ -89,8 +89,7 @@
 	                              
      $nolog=$_GET['nolog'];
      $nostock=$_GET['nostock'];
-     $cartd=$_GET['cartd'];
-     $carta=$_GET['carta'];
+     $buy=$_GET['buy'];
 	
      if(isset($_SESSION['user_name']))
      {
@@ -134,7 +133,9 @@
   <div class="text-center">
     <? if($nolog)
           echo "<h5 class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-warning' role='alert'>You are not logged in &nbsp;&nbsp;<a href='../sign_in/sign_in.php' style='font-size:16px;'>login</a></div></h4>";
-       if(isset($_SESSION['user_name'])){
+       else if($buy=="no")
+	  echo "<h5 class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-warning' role='alert'>Some error occured, Try again</div></h4>";  
+	if(isset($_SESSION['user_name'])){
 		if($wish->num_rows>0)
           		echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 4s;'>Wishlisted</h4>";
       		else
