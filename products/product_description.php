@@ -213,8 +213,8 @@
 								<h4 class="card-text ml-4 mr-4 mb-4">OUT OF STOCK</h4>
 							<?php } ?>
 							<option value="1" selected>1</option>
-							<?php $loop=min($remaining_quantity,4); for($i=0;$i<$loop;$i++) { ?>
-      								<option value="<?=$i+1?>">$i+1</option>
+							<?php $loop=min($remaining_quantity,4); for($i=0;$i<$loop-1;$i++) { ?>
+      								<option value="<?=$i+1?>"><?=$i+1?></option>
 					    		<?php } ?>
     						</select>
   				    </div>
