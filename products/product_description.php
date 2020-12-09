@@ -236,9 +236,9 @@
 			    <div class="col-3"></div>
 			    <div class="col-6">
 				    <?php if($addtocart=="yes")
-          					echo "<p class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-warning' role='alert'>addedtocart</div></p>";
+          					echo "<p class='animate__animated animate__fadeOut' style='--animate-duration: 8s;' style='padding:0px;margin-bottom:0px;'><div class='alert alert-success' role='alert'>added to cart</div></p>";
 					  else if($addtocart=="no")
-          					echo "<p class='animate__animated animate__fadeOut' style='--animate-duration: 24s;'><div class='alert alert-warning' role='alert'>Not added to cart, try again</div></p>";
+          					echo "<p class='animate__animated animate__fadeOut' style='--animate-duration: 8s;' style='padding:0px;margin-bottom:0px;'><div class='alert alert-warning' role='alert'>Not added to cart, try again</div></p>";
        				    ?>
 				    <button class="btn btn-dark btn-block mb-4" type="submit" name="addtocart" class="btn btn-dark">Add to cart</button>
 			    </div>
