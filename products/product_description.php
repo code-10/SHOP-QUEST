@@ -201,7 +201,7 @@
 		    </div>
 		    <!--variants-->
 			
-		<form method="POST" action="">
+		<form method="POST" action="cart.php">
 		<!--buy and add to cart-->
 		    <div class="row">
 			    <div class="col-3"></div>
