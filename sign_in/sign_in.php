@@ -21,9 +21,9 @@
   
   
   <!--heading-->
-	<div class="container">
+	<div class="container" style="background-color:black;">
 		<div class="text-center">
-			<h2 style="color:white;background-color:black;">Sign in</h2>
+			<h2 style="color:white;">Sign in</h2>
 		</div>
 	</div>
   
