@@ -134,7 +134,7 @@
   
 	<script>
 		
-		var signin = <?php print($signinwhich); ?>
+		/*var signin = <?php print($signinwhich); ?>
 	
 		if(signin=="login")
 		{
@@ -152,7 +152,7 @@
 			$(this).addClass('active');
 			e.preventDefault();
 		}
-
+			*/
 		
 		
 	$(function() {
