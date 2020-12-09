@@ -134,7 +134,7 @@
   
 	<script>
 		
-		var signin = <? php Print($signinwhich); ?>
+		var signin = <?php print($signinwhich); ?>
 	
 		if(signin=="login")
 		{
