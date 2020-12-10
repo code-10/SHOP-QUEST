@@ -48,6 +48,26 @@
             }
       
       } 
+      else if(isset($_POST['minus']))
+      {
+	    
+      }
+      else if(isset($_POST['plus']))
+      {
+	     
+      }
+      else if(isset($_POST['trash']))
+      {
+	    if(($con->query("delete from cart where user_name='$user' and unique_type_id='$unique_type_id'"))===True)
+            {
+                 header("Location:cart.php");
+                 die();
+            }
+            else
+            {
+                  header("Location:cart.php");
+                 die();
+            }	     
       }
       else
       {
@@ -140,11 +160,16 @@
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;">
 				<form method="POST" action="cart.php">
 					<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$i]?>" />
-					<button type="submit" class="fa fa-minus pm" style="background-color:black;color:white;"></button>    <?=$product_qty[$i]?>    <button type="submit" class="fa fa-plus pm" style="background-color:black;color:white;"></button>
+					<button type="submit" class="fa fa-minus pm" name="minus" style="background-color:black;color:white;"></button>    <?=$product_qty[$i]?>    <button type="submit" class="fa fa-plus pm" name="plus" style="background-color:black;color:white;"></button>
 				</form>
 				</div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><i class="fa fa-rupee"></i> <?=$product_qty[$i]*$product_price[$i]?></p></div>
-				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><a href='#'><i class="fa fa-trash"></i></a></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8">
+				<form method="POST" action="cart.php">
+					<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$i]?>" />
+					<button type="submit" class="fa fa-trash pm" name="trash" style="background-color:black;color:white;"></button> 
+				</form>
+				</div>
 			</div>
 		</div>
 	</div>
