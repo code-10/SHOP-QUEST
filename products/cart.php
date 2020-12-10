@@ -169,6 +169,17 @@
 <?php } ?>
 	
 
+	<!--continue-->
+<div class="row">
+			    <div class="col-3"></div>
+			    <div class="col-6">
+				    <a href="#" class="btn btn-dark btn-block mb-4" type="submit" name="buy">Continue</a>
+			    </div>
+			    <div class="col-3"></div>
+		    </div>	
+
+	
+	
 	
 
 	
