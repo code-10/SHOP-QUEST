@@ -60,13 +60,14 @@
 	
 	<?php
 	
-		$cart=$con->query("select c.user_name,p.product_name,up.price,c.qty,up.color,up.size,up.quantity from products as p,cart as c,unique_product as up where p.product_id=up.product_id and c.unique_type_id=up.unique_type_id and user_name='$user'");
+		$cart=$con->query("select c.user_name,p.product_name,up.unique_type_id,up.price,c.qty,up.color,up.size,up.quantity from products as p,cart as c,unique_product as up where p.product_id=up.product_id and c.unique_type_id=up.unique_type_id and user_name='$user'");
 		
 		$product_name=Array();
 		$product_price=Array();
 		$product_color=Array();
 		$product_size=Array();
 		$product_qty=Array();
+		$unique_type_id=Array();
 			
 		while($ele=$cart->fetch_assoc())
 		{
@@ -75,6 +76,7 @@
 			$product_color[]=$ele['color'];
 			$product_size[]=$ele['size'];
 			$product_qty[]=$ele['qty'];
+			$unique_type_id[]=$ele['unique_type_id'];
 		}	
 	
 		$n=count($product_name);
@@ -93,7 +95,10 @@
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_name[$i]?></p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_color[$i]?></p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_size[$i]?></p></div>
-				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;">quantity:<?=$product_qty[$i]?></p></div>
+				<form method="POST" action="cart.php">
+					<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$i]?>" />
+					<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><button class="btn btn-dark" type="submit" name="minus">-</button><?=$product_qty[$i]?><button class="btn btn-dark" type="submit" name="plus">+</button></p></div>
+				</form>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><i class="fa fa-rupee"></i> <?=$product_qty[$i]*$product_price[$i]?></p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><a href='#'><i class="fa fa-trash"></i></a></div>
 			</div>
