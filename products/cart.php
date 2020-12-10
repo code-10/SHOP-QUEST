@@ -60,7 +60,7 @@
 	
 	<?php
 	
-		$cart=$con->query("select c.user_name,p.product_name,up.price,c.qty,up.color,up.size,up.quantity from products as p,cart as c,unique_product as up where p.product_id=up.product_id and c.unique_type_id=up.unique_type_id and user_name='$user');
+		$cart=$con->query("select c.user_name,p.product_name,up.price,c.qty,up.color,up.size,up.quantity from products as p,cart as c,unique_product as up where p.product_id=up.product_id and c.unique_type_id=up.unique_type_id and user_name='$user'");
 		
 		$product_name=Array();
 		$product_price=Array();
