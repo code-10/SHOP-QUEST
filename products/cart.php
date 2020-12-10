@@ -85,10 +85,10 @@
 
 <?php for($i=0;$i<$n;$i++) { ?>	
 	<div class="row m-4 d-flex justify-content-center">
-		<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-4">
+		<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-6">
 			<img src="..." class="figure-img img-fluid rounded float-right pro" alt="product" onerror="this.src='../assets/black.png';">
 		</div>
-		<div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 col-8">
+		<div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 col-6">
 			<div class="row">
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_name[$i]?></p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_color[$i]?></p></div>
@@ -149,12 +149,12 @@
 	
 <style>
     /*Media Queries*/
-	@media (min-width:320px)  { .pro{} /* smartphones, iPhone, portrait 480x320 phones */ }
-	@media (min-width:481px)  { .pro{width:32%;height:88%;}  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
-    	@media (min-width:641px)  { .pro{width:32%;height:88%;} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
-	@media (min-width:961px)  { .pro{width:32%;height:88%;}  /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-	@media (min-width:1025px) { .pro{width:32%;height:88%;}  /* big landscape tablets, laptops, and desktops */ }
-	@media (min-width:1281px) { .pro{width:32%;height:88%;}  /* hi-res laptops and desktops */ }
+	@media (min-width:320px)  { .pro{width:100%;height:100%;} /* smartphones, iPhone, portrait 480x320 phones */ }
+	@media (min-width:481px)  { .pro{width:36%;height:88%;}  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+    	@media (min-width:641px)  { .pro{width:36%;height:88%;} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+	@media (min-width:961px)  { .pro{width:36%;height:88%;}  /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+	@media (min-width:1025px) { .pro{width:36%;height:88%;}  /* big landscape tablets, laptops, and desktops */ }
+	@media (min-width:1281px) { .pro{width:36%;height:88%;}  /* hi-res laptops and desktops */ }
 	
 </style>
    
