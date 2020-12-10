@@ -83,8 +83,8 @@
 	
 	
 
-	<?php for($i=0;$i<$n;$i++) { ?>	
 <div class="row m-4 d-flex justify-content-center">
+	<?php for($i=0;$i<$n;$i++) { ?>	
 	<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-4">
 		<img src="..." class="figure-img img-fluid rounded float-right pro" alt="product" onerror="this.src='../assets/black.png';">
 	</div>
@@ -95,8 +95,8 @@
 		<p style="margin-bottom:0px;">product quantity : <?=$product_qty[$i]?></p>
 		<p style="margin-bottom:0px;">product price : <?=$product_qty[$i]*$product_price[$i]?></p>
 	</div>
-</div>
 	<?php } ?>
+</div>
 	
 	
 	
