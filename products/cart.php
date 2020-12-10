@@ -88,7 +88,7 @@
 	<div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 col-6">
 		<img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:60%;height:50%;" alt="product" onerror="this.src='../assets/black.png';">
 	</div>
-	</div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 col-6">
+	</div class="col-lg-8 col-sm-8 col-xs-8 col-md-8 col-6">
 		<p><?=$product_name[$i]?></p>
 		<p><?=$product_color[$i]?></p>
 		<p><?=$product_size[$i]?></p>
