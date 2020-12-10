@@ -48,7 +48,7 @@
             }
       
       } 
-      /*else if(isset($_POST['trash']))
+      else if(isset($_POST['trash']))
       {
 	    if(($con->query("delete from cart where user_name='$user' and unique_type_id='$unique_type_id'"))===True)
             {
@@ -60,7 +60,7 @@
                   header("Location:cart.php");
                  die();
             }	     
-      }*/
+      }
       else
       {
             $nolog=true;
@@ -174,11 +174,11 @@
 <style>
     /*Media Queries*/
 	@media (min-width:320px)  { .pro{width:100%;height:100%;} .pm{font-size:12px;}  /* smartphones, iPhone, portrait 480x320 phones */ }
-	@media (min-width:481px)  { .pro{width:32%;height:88%;} .pm{font-size:20px}  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
-    	@media (min-width:641px)  { .pro{width:32%;height:88%;} .pm{font-size:20px} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
-	@media (min-width:961px)  { .pro{width:32%;height:88%;} .pm{font-size:20px}  /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-	@media (min-width:1025px) { .pro{width:32%;height:88%;} .pm{font-size:20px}  /* big landscape tablets, laptops, and desktops */ }
-	@media (min-width:1281px) { .pro{width:32%;height:88%;} .pm{font-size:20px}  /* hi-res laptops and desktops */ }
+	@media (min-width:481px)  { .pro{width:32%;height:88%;} .pm{font-size:20px;}  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+    	@media (min-width:641px)  { .pro{width:32%;height:88%;} .pm{font-size:20px;} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+	@media (min-width:961px)  { .pro{width:32%;height:88%;} .pm{font-size:20px;}  /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+	@media (min-width:1025px) { .pro{width:32%;height:88%;} .pm{font-size:20px;}  /* big landscape tablets, laptops, and desktops */ }
+	@media (min-width:1281px) { .pro{width:32%;height:88%;} .pm{font-size:20px;}  /* hi-res laptops and desktops */ }
 	
 </style>
    
