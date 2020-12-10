@@ -48,14 +48,6 @@
             }
       
       } 
-      else if(isset($_POST['minus']))
-      {
-	    
-      }
-      else if(isset($_POST['plus']))
-      {
-	     
-      }
       else if(isset($_POST['trash']))
       {
 	    if(($con->query("delete from cart where user_name='$user' and unique_type_id='$unique_type_id'"))===True)
