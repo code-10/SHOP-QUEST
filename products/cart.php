@@ -86,7 +86,7 @@
 	<?php for($i=0;$i<$n;$i++) { ?>	
 <div class="row m-4 d-flex justify-content-center">
 	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
-		<img src="..." class="figure-img img-fluid rounded mx-auto d-block pro" alt="product" onerror="this.src='../assets/black.png';">
+		<img src="..." class="figure-img img-fluid rounded float-right pro" alt="product" onerror="this.src='../assets/black.png';">
 	</div>
 	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
 		<p style="margin-bottom:0px;"><?=$product_name[$i]?></p>
