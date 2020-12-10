@@ -95,10 +95,12 @@
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_name[$i]?></p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_color[$i]?></p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_size[$i]?></p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;">
 				<form method="POST" action="cart.php">
 					<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$i]?>" />
-					<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><button class="btn btn-dark" type="submit" name="minus">-</button><?=$product_qty[$i]?><button class="btn btn-dark" type="submit" name="plus">+</button></p></div>
+					<button class="btn btn-dark" type="submit" name="minus">-</button><?=$product_qty[$i]?><button class="btn btn-dark" type="submit" name="plus">+</button>
 				</form>
+				</div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><i class="fa fa-rupee"></i> <?=$product_qty[$i]*$product_price[$i]?></p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><a href='#'><i class="fa fa-trash"></i></a></div>
 			</div>
