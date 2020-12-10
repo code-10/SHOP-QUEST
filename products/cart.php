@@ -90,14 +90,7 @@
 		</div>
 		<div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 col-8">
 			<div class="row">
-				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_name[$i]?>
-					<?php if($wish->num_rows>0) 
-						echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no&&show='.$show.'"><i class="fa fa-heart" style="color:#ff008a"></i></a>';
-			      		      else
-			        		echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes&&show='.$show.'"> <i class="fa fa-heart-o" style="color:#a9a9a9"></i></a>';
-					?>
-					</p>
-				</div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_name[$i]?></p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_color[$i]?></p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_size[$i]?></p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;">quantity:<?=$product_qty[$i]?></p></div>
