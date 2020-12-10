@@ -43,7 +43,7 @@
 </nav>
   
   
-  <!--search bar-->
+  				<!--search bar-->
 					<div id="search" class="mb-2" style="background-color:black;">
 						<div class="text-center">
 						<form method="GET" action="../pages/search.php" class="form-inline input-group d-flex justify-content-center" style="padding:0.60rem!important">
@@ -56,6 +56,50 @@
     						</form>
 						</div>
 					</div>
+	
+	
+	<?php
+	
+		$cart=$con->query("select c.user_name,p.product_name,up.price,c.qty,up.color,up.size,up.quantity from products as p,cart as c,unique_product as up where p.product_id=up.product_id and c.unique_type_id=up.unique_type_id and user_name="'$user'");
+		
+		$product_name=Array();
+		$product_price=Array();
+		$product_color=Array();
+		$product_size=Array();
+		$product_qty=Array();
+			
+		while($ele=$cart->fetch_assoc())
+		{
+			$product_name[]=$ele['product_name'];
+			$product_price[]=$ele['price'];
+			$product_color[]=$ele['color'];
+			$product_size[]=$ele['size'];
+			$product_qty[]=$ele['qty'];
+		}	
+	
+		$n=count($product_name);
+	
+	?>
+	
+	
+
+	<?php for($i=0;$i<$n;$i++) { ?>	
+<div class="row">
+	<div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 col-6">
+		<img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:60%;height:50%;" alt="product" onerror="this.src='../assets/black.png';">
+	</div>
+	</div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 col-6">
+		<p><?=$product_name[$i]?></p>
+		<p><?=$product_color[$i]?></p>
+		<p><?=$product_size[$i]?></p>
+		<p><?=$product_qty[$i]?></p>
+		<p><?=$product_qty[$i]*$product_price[$i]?></p>
+	</div>
+</div>
+	<?php } ?>
+	
+	
+	
 
 
 
@@ -79,12 +123,12 @@
       {
             if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
             {
-                 header("Location:cart.php?unique_type_id=".$unique_type_id."&&quantity=".$quantity);
+                 header("Location:cart.php");
                  die();
             }
             else
             {
-                  header("Location:cart.php?unique_type_id=".$unique_type_id."&&quantity=".$quantity);
+                  header("Location:cart.php");
                  die();
             }
       
