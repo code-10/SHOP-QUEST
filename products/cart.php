@@ -48,7 +48,7 @@
             }
       
       } 
-      else if(isset($_POST['trash']))
+      /*else if(isset($_POST['trash']))
       {
 	    if(($con->query("delete from cart where user_name='$user' and unique_type_id='$unique_type_id'"))===True)
             {
@@ -60,7 +60,7 @@
                   header("Location:cart.php");
                  die();
             }	     
-      }
+      }*/
       else
       {
             $nolog=true;
