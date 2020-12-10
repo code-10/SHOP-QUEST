@@ -84,9 +84,9 @@
 	
 
 	<?php for($i=0;$i<$n;$i++) { ?>	
-<div class="row mt-2 d-flex justify-content-center">
+<div class="row m-4 d-flex justify-content-center">
 	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
-		<img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:16%;height:88%;" alt="product" onerror="this.src='../assets/black.png';">
+		<img src="..." class="figure-img img-fluid rounded mx-auto d-block pro" alt="product" onerror="this.src='../assets/black.png';">
 	</div>
 	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
 		<p style="margin-bottom:0px;"><?=$product_name[$i]?></p>
@@ -141,6 +141,18 @@
             die(); 
       } 
 ?>
+	
+	
+<style>
+    /*Media Queries*/
+	@media (min-width:320px)  { .pro{} /* smartphones, iPhone, portrait 480x320 phones */ }
+	@media (min-width:481px)  { .pro{width:24%;height:88%;}  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+    	@media (min-width:641px)  { .pro{width:24%;height:88%;} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+	@media (min-width:961px)  { .pro{width:24%;height:88%;}  /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+	@media (min-width:1025px) { .pro{width:24%;height:88%;}  /* big landscape tablets, laptops, and desktops */ }
+	@media (min-width:1281px) { .pro{width:24%;height:88%;}  /* hi-res laptops and desktops */ }
+	
+</style>
    
 
 <?php include_once '../footer.php'; ?>
