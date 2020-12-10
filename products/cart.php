@@ -16,6 +16,48 @@
 ?>
 
 
+
+
+<?php
+      if(isset($_SESSION['user_name']))
+      {
+      if(isset($_POST['addtocart']))
+      {
+            if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
+            {
+                header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&addtocart=yes&&show=".$show);
+                die();
+            }
+            else
+            {
+                  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&addtocart=yes&&show=".$show);
+                  die();
+            }
+      }
+      else if(isset($_POST['buy']))
+      {
+            if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
+            {
+                 header("Location:cart.php");
+                 die();
+            }
+            else
+            {
+                  header("Location:cart.php");
+                 die();
+            }
+      
+      } 
+      }
+      else
+      {
+            $nolog=true;
+            header("Location:../index.php");
+            die(); 
+      } 
+?>
+
+
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a href="../index.php" class="navbar-brand">ShopQuest</a>
@@ -109,50 +151,7 @@
 <?php } ?>
 
 	
-	
-	
 
-
-
-<?php
-      if(isset($_SESSION['user_name']))
-      {
-      if(isset($_POST['addtocart']))
-      {
-            if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
-            {
-                header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&addtocart=yes&&show=".$show);
-                die();
-            }
-            else
-            {
-                  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&addtocart=yes&&show=".$show);
-                  die();
-            }
-      }
-      else if(isset($_POST['buy']))
-      {
-            if(($con->query("insert into cart(user_name,unique_type_id,qty) values('$user','$unique_type_id','$quantity');"))===True)
-            {
-                 header("Location:cart.php");
-                 die();
-            }
-            else
-            {
-                  header("Location:cart.php");
-                 die();
-            }
-      
-      } 
-      }
-      else
-      {
-            $nolog=true;
-            header("Location:../index.php");
-            die(); 
-      } 
-?>
-	
 	
 <style>
     /*Media Queries*/
