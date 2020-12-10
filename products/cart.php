@@ -90,11 +90,11 @@
 		</div>
 		<div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 col-8">
 			<div class="row">
-				<div class="col-lg-1 col-sm-1 col-xs-1 col-md-1 col-8"><p style="margin-bottom:0px;"><?=$product_name[$i]?></p></div>
-				<div class="col-lg-1 col-sm-1 col-xs-1 col-md-1 col-8"><p style="margin-bottom:0px;">color : <?=$product_color[$i]?></p></div>
-				<div class="col-lg-1 col-sm-1 col-xs-1 col-md-1 col-8"><p style="margin-bottom:0px;">size : <?=$product_size[$i]?></p></div>
-				<div class="col-lg-1 col-sm-1 col-xs-1 col-md-1 col-8"><p style="margin-bottom:0px;">quantity : <?=$product_qty[$i]?></p></div>
-				<div class="col-lg-1 col-sm-1 col-xs-1 col-md-1 col-8"><p style="margin-bottom:0px;">price : <?=$product_qty[$i]*$product_price[$i]?></p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_name[$i]?></p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;">color : <?=$product_color[$i]?></p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;">size : <?=$product_size[$i]?></p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;">quantity : <?=$product_qty[$i]?></p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;">price : <?=$product_qty[$i]*$product_price[$i]?></p></div>
 			</div>
 		</div>
 	</div>
