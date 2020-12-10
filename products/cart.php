@@ -84,16 +84,16 @@
 	
 
 	<?php for($i=0;$i<$n;$i++) { ?>	
-<div class="row">
-	<div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 col-6">
-		<img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:60%;height:50%;" alt="product" onerror="this.src='../assets/black.png';">
+<div class="row mt-2 d-flex justify-content-center">
+	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
+		<img src="..." class="figure-img img-fluid rounded mx-auto d-block" alt="product" onerror="this.src='../assets/black.png';">
 	</div>
-	<div class="col-lg-8 col-sm-8 col-xs-8 col-md-8 col-6">
-		<p><?=$product_name[$i]?></p>
-		<p><?=$product_color[$i]?></p>
-		<p><?=$product_size[$i]?></p>
-		<p><?=$product_qty[$i]?></p>
-		<p><?=$product_qty[$i]*$product_price[$i]?></p>
+	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
+		<p style="margin-bottom:0px;"><?=$product_name[$i]?></p>
+		<p style="margin-bottom:0px;"><?=$product_color[$i]?></p>
+		<p style="margin-bottom:0px;"><?=$product_size[$i]?></p>
+		<p style="margin-bottom:0px;"><?=$product_qty[$i]?></p>
+		<p style="margin-bottom:0px;"><?=$product_qty[$i]*$product_price[$i]?></p>
 	</div>
 </div>
 	<?php } ?>
