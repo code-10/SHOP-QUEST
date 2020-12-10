@@ -61,6 +61,7 @@
                  die();
             }	     
       }
+      }
       else
       {
             $nolog=true;
