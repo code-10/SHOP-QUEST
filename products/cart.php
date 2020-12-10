@@ -98,7 +98,7 @@
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;">
 				<form method="POST" action="cart.php">
 					<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$i]?>" />
-					<button type="submit" class="fa fa-minus" style="background-color:black;color:white;"></button>    <?=$product_qty[$i]?>    <button type="submit" class="fa fa-plus" style="background-color:black;color:white;"></button>
+					<button type="submit" class="fa fa-minus pm" style="background-color:black;color:white;"></button>    <?=$product_qty[$i]?>    <button type="submit" class="fa fa-plus pm" style="background-color:black;color:white;"></button>
 				</form>
 				</div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><i class="fa fa-rupee"></i> <?=$product_qty[$i]*$product_price[$i]?></p></div>
@@ -156,12 +156,12 @@
 	
 <style>
     /*Media Queries*/
-	@media (min-width:320px)  { .pro{width:100%;height:100%;} /* smartphones, iPhone, portrait 480x320 phones */ }
-	@media (min-width:481px)  { .pro{width:32%;height:88%;}  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
-    	@media (min-width:641px)  { .pro{width:32%;height:88%;} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
-	@media (min-width:961px)  { .pro{width:32%;height:88%;}  /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-	@media (min-width:1025px) { .pro{width:32%;height:88%;}  /* big landscape tablets, laptops, and desktops */ }
-	@media (min-width:1281px) { .pro{width:32%;height:88%;}  /* hi-res laptops and desktops */ }
+	@media (min-width:320px)  { .pro{width:100%;height:100%;} .pm{font-size:12px;}  /* smartphones, iPhone, portrait 480x320 phones */ }
+	@media (min-width:481px)  { .pro{width:32%;height:88%;} .pm{font-size:20px}  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+    	@media (min-width:641px)  { .pro{width:32%;height:88%;} .pm{font-size:20px} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+	@media (min-width:961px)  { .pro{width:32%;height:88%;} .pm{font-size:20px}  /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+	@media (min-width:1025px) { .pro{width:32%;height:88%;} .pm{font-size:20px}  /* big landscape tablets, laptops, and desktops */ }
+	@media (min-width:1281px) { .pro{width:32%;height:88%;} .pm{font-size:20px}  /* hi-res laptops and desktops */ }
 	
 </style>
    
