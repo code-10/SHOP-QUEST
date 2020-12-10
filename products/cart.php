@@ -87,6 +87,12 @@
 	<div class="row m-4 d-flex justify-content-center">
 		<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-4">
 			<img src="..." class="figure-img img-fluid rounded float-right pro" alt="product" onerror="this.src='../assets/black.png';">
+			<?php if($wish->num_rows>0) 
+				echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no&&show='.$show.'"><i class="fa fa-heart" style="color:#ff008a"></i></a>';
+			      else
+			        echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes&&show='.$show.'"> <i class="fa fa-heart-o" style="color:#a9a9a9"></i></a>';
+			?>
+			<div class="col"><a href='#'><i class="fa fa-trash"></i></a></div>
 		</div>
 		<div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 col-8">
 			<div class="row">
@@ -95,18 +101,6 @@
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;">size : <?=$product_size[$i]?></p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;">quantity : <?=$product_qty[$i]?></p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;">price : <?=$product_qty[$i]*$product_price[$i]?></p></div>
-			</div>
-			<div class="row">
-				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8">
-					<?php if($wish->num_rows>0) 
-						echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=no&&show='.$show.'"><i class="fa fa-heart" style="color:#ff008a"></i></a>';
-			    		      else
-						echo '<a class="ml-2" href="wishlist.php?product_id='.$product_id.'&&product_name='.$product_name.'&&wishdo=yes&&show='.$show.'"> <i class="fa fa-heart-o" style="color:#a9a9a9"></i></a>';
-			    		?>
-				</div>
-				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8">
-					<div class="col"><a href='#'><i class="fa fa-trash"></i></a></div>
-				</div>
 			</div>
 		</div>
 	</div>
