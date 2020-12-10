@@ -98,7 +98,7 @@
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;">
 				<form method="POST" action="cart.php">
 					<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$i]?>" />
-					<button class="btn btn-dark" type="submit" name="minus" style="font-size:10px;">-</button>    <?=$product_qty[$i]?>    <button class="btn btn-dark" type="submit" name="plus" style="font-size:10px;">+</button>
+					<input type="submit"><i class="fa fa-minus"></i></input>    <?=$product_qty[$i]?>    <input type="submit"><a href="#"><i class="fa fa-plus"></i></a></input>
 				</form>
 				</div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><i class="fa fa-rupee"></i> <?=$product_qty[$i]*$product_price[$i]?></p></div>
