@@ -85,15 +85,15 @@
 
 	<?php for($i=0;$i<$n;$i++) { ?>	
 <div class="row m-4 d-flex justify-content-center">
-	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
+	<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-6">
 		<img src="..." class="figure-img img-fluid rounded float-right pro" alt="product" onerror="this.src='../assets/black.png';">
 	</div>
-	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
-		<p style="margin-bottom:0px;"><?=$product_name[$i]?></p>
-		<p style="margin-bottom:0px;"><?=$product_color[$i]?></p>
-		<p style="margin-bottom:0px;"><?=$product_size[$i]?></p>
-		<p style="margin-bottom:0px;"><?=$product_qty[$i]?></p>
-		<p style="margin-bottom:0px;"><?=$product_qty[$i]*$product_price[$i]?></p>
+	<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-6">
+		<p style="margin-bottom:0px;">product name : <?=$product_name[$i]?></p>
+		<p style="margin-bottom:0px;">product color : <?=$product_color[$i]?></p>
+		<p style="margin-bottom:0px;">product size : <?=$product_size[$i]?></p>
+		<p style="margin-bottom:0px;">product quantity : <?=$product_qty[$i]?></p>
+		<p style="margin-bottom:0px;">product price : <?=$product_qty[$i]*$product_price[$i]?></p>
 	</div>
 </div>
 	<?php } ?>
