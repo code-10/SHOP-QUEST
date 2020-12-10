@@ -233,14 +233,14 @@
 		    <div class="row">
 			    <div class="col-3"></div>
 			    <div class="col-6">
-				    <button class="btn btn-dark btn-block mb-4" type="submit" name="buy" class="btn btn-dark">Buy</button>
+				    <button class="btn btn-dark btn-block mb-4" type="submit" name="buy">Buy</button>
 			    </div>
 			    <div class="col-3"></div>
 		    </div>
 		    <div class="row">
 			    <div class="col-3"></div>
 			    <div class="col-6">
-				    <button class="btn btn-dark btn-block mb-4" type="submit" name="addtocart" class="btn btn-dark">Add to cart</button>
+				    <button class="btn btn-dark btn-block mb-4" type="submit" name="addtocart">Add to cart</button>
 			    </div>
 			    <div class="col-3"></div>
 		    </div>	
