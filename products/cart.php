@@ -85,10 +85,10 @@
 
 <?php for($i=0;$i<$n;$i++) { ?>	
 	<div class="row m-4 d-flex justify-content-center">
-		<div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 col-4">
+		<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-4">
 			<img src="..." class="figure-img img-fluid rounded float-right pro" alt="product" onerror="this.src='../assets/black.png';">
 		</div>
-		<div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 col-8">
+		<div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 col-8">
 			<div class="row">
 				<div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 col-8"><p style="margin-bottom:0px;"><?=$product_name[$i]?></p></div>
 				<div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 col-8"><p style="margin-bottom:0px;">color : <?=$product_color[$i]?></p></div>
