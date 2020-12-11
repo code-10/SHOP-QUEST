@@ -116,7 +116,7 @@ else
 
 
 	<div class="row m-2 d-flex justify-content-center">
-		<?php for(int $i=0;$i<$countwish;$i++) { ?>
+		<?php for($i=0;$i<$countwish;$i++) { ?>
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-4">
 				<p><?=$product_name_wish[$i]?></p>
 			</div>
