@@ -84,7 +84,7 @@
     
     <?$c=1; $lim=$n/4+1; for($j=1;$j<=$lim;$j++){ ?>
     <div class="container">
-      <div class="row p-2">
+      <div class="row p-2 d-flex justify-content-center">
         <? for($i=1;$i<=3;$i++){ ?> 
         <? if(3*($j-1)+$i>$n) break; ?>
         <div class="col-md-3 col-4 text-center">
