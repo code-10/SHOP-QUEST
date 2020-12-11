@@ -164,24 +164,24 @@
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
-				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"><h5>Total Price </h5></div>
-				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"><h5><i class="fa fa-rupee"></i> <?=$total_price?></h5></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><h5 style="margin-bottom:0px;">Total Price </h5></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><h5 style="margin-bottom:0px;"><i class="fa fa-rupee"></i> <?=$total_price?></h5></div>
 	</div>	
 	<div class="row m-4 d-flex justify-content-end">
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
-				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"><h5>Exclusive Discount </h5></div>
-				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"><h5><i class="fa fa-rupee"></i> <?=$discount?></h5></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><h5 style="margin-bottom:0px;">Exclusive Discount </h5></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><h5 style="margin-bottom:0px;"><i class="fa fa-rupee"></i> <?=$discount?></h5></div>
 	</div>	
 	<div class="row m-4 d-flex justify-content-end">
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
-				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"><h5>Total after discount </h5></div>
-				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"><h5><i class="fa fa-rupee"></i> <?=$final_price?></h5></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><h5 style="margin-bottom:0px;">Total after discount </h5></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><h5 style="margin-bottom:0px;"><i class="fa fa-rupee"></i> <?=$final_price?></h5></div>
 	</div>	
 	
 <div class="m-4 d-flex justify-content-center">
