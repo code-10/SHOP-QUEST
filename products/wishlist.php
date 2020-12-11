@@ -56,7 +56,7 @@ else
 		$product_id_wish[]=$display['product_id'];	
 	}
 	
-	$countwish=count($product_id);
+	$countwish=count($product_id_wish);
 	$product_name_wish=Array();
 
 	for($i=0;$i<$countwish;$i++)
