@@ -8,6 +8,12 @@
       
       $user=$_SESSION['user_name'];
 
+	
+      if(isset($_POST['done']))
+      {
+		      
+      }
+
       if(!(isset($_SESSION['user_name'])))
       {
             header("Location:../index.php");
@@ -126,13 +132,14 @@
 				<input type="number" class="form-control"  name="price" placeholder="Just enter the total price">
   			</div>
 	</div>
-	</form>
 </div>
 	
 	
 		    <div class="container">
-				<a href="#" class="btn btn-dark btn-block mb-4" type="submit" name="done">Place your order and pay</a>
+			    <button type="submit" class="btn btn-dark btn-block mb-4" name="done">Pay and Place your order</button>
 		    </div>
+
+	</form>
 	
           
  <?php include_once '../footer.php';
