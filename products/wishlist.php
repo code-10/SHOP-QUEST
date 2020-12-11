@@ -68,8 +68,6 @@ else
       		}
     	}
 
-	print_r($product_id_wish);
-	print_r($product_name_wish);
 
     
 ?>
@@ -117,8 +115,12 @@ else
 					</div>
 
 
-	<div class="row">
-		
+	<div class="row m-2 d-flex justify-content-center">
+		<?php for(int $i=0;$i<$countwish;$i++) { ?>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-4">
+				<p><?=$product_name_wish[$i]?></p>
+			</div>
+		<? } ?>
 	</div>
 	
 
