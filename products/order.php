@@ -185,7 +185,7 @@
 	
 <div class="m-4 d-flex justify-content-center">
 	<form method="POST" action="order.php">
-	<div class="col"	>
+	<div class="col">
   			<div class="form-group">
     				<label for="exampleFormControlTextarea1">Enter your Address</label>
     				<textarea class="form-control" name="address" rows="4" cols="48"></textarea>
