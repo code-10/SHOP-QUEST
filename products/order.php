@@ -13,7 +13,8 @@
 	
       if(isset($_POST['done']))
       {
-		      
+	    header("Location:successful.php");
+            die();       
       }
 
       if(!(isset($_SESSION['user_name'])))
