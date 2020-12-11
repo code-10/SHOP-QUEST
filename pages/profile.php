@@ -53,7 +53,7 @@
         </div>
       
          <div class="text-center">
-            <a href="products/wishlist.php"><button type="button" class="btn btn-dark">Wishlist</button></a><br><br>    
+            <a href="../products/wishlist.php"><button type="button" class="btn btn-dark">Wishlist</button></a><br><br>    
             <a href="products/"><button type="button" class="btn btn-dark">orders</button></a><br><br>
         </div>
       
