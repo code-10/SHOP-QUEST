@@ -119,7 +119,7 @@
 	</div>	
 	
 <div class="m-4 d-flex justify-content-center">
-	<form method="POST" action="delivery_and_payment.php">
+	<form method="POST" action="order.php">
 	<div class="col">
   			<div class="form-group">
     				<label for="exampleFormControlTextarea1">Enter your Address</label>
