@@ -61,6 +61,20 @@
                  die();
             }	     
       }
+      else if(isset($_POST['minus']))
+      {
+	    	     
+      }
+      else if(isset($_POST['plus']))
+      {
+	    	     
+      }
+      	      
+	      
+	      
+	      
+	      
+	      
       }
       else
       {
