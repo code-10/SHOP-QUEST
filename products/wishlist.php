@@ -59,11 +59,14 @@ else
 	$countwish=count($product_id);
 	$product_name_wish=Array();
 
-	for($i=0;$i<$count_wish;$i++)
-	{
-		$store_wish=$con->query("select product_name from products where product_id='$product_id_wish[$i]'")->fetch_assoc('product_name');	
-		$product_name_wish[$i]=$store_wish;
-	}
+	for($i=0;$i<$countwish;$i++)
+    	{
+      		$res1 = $con->query("select * from products  where product_id= '$product_id_wish[$i]'");
+      		while($ele1 = $res1->fetch_assoc())
+      		{ 
+        		$product_name_wish[]=$ele1["product_name"];
+      		}
+    	}
 
 	print_r($product_id_wish);
 	print_r($product_name_wish);
