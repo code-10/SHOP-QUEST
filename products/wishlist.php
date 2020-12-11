@@ -36,6 +36,19 @@
            }
   
       }
+      else if(isset($_POST['wish_trash']))
+      {
+	    if(($con->query("delete from cart where user_name='$user' and product_id='$product_id'"))===True)
+            {
+                 header("Location:wishlist.php");
+                 die();
+            }
+            else
+            {
+                  header("Location:wishlist.php");
+                 die();
+            }	      
+      }
   }
 else
 {
@@ -121,7 +134,7 @@ else
 				<p>
 					<?=$product_name_wish[$i]?>
 					<form method="POST" action="wishlist.php">
-						<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$i]?>" />
+						<input type="hidden" name="product_id" value="<?=$product_id_wish[$i]?>" />
 						<button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="wish_trash" style="background-color:black;color:white;"></button> 
 					</form>
 				</p>
