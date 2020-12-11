@@ -1,4 +1,13 @@
-<?php include_once '../header.php'; session_start(); ?>
+<?php 
+	include_once '../header.php'; session_start(); 
+	
+	if(!(isset($_SESSION['user_name'])))
+      {
+            header("Location:../index.php");
+            die(); 
+      } 
+
+?>
 
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -42,7 +51,7 @@
 					</div>
 	
 	
-	<div class="container"><h4 class="text-center m-4">Your Order is successful, Thank you.</h4></div>
+	<div class="container"><h4 class="text-center m-4 alert alert-success">Your Order is successful, Thank you.</h4></div>
           
           
  <?php include_once '../footer.php'; ?>
