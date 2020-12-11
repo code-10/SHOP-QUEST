@@ -248,7 +248,7 @@
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"></div>
-				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><p>Total Price : </p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><p>Total Price </p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><i class="fa fa-rupee"></i><?=$total_price?></p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"></div>
 			</div>
@@ -288,7 +288,7 @@
 	
 <style>
     /*Media Queries*/
-	@media (min-width:320px)  { .pro{width:100%;height:100%;} .pm{font-size:12px;}  /* smartphones, iPhone, portrait 480x320 phones */ }
+	@media (min-width:320px)  { .pro{width:100%;height:100%;} .pm{font-size:10px;}  /* smartphones, iPhone, portrait 480x320 phones */ }
 	@media (min-width:481px)  { .pro{width:32%;height:88%;} .pm{font-size:20px;}  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
     	@media (min-width:641px)  { .pro{width:32%;height:88%;} .pm{font-size:20px;} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
 	@media (min-width:961px)  { .pro{width:32%;height:88%;} .pm{font-size:20px;}  /* tablet, landscape iPad, lo-res laptops ands desktops */ }
