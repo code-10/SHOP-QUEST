@@ -115,13 +115,19 @@ else
 					</div>
 
 
-	<div class="row m-2 d-flex justify-content-center">
-		<?php for($i=0;$i<$countwish;$i++) { ?>
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-4">
-				<p><?=$product_name_wish[$i]?></p>
+	<?php for($i=0;$i<$countwish;$i++) { ?>
+		<div class="row m-2 d-flex justify-content-center">
+			<div class="col">
+				<p>
+					<?=$product_name_wish[$i]?>
+					<form method="POST" action="wishlist.php">
+						<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$i]?>" />
+						<button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="wish_trash" style="background-color:black;color:white;"></button> 
+					</form>
+				</p>
 			</div>
-		<? } ?>
-	</div>
+		</div>
+	<? } ?>
 	
 
 <?php include_once '../footer.php';?>
