@@ -120,13 +120,13 @@
 	
 <div class="m-4 d-flex justify-content-center">
 	<form method="POST" action="delivery_and_payment.php">
-	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
+	<div class="col">
   			<div class="form-group">
     				<label for="exampleFormControlTextarea1">Enter your Address</label>
     				<textarea class="form-control" name="address" rows="8" cols="48"></textarea>
   			</div>
 	</div>
-	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
+	<div class="col">
   			<div class="form-group">
     				<label for="exampleFormControlTextarea1">Enter total price</label>
 				<input type="number" class="form-control"  name="price" placeholder="Just enter the total price">
