@@ -199,8 +199,9 @@
 	</div>
 </div>
 	
-	
+			
 		    <div class="container">
+			    <input type="hidden" name="final_price" value="<?=$final_price?>" />
 			    <button type="submit" class="btn btn-dark btn-block mb-4" name="done">Pay and Place your order</button>
 		    </div>
 
