@@ -136,15 +136,23 @@ else
 
 
 	<?php for($i=0;$i<$countwish;$i++) { ?>
+		<div class="row m-4 d-flex justify-content-center">
+		<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-6">
+			<?=$product_name_wish[$i]?>
+		</div>
+		<div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 col-6">
+			<p>
+				<form method="POST" action="wishlist.php">
+					<input type="hidden" name="product_id_wish" value="<?=$product_id_wish[$i]?>" />
+					<button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="wish_trash" style="background-color:black;color:white;"></button> 
+				</form>
+			</p>
+		</div>
+	</div>
+
 		<div class="row m-2 d-flex justify-content-center">
 			<div class="col">
-				<p>
-					<?=$product_name_wish[$i]?>
-					<form method="POST" action="wishlist.php">
-						<input type="hidden" name="product_id_wish" value="<?=$product_id_wish[$i]?>" />
-						<button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="wish_trash" style="background-color:black;color:white;"></button> 
-					</form>
-				</p>
+				
 			</div>
 		</div>
 	<? } ?>
