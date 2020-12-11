@@ -1,12 +1,14 @@
 <?php
 
-      include_once '../header.php';
-      include_once '../libraries/chocolates.php';
-      session_start();
+      	include_once '../header.php';
+      	include_once '../libraries/chocolates.php';
+      	session_start();
 
-      $con=getCon();
+      	$con=getCon();
       
-      $user=$_SESSION['user_name'];
+      	$user=$_SESSION['user_name'];
+      
+
 
 	
       if(isset($_POST['done']))
@@ -94,6 +96,53 @@
 			$total_price=$total_price+($product_qty[$i]*$product_price[$i]);
 		}
 	
+	
+	
+	
+	
+	
+	
+		/*Discount*/
+		$discount_calc=$con->query("select * from orders where user_name = '$user'");
+		$discount_data=Array();
+		while($ele = $discount_calc->fetch_assoc())
+		{
+            		$discount_data[]=$ele['total_price'];
+		}
+
+		$discount=0;
+		$total=0;
+
+		foreach($discount_data as $d)
+        	{
+             		$total=$total+$d;
+        	}
+	
+		if($total>10000)
+          		$discount=$total_price*0.01;
+        	if($total>20000)
+          		$discount=$total_price*0.02;
+        	if($total>30000)
+          		$discount=$total_price*0.03;
+        	if($total>40000)
+          		$discount=$total_price*0.04;
+        	if($total>50000)
+          		$discount=$total_price*0.05;
+        	if($total>60000)
+          		$discount=$total_price*0.06;
+        	if($total>70000)
+          		$discount=$total_price*0.07;
+        	if($total>80000)
+          		$discount=$total_price*0.08;
+        	if($total>90000)
+          		$discount=$total_price*0.09;
+        	if($total>100000)
+          		$discount=$total_price*0.10;
+
+		$final_price = $total_price-$discount;
+	
+		/*Discount*/
+	
 	?>
 	
 	
@@ -117,10 +166,26 @@
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"><p>Total Price </p></div>
 				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"><i class="fa fa-rupee"></i> <?=$total_price?></p></div>
 	</div>	
+	<div class="row m-4 d-flex justify-content-end">
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"><p>Exclusive Discount </p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"><i class="fa fa-rupee"></i> <?=$discount?></p></div>
+	</div>	
+	<div class="row m-4 d-flex justify-content-end">
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"><p>Exclusive Discount </p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-7"><p style="margin-bottom:0px;"><i class="fa fa-rupee"></i> <?=$final_price?></p></div>
+	</div>	
 	
 <div class="m-4 d-flex justify-content-center">
 	<form method="POST" action="order.php">
-	<div class="col">
+	<div class="col"	>
   			<div class="form-group">
     				<label for="exampleFormControlTextarea1">Enter your Address</label>
     				<textarea class="form-control" name="address" rows="4" cols="48"></textarea>
