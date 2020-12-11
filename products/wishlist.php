@@ -39,7 +39,7 @@
       }
       else if(isset($_POST['wish_trash']))
       {
-	    if(($con->query("delete from cart where user_name='$user' and product_id='$product_id'"))===True)
+	    if(($con->query("delete from wishlist where user_name='$user' and product_id='$product_id'"))===True)
             {
                  header("Location:wishlist.php");
                  die();
