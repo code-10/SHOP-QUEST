@@ -51,7 +51,7 @@ else
 	//find wishlisted items
 	$wishlist_display=$con->query("select * from wishlist where user_name='$user'");
 	$product_id_wish=Array();
-	while($display=$wishlist_display)
+	while($display=$wishlist_display->fetch_assoc())
 	{
 		$product_id_wish[]=$display['product_id'];	
 	}
