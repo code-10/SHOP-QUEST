@@ -1,7 +1,8 @@
 <?php
   
   session_start();
-  include '../libraries/chocolates.php';
+  include_once '../libraries/chocolates.php';
+  include_once '../header.php';
   $con = getCon();  
 
   $show=$_GET['show']; 
