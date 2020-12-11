@@ -8,6 +8,7 @@
   $show=$_GET['show']; 
   $wishdo=$_GET['wishdo'];
   $product_id=$_GET['product_id'];
+  $product_id_wish=$_POST['product_id_wish'];
   $user=$_SESSION['user_name'];
   $product_name=$_GET['product_name'];
   $user=strtolower($user);
@@ -39,7 +40,7 @@
       }
       else if(isset($_POST['wish_trash']))
       {
-	    if(($con->query("delete from wishlist where user_name='$user' and product_id='$product_id'"))===True)
+	    if(($con->query("delete from wishlist where user_name='$user' and product_id='$product_id_wish'"))===True)
             {
                  header("Location:wishlist.php");
                  die();
@@ -140,7 +141,7 @@ else
 				<p>
 					<?=$product_name_wish[$i]?>
 					<form method="POST" action="wishlist.php">
-						<input type="hidden" name="product_id" value="<?=$product_id_wish[$i]?>" />
+						<input type="hidden" name="product_id_wish" value="<?=$product_id_wish[$i]?>" />
 						<button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="wish_trash" style="background-color:black;color:white;"></button> 
 					</form>
 				</p>
