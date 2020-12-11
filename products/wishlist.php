@@ -139,7 +139,7 @@ else
 	
 
 	<div class="container">
-		<?php for($i=0;$i<=$countwish/3;$i++) ?>
+		<?php for($i=0;$i<=$countwish/3;$i++) { ?>
 		<div class="row m-2 d-flex justify-content-center">
 			<?php for($j=0;$j<$countwish;$j++) { ?>
 			<div class="col">
