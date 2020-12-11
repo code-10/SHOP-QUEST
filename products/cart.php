@@ -258,7 +258,7 @@
 	       
 	       <!--continue-->
 		    <div class="container">
-		    		<a href="delivery_and_payment.php" class="btn btn-dark btn-block mb-4" type="submit" name="buy">Continue</a>
+		    		<a href="order.php" class="btn btn-dark btn-block mb-4" type="submit" name="buy">Continue</a>
 		    </div>		
 		
 	    <?php } else { ?>
@@ -266,11 +266,8 @@
 		<h5>Nothing in your cart yet</h5>
 	</div>
 	<div class="row">
-			    <div class="col-3"></div>
-			    <div class="col-6">
 				    <a href="../index.php" class="btn btn-dark btn-block mb-4" type="submit" >Let me shop</a>
-			    </div>
-			    <div class="col-3"></div>
+			   
 		    </div>
 <?php } ?>
 	
