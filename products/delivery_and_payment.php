@@ -52,5 +52,78 @@
 					</div>
           
           
+
+<?php
+	
+		$cart=$con->query("select c.user_name,p.product_name,up.unique_type_id,up.price,c.qty,up.color,up.size,up.quantity from products as p,cart as c,unique_product as up where p.product_id=up.product_id and c.unique_type_id=up.unique_type_id and user_name='$user'");
+		
+		$product_name=Array();
+		$product_price=Array();
+		$product_color=Array();
+		$product_size=Array();
+		$product_qty=Array();
+		$unique_type_id=Array();
+			
+		while($ele=$cart->fetch_assoc())
+		{
+			$product_name[]=$ele['product_name'];
+			$product_price[]=$ele['price'];
+			$product_color[]=$ele['color'];
+			$product_size[]=$ele['size'];
+			$product_qty[]=$ele['qty'];
+			$unique_type_id[]=$ele['unique_type_id'];
+		}	
+	
+		$n=count($product_name);
+	
+		$total_price=0;
+		for($i=0;$i<$n;$i++)
+		{
+			$total_price=$total_price+($product_qty[$i]*$product_price[$i]);
+		}
+	
+	?>
+	
+	
+
+<?php for($i=0;$i<$n;$i++) { ?>	
+	<div class="row m-4 d-flex justify-content-center">
+		<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-6"></div>
+		<div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 col-6">
+			<div class="row">
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_name[$i]?></p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_color[$i]?></p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><?=$product_size[$i]?></p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><p><?=$product_qty[$i]?></p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"><p style="margin-bottom:0px;"><i class="fa fa-rupee"></i> <?=$product_qty[$i]*$product_price[$i]?></p></div>
+				<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-8"></div>
+			</div>
+		</div>
+	</div>
+
+<?php } ?>	
+
+	
+<div class="row m-4 d-flex justify-content-center">
+	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
+		<form method="POST" action="delivery_and_payment.php">
+  			<div class="form-group">
+    				<label for="exampleFormControlTextarea1">Enter your Address</label>
+    				<textarea class="form-control" name="address" rows="8" cols="48"></textarea>
+  			</div>
+		</form>
+	</div>
+	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
+		<form method="POST" action="delivery_and_payment.php">
+  			<div class="form-group">
+    				<label for="exampleFormControlTextarea1">Enter your Address</label>
+				<input type="number" class="form-control" placeholder="Just enter the total price">
+  			</div>
+		</form>
+	</div>
+</div>
+	
+	
+	
           
- include_once '../footer.php';
+ <?php include_once '../footer.php';
