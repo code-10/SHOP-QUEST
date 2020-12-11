@@ -11,6 +11,7 @@
   $user=$_SESSION['user_name'];
   $product_name=$_GET['product_name'];
   $user=strtolower($user);
+  $product_description_page=$_GET['product_description_page'];
   
 
   
@@ -50,11 +51,16 @@
             }	      
       }
   }
-else
+else if($product_description_page=="yes")
 {
   $nolog=true;
   header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&nolog=".$nolog."&&show=".$show);
         die();
+}
+else
+{
+   header("Location: wishlist.php");
+   die();
 }
 
 
