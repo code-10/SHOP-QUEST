@@ -80,7 +80,7 @@
                    }  
 	    }
 	    else{
-	    	if(($con->query("update cart set quantity='$qty_to_cart' where user_name='$user' and unique_type_id='$unique_type_id'"))===True)
+	    	if(($con->query("update cart set qty='$qty_to_cart' where user_name='$user' and unique_type_id='$unique_type_id'"))===True)
             	{
                  	header("Location:cart.php");
                 	 die();
