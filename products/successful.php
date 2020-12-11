@@ -40,6 +40,9 @@
     						</form>
 						</div>
 					</div>
+	
+	
+	<div class="container"><h4 class="text-center m-4">Your Order is successful, Thank you.</h4></div>
           
           
  <?php include_once '../footer.php'; ?>
