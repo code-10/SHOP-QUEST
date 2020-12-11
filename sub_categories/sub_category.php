@@ -85,8 +85,8 @@
     <?$c=1; $lim=$n/4+1; for($j=1;$j<=$lim;$j++){ ?>
     <div class="container">
       <div class="row p-2">
-        <? for($i=1;$i<=4;$i++){ ?> 
-        <? if(4*($j-1)+$i>$n) break; ?>
+        <? for($i=1;$i<=3;$i++){ ?> 
+        <? if(3*($j-1)+$i>$n) break; ?>
         <div class="col-md-3 col-4 text-center">
             <figure class="figure">
                 <a href='../products/product.php?sub_cat_id=<?=$sub_cat_id[$c-1]?>&&sub_cat_name=<?=$sub_cat_name[$c-1]?>&&id_s=1'>
