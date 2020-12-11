@@ -118,7 +118,7 @@
 		</div>
 	</div>	
 	
-<div class="row m-4 d-flex justify-content-center">
+<div class="m-4 d-flex justify-content-center container">
 	<form method="POST" action="delivery_and_payment.php">
 	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
   			<div class="form-group">
