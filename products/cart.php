@@ -63,11 +63,39 @@
       }
       else if(isset($_POST['minus']))
       {
-	    	     
+	      $qty_in_cart=$con->query("select qty from cart where unique_type_id='$unique_type_id' and user_name='$user'")->fetch_assoc()['qty']; 
+	      $qty_to_cart=$qty_in_cart-1;
+	      
+	    if($qty_in_cart==1)
+	    {
+		   if(($con->query("delete from cart where user_name='$user' and unique_type_id='$unique_type_id'"))===True)
+                   {
+                         header("Location:cart.php");
+                         die();
+                   }
+                   else
+                   {
+                         header("Location:cart.php");
+                         die();
+                   }  
+	    }
+	    else{
+	    	if(($con->query("update cart set quantity='$qty_to_cart' where user_name='$user' and unique_type_id='$unique_type_id'"))===True)
+            	{
+                 	header("Location:cart.php");
+                	 die();
+            	}
+           	 else
+            	{
+                 	header("Location:cart.php");
+                 	die();
+            	}
+	    }
       }
       else if(isset($_POST['plus']))
       {
-	    	     
+           $remaining_quantity=$con->query("select quantity from unique_product where unique_type_id='$unique_type_id'")->fetch_assoc()['quantity']; 
+	   $qty_in_cart=$con->query("select qty from cart where unique_type_id='$unique_type_id' and user_name='$user'")->fetch_assoc()['qty']; 
       }
       	      
 	      
