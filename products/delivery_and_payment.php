@@ -123,13 +123,13 @@
 	<div class="col">
   			<div class="form-group">
     				<label for="exampleFormControlTextarea1">Enter your Address</label>
-    				<textarea class="form-control" name="address" rows="8" cols="48"></textarea>
+    				<textarea class="form-control" name="address" rows="4" cols="48"></textarea>
   			</div>
 	</div>
 	<div class="col">
   			<div class="form-group">
     				<label for="exampleFormControlTextarea1">Enter total price</label>
-				<input type="number" class="form-control"  name="price" placeholder="Just enter the total price">
+				<input type="number" class="form-control"  name="price" placeholder="Just enter the total price" value="<?=$total_price?>" disabled>
   			</div>
 	</div>
 </div>
