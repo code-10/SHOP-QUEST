@@ -43,6 +43,30 @@ else
   header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&nolog=".$nolog."&&show=".$show);
         die();
 }
+
+
+
+
+
+	//find wishlisted items
+	$wishlist_display=$con->query("select * from wishlist where user_name='$user'");
+	$product_id_wish=Array();
+	while($display=$wishlist_display)
+	{
+		$product_id_wish[]=$display['product_id'];	
+	}
+	
+	$countwish=count($product_id);
+	$product_name_wish=Array();
+
+	for($i=0;$i<$n;$i++)
+	{
+		$product_name_wish[$i]=$con->query("select * from products where product_id='$product_id_wish[$i]'")->fetch_assoc('product_name');	
+	}
+
+	print_r($product_id_wish);
+	print_r($product_name_wish);
+
     
 ?>
 
@@ -89,5 +113,9 @@ else
 					</div>
 
 
+	<div class="row">
+		
+	</div>
+	
 
 <?php include_once '../footer.php';?>
