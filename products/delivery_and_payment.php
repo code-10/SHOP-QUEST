@@ -7,6 +7,12 @@
       $con=getCon();
       
       $user=$_SESSION['user_name'];
+
+      if(!(isset($_SESSION['user_name'])))
+      {
+            header("Location:../index.php");
+            die(); 
+      } 
       
 ?>
 
