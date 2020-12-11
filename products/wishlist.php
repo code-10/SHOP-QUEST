@@ -138,22 +138,19 @@ else
 	
 	
 
-	<div class="container">
-		<?php $c=0; for($i=0;$i<=$countwish/3;$i++) { ?>
+	<?php for($i=0;$i<$countwish;$i++) { ?>
 		<div class="row m-2 d-flex justify-content-center">
-			<?php for($j=0;$j<3;$j++) { ?>
 			<div class="col">
-				<p><?=$product_id_wish[$c]?>
-				<form method="POST" action="wishlist.php">
-					<input type="hidden" name="product_id_wish" value="<?=$product_id_wish[$i]?>" />
-					<button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="wish_trash" style="background-color:black;color:white;"></button> 
-				</form>
-				</p>	
+				<p>
+					<?=$product_name_wish[$i]?>
+					<form method="POST" action="wishlist.php">
+						<input type="hidden" name="product_id_wish" value="<?=$product_id_wish[$i]?>" />
+						<button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="wish_trash" style="background-color:black;color:white;"></button> 
+					</form>
+				</p>
 			</div>
-			<?php } ?>
 		</div>
-		<?php } ?>
-	</div>
+	<? } ?>
 	
 
 <?php include_once '../footer.php';?>
