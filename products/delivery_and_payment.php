@@ -112,7 +112,7 @@
     				<textarea class="form-control" name="address" rows="8" cols="48"></textarea>
   			</div>
 	</div>
-	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-6">
+	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 col-12">
   			<div class="form-group">
     				<label for="exampleFormControlTextarea1">Enter total price</label>
 				<input type="number" class="form-control"  name="price" placeholder="Just enter the total price">
