@@ -139,15 +139,15 @@ else
 	
 
 	<?php for($i=0;$i<$countwish;$i++) { ?>
-		<div class="row m-2 d-flex justify-content-center">
-			<div class="col">
-				<p>
-					<?=$product_name_wish[$i]?>
-					<form method="POST" action="wishlist.php">
-						<input type="hidden" name="product_id_wish" value="<?=$product_id_wish[$i]?>" />
-						<button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="wish_trash" style="background-color:black;color:white;"></button> 
-					</form>
-				</p>
+		<div class="row m-4 d-flex justify-content-center">
+			<div class="col-6">
+				<?=$product_name_wish[$i]?>
+			</div>
+			<div class="col-6">
+				<form method="POST" action="wishlist.php">
+					<input type="hidden" name="product_id_wish" value="<?=$product_id_wish[$i]?>" />
+					<button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="wish_trash" style="background-color:black;color:white;"></button> 
+				</form>
 			</div>
 		</div>
 	<? } ?>
