@@ -167,7 +167,7 @@
 		</div>
 	</div>
 
-<?php } 
+<?php } ?>
 	       
 	       
 <div class="row">
@@ -178,7 +178,7 @@
 			    <div class="col-3"></div>
 		    </div>		
 		
-	       } else { ?>
+	    <?php } else { ?>
 	<div class="text-center m-4">
 		<h5>Nothing in your cart yet</h5>
 	</div>
