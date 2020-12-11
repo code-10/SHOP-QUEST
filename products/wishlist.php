@@ -59,7 +59,7 @@ else if($product_description_page=="yes")
 }
 else
 {
-   header("Location: wishlist.php");
+   header("Location: ../index.php");
    die();
 }
 
