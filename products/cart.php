@@ -95,7 +95,7 @@
       else if(isset($_POST['plus']))
       {
            $remaining_quantity=$con->query("select quantity from unique_product where unique_type_id='$unique_type_id'")->fetch_assoc()['quantity']; 
-	   $remaining_quantity=min($remaining_quantity,4);
+	   $remaining_quantity=min(3,$remaining_quantity);
 	   $qty_in_cart=$con->query("select qty from cart where unique_type_id='$unique_type_id' and user_name='$user'")->fetch_assoc()['qty']; 
 	   $qty_to_cart=$qty_in_cart+1;   
 	      
