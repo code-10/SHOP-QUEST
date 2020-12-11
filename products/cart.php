@@ -140,7 +140,7 @@
 	
 	
 
-<?php for($i=0;$i<$n;$i++) { ?>	
+<?php if($n>0) { for($i=0;$i<$n;$i++) { ?>	
 	<div class="row m-4 d-flex justify-content-center">
 		<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 col-6">
 			<img src="..." class="figure-img img-fluid rounded float-right pro" alt="product" onerror="this.src='../assets/black.png';">
@@ -165,6 +165,10 @@
 				</div>
 			</div>
 		</div>
+	</div>
+<?php } } else { ?>
+	<div class="text-center">
+		<h5>Nothing in your cart yet</h5>
 	</div>
 <?php } ?>
 	
