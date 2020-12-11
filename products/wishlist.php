@@ -61,7 +61,8 @@ else
 
 	for($i=0;$i<$n;$i++)
 	{
-		$product_name_wish[$i]=$con->query("select product_name from products where product_id='$product_id_wish[$i]'")->fetch_assoc('product_name');	
+		$store_wish=$con->query("select product_name from products where product_id='$product_id_wish[$i]'")->fetch_assoc('product_name');	
+		$product_name_wish[$i]=$store_wish
 	}
 
 	print_r($product_id_wish);
