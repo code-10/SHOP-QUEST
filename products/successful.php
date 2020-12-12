@@ -133,9 +133,11 @@
 		</div>
 		<? } ?>	
 	<?php } else if($order_details=="yes") { ?>
-		<?php for($i=0;$i<$order_details_count;$i++) { ?>
-			<div class="row m-4">
-				<div class="card">
+	
+		<div class="row m-4 d-flex justify-content-center">
+			<?php for($i=0;$i<$order_details_count;$i++) { ?>
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-3">
+					<div class="card">
   					<div class="card-body">
     						<h5 class="card-title"><?=$product_name[$i]?></h5>
 						<p class="card-text"><?=$product_color[$i]?></p>
@@ -148,8 +150,9 @@
     						<a href="#" class="btn btn-primary btn-sm">Replace or Return</a>
   					</div>
 				</div>
-			</div>
-		<?php } ?>
+				</div>
+			<?php } ?>
+		</div>		
 	<?php } ?>
 													
           
