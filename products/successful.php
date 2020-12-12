@@ -25,19 +25,21 @@
 
 
 	//orders
-	$res=$con->query("select * from orders where user_name='$user'");
-	$order_id=Array();
-	$order_date=Array();
-	$total_price=Array();
-	while($ele=$res->fetch_assoc())
+	if($order_placed=="yes")
 	{
-		$order_id[]=$ele['order_id'];
-		$order_date[]=$ele['order_date'];
-		$total_price[]=$ele['total_price'];
+		$res=$con->query("select * from orders where user_name='$user'");
+		$order_id=Array();
+		$order_date=Array();
+		$total_price=Array();
+		while($ele=$res->fetch_assoc())
+		{
+			$order_id[]=$ele['order_id'];
+			$order_date[]=$ele['order_date'];
+			$total_price[]=$ele['total_price'];
+		}
+	
+		$count_orders=count($order_id);
 	}
-
-	$count_orders=count($order_id);
-
 
 
 
