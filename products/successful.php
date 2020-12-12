@@ -63,7 +63,7 @@
 
 		while($ele2=$res2->fetch_assoc())
 		{
-			$product_name[]=$ele2['product_id'];
+			$product_id[]=$ele2['product_id'];
 			$product_name[]=$ele2['product_name'];
 			$product_color[]=$ele2['color'];
 			$product_size[]=$ele2['size'];
@@ -72,6 +72,14 @@
 			$product_rating[]=$ele2['o_rating'];
 			$product_review[]=$ele2['review'];
 		}
+		
+		print_r($product_name); echo "<br>";
+		print_r($product_color); echo "<br>";
+		print_r($product_size); echo "<br>";
+		print_r($product_qty); echo "<br>";
+		print_r($product_total); echo "<br>";
+		print_r($product_rating); echo "<br>";
+		print_r($product_review); echo "<br>";
 
 		$order_details_count=count($product_id);
 		
