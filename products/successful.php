@@ -43,11 +43,11 @@
 
 	while($ele2=$res2->fetch_assoc())
 	{
-		$product_name[]=$ele['product_name'];
-		$product_color[]=$ele['color'];
-		$product_size[]=$ele['size'];
-		$product_qty[]=$ele['qty'];
-		$product_total_price[]=$ele['total_price'];
+		$product_name[]=$ele2['product_name'];
+		$product_color[]=$ele2['color'];
+		$product_size[]=$ele2['size'];
+		$product_qty[]=$ele2['qty'];
+		$product_total_price[]=$ele2['total_price'];
 	}
 
 	print_r($product_name);echo "<br>";
