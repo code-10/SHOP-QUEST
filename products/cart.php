@@ -114,8 +114,8 @@
 	   }
 	   else
 	   {
-		  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&show=".$show);
-                  die();
+		 header("Location:cart.php");
+                 die();
 	   }
 	   
       }
@@ -125,8 +125,8 @@
       else
       {
             $nolog=true;
-            header("Location:../index.php");
-            die(); 
+            header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&show=".$show);
+            die();
       } 
 ?>
 
