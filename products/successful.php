@@ -188,15 +188,15 @@
 						<?php } ?>
 						
 						<form method="POST" action="successful.php" class="form-inline input-group">
-							<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+							<button class="btn btn-primary btn-sm ml-2 mb-2" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     								Rate and review
   							</button>
-							<div class="collapse" id="collapseExample">
+							<div class="collapse mb-2" id="collapseExample">
   								<div class="card card-body">
     									<div class="input-group">
   										<input type="text" class="form-control" name="rating" placeholder="rating" required>
   										<div class="input-group-append">
-    											<button class="btn btn-outline-light btn-sm" type="submit">Submit Rating</button>
+    											<button class="btn btn-dark btn-sm" type="submit">Submit Rating</button>
   										</div>
 									</div>
   								</div>
