@@ -12,7 +12,7 @@
       $product_id=$_POST['product_id'];
       $product_name=$_POST['product_name'];
       $quantity=$_POST['quantity'];
-      $product_description_cart=$_POST['product_description_cart'];
+      $product_description_cart=$_POST['product_description_cart']; 
 
 ?>
 
