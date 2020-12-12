@@ -6,6 +6,7 @@
 
 	$user=$_SESSION['user_name'];
 	$order_id_detail=$_GET['order_id_detail'];
+	$order_details=$_GET['order_details'];
 
 	if(!(isset($_SESSION['user_name'])))
       {
@@ -37,31 +38,34 @@
 
 
 
-
-
-	//view details
-	$res2=$con->query("select p.product_name,up.color,up.size,oc.qty,oc.o_rating,oc.review,(oc.qty*up.price) as total_price from products as p,unique_product as up,order_contents as oc,orders as o where oc.order_id=o.order_id and oc.unique_type_id=up.unique_type_id and p.product_id=up.product_id and o.user_name='$user' and oc.order_id='$order_id_detail'");
+	//view details of order
+	if($order_details=="yes"){
 	
-	$product_name=Array();
-	$product_color=Array();
-	$product_size=Array();
-	$product_qty=Array();
-	$product_total_price=Array();
+		$res2=$con->query("select p.product_name,up.color,up.size,oc.qty,oc.o_rating,oc.review,(oc.qty*up.price) as total_price from products as p,unique_product as up,order_contents as oc,orders as o where oc.order_id=o.order_id and oc.unique_type_id=up.unique_type_id and p.product_id=up.product_id and o.user_name='$user' and oc.order_id='$order_id_detail'");
+	
+		$product_name=Array();
+		$product_color=Array();
+		$product_size=Array();
+		$product_qty=Array();
+		$product_total_price=Array();
 
-	while($ele2=$res2->fetch_assoc())
-	{
-		$product_name[]=$ele2['product_name'];
-		$product_color[]=$ele2['color'];
-		$product_size[]=$ele2['size'];
-		$product_qty[]=$ele2['qty'];
-		$product_total_price[]=$ele2['total_price'];
+		while($ele2=$res2->fetch_assoc())
+		{
+			$product_name[]=$ele2['product_name'];
+			$product_color[]=$ele2['color'];
+			$product_size[]=$ele2['size'];
+			$product_qty[]=$ele2['qty'];
+			$product_total_price[]=$ele2['total_price'];
+		}
+
+		print_r($product_name);echo "<br>";
+		print_r($product_color);echo "<br>";
+		print_r($product_size);echo "<br>";
+		print_r($product_qty);echo "<br>";
+		print_r($product_total_price);echo "<br>";
+		
 	}
-
-	print_r($product_name);echo "<br>";
-	print_r($product_color);echo "<br>";
-	print_r($product_size);echo "<br>";
-	print_r($product_qty);echo "<br>";
-	print_r($product_total_price);echo "<br>";
+	
 	
 
 
