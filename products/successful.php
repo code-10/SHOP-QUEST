@@ -188,7 +188,7 @@
   							</div>
 						</div>
 						
-    						<a href="#" class="btn btn-primary btn-sm m-2" style="display:block;">Replace or Return</a>
+    						<a href="#" class="btn btn-primary btn-sm m-2">Replace or Return</a>
   					</div>
 				</div>
 				</div>
