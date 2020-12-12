@@ -128,6 +128,8 @@
 	
 	$remaining_quantity=$con->query("select quantity from unique_product where unique_type_id='$unique_type_id[$show]'")->fetch_assoc()['quantity'];
 	
+	$product_description_cart=true;
+	
   ?>
   
   
@@ -245,6 +247,7 @@
 			    <div class="col-3"></div>
 		    </div>	
 			<?php } ?>
+			<input type="hidden" name="product_description_cart" value="<?=$product_description_cart?>" />
 			<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$show]?>" />
 			<input type="hidden" name="show" value="<?=$show?>" />
 			<input type="hidden" name="product_id" value="<?=$product_id?>" />
