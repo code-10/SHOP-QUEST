@@ -73,7 +73,7 @@
 			$product_review[]=$ele2['review'];
 		}
 
-		$order_details_count=count($product_name);
+		$order_details_count=count($product_id);
 		
 		
 	}
@@ -167,22 +167,22 @@
 	<?php } else if($order_details=="yes") { ?>
 	
 		<div class="row m-4 d-flex justify-content-center">
-			<?php for($i=0;$i<$order_details_count;$i++) { ?>
+			<?php for($j=0;$j<$order_details_count;$j++) { ?>
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-12">
 					<div class="card m-2">
   					<div class="card-body">
-    						<h5 class="card-title">Product name : <?=$product_name[$i]?></h5>
-						<p class="card-text">Product color : <?=$product_color[$i]?></p>
-						<p class="card-text">Product Specification : <?=$product_size[$i]?></p>
-    						<p class="card-text">Quantity : <?=$product_qty[$i]?></p>
-						<p class="card-text">Total price : <?=$product_total_price[$i]?></p>
-						<?php if(count($product_rating[$i])>0) { ?>
-							<p class="card-text">Product rating : <?=$product_rating[$i]?></p>
+    						<h5 class="card-title">Product name : <?=$product_name[$j]?></h5>
+						<p class="card-text">Product color : <?=$product_color[$j]?></p>
+						<p class="card-text">Product Specification : <?=$product_size[$j]?></p>
+    						<p class="card-text">Quantity : <?=$product_qty[$j]?></p>
+						<p class="card-text">Total price : <?=$product_total_price[$j]?></p>
+						<?php if(count($product_rating[$j])>0) { ?>
+							<p class="card-text">Product rating : <?=$product_rating[$j]?></p>
 						<?php } else { ?>
 							<p class="card-text">Product rating : You haven't given yet</p>
 						<?php } ?>
-						<?php if(count($product_review[$i])>0) { ?>
-							<p class="card-text">Product rating : <?=$product_review[$i]?></p>
+						<?php if(count($product_review[$j])>0) { ?>
+							<p class="card-text">Product rating : <?=$product_review[$j]?></p>
 						<?php } else { ?>
 							<p class="card-text">Product rating : You haven't given yet</p>
 						<?php } ?>
