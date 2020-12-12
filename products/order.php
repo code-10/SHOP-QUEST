@@ -16,7 +16,7 @@
 	     
 	    $con->query("insert into orders(user_name,total_price) values('$user','$final_price')");
 	    
-	    $order_id=$con->query("select order_id from orders where user_name='$user' and total_price='$final_price' order by order_date desc")->fetch_assoc('order_id');
+	    $order_id=$con->query("select order_id from orders where user_name='$user' and total_price='$final_price' order by order_date desc")->fetch_assoc()['order_id'];
 	    
 	      
 	    $unique_type_id[]=Array();
