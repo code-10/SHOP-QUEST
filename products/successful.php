@@ -136,16 +136,16 @@
 	
 		<div class="row m-4 d-flex justify-content-center">
 			<?php for($i=0;$i<$order_details_count;$i++) { ?>
-				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-3">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-8">
 					<div class="card">
   					<div class="card-body">
-    						<h5 class="card-title"><?=$product_name[$i]?></h5>
-						<p class="card-text"><?=$product_color[$i]?></p>
-						<p class="card-text"><?=$product_size[$i]?></p>
-    						<p class="card-text"><?=$product_qty[$i]?></p>
-						<p class="card-text"><?=$product_total_price[$i]?></p>
-						<p class="card-text"><?=$product_rating[$i]?></p>
-						<p class="card-text"><?=$product_review[$i]?></p>
+    						<h5 class="card-title">Product name : <?=$product_name[$i]?></h5>
+						<p class="card-text">Product color : <?=$product_color[$i]?></p>
+						<p class="card-text">Product Specification : <?=$product_size[$i]?></p>
+    						<p class="card-text">Quantity : <?=$product_qty[$i]?></p>
+						<p class="card-text">Total price : <?=$product_total_price[$i]?></p>
+						<p class="card-text">Product rating : <?=$product_rating[$i]?></p>
+						<p class="card-text">Product Review : <?=$product_review[$i]?></p>
 						<a href="#" class="btn btn-primary btn-sm">Rate and Review</a>
     						<a href="#" class="btn btn-primary btn-sm">Replace or Return</a>
   					</div>
