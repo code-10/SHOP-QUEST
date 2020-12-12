@@ -141,7 +141,7 @@ else
 	<?php for($i=0;$i<$countwish;$i++) { ?>
 		<div class="row m-4 d-flex justify-content-center">
 			<div class="col-6 text-right">
-				<?=$product_name_wish[$i]?>
+				<a href="product_description.php?product_id=<?=$product_id_wish[$i]?>&&product_name=<?=$product_name_wish[$i]?>&&show=0" style="color:black;"><?=$product_name_wish[$i]?></a>
 			</div>
 			<div class="col-6">
 				<form method="POST" action="wishlist.php">
