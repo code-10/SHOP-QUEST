@@ -22,6 +22,7 @@
 		    $order_id_store[]=$count['order_id'];
 	    
 	    $i_order_id=$order_id_store[0];
+	    echo $i_order_id;  
 	      
 	    $unique_type_id[]=Array();
 	    $quantity=Array();
@@ -39,7 +40,7 @@
 	    	$con->query("insert into order_contents(order_id,unique_type_id,quantity) values('$i_order_id','$unique_type_id[$i]','$quantity[$i]')");
 	    }
 	    
-	    $con->query("delete from cart where user_name = '$user'");
+	    //$con->query("delete from cart where user_name = '$user'");
 	      
 	    header("Location:successful.php");
             die();       
