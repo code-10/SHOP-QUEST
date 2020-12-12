@@ -40,7 +40,7 @@
 	    
 	    $con->query("delete from cart where user_name = '$user'");
 	      
-	    header("Location:successful.php");
+	    header("Location:successful.php?order_placed=yes");
             die();       
       }
 
