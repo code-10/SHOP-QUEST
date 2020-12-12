@@ -48,6 +48,8 @@
 		$product_size=Array();
 		$product_qty=Array();
 		$product_total_price=Array();
+		$product_rating=Array();
+		$product_review=Array();
 
 		while($ele2=$res2->fetch_assoc())
 		{
@@ -56,13 +58,12 @@
 			$product_size[]=$ele2['size'];
 			$product_qty[]=$ele2['qty'];
 			$product_total_price[]=$ele2['total_price'];
+			$product_rating[]=$ele2['o_rating'];
+			$product_review[]=$ele2['review'];
 		}
 
-		print_r($product_name);echo "<br>";
-		print_r($product_color);echo "<br>";
-		print_r($product_size);echo "<br>";
-		print_r($product_qty);echo "<br>";
-		print_r($product_total_price);echo "<br>";
+		$order_details_count=count($product_name);
+		
 		
 	}
 	
@@ -132,7 +133,23 @@
 		</div>
 		<? } ?>	
 	<?php } else if($order_details=="yes") { ?>
-		
+		<?php for($i=0;$i<$order_details_count;$i++) { ?>
+			<div class="row m-4">
+				<div class="card">
+  					<div class="card-body">
+    						<h5 class="card-title"><?=$product_name?></h5>
+						<p class="card-text"><?=$product_color?></p>
+						<p class="card-text"><?=$product_size?></p>
+    						<p class="card-text"><?=$product_qty?></p>
+						<p class="card-text"><?=$product_total_price?></p>
+						<p class="card-text"><?=$product_rating?></p>
+						<p class="card-text"><?=$product_review?></p>
+    						<a href="#" class="btn btn-primary btn-sm">Replace or Return</a>
+  					</div>
+				</div>
+			</div>
+		<?php } ?>
 	<?php } ?>
+													
           
  <?php include_once '../footer.php'; ?>
