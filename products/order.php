@@ -16,13 +16,13 @@
 	     
 	    $con->query("insert into orders(user_name,total_price) values('$user','$final_price')");
 	    
-	    $order_id=$con->query("select order_id from orders where user_name='$user' order by order_date desc");
+	    $order_id=$con->query("select * from orders where user_name='$user' order by order_date desc");
 	    $order_id_store=Array();
 	    while($count=$order_id->fetch_assoc())
 		    $order_id_store[]=$count['order_id'];
 	    
 	    $i_order_id=$order_id_store[0];
-	    echo $i_order_id;  
+	    var_dump($i_order_id);  
 	      
 	    $unique_type_id[]=Array();
 	    $quantity=Array();
