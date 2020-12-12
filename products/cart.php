@@ -66,7 +66,7 @@
 
       if(isset($_SESSION['user_name']))
       {
-      else if(isset($_POST['trash']))
+      if(isset($_POST['trash']))
       {
 	    if(($con->query("delete from cart where user_name='$user' and unique_type_id='$unique_type_id'"))===True)
             {
