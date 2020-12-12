@@ -35,7 +35,7 @@
 	      
 	    for($i=0;$i<$c;$i++)
 	    {
-	    	$con->query("insert into order_contents(order_id,unique_type_id,quantity) values('$i_order_id','$unique_type_id[$i]','$quantity[$i]')");
+	    	$con->query("insert into order_contents(order_id,unique_type_id,qty) values('$i_order_id','$unique_type_id[$i]','$quantity[$i]')");
 	    }
 	    
 	    //$con->query("delete from cart where user_name = '$user'");
