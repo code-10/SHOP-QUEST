@@ -78,13 +78,13 @@
 		<?php for($i=0;$i<$count_orders;$i++) { ?>
 		<div class="row m-4 d-flex justify-content-center">
 			<div class="col-3 text-center">
-				<p><?=$order_id[$i]?></p>
+				<p style="margin-top=0;margin-bottom:0;"><?=$order_id[$i]?></p>
 			</div>
 			<div class="col-3 text-center">
-				<p><?=$order_date[$i]?>
+				<p style="margin-top=0;margin-bottom:0;"><?=$order_date[$i]?>
 			</div>
 			<div class="col-3 text-center">
-				<p><?=$total_price[$i]?></p>
+				<p style="margin-top=0;margin-bottom:0;"><?=$total_price[$i]?></p>
 			</div>
 			<div class="col-3 text-center">
 				<a href="#"><button class="btn btn-dark">View details</button></a>
