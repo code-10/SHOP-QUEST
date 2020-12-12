@@ -184,7 +184,14 @@
   						</button>
 						<div class="collapse m-2" id="collapse<?=$j?>">
   							<div class="card card-body">
-								
+								<form method="POST" action="successful.php" class="form-inline input-group d-flex justify-content-center" style="padding:0.60rem!important">
+								<div class="input-group mb-3">
+  									<input type="number" class="form-control" placeholder="Rating" aria-label="Rating" aria-describedby="basic-addon2">
+  										<div class="input-group-append">
+    											<button class="btn btn-dark" type="submit">Submit rating</button>
+  										</div>
+								</div>
+								</form>
   							</div>
 						</div>
 						
