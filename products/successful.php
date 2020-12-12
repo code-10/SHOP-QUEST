@@ -137,14 +137,14 @@
 			<div class="row m-4">
 				<div class="card">
   					<div class="card-body">
-    						<h5 class="card-title"><?=$product_name?></h5>
-						<p class="card-text"><?=$product_color?></p>
-						<p class="card-text"><?=$product_size?></p>
-    						<p class="card-text"><?=$product_qty?></p>
-						<p class="card-text"><?=$product_total_price?></p>
-						<p class="card-text"><?=$product_rating?></p>
-						<p class="card-text"><?=$product_review?></p>
-						<a href="#" class="btn btn-primary btn-sm">rate and Review</a>
+    						<h5 class="card-title"><?=$product_name[$i]?></h5>
+						<p class="card-text"><?=$product_color[$i]?></p>
+						<p class="card-text"><?=$product_size[$i]?></p>
+    						<p class="card-text"><?=$product_qty[$i]?></p>
+						<p class="card-text"><?=$product_total_price[$i]?></p>
+						<p class="card-text"><?=$product_rating[$i]?></p>
+						<p class="card-text"><?=$product_review[$i]?></p>
+						<a href="#" class="btn btn-primary btn-sm">Rate and Review</a>
     						<a href="#" class="btn btn-primary btn-sm">Replace or Return</a>
   					</div>
 				</div>
