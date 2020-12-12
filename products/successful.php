@@ -25,7 +25,7 @@
 
 
 	//orders
-	if($order_placed=="yes")
+	if($your_orders=="yes")
 	{
 		$res=$con->query("select * from orders where user_name='$user'");
 		$order_id=Array();
