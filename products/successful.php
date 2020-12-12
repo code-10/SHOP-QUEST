@@ -77,14 +77,17 @@
         <?php } else if($your_orders=="yes") { ?>
 		<?php for($i=0;$i<$count_orders;$i++) { ?>
 		<div class="row m-4 d-flex justify-content-center">
-			<div class="col-4 text-center">
-				<a href="#" style="color:black;"><?=$order_id[$i]?></a>
+			<div class="col-3 text-center">
+				<p><?=$order_id[$i]?></p>
 			</div>
-			<div class="col-4 text-center">
-				<a href="#" style="color:black;"><?=$order_date[$i]?></a>
+			<div class="col-3 text-center">
+				<p><?=$order_date[$i]?>
 			</div>
-			<div class="col-4 text-center">
-				<a href="#" style="color:black;"><?=$total_price[$i]?></a>
+			<div class="col-3 text-center">
+				<p><?=$total_price[$i]?></p>
+			</div>
+			<div class="col-3 text-center">
+				<a href="#"><button class="btn btn-dark">View details</button></a>
 			</div>
 		</div>
 		<? } ?>	
