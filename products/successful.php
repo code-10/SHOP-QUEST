@@ -5,6 +5,7 @@
 	$con=getCon();
 
 	$user=$_SESSION['user_name'];
+	$order_id_detail=$_GET['order_id_detail'];
 
 	if(!(isset($_SESSION['user_name'])))
       {
@@ -14,6 +15,7 @@
 
 	$order_placed=$_GET['order_placed'];
 	$your_orders=$_GET['your_orders'];
+	$order_details=$_GET['order_details'];
 
 
 	$res=$con->query("select * from orders where user_name='$user'");
@@ -28,6 +30,35 @@
 	}
 
 	$count_orders=count($order_id);
+
+
+
+	$res2=$con->query("select p.product_name,up.color,up.size,oc.qty,oc.o_rating,oc.review,(oc.qty*up.price) as total_price from products as p,unique_product as up,order_contents as oc,orders as o where oc.order_id=o.order_id and oc.unique_type_id=up.unique_type_id and p.product_id=up.product_id and o.user_name='$user'");
+	
+	$product_name=Array();
+	$product_color=Array();
+	$product_size=Array();
+	$product_qty=Array();
+	$product_total_price=Array();
+
+	while($ele2=$res2->fetch_assoc())
+	{
+		$product_name[]=$ele['product_name'];
+		$product_color[]=$ele['color'];
+		$product_size[]=$ele['size'];
+		$product_qty[]=$ele['qty'];
+		$product_total_price[]=$ele['total_price'];
+	}
+
+	print_r($product_name);echo "<br>";
+	print_r($product_color);echo "<br>";
+	print_r($product_size);echo "<br>";
+	print_r($product_qty);echo "<br>";
+	print_r($product_total_price);echo "<br>";
+	
+
+	
+	
 
 ?>
 
@@ -87,10 +118,12 @@
 				<p style="margin-top=0;margin-bottom:0;"><?=$total_price[$i]?></p>
 			</div>
 			<div class="col-3 text-center">
-				<a href="#"><button class="btn btn-dark">View details</button></a>
+				<a href="successful.php?order_details=yes&&order_id_detail=<?=$order_id[$i]?>"><button class="btn btn-dark">View details</button></a>
 			</div>
 		</div>
 		<? } ?>	
+	<?php } else if($order_details=="yes") { ?>
+		
 	<?php } ?>
           
  <?php include_once '../footer.php'; ?>
