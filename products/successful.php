@@ -179,12 +179,10 @@
 						<p class="card-text">Product rating : <?=$product_rating[$j]?></p>
 						<p class="card-text">Product rating : <?=$product_review[$j]?></p>
 						
-						<a href="#" class="btn btn-primary btn-sm m-2">Rate and review</a>
-						
-						<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse<?=$j?>" aria-expanded="false" aria-controls="collapseExample">
+						<button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#collapse<?=$j?>" aria-expanded="false" aria-controls="collapseExample">
     							Rate and Review
   						</button>
-						<div class="collapse" id="collapse<?=$j?>">
+						<div class="collapse m-2" id="collapse<?=$j?>">
   							<div class="card card-body">
 								<p>fill</p>
   							</div>
