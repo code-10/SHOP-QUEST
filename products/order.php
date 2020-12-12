@@ -7,12 +7,15 @@
       	$con=getCon();
       
       	$user=$_SESSION['user_name'];
-      
+      	$final_price=$_POST['final_price'];
 
 
 	
       if(isset($_POST['done']))
       {
+	     
+	    $con->query("insert into orders(total_price) values('$final_price')");
+	    
 	    header("Location:successful.php");
             die();       
       }
