@@ -79,6 +79,11 @@
 	}
 
 
+	if(isset($_SESSION['submit_rating']))
+	{
+		$rating=$_POST['rating'];
+		
+	}	
 
 
 
@@ -186,9 +191,9 @@
   							<div class="card card-body">
 								<form method="POST" action="successful.php" class="form-inline input-group d-flex justify-content-center">
 								<div class="input-group mb-3">
-  									<input type="number" class="form-control" placeholder="Rating" aria-label="Rating" aria-describedby="basic-addon2">
+  									<input type="number" class="form-control" name="rating" placeholder="Rating" aria-label="Rating" aria-describedby="basic-addon2" required>
   										<div class="input-group-append">
-    											<button class="btn btn-dark" type="submit">Submit rating</button>
+    											<button class="btn btn-dark" name="submit_rating" type="submit">Submit rating</button>
   										</div>
 								</div>
 								</form>
