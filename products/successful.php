@@ -87,8 +87,7 @@
 	//replace or return
 	if($replaceorreturn=="yes")
 	{
-		header("Location:successful.php");
-                die();	
+		
 	}
 	
 	
