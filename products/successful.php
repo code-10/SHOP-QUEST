@@ -177,14 +177,14 @@
     						<p class="card-text">Quantity : <?=$product_qty[$j]?></p>
 						<p class="card-text">Total price : <?=$product_total_price[$j]?></p>
 						<p class="card-text">Product rating : <?=$product_rating[$j]?></p>
-						<p class="card-text">Product rating : <?=$product_review[$j]?></p>
+						<p class="card-text">Product review : <?=$product_review[$j]?></p>
 						
 						<button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#collapse<?=$j?>" aria-expanded="false" aria-controls="collapseExample">
     							Rate and Review
   						</button>
 						<div class="collapse m-2" id="collapse<?=$j?>">
   							<div class="card card-body">
-								<p>fill</p>
+								
   							</div>
 						</div>
 						
