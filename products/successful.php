@@ -33,7 +33,14 @@
 
 
 
-	$res2=$con->query("select p.product_name,up.color,up.size,oc.qty,oc.o_rating,oc.review,(oc.qty*up.price) as total_price from products as p,unique_product as up,order_contents as oc,orders as o where oc.order_id=o.order_id and oc.unique_type_id=up.unique_type_id and p.product_id=up.product_id and o.user_name='$user'");
+
+
+
+
+
+
+	//view details
+	$res2=$con->query("select p.product_name,up.color,up.size,oc.qty,oc.o_rating,oc.review,(oc.qty*up.price) as total_price from products as p,unique_product as up,order_contents as oc,orders as o where oc.order_id=o.order_id and oc.unique_type_id=up.unique_type_id and p.product_id=up.product_id and o.user_name='$user' and oc.order_id='$order_id_detail'");
 	
 	$product_name=Array();
 	$product_color=Array();
@@ -57,8 +64,6 @@
 	print_r($product_total_price);echo "<br>";
 	
 
-	
-	
 
 ?>
 
