@@ -144,8 +144,16 @@
 						<p class="card-text">Product Specification : <?=$product_size[$i]?></p>
     						<p class="card-text">Quantity : <?=$product_qty[$i]?></p>
 						<p class="card-text">Total price : <?=$product_total_price[$i]?></p>
-						<p class="card-text">Product rating : <?=$product_rating[$i]?></p>
-						<p class="card-text">Product Review : <?=$product_review[$i]?></p>
+						<?php if(count($product_rating[$i])>0)) { ?>
+							<p class="card-text">Product rating : <?=$product_rating[$i]?></p>
+						<?php } else { ?>
+							<p class="card-text">Product rating : You haven't given yet</p>
+						<?php } ?>
+						<?php if(count($product_review[$i])>0)) { ?>
+							<p class="card-text">Product rating : <?=$product_review[$i]?></p>
+						<?php } else { ?>
+							<p class="card-text">Product rating : You haven't given yet</p>
+						<?php } ?>
 						<a href="#" class="btn btn-primary btn-sm m-2">Rate and Review</a>
     						<a href="#" class="btn btn-primary btn-sm m-2">Replace or Return</a>
   					</div>
