@@ -16,6 +16,26 @@
 	     
 	    $con->query("insert into orders(user_name,total_price) values('$user','$final_price')");
 	    
+	    $order_id=$con->query("select order_id from orders where user_name='$user' and total_price='$final_price' order by order_date desc")->fetch_assoc('order_id');
+	    
+	      
+	    $unique_type_id[]=Array();
+	    $quantity=Array();
+	    $cart_no=$con->query("select * from cart where user_name='$user'");
+	    while($ele=$cart_no->fetch_assoc())
+	    {
+		$unique_type_id[]=$ele['unique_type_id'];
+		$quantity[]=$ele['qty'];
+	    }
+	    $c=count($unique_type_id);
+		    
+	      
+	    for($i=0;$i<$c;$i++)
+	    {
+	    	$con->query("insert into order_contents(order_id,unique_type_id,quantity) values('$order_id','$unique_type_id[$i]','$quantity[$i]')");
+	    }
+	    
+	      
 	    header("Location:successful.php");
             die();       
       }
