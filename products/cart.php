@@ -114,17 +114,13 @@
 	   }
 	   else
 	   {
-		   header("Location:cart.php");
-                   die();
+		  header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&show=".$show);
+                  die();
 	   }
 	   
       }
       	      
-	      
-	      
-	      
-	      
-	      
+	    
       }
       else
       {
