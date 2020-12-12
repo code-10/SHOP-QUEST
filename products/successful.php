@@ -144,6 +144,7 @@
 						<p class="card-text"><?=$product_total_price?></p>
 						<p class="card-text"><?=$product_rating?></p>
 						<p class="card-text"><?=$product_review?></p>
+						<a href="#" class="btn btn-primary btn-sm">rate and Review</a>
     						<a href="#" class="btn btn-primary btn-sm">Replace or Return</a>
   					</div>
 				</div>
