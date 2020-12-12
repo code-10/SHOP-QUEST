@@ -279,8 +279,8 @@
 	<div class="text-center m-4">
 		<h5>Nothing in your cart yet</h5>
 	</div>
-	<div class="row">
-				    <a href="../index.php" class="btn btn-dark btn-block mb-4" type="submit" >Let me shop</a>
+	<div class="row d-flex justify-content-center">
+				    <a href="../index.php" class="btn btn-dark mb-4">Let me shop</a>
 			   
 		    </div>
 <?php } ?>
