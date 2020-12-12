@@ -27,7 +27,7 @@
 		$total_price[]=$ele['total_price'];
 	}
 
-	$count_order=count($order_id);
+	$count_orders=count($order_id);
 
 ?>
 
