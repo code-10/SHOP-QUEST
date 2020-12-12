@@ -1,6 +1,8 @@
 <?php 
 	include_once '../header.php'; session_start(); 
 	
+	$user=$_SESSION['user_name'];
+
 	if(!(isset($_SESSION['user_name'])))
       {
             header("Location:../index.php");
@@ -8,6 +10,21 @@
       } 
 
 	$order_placed=$_GET['order_placed'];
+	$your_orders=$_GET['your_orders'];
+
+
+	$res=$con->query("select * from orders where user_name='$user'");
+	$order_id=Array();
+	$order_date=Array();
+	$total_price=Array();
+	while($ele=$res->fetch_assoc())
+	{
+		$order_id[]=$ele['order_id'];
+		$order_date[]=$ele['order_date'];
+		$total_price[]=$ele['total_price'];
+	}
+
+	$count_order=count($order_id);
 
 ?>
 
@@ -54,10 +71,20 @@
 	
 	<?php if($order_placed=="yes") { ?>
 		<div class="container"><h4 class="text-center m-4 alert alert-success">Your Order is successful, Thank you.</h4></div>
-        <?php } else { ?>
-	
-		
-	
+        <?php } else if($your_orders=="yes") { ?>
+		<?php for($i=0;$i<$count_orders;$i++) { ?>
+		<div class="row m-4 d-flex justify-content-center">
+			<div class="col-4 text-center">
+				<a href="#" style="color:black;"><?=$order_id[$i]?></a>
+			</div>
+			<div class="col-4 text-center">
+				<a href="#" style="color:black;"><?=$order_date[$i]?></a>
+			</div>
+			<div class="col-4 text-center">
+				<a href="#" style="color:black;"><?=$total_price[$i]?></a>
+			</div>
+		</div>
+		<? } ?>	
 	<?php } ?>
           
  <?php include_once '../footer.php'; ?>
