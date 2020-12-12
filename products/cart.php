@@ -12,7 +12,7 @@
       $product_id=$_POST['product_id'];
       $product_name=$_POST['product_name'];
       $quantity=$_POST['quantity'];
-      $product_description_page=$_GET['product_description_page'];
+      $product_description_cart=$_GET['product_description_cart'];
 
 ?>
 
@@ -50,7 +50,7 @@
       
       } 
       }
-      else if($product_description_page=="yes")
+      else if($product_description_cart)
       {
   		$nolog=true;
   		header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&nolog=".$nolog."&&show=".$show);
