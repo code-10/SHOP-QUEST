@@ -7,6 +7,8 @@
             die(); 
       } 
 
+	$order_placed=$_GET['order_placed'];
+
 ?>
 
 <body>
@@ -50,8 +52,12 @@
 						</div>
 					</div>
 	
+	<?php if($order_placed=="yes") { ?>
+		<div class="container"><h4 class="text-center m-4 alert alert-success">Your Order is successful, Thank you.</h4></div>
+        <?php } else { ?>
 	
-	<div class="container"><h4 class="text-center m-4 alert alert-success">Your Order is successful, Thank you.</h4></div>
-          
+		
+	
+	<?php } ?>
           
  <?php include_once '../footer.php'; ?>
