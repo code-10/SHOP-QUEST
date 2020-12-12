@@ -14,7 +14,7 @@
       if(isset($_POST['done']))
       {
 	     
-	    $con->query("insert into orders(total_price) values('$final_price')");
+	    $con->query("insert into orders(user_name,total_price) values('$user','$final_price')");
 	    
 	    header("Location:successful.php");
             die();       
