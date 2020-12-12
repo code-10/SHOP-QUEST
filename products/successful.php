@@ -5,20 +5,26 @@
 	$con=getCon();
 
 	$user=$_SESSION['user_name'];
+	
+
+	//differentiate and inputs
 	$order_id_detail=$_GET['order_id_detail'];
 	$order_details=$_GET['order_details'];
-
-	if(!(isset($_SESSION['user_name'])))
-      {
-            header("Location:../index.php");
-            die(); 
-      } 
-
 	$order_placed=$_GET['order_placed'];
 	$your_orders=$_GET['your_orders'];
-	$order_details=$_GET['order_details'];
+	$rateandreview=$_GET['rateandreview'];
+	$replaceorreturn=$_GET['replaceorreturn'];
+		
+
+	if(!(isset($_SESSION['user_name'])))
+      	{
+            header("Location:../index.php");
+            die(); 
+      	} 
 
 
+
+	//orders
 	$res=$con->query("select * from orders where user_name='$user'");
 	$order_id=Array();
 	$order_date=Array();
@@ -65,6 +71,24 @@
 		$order_details_count=count($product_name);
 		
 		
+	}
+
+
+
+
+
+	//rate and review
+		
+
+
+
+
+
+	//replace or return
+	if($replaceorreturn=="yes")
+	{
+		header("Location:successful.php");
+                die();	
 	}
 	
 	
@@ -154,13 +178,19 @@
 						<?php } else { ?>
 							<p class="card-text">Product rating : You haven't given yet</p>
 						<?php } ?>
-						<a href="#" class="btn btn-primary btn-sm m-2">Rate and Review</a>
-    						<a href="#" class="btn btn-primary btn-sm m-2">Replace or Return</a>
+						<a href="successful.php?rateandreview=yes" class="btn btn-primary btn-sm m-2">Rate and Review</a>
+    						<a href="successful.php?replaceorreturn=yes" class="btn btn-primary btn-sm m-2">Replace or Return</a>
   					</div>
 				</div>
 				</div>
 			<?php } ?>
-		</div>		
+		</div>	
+	<?php } else if($rateandreview=="yes") { ?>
+		
+	
+	<?php } else if($replaceorreturn=="yes") { ?>
+	
+	
 	<?php } ?>
 													
           
