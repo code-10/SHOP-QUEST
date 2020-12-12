@@ -14,6 +14,7 @@
 	$your_orders=$_GET['your_orders'];
 	$rateandreview=$_GET['rateandreview'];
 	$replaceorreturn=$_GET['replaceorreturn'];
+	$product_id_rar=$_GET['product_id_rar'];
 		
 
 	if(!(isset($_SESSION['user_name'])))
@@ -49,8 +50,9 @@
 	//view details of order
 	if($order_details=="yes"){
 	
-		$res2=$con->query("select p.product_name,up.color,up.size,oc.qty,oc.o_rating,oc.review,(oc.qty*up.price) as total_price from products as p,unique_product as up,order_contents as oc,orders as o where oc.order_id=o.order_id and oc.unique_type_id=up.unique_type_id and p.product_id=up.product_id and o.user_name='$user' and oc.order_id='$order_id_detail'");
+		$res2=$con->query("select p.product_name,p.product_id,up.color,up.size,oc.qty,oc.o_rating,oc.review,(oc.qty*up.price) as total_price from products as p,unique_product as up,order_contents as oc,orders as o where oc.order_id=o.order_id and oc.unique_type_id=up.unique_type_id and p.product_id=up.product_id and o.user_name='$user' and oc.order_id='$order_id_detail'");
 	
+		$product_id=Array();
 		$product_name=Array();
 		$product_color=Array();
 		$product_size=Array();
@@ -61,6 +63,7 @@
 
 		while($ele2=$res2->fetch_assoc())
 		{
+			$product_name[]=$ele2['product_id'];
 			$product_name[]=$ele2['product_name'];
 			$product_color[]=$ele2['color'];
 			$product_size[]=$ele2['size'];
@@ -80,7 +83,11 @@
 
 
 	//rate and review
-		
+	/*if($rateandreview=="yes")
+	{
+		$previous_sum=$con->query("select rating_sum from products where product_id='$product_id_rar'")->fetch_assoc['rating_sum'];
+		$new_sum=$previous_sum+
+	}*/
 
 
 
@@ -179,7 +186,23 @@
 						<?php } else { ?>
 							<p class="card-text">Product rating : You haven't given yet</p>
 						<?php } ?>
-						<a href="successful.php?rateandreview=yes" class="btn btn-primary btn-sm m-2">Rate and Review</a>
+						
+						<form method="POST" action="successful.php" class="form-inline input-group">
+							<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    								Rate and review
+  							</button>
+							<div class="collapse" id="collapseExample">
+  								<div class="card card-body">
+    									<div class="input-group">
+  										<input type="text" class="form-control" name="rating" placeholder="rating" required>
+  										<div class="input-group-append">
+    											<button class="btn btn-outline-light btn-sm" type="submit">Submit Rating</button>
+  										</div>
+									</div>
+  								</div>
+							</div>
+						</form>
+						
     						<a href="#" class="btn btn-primary btn-sm m-2">Replace or Return</a>
   					</div>
 				</div>
