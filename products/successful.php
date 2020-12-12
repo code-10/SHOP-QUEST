@@ -136,8 +136,8 @@
 	
 		<div class="row m-4 d-flex justify-content-center">
 			<?php for($i=0;$i<$order_details_count;$i++) { ?>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-8">
-					<div class="card">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-12">
+					<div class="card m-2">
   					<div class="card-body">
     						<h5 class="card-title">Product name : <?=$product_name[$i]?></h5>
 						<p class="card-text">Product color : <?=$product_color[$i]?></p>
@@ -146,8 +146,8 @@
 						<p class="card-text">Total price : <?=$product_total_price[$i]?></p>
 						<p class="card-text">Product rating : <?=$product_rating[$i]?></p>
 						<p class="card-text">Product Review : <?=$product_review[$i]?></p>
-						<a href="#" class="btn btn-primary btn-sm">Rate and Review</a>
-    						<a href="#" class="btn btn-primary btn-sm">Replace or Return</a>
+						<a href="#" class="btn btn-primary btn-sm m-2">Rate and Review</a>
+    						<a href="#" class="btn btn-primary btn-sm m-2">Replace or Return</a>
   					</div>
 				</div>
 				</div>
