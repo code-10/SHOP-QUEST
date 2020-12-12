@@ -16,11 +16,12 @@
 	     
 	    $con->query("insert into orders(user_name,total_price) values('$user','$final_price')");
 	    
-	    $order_id=$con->query("select order_id from orders where user_name='$user' and total_price='$final_price' order by order_date desc");
+	    $order_id=$con->query("select order_id from orders where user_name='$user' order by order_date desc");
 	    $order_id_store=Array();
 	    while($count=$order_id->fetch_assoc())
 		    $order_id_store[]=$count['order_id'];
 	    
+	    $i_order_id=$order_id_store[0];
 	      
 	    $unique_type_id[]=Array();
 	    $quantity=Array();
@@ -30,14 +31,15 @@
 		$unique_type_id[]=$ele['unique_type_id'];
 		$quantity[]=$ele['qty'];
 	    }
+	      
 	    $c=count($unique_type_id);
-		    
 	      
 	    for($i=0;$i<$c;$i++)
 	    {
-	    	$con->query("insert into order_contents(order_id,unique_type_id,quantity) values('$order_id_store[0]','$unique_type_id[$i]','$quantity[$i]')");
+	    	$con->query("insert into order_contents(order_id,unique_type_id,quantity) values('$i_order_id','$unique_type_id[$i]','$quantity[$i]')");
 	    }
 	    
+	    $con->query("delete from cart where user_name = '$user'");
 	      
 	    header("Location:successful.php");
             die();       
