@@ -85,10 +85,10 @@
 
 
 	//replace or return
-	if($replaceorreturn=="yes")
+	/*if($replaceorreturn=="yes")
 	{
 		
-	}
+	}*/
 	
 	
 
