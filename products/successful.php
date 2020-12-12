@@ -178,7 +178,7 @@
 							<p class="card-text">Product rating : You haven't given yet</p>
 						<?php } ?>
 						<a href="successful.php?rateandreview=yes" class="btn btn-primary btn-sm m-2">Rate and Review</a>
-    						<a href="successful.php?replaceorreturn=yes" class="btn btn-primary btn-sm m-2">Replace or Return</a>
+    						<a href="#" class="btn btn-primary btn-sm m-2">Replace or Return</a>
   					</div>
 				</div>
 				</div>
