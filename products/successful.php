@@ -186,12 +186,6 @@
 				</div>
 			<?php } ?>
 		</div>	
-	<?php } else if($rateandreview=="yes") { ?>
-		
-	
-	<?php } else if($replaceorreturn=="yes") { ?>
-	
-	
 	<?php } ?>
 													
           
