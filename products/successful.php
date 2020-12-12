@@ -1,6 +1,9 @@
 <?php 
 	include_once '../header.php'; session_start(); 
-	
+	include_once '../libraries/chocolates.php';
+
+	$con=getCon();
+
 	$user=$_SESSION['user_name'];
 
 	if(!(isset($_SESSION['user_name'])))
