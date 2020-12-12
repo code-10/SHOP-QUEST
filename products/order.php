@@ -216,7 +216,7 @@
 	<div class="col">
   			<div class="form-group">
     				<label for="exampleFormControlTextarea1">Enter your Address</label>
-    				<textarea class="form-control" name="address" rows="4" cols="48"></textarea>
+    				<textarea class="form-control" name="address" rows="4" cols="48" required></textarea>
   			</div>
 	</div>
 	<div class="col">
