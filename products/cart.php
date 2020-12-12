@@ -48,6 +48,24 @@
             }
       
       } 
+      }
+      else
+      {
+		 $nolog=true;
+            header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&show=".$show);
+            die();      
+      }
+	      
+	
+	
+
+
+	
+
+
+
+      if(isset($_SESSION['user_name']))
+      {
       else if(isset($_POST['trash']))
       {
 	    if(($con->query("delete from cart where user_name='$user' and unique_type_id='$unique_type_id'"))===True)
@@ -124,7 +142,7 @@
       else
       {
             $nolog=true;
-            header("Location:product_description.php?product_id=".$product_id."&&product_name=".$product_name."&&show=".$show);
+            header("Location:../index.php");
             die();
       } 
 ?>
