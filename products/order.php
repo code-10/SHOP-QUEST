@@ -39,11 +39,11 @@
 	    }
 	    
 	    
-	    for($i=0;$i<$c;$i++)
+	    for($j=0;$j<$c;$j++)
 	    {
-		$quantity_up=$con->query("select quantity from unique_product where unique_type_id='$unique_type_id[$i]'")->fetch_assoc['quantity'];   
-		$updated_quantity=$quantity_up-$quantity[$i];
-		$con->query("update unique_product set quantity='$updated_quantity' where unique_type_id]='$unique_type_id[$i]'");
+		$quantity_up=$con->query("select quantity from unique_product where unique_type_id='$unique_type_id[$j]'")->fetch_assoc['quantity'];   
+		$updated_quantity=$quantity_up-$quantity[$j];
+		$con->query("update unique_product set quantity='$updated_quantity' where unique_type_id='$unique_type_id[$j]'");
 	    }  
 	      
 	    $con->query("delete from cart where user_name = '$user'");
