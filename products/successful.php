@@ -87,12 +87,13 @@
 	//rate and review
 	if($rate)
 	{
+		echo $rating;
+			echo $unique_type_id;
+			echo $order_id_rate;
 		if(isset($_SESSION['submit_rating']))
 		{
 			$rating=$_POST['rating'];
-			echo $rating;
-			echo $unique_type_id;
-			echo $order_id_rate;
+			
 			header("Location:successful.php?order_details=yes&&order_id_detail=".$order_id_detail);
 			die();
 		}
