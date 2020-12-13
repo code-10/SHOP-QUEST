@@ -127,17 +127,22 @@
         <?php } else if($your_orders=="yes") { ?>
 		<?php for($i=0;$i<$count_orders;$i++) { ?>
 		<div class="row m-4 d-flex justify-content-center">
-			<div class="col-3 text-center">
+			<div class="col-2 text-center">
 				<p style="margin-top=0;margin-bottom:0;"><?=$order_id[$i]?></p>
 			</div>
-			<div class="col-3 text-center">
+			<div class="col-2 text-center">
 				<p style="margin-top=0;margin-bottom:0;"><?=$order_date[$i]?>
 			</div>
-			<div class="col-3 text-center">
+			<div class="col-2 text-center">
 				<p style="margin-top=0;margin-bottom:0;"><?=$total_price[$i]?></p>
 			</div>
-			<div class="col-3 text-center">
+			<div class="col-2 text-center">
 				<a href="successful.php?order_details=yes&&order_id_detail=<?=$order_id[$i]?>"><button class="btn btn-dark">View details</button></a>
+			</div>
+			<div class="col-2 text-center">
+				<div class="spinner-grow text-primary" role="status">
+  					<span class="sr-only">Loading...</span>
+				</div>
 			</div>
 		</div>
 		<? } ?>	
