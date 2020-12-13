@@ -162,18 +162,19 @@
 						<div class="collapse m-2" id="collapse<?=$j?>">
   							<div class="card card-body">
 								<form method="POST" action="rateandreview.php" class="form-inline input-group d-flex justify-content-center">
-								<div class="form-group mb-3">
+									<p>Rating</p>
+								<div class="form-group m-2 col-12">
 									<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$j]?>" />
 									<input type="hidden" name="order_id_rate" value="<?=$order_id_detail?>" />
 									<label for="rating">Rating</label>
-  									<input type="number" class="form-control" name="rating" placeholder="Rating" aria-label="Rating" aria-describedby="basic-addon2" required>
+  									<input type="number" class="form-control" name="rating" placeholder="Your Rating" aria-label="Rating" aria-describedby="basic-addon2" required>
 								</div>
-								<div class="form-group mb-3">
-    									<label for="review">Review</label>
-    									<textarea class="form-control" id="review" rows="3" name="review"></textarea>
+									<p>Review</p>
+								<div class="form-group m-2 col-12">
+    									<textarea class="form-control" id="review" rows="3"  cols="100" placeholder="Your review" name="review"></textarea>
   								</div>
 									
-								<button class="btn btn-dark" name="submit_rating_and_review" type="submit">Submit rating</button>
+								<button class="btn btn-dark" name="submit_rating_and_review" type="submit">Submit</button>
 								</form>
   							</div>
 						</div>
