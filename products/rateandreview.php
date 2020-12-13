@@ -29,7 +29,8 @@
 
     if(isset($_POST['submit_rating_and_review']))
     {
-        
+     	$con->query("update order_contents set o_rating='$rating' AND review='$review' where unique_type_id='$unique_type_id' AND order_id='$order_id_rate'");   
+	   
     }
     
   
