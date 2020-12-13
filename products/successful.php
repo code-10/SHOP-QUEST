@@ -12,7 +12,6 @@
 	$order_details=$_GET['order_details'];
 	$order_placed=$_GET['order_placed'];
 	$your_orders=$_GET['your_orders'];
-	$rateandreview=$_GET['rateandreview'];
 	$replaceorreturn=$_GET['replaceorreturn'];
 	$product_id_rar=$_GET['product_id_rar'];
 		
@@ -87,6 +86,7 @@
 		$rating=$_POST['rating'];
 		echo $rating;
 		header("Location:successful.php?order_details=yes&&order_id_detail=".$order_id_detail);
+		die();
 	}
 
 
