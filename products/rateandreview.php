@@ -7,11 +7,19 @@
 
 	$user=$_SESSION['user_name'];
     
-	echo "in";
-
     $unique_type_id=$_POST['unique_type_id'];
     $order_id_rate=$_POST['order_id_rate'];
-    
+    $rating=$_POST['rating']; 
+    $review=$_POST['review'];
+
+	
+	echo $unique_type_id;echo "<br>";
+	echo $order_id_rate;echo "<br>";
+	echo $rating;echo "<br>";
+	echo $review;echo "<br>";
+	
+
+
     if(!(isset($_SESSION['user_name'])))
     {
         header("Location:../index.php");
@@ -22,7 +30,7 @@
         echo "<br>";
         echo $unique_type_id;    
 
-    if(isset($_POST['submit_rating']))
+    if(isset($_POST['submit_rating_and_review']))
     {
         
     }
