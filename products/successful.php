@@ -161,7 +161,7 @@
   						</button>
 						<div class="collapse m-2" id="collapse<?=$j?>">
   							<div class="card card-body" style="padding:8px;">
-								<form method="POST" action="rateandreview.php" class="form-inline input-group d-flex justify-content-center">
+								<form method="POST" action="rateandreview.php" class="input-group d-flex justify-content-center">
 									<p>Rating</p>
 								<div class="form-group m-2 col-12">
 									<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$j]?>" />
