@@ -7,6 +7,8 @@
 
 	$user=$_SESSION['user_name'];
     
+	echo "in";
+
     $unique_type_id=$_POST['unique_type_id'];
     $order_id_rate=$_POST['order_id_rate'];
     
