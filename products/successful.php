@@ -79,20 +79,15 @@
 	}
 
 
-	if(isset($_SESSION['submit_rating']))
-	{
-		$rating=$_POST['rating'];
-		
-	}	
-
 
 
 	//rate and review
-	/*if($rateandreview=="yes")
+	if(isset($_SESSION['submit_rating']))
 	{
-		$previous_sum=$con->query("select rating_sum from products where product_id='$product_id_rar'")->fetch_assoc['rating_sum'];
-		$new_sum=$previous_sum+
-	}*/
+		$rating=$_POST['rating'];
+		echo $rating;
+		header("Location:successful.php?order_details=yes&&order_id_detail=".$order_id_detail);
+	}
 
 
 
@@ -191,6 +186,7 @@
   							<div class="card card-body">
 								<form method="POST" action="successful.php" class="form-inline input-group d-flex justify-content-center">
 								<div class="input-group mb-3">
+									<input type="hidden" name="order_id_detail" value="<?=$order_id_detail?>" />
   									<input type="number" class="form-control" name="rating" placeholder="Rating" aria-label="Rating" aria-describedby="basic-addon2" required>
   										<div class="input-group-append">
     											<button class="btn btn-dark" name="submit_rating" type="submit">Submit rating</button>
