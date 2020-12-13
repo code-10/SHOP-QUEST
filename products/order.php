@@ -38,7 +38,17 @@
 	    	$con->query("insert into order_contents(order_id,unique_type_id,qty) values('$i_order_id','$unique_type_id[$i]','$quantity[$i]')");
 	    }
 	    
+	    
+	    for($i=0;$i<$c;$i++)
+	    {
+		$quantity_up=$con->query("select quantity from unique_product where unique_type_id='$unique_type_id[$i]'")->fetch_assoc['quantity'];   
+		$updated_quantity=$quantity_up-$quantity[$i];
+		$con->query("update unique_product set quantity='$updated_quantity' where unique_type_id]='$unique_type_id[$i]'");
+	    }  
+	      
 	    $con->query("delete from cart where user_name = '$user'");
+	      
+	   
 	      
 	    header("Location:successful.php?order_placed=yes");
             die();       
