@@ -164,11 +164,9 @@
 								<form method="POST" action="rateandreview.php" class="form-inline input-group d-flex justify-content-center">
 								<div class="input-group mb-3">
 									<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$i]?>" />
-									<input type="hidden" name="order_id_rate" value="<?=$order_id_rate?>" />
-  									<input type="number" class="form-control" name="rating" placeholder="Rating" aria-label="Rating" aria-describedby="basic-addon2" required>
-  										<div class="input-group-append">
-    											<button class="btn btn-dark" name="submit_rating" type="submit">Submit rating</button>
-  										</div>
+									<input type="hidden" name="order_id_rate" value="<?=$order_id_detail?>" />
+  									<input type="number" class="form-control" name="rating" placeholder="Rating" aria-label="Rating" aria-describedby="basic-addon2" required>	
+    									<button class="btn btn-dark" name="submit_rating" type="submit">Submit rating</button>
 								</div>
 								</form>
   							</div>
