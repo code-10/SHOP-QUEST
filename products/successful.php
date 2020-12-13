@@ -12,10 +12,6 @@
 	$order_details=$_GET['order_details'];
 	$order_placed=$_GET['order_placed'];
 	$your_orders=$_GET['your_orders'];
-	$replaceorreturn=$_GET['replaceorreturn'];
-	$product_id_rar=$_GET['product_id_rar'];
-	$rate=$_POST['rate'];
-	$order_id_rate=$_POST['order_id_rate'];
 		
 
 	if(!(isset($_SESSION['user_name'])))
@@ -81,35 +77,6 @@
 		
 	}
 
-
-
-
-	//rate and review
-	if($rate)
-	{
-		echo $rating;
-			echo $unique_type_id;
-			echo $order_id_rate;
-		if(isset($_SESSION['submit_rating']))
-		{
-			$rating=$_POST['rating'];
-			
-			header("Location:successful.php?order_details=yes&&order_id_detail=".$order_id_detail);
-			die();
-		}
-	}
-
-
-
-
-
-	//replace or return
-	/*if($replaceorreturn=="yes")
-	{
-		
-	}*/
-	
-	
 
 
 ?>
@@ -194,7 +161,7 @@
   						</button>
 						<div class="collapse m-2" id="collapse<?=$j?>">
   							<div class="card card-body">
-								<form method="POST" action="successful.php" class="form-inline input-group d-flex justify-content-center">
+								<form method="POST" action="rateandreview.php" class="form-inline input-group d-flex justify-content-center">
 								<div class="input-group mb-3">
 									<?php $rate=true; ?>
 									<input type="hidden" name="rate" value="<?=$rate?>" />
