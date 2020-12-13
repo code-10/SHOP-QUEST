@@ -49,7 +49,7 @@
 	//view details of order
 	if($order_details=="yes"){
 	
-		$res2=$con->query("select p.product_name,p.product_id,up.color,up.size,oc.qty,oc.o_rating,oc.review,(oc.qty*up.price) as total_price from products as p,unique_product as up,order_contents as oc,orders as o where oc.order_id=o.order_id and oc.unique_type_id=up.unique_type_id and p.product_id=up.product_id and o.user_name='$user' and oc.order_id='$order_id_detail'");
+		$res2=$con->query("select p.product_name,up.unique_type_id,p.product_id,up.color,up.size,oc.qty,oc.o_rating,oc.review,(oc.qty*up.price) as total_price from products as p,unique_product as up,order_contents as oc,orders as o where oc.order_id=o.order_id and oc.unique_type_id=up.unique_type_id and p.product_id=up.product_id and o.user_name='$user' and oc.order_id='$order_id_detail'");
 	
 		$product_id=Array();
 		$product_name=Array();
@@ -59,6 +59,7 @@
 		$product_total_price=Array();
 		$product_rating=Array();
 		$product_review=Array();
+		$unique_type_id=Array();
 
 		while($ele2=$res2->fetch_assoc())
 		{
@@ -70,6 +71,7 @@
 			$product_total_price[]=$ele2['total_price'];
 			$product_rating[]=$ele2['o_rating'];
 			$product_review[]=$ele2['review'];
+			$unique_type_id[]=$ele2['unique_type_id'];
 		}
 
 		$order_details_count=count($product_id);
@@ -81,7 +83,7 @@
 
 
 	//rate and review
-	if(isset($_SESSION['submit_rating']))
+	if(isset($_SESSION['submit_rating<?=$unique_type_id?>']))
 	{
 		$rating=$_POST['rating'];
 		echo $rating;
@@ -189,7 +191,7 @@
 									<input type="hidden" name="order_id_detail" value="<?=$order_id_detail?>" />
   									<input type="number" class="form-control" name="rating" placeholder="Rating" aria-label="Rating" aria-describedby="basic-addon2" required>
   										<div class="input-group-append">
-    											<button class="btn btn-dark" name="submit_rating" type="submit">Submit rating</button>
+    											<button class="btn btn-dark" name="submit_rating<?=$unique_type_id[$i]?>" type="submit">Submit rating</button>
   										</div>
 								</div>
 								</form>
