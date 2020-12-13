@@ -166,7 +166,6 @@
 								<div class="form-group m-2 col-12">
 									<input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$j]?>" />
 									<input type="hidden" name="order_id_rate" value="<?=$order_id_detail?>" />
-									<label for="rating">Rating</label>
   									<input type="number" class="form-control" name="rating" placeholder="Your Rating" aria-label="Rating" aria-describedby="basic-addon2" required>
 								</div>
 									<p>Review</p>
