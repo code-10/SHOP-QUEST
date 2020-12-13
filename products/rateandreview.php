@@ -25,10 +25,7 @@
         header("Location:../index.php");
         die(); 
     } 
-    
-	echo $order_id_rate;
-        echo "<br>";
-        echo $unique_type_id;    
+     
 
     if(isset($_POST['submit_rating_and_review']))
     {
