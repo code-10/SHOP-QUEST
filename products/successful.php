@@ -160,7 +160,7 @@
     							Rate and Review
   						</button>
 						<div class="collapse m-2" id="collapse<?=$j?>">
-  							<div class="card card-body">
+  							<div class="card card-body" style="padding:8px;">
 								<form method="POST" action="rateandreview.php" class="form-inline input-group d-flex justify-content-center">
 									<p>Rating</p>
 								<div class="form-group m-2 col-12">
