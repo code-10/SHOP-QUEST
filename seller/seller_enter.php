@@ -12,7 +12,7 @@
       	} 
 
 
-	$con=getCon();
+		$con=getCon();
 
       
       $seller_enter_main=$_GET['seller_enter_main'];
@@ -63,6 +63,47 @@
             		header("Location:seller_enter.php");
                 	die();
         		}
+		}
+		
+
+		if($my_sell_requests=="yes")
+		{
+				$seller=$_SESSION['user_name'];
+  				$con=getCon();
+  				$sql="select * from store_info where seller_user_name='$seller'";
+  
+  				$res=$con->query($sql);
+  
+  				$category=array();
+ 	 			$subcategory=array();
+  				$product_name=array();
+  				$product_brand=array();
+  				$product_description=array();
+  				$price=array();
+  				$quantity=array();
+  				$color=array();
+  				$size=array();
+  				$approved=array();
+  				$storeinfoid=array();
+	
+  
+  				while($ele = $res->fetch_assoc())
+  				{
+      					$category[]=$ele['category'];
+      					$subcategory[]=$ele['sub_category'];
+      					$product_name[]=$ele['product_name'];
+      					$product_brand[]=$ele['product_brand'];
+      					$product_description[]=$ele['product_description'];
+      					$price[]=$ele['price'];
+      					$quantity[]=$ele['quantity'];
+      					$color[]=$ele['color'];
+      					$size[]=$ele['size'];
+      					$approved[]=$ele['approved'];
+      					$storeinfoid[]=$ele['store_info_id'];
+  				}
+  
+  				$n=count($product_name);
+	
 		}
       
 
@@ -158,6 +199,32 @@
       
       <?php } else if($my_sell_requests=="yes") { ?>
       
+			<? for($k=0;$k<$n;$k++) { ?>
+				<div class="card m-4">
+  					<div class="card-header">Product name : <?=$product_name[$k]?></div>
+  					<div class="card-body">
+    					<p class="card-text">category : <?=$category[$k]?></p>
+    					<p class="card-text">sub category : <?=$sub_category[$k]?></p>
+    					<p class="card-text">product brand  : <?=$product_brand[$k]?></p>
+    					<p class="card-text">product description : <?=$product_description[$k]?></p>
+    					<p class="card-text">price : <?=$price[$k]?></p>
+    					<p class="card-text">color : <?=$color[$k]?></p>
+    					<p class="card-text">size  : <?=$size[$k]?></p>
+    					<p class="card-text">quantity : <?=$quantity[$k]?></p>
+    
+    				<? if($approved[$k]) { ?>
+    					<h6 class="card-text">Approved&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
+    				<? } else { ?>
+    					<h6 class="card-text">waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
+    				<? } ?>
+    
+    				<a href="#" class="btn btn-primary">Edit</a>
+    				<a href="#" class="btn btn-primary">delete</a>
+
+				</div>
+			</div>  
+ 		 <? } ?>
+	
       <?php } ?>
   
 
