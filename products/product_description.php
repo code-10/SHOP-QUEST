@@ -14,11 +14,11 @@
 	if(rowExists('most_viewed','product_id',$product_id)){
 		
 		$notv=$con->query("select number_of_times_viewed from most_viewed")->fetch_assoc['number_of_times_viewed'];
-		echo "already viewed";
-		echo $notv;
-		$notvc=$notv;
-		$notvc=$notvc+1;
-		$con->query("update most_viewed set number_of_times_viewed='$notvc' where product_id='$product_id'");
+		$notvc=Array();
+		while($getcount=$notv->fetch_assoc())
+			$notvc[]=$getcount['number_of_times_viewed'];
+		$notvcc=$notvc[0]+1;
+		$con->query("update most_viewed set number_of_times_viewed='$notvcc' where product_id='$product_id'");
 		
 	}
 	else{
