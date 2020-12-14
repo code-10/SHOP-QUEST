@@ -14,8 +14,9 @@
 	if(rowExists('most_viewed','product_id',$product_id)){
 		
 		$notv=$con->query("select number_of_times_viewed from most_viewed")->fetch_assoc['number_of_times_viewed'];
-		$notv=$notv+1;
-		$con->query("update most_viewed set number_of_times_viewed='$notv' where product_id='$product_id'");
+		$notvc=$notv;
+		$notvc=$notvc+1;
+		$con->query("update most_viewed set number_of_times_viewed='$notvc' where product_id='$product_id'");
 		
 	}
 	else
