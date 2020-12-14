@@ -69,7 +69,7 @@
 		
 		
 		<!--main card carousel-->
-		<div id="main-card" class="carousel slide" data-ride="carousel">
+		<!--<div id="main-card" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
 				<div class="carousel-item active" data-interval="10000"> <img src="assets/caro1.jpg" class="img-fluid" alt="..." style="width:100%;"> </div>
 				<div class="carousel-item" data-interval="2000"> <img src="assets/caro2.jpg" class="img-fluid" alt="..." style="width:100%;"> </div>
@@ -77,7 +77,7 @@
 			</div>
 			<a class="carousel-control-prev" href="#main-card" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
 			<a class="carousel-control-next" href="#main-card" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
-		</div>
+		</div>-->
           
           
           
