@@ -33,7 +33,7 @@
   
     <div class="text-center m-4">
       <p class="lead">
-          You agree to the terms and conditions of selling on this website
+          You agree to all terms and conditions of selling on ShopQuest.
       </p>
       <a href="seller_enter.php"><button type="button" class="btn btn-success">Confirm</button></a>
     </div>
