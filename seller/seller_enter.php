@@ -81,6 +81,7 @@
 		  			<label for="category">Category</label>
                   	<div class="form-group">
     					<select class="form-control" id="category" name="cat">
+							<option value="notselected">Choose...</option>
                               	<?php for($i=0;$i<$c;$i++) { ?>
 					      			<option value="<?=$categories[$i]?>"><?=$i+1?> - <?=$categories[$i]?></option>
 				      			<?php } ?>
@@ -89,6 +90,7 @@
 		  			<label for="sub_category">Sub_Category</label>
                   	<div class="form-group">
     						<select class="form-control" id="category" name="subcat">
+								<option value="notselected">Choose...</option>
                               	<?php for($j=0;$j<$sc;$j++) { ?>
 					      			<option value="<?=$sub_categories[$j]?>"><?=$j+1?> - <?=$sub_categories[$j]?></option>
 								<?php } ?>
