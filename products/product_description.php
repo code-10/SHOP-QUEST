@@ -242,7 +242,7 @@
 				    Quantity
 			    	    <div class="form-group">
     						<select class="form-control" id="qty" name="quantity">
-							<?php $loop=min($remaining_quantity,4); for($i=1;$i<$loop;$i++) { ?>
+							<?php $loop=min($remaining_quantity,4); for($i=1;$i<=$loop;$i++) { ?>
       								<option value="<?=$i?>"><?=$i?></option>
 					    		<?php } ?>
     						</select>
