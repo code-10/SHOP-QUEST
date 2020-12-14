@@ -12,6 +12,7 @@
       	} 
 
 
+	$con=getCon();
 
       
       $seller_enter_main=$_GET['seller_enter_main'];
