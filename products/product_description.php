@@ -14,13 +14,19 @@
 	if(rowExists('most_viewed','product_id',$product_id)){
 		
 		$notv=$con->query("select number_of_times_viewed from most_viewed")->fetch_assoc['number_of_times_viewed'];
+		echo "already viewed";
+		echo $notv;
 		$notvc=$notv;
 		$notvc=$notvc+1;
 		$con->query("update most_viewed set number_of_times_viewed='$notvc' where product_id='$product_id'");
 		
 	}
-	else
+	else{
+		
 		$con->query("insert into most_viewed(product_id,number_of_times_viewed) values('$product_id',1)");
+		echo "not viewed before";
+		
+	}
 	//most viewed	
 	
 
