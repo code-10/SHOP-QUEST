@@ -181,7 +181,7 @@
 			<?php $c=1; for($i=0;$i<4;$i++) { ?>
 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-3">
 					<div class="card text-center">
-						<a href='#' class="stretched-link">
+						<a href="products/product_description.php?product_id=<?=$mw_product_id[$i]?>&&product_name=<?=$mw_product_name[$i]?>&&show=0" class="stretched-link">
   						<img class="card-img-top" src="..." alt="Category" onerror="this.src='assets/black.png';">
   							<div class="text-center">
     								<p class="card-title mob" style="color:black;"><?=$mw_product_name[$i];?></p>
