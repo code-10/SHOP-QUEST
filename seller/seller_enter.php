@@ -36,6 +36,34 @@
 
       $c=count($categories);
       $sc=count($sub_categories);
+
+
+
+		if($isset($_POST['sell_a_product']))
+		{
+				$approved=0;
+      			$seller=$_SESSION['user_name'];
+      			$category=$_POST['cat'];
+      			$subcategory=$_POST['subcat'];
+      			$product=$_POST['pro'];
+      			$description=$_POST['desc'];
+      			$quantity=$_POST['qty'];
+      			$brand=$_POST['brand'];
+      			$size=$_POST['size'];
+      			$color=$_POST['color'];
+      			$price=$_POST['price'];
+			
+        		if(($con->query("insert into store_info(seller_user_name,category,sub_category,product_name,product_brand,product_description,price,quantity,color,size,approved) values('".mysqli_real_escape_string($con,$seller)."','".mysqli_real_escape_string($con,$category)."','".mysqli_real_escape_string($con,$subcategory)."','".mysqli_real_escape_string($con,$product)."','".mysqli_real_escape_string($con,$brand)."','".mysqli_real_escape_string($con,$description)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."','".mysqli_real_escape_string($con,$approved)."')"))===True){
+                
+                	header("Location:seller_enter.php?seller_enter_main=yes");
+                	die();
+        		}
+        		else
+        		{
+            		header("Location:seller_enter.php");
+                	die();
+        		}
+		}
       
 
 ?>
@@ -98,15 +126,15 @@
   		   			</div>
 					<div class="form-group">
         				<label for="inputpro">product</label>
-        					<input type="text" class="form-control" id="inputpro" placeholder="product" name="pro" required>
+        					<input type="text" class="form-control" id="inputpro" placeholder="product name" name="pro" required>
     		   		</div>
     		   		<div class="form-group">
         				<label for="inputdesc">Description</label>
-        					<input type="text" class="form-control" id="inputdesc" placeholder="desc" name="desc" required>
+        					<input type="text" class="form-control" id="inputdesc" placeholder="product description" name="desc" required>
     				</div>
     				<div class="form-group">
         				<label for="inputbrand">brand</label>
-        					<input type="text" class="form-control" id="inputbrand" placeholder="brand" name="brand" required>
+        					<input type="text" class="form-control" id="inputbrand" placeholder="product brand" name="brand" required>
     				</div>
     				<div class="form-group">
         				<label for="inputsize">size</label>
@@ -122,7 +150,7 @@
     				</div>
     				<div class="form-group">
         				<label for="inputqty">quantity</label>
-        					<input type="number" class="form-control" id="inputqty" placeholder="qty" name="qty" required>
+        					<input type="number" class="form-control" id="inputqty" placeholder="quantity" name="qty" required>
     				</div>
     				
 					<button type="submit" name="sell_a_product" class="btn btn-dark">Sell product</button>
