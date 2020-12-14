@@ -232,7 +232,7 @@
 	<div class="col">
   			<div class="form-group">
     				<label for="exampleFormControlTextarea1">Enter total price</label>
-				<input type="number" class="form-control"  name="price" placeholder="Just enter the total price" value="<?=$total_price?>" disabled>
+				<input type="number" class="form-control"  name="price" placeholder="Just enter the total price" value="<?=$final_price?>" disabled>
   			</div>
 	</div>
 </div>
