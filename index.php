@@ -151,6 +151,48 @@
 			<?php $c++; } ?>
 		</div>
 			
+			
+		
+			
+			
+			
+			
+			
+			
+		<!--most viewed-->
+		<div id="most_viewed">
+		<h5 class="text-center">Most viewed</h5>
+		
+		<?php
+			
+			$most_viewed=$con->query("select p.product_name,p.product_id,m.number_of_times_viewed from products as p,most_viewed as m where p.product_id=m.product_id order by m.number_of_times_viewed desc limit 4");
+			$mw_product_id=Array();
+			$mw_product_name=Array();
+			while($mw=$most_viewed->fetch_assoc())
+			{
+				$mw_product_id[]=$mw['product_id'];
+				$mw_product_name[]=$mw['product_name'];
+			}
+			
+		?>
+        
+			
+		<div class="row m-4 d-flex justify-content-center">
+			<?php $c=1; for($i=0;$i<4;$i++) { ?>
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-3">
+					<div class="card text-center">
+						<a href='#' class="stretched-link">
+  						<img class="card-img-top" src="..." alt="Category" onerror="this.src='assets/black.png';">
+  							<div class="text-center">
+    								<p class="card-title mob" style="color:black;"><?=$mw_product_name[$i];?></p>
+  							</div>
+						</a>
+					</div>
+				</div>
+			<?php $c++; } ?>
+		</div>
+			
+		
 	</body>
 		
 		
