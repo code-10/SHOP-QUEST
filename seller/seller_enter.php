@@ -142,10 +142,11 @@
       	    <div class="text-center m-4">
             	<a class="btn btn-primary" href="seller_enter.php?sell_a_product=yes" role="button">Sell a product</a>
             	<a class="btn btn-primary" href="seller_enter.php?my_sell_requests=yes" role="button">My sell requests</a>
-	    </div>
+	   	 	</div>
 	
       <?php } else if($sell_a_product=="yes") { ?>
-      
+      		
+            <a class="btn btn-primary m-4" href="seller_enter.php?my_sell_requests=yes" role="button">My sell requests</a>
             <form class="jumbotron m-4" method="POST" action="seller_enter.php">
 		  			<label for="category">Category</label>
                   	<div class="form-group">
@@ -198,7 +199,9 @@
     		</form>
       
       <?php } else if($my_sell_requests=="yes") { ?>
-      
+      		
+            <a class="btn btn-primary m-4" href="seller_enter.php?sell_a_product=yes" role="button">Sell a product</a>
+	
 			<? for($k=0;$k<$n;$k++) { ?>
 				<div class="card m-4">
   					<div class="card-header">Product name : <?=$product_name[$k]?></div>
