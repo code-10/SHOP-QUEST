@@ -24,7 +24,6 @@
 	else{
 		
 		$con->query("insert into most_viewed(product_id,number_of_times_viewed) values('$product_id',1)");
-		echo "not viewed before";
 		
 	}
 	//most viewed	
