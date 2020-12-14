@@ -1,12 +1,23 @@
 <?php include_once '../header.php'; ?>
 
 <?php
-
+	
     session_start();
     include_once '../libraries/chocolates.php';
+	$con=getCon();
     
     $product_id=$_GET['product_id'];
     $product_name=$_GET['product_name'];
+
+
+	//most viewed
+	$con->query("insert into most_viewed(product_id) values('$product_id')");
+	$notv=$con->query("select number_of_times_viewed from most_viewed")->fetch_assoc['number_of_times_viewed'];
+	$notv=$notv+1;
+	$con->query("update most_viewed set number_of_times_viewed='$notv' where product_id='$product_id'");
+	//most viewed	
+	
+
     $itsprice=$_GET['price'];
     $show = $_GET['show'];
   
