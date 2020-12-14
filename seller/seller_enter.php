@@ -39,7 +39,7 @@
 
 
 
-		if($isset($_POST['sell_a_product']))
+		if(isset($_POST['sell_a_product']))
 		{
 				$approved=0;
       			$seller=$_SESSION['user_name'];
