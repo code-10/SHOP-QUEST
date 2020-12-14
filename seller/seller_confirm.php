@@ -31,7 +31,7 @@
   
   
   
-    <div class="">
+    <div class="text-center m-4">
       <p class="lead">
           You agree to the terms and conditions of selling on this website
       </p>
