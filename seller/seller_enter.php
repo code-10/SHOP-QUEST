@@ -69,10 +69,12 @@
 
 
       <?php if($seller_enter_main=="yes") { ?>
-      
-            <a class="btn btn-primary" href="seller_enter.php?sell_a_product=yes" role="button">Sell a product</a>
-            <a class="btn btn-primary" href="seller_enter.php?my_sell_requests=yes" role="button">My sell requests</a>
-      
+	
+      	    <div class="text-center m-4">
+            	<a class="btn btn-primary" href="seller_enter.php?sell_a_product=yes" role="button">Sell a product</a>
+            	<a class="btn btn-primary" href="seller_enter.php?my_sell_requests=yes" role="button">My sell requests</a>
+	    </div>
+	
       <?php } else if($sell_a_product=="yes") { ?>
       
             <form class="jumbotron m-4" method="POST" action="seller_enter.php">
