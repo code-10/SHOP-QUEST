@@ -34,11 +34,12 @@
         <div class="text-center">
             <?php if(isset($_SESSION['user_name'])&&$_SESSION['user_name']=="root"){
                         
-                            header("Location:login/admin_enter.php");
+                            header("Location:../admin/admin_enter.php?admin_enter_main=yes");
                             die();
                         
                     }
                     else if(isset($_SESSION['user_name'])){ 
+                      
                         $user=$_SESSION['user_name'];
                         $user[0]=strtoupper($user[0]);
                         
