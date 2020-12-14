@@ -8,6 +8,7 @@
             die(); 
       	} 
 
+      $con=getCon();
 
       
       $user=$_SESSION['user_name'];
