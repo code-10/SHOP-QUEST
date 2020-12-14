@@ -13,7 +13,7 @@
 	//most viewed
 	if(rowExists('most_viewed','product_id',$product_id)){
 		
-		$notv=$con->query("select number_of_times_viewed from most_viewed")->fetch_assoc['number_of_times_viewed'];
+		$notv=$con->query("select number_of_times_viewed from most_viewed");
 		$notvc=Array();
 		while($getcount=$notv->fetch_assoc())
 			$notvc[]=$getcount['number_of_times_viewed'];
