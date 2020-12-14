@@ -11,10 +11,15 @@
 
 
 	//most viewed
-	$con->query("insert into most_viewed(product_id) values('$product_id')");
-	$notv=$con->query("select number_of_times_viewed from most_viewed")->fetch_assoc['number_of_times_viewed'];
-	$notv=$notv+1;
-	$con->query("update most_viewed set number_of_times_viewed='$notv' where product_id='$product_id'");
+	if(rowExists('most_viewed','product_id',$product_id)){
+		
+		$notv=$con->query("select number_of_times_viewed from most_viewed")->fetch_assoc['number_of_times_viewed'];
+		$notv=$notv+1;
+		$con->query("update most_viewed set number_of_times_viewed='$notv' where product_id='$product_id'");
+		
+	}
+	else
+		$con->query("insert into most_viewed(product_id,number_of_times_viewed) values('$product_id',1)");
 	//most viewed	
 	
 
