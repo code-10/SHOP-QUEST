@@ -8,6 +8,24 @@
             die(); 
       	} 
 
+
+      
+      $user=$_SESSION['user_name'];
+      $confirm=$_GET['confirm'];
+      if($confirm=="yes"){
+      if(($con->query("insert into seller(seller_user_name,seller_email,seller_password) select user_name,email,password from user where user_name='$user'"))===True)
+      {
+            $newuser=true;
+            header("Location:seller_enter.php");
+            die();
+      }
+      else
+      {
+            header("Location:../profile.php");
+            die();
+      }
+      }
+
 ?>
 
 <body>
@@ -43,7 +61,7 @@
       <p class="lead">
           You agree to all terms and conditions of selling on ShopQuest.
       </p>
-      <a href="seller_enter.php"><button type="button" class="btn btn-success">Confirm</button></a>
+      <a href="seller_confirm.php?confirm=yes"><button type="button" class="btn btn-success">Confirm</button></a>
     </div>
   
   
