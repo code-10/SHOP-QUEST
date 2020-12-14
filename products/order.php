@@ -41,8 +41,11 @@
 	    
 	    for($j=0;$j<$c;$j++)
 	    {
-		$quantity_up=$con->query("select quantity from unique_product where unique_type_id='$unique_type_id[$j]'")->fetch_assoc['quantity'];   
-		$updated_quantity=$quantity_up-$quantity[$j];
+		$quantity_up=$con->query("select quantity from unique_product where unique_type_id='$unique_type_id[$j]'");  
+		$quantity_ans=Array();
+		while($out=$quantity_up->fetch_assoc())
+			$quantity_ans[]=$out['quantity'];
+		$updated_quantity=$quantity_ans[0]-$quantity[$j];
 		$con->query("update unique_product set quantity='$updated_quantity' where unique_type_id='$unique_type_id[$j]'");
 	    }  
 	      
