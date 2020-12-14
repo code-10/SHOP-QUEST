@@ -80,7 +80,7 @@
             <form class="jumbotron m-4" method="POST" action="seller_enter.php">
 		  			<label for="category">Category</label>
                   	<div class="form-group">
-    					<select class="form-control" id="category" name="category">
+    					<select class="form-control" id="category" name="cat">
                               	<?php for($i=0;$i<$c;$i++) { ?>
 					      			<option value="<?=$categories[$i]?>"><?=$i+1?> - <?=$categories[$i]?></option>
 				      			<?php } ?>
@@ -88,7 +88,7 @@
   		  			</div>
 		  			<label for="sub_category">Sub_Category</label>
                   	<div class="form-group">
-    						<select class="form-control" id="category" name="sub_category">
+    						<select class="form-control" id="category" name="subcat">
                               	<?php for($j=0;$j<$sc;$j++) { ?>
 					      			<option value="<?=$sub_categories[$j]?>"><?=$j+1?> - <?=$sub_categories[$j]?></option>
 								<?php } ?>
