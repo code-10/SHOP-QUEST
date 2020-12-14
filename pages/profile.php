@@ -68,9 +68,9 @@
         
     <div class="text-center">
         <? if(rowExists('seller','seller_user_name',$user)){ ?>
-            <a href="../vendor/vendor_enter.php"><button type="button" class="btn btn-dark">Head to seller profile</button></a><br><br>  
+            <a href="../seller/seller_enter.php"><button type="button" class="btn btn-dark">Head to seller profile</button></a><br><br>  
         <? } else { ?>
-            <a href="../vendor/vendor_confirm.php"><button type="button" class="btn btn-dark">Become a seller</button></a><br><br>
+            <a href="../seller/seller_confirm.php"><button type="button" class="btn btn-dark">Become a seller</button></a><br><br>
         <? } ?>
     </div>
     
