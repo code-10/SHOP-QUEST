@@ -22,7 +22,7 @@
       $categories=Array();
       $sub_categories=Array();
 
-      $res1=$con-query("select * from categories");
+      $res1=$con->query("select * from categories");
       while($ele1=$res1->fetch_assoc())
       {
             $categories[]=$ele1['cat_name'];     
