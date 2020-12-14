@@ -17,7 +17,7 @@
       if(($con->query("insert into seller(seller_user_name,seller_email,seller_password) select user_name,email,password from user where user_name='$user'"))===True)
       {
             $newuser=true;
-            header("Location:seller_enter.php");
+            header("Location:seller_enter.php?seller_enter_main=yes");
             die();
       }
       else
