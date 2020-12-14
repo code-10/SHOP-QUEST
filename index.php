@@ -14,7 +14,7 @@
 
 	//most viewed
 	
-	$wished=$con->query("select product_id,count(*) as c from wishlist group by product_id");
+	/*$wished=$con->query("select product_id,count(*) as c from wishlist group by product_id");
 	$product_id=Array();
 	$count_wish=Array();
 	while($ans1=$wished->fetch_assoc())
@@ -35,7 +35,7 @@
 		$vow[0]=$vow[0]+1;
 		$con->query("update most_viewed set number_of_times_wishlisted='$vow[0]' where product_id='$product_id[$m]'");
 		
-	}
+	}*/
 
 	//most viewed
 	
