@@ -78,50 +78,53 @@
       <?php } else if($sell_a_product=="yes") { ?>
       
             <form class="jumbotron m-4" method="POST" action="seller_enter.php">
-                  <div class="form-group">
-    				<select class="form-control" id="category" name="category">
-                              <?php for($i=0;$i<$c;$i++) { ?>
-					      <option value="<?=$categories[$i]?>"><?=$i+1?> - <?=$categories[$i]?></option>
-				      <?php } ?>
-    				</select>
-  		      </div>
-                  <div class="form-group">
-    				<select class="form-control" id="category" name="sub_category">
-                              <?php for($j=0;$j<$sc;$j++) { ?>
-					      <option value="<?=$sub_categories[$j]?>"><?=$j+1?> - <?=$sub_categories[$j]?></option>
-					<?php } ?>
-    				</select>
-  		      </div>
-    <div class="form-group">
-        <label for="inputpro">product</label>
-        <input type="text" class="form-control" id="inputpro" placeholder="product" name="pro" required>
-    </div>
-    <div class="form-group">
-        <label for="inputdesc">Description</label>
-        <input type="text" class="form-control" id="inputdesc" placeholder="desc" name="desc" required>
-    </div>
-    <div class="form-group">
-        <label for="inputbrand">brand</label>
-        <input type="text" class="form-control" id="inputbrand" placeholder="brand" name="brand" required>
-    </div>
-    <div class="form-group">
-        <label for="inputsize">size</label>
-        <input type="text" class="form-control" id="inputsize" placeholder="size" name="size" required>
-    </div>
-    <div class="form-group">
-        <label for="inputcolor">color</label>
-        <input type="text" class="form-control" id="inputcolor" placeholder="color" name="color" required>
-    </div>
-    <div class="form-group">
-        <label for="inputcolor">Price</label>
-        <input type="number" class="form-control" id="inputprice" placeholder="price" name="price" required>
-    </div>
-    <div class="form-group">
-        <label for="inputqty">quantity</label>
-        <input type="number" class="form-control" id="inputqty" placeholder="qty" name="qty" required>
-    </div>
-    <button type="submit" name="sell_a_product" class="btn btn-dark">Sell product</button>
-    </form>
+		  			<label for="category">Category</label>
+                  	<div class="form-group">
+    					<select class="form-control" id="category" name="category">
+                              	<?php for($i=0;$i<$c;$i++) { ?>
+					      			<option value="<?=$categories[$i]?>"><?=$i+1?> - <?=$categories[$i]?></option>
+				      			<?php } ?>
+    					</select>
+  		  			</div>
+		  			<label for="sub_category">Sub_Category</label>
+                  	<div class="form-group">
+    						<select class="form-control" id="category" name="sub_category">
+                              	<?php for($j=0;$j<$sc;$j++) { ?>
+					      			<option value="<?=$sub_categories[$j]?>"><?=$j+1?> - <?=$sub_categories[$j]?></option>
+								<?php } ?>
+    						</select>
+  		   			</div>
+					<div class="form-group">
+        				<label for="inputpro">product</label>
+        					<input type="text" class="form-control" id="inputpro" placeholder="product" name="pro" required>
+    		   		</div>
+    		   		<div class="form-group">
+        				<label for="inputdesc">Description</label>
+        					<input type="text" class="form-control" id="inputdesc" placeholder="desc" name="desc" required>
+    				</div>
+    				<div class="form-group">
+        				<label for="inputbrand">brand</label>
+        					<input type="text" class="form-control" id="inputbrand" placeholder="brand" name="brand" required>
+    				</div>
+    				<div class="form-group">
+        				<label for="inputsize">size</label>
+        					<input type="text" class="form-control" id="inputsize" placeholder="size" name="size" required>
+    				</div>
+    				<div class="form-group">
+        				<label for="inputcolor">color</label>
+        					<input type="text" class="form-control" id="inputcolor" placeholder="color" name="color" required>
+    				</div>
+    				<div class="form-group">
+        				<label for="inputcolor">Price</label>
+        					<input type="number" class="form-control" id="inputprice" placeholder="price" name="price" required>
+    				</div>
+    				<div class="form-group">
+        				<label for="inputqty">quantity</label>
+        					<input type="number" class="form-control" id="inputqty" placeholder="qty" name="qty" required>
+    				</div>
+    				
+					<button type="submit" name="sell_a_product" class="btn btn-dark">Sell product</button>
+    		</form>
       
       <?php } else if($my_sell_requests=="yes") { ?>
       
