@@ -25,7 +25,7 @@
 		}
 		else{
 		
-			$con->query("insert into user_viewed(user_name,product_id,number_of_times_viewed) values('$user''$product_id',1)");
+			$con->query("insert into user_viewed(user_name,product_id,number_of_times_viewed) values('$user','$product_id',1)");
 		
 		}
 		
