@@ -305,6 +305,23 @@
                     <div class="row m-4">
                         <p class="p-4">Description : <?=$product_description;?></p>
                     </div>
+				
+				
+		    <?php   
+				
+			$review=$con->query("select up.product_id,oc.review from unique_product as up,order_contents as oc where up.unique_type_id=oc.unique_type_id and product_id='$product_id' and oc.review is not null;");	
+			
+			$rd=Array();	
+			while($ro=$review->fetch_assoc())
+			{
+				$rd[]=$rd['review'];
+			}
+				
+			$rc=count($rd);
+				
+			print_r($rd);
+				
+		    ?>		
                     
                  </div>
                 
