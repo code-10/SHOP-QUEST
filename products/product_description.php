@@ -20,7 +20,7 @@
 			while($getcount=$notvu->fetch_assoc())
 				$notvcu[]=$getcount['number_of_times_viewed'];
 			$notvccu=$notvcu[0]+1;
-			$con->query("update user_viewed set number_of_times_viewed='$notvccu' where product_id='$product_id' and user_name='$user'");
+			$con->query("update user_viewed set number_of_times_viewed='$notvccu',user_name='$user' where product_id='$product_id' and user_name='$user'");
 		
 		}
 		else{
