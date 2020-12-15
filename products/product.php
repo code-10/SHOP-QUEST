@@ -185,9 +185,10 @@
           <img src="../assets/<?=$product_id[$c-1]?>.jpeg" class="figure-img img-fluid rounded mx-auto d-block" alt="product" onerror="this.src='../assets/black.png';">
         </a>
         <figcaption class="text-center">
-            <h5><?=$product_name[$c-1]?><?php if($c==$bestsell[0]) { ?>
+	<?php if($c==$bestsell[0]) { ?>
 	   	<span class="badge badge-primary">Best Seller</span>
-	   <?php } ?></h5>
+	   <?php } ?>
+            <h5><?=$product_name[$c-1]?></h5>
           <h5>Rating : <?=$product_rating[$c-1]?>&nbsp;&nbsp;</h5>
            <h5>Price : <?=$product_price[$c-1]?>&nbsp;&nbsp;</h5> 
            </figcaption>
