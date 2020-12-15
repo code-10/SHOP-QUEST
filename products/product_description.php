@@ -309,17 +309,21 @@
 				
 		    <?php   
 				
-			$review=$con->query("select up.product_id,oc.review from unique_product as up,order_contents as oc where up.unique_type_id=oc.unique_type_id and product_id='$product_id' and oc.review is not null;");	
+			$review=$con->query("select up.product_id,oc.review,o.user_name from unique_product as up,orders as o,order_contents as oc where up.unique_type_id=oc.unique_type_id and o.order_id=oc.order_id  and product_id='$product_id' and oc.review is not null group by o.user_name;");	
 			
-			$rd=Array();	
+			$rd=Array();
+			$run=Array();
+				
 			while($ro=$review->fetch_assoc())
 			{
 				$rd[]=$ro['review'];
+				$run[]=$ro['user_name'];
 			}
 				
 			$rc=count($rd);
 				
 			print_r($rd);
+			print_r($run);
 				
 		    ?>		
                     
