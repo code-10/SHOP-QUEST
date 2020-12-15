@@ -25,7 +25,7 @@
 	//orders
 	if($your_orders=="yes")
 	{
-		$res=$con->query("select * from orders where user_name='$user'");
+		$res=$con->query("select * from orders where user_name='$user' order by order_date desc");
 		$order_id=Array();
 		$order_date=Array();
 		$total_price=Array();
