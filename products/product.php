@@ -165,7 +165,6 @@
     }
    
     $n=count($product_id);
-	$bsindex=$n-$bestsell[0];
     
   ?>   
     
@@ -186,7 +185,7 @@
           <img src="../assets/<?=$product_id[$c-1]?>.jpeg" class="figure-img img-fluid rounded mx-auto d-block" alt="product" onerror="this.src='../assets/black.png';">
         </a>
         <figcaption class="text-center">
-	<?php if($c==$bsindex) { ?>
+	<?php if($bestsell[0]==$product_id[$c-1]) { ?>
 	   	<span class="badge badge-primary">Best Seller</span>
 	   <?php } ?>
             <h5><?=$product_name[$c-1]?></h5>
