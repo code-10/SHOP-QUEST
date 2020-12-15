@@ -12,6 +12,26 @@
   	$visit = substr($visit,1);
 
   	$_SESSION['visit'] = $visit;
+
+
+
+	$con=getCon();
+
+
+	//best seller
+
+	$bs=$con->query("select p.product_id,p.product_name,s.sub_cat_name from products as p,sub_categories as s,order_contents as oc,unique_product as up where s.sub_cat_id=p.sub_cat_id and p.product_id=up.product_id and up.unique_type_id=oc.unique_type_id and s.sub_cat_id='$sub_cat_id' group by p.product_name order by count(oc.unique_type_id) desc limit 1;");
+	$bestsell=Array();
+
+	while($bso=$bs->fetch_assoc())
+	{
+		$bestsell[]=$bso['product_id'];
+	}
+
+	print_r($bestsell);
+
+	//best seller
+	
   
 ?>
 
@@ -160,6 +180,9 @@
     <? for($i=1;$i<=4;$i++){ ?> 
     <? if(4*($j-1)+$i>$n) break; ?>
    <div class="col-sm-6 col-lg-3 col-6 text-center">
+	   <?php if($c==$bestsell[0]) { ?>
+	   	<span class="badge badge-primary">Best Seller</span>
+	   <?php } ?>
       <figure class="figure">
         <a href='../products/product_description.php?product_id=<?=$product_id[$c-1]?>&&product_name=<?=$product_name[$c-1]?>&&show=0'>
           <img src="../assets/<?=$product_id[$c-1]?>.jpeg" class="figure-img img-fluid rounded mx-auto d-block" alt="product" onerror="this.src='../assets/black.png';">
