@@ -330,6 +330,8 @@
 			
 		    <?php if($rc>0) { ?>
 			
+				<h5 class="text-center">Reviews</h5>	
+				
 			<ul class="list-group list-group-flush">
 				<?php for($f=0;$f<$rc;$f++) { ?>
   					<li class="list-group-item"><?=$run[$f]?> - <?=$rd[$f]?></li>
