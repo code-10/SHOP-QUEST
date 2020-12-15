@@ -145,8 +145,11 @@
 	
 			$uvc=min(count($uv_product_id),4);
 			
+			if($uvc>0) { 
 		?>
         
+			
+			
 		<div id="user_viewed">
 		<h5 class="text-center">Products related to your search</h5>
 			
@@ -167,7 +170,11 @@
 				
 		
 			
-		<?php } ?>	
+		<?php } else { ?>
+			
+			<h5 class="text-center">Shop from ShopQuest</h5>
+			
+		<?php } } ?>
 			
 			
 			
