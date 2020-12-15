@@ -130,7 +130,7 @@
 		
 			
 			
-		<php if(isset($_SESSION['user_name'])) { 
+		<?php if(isset($_SESSION['user_name'])) { 
 			
 			$user=$_SESSION['user_name'];
 			
