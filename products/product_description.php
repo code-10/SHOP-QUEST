@@ -123,8 +123,9 @@
   
     $product_description=Array();
     $product_price=Array();
-    $product_rating=array();
+    $product_rating=Array();
     $product_brand=Array();
+    $product_rating_no=Array();
         
     while($ele = $res1->fetch_assoc())
     {
@@ -132,6 +133,7 @@
         $product_price=$ele['price'];
         $product_rating=$ele['rating'];
         $product_brand=$ele['product_brand'];
+	$product_rating_no[]=$ele['rating_no'];
     }
     
     	$n=count($product_description);
@@ -220,7 +222,7 @@
 		    	</h5>	
 			<h4 class="text-center mt-2" style="font-size:24px;"><?=$product_color[$show]?>, <?=$product_size[$show]?></h4>
 				
-                    <h5 class="card-text ml-4 mr-4">Rating : <?=$product_rating;?></h5>
+                    <h5 class="card-text ml-4 mr-4">Rating : <?=$product_rating;?> (<?=$product_rating_no?>) </h5>
 		    <h4 class="card-text ml-4 mr-4 mb-4">Price : <i class="fa fa-rupee"></i> <?=$product_price[$show];?></h4>	
                     <p class="card-text ml-4 mr-4">Brand : <?=$product_brand;?> | Seller : <?=$product_seller[$show]?></p>
                     		
