@@ -130,13 +130,7 @@
 		
 			
 			
-		<php if(isset($_SESSION['user_name'])) { ?>
-			
-		<!--user related-->
-		<div id="user_viewed">
-		<h5 class="text-center">Products related to your search</h5>
-		
-		<?php
+		<php if(isset($_SESSION['user_name'])) { 
 			
 			$user=$_SESSION['user_name'];
 			
@@ -151,6 +145,8 @@
 			
 		?>
         
+		<div id="user_viewed">
+		<h5 class="text-center">Products related to your search</h5>
 			
 		<div class="row m-4 d-flex justify-content-center">
 			<?php for($k=0;$k<4;$k++) { ?>
