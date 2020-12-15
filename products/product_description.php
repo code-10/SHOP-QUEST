@@ -2,8 +2,9 @@
 
 <?php
 	
-	$user=$_SESSION['user_name'];
+	
     session_start();
+	$user=$_SESSION['user_name'];
     include_once '../libraries/chocolates.php';
 	$con=getCon();
     
