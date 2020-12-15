@@ -184,7 +184,7 @@
         </a>
         <figcaption class="text-center">
 	<?php if($bestsell[0]==$product_id[$c-1]) { ?>
-	   	<span class="badge badge-primary">Best Seller</span>
+	   	<span class="badge badge-success">Best Seller</span>
 	   <?php } ?>
             <h5><?=$product_name[$c-1]?></h5>
           <h5>Rating : <?=$product_rating[$c-1]?>&nbsp;&nbsp;</h5>
