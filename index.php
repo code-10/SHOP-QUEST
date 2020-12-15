@@ -12,32 +12,7 @@
 
 	$con=getCon();
 
-	//most viewed
 	
-	/*$wished=$con->query("select product_id,count(*) as c from wishlist group by product_id");
-	$product_id=Array();
-	$count_wish=Array();
-	while($ans1=$wished->fetch_assoc())
-	{
-		$product_id[]=$ans1['product_id'];
-		$count_wish[]=$ans1['c'];
-	}
-	$t=count($product_id);
-	
-	for($m=0;$m<$t;$m++){
-		
-		$vow=Array();
-		$notw=$con->query("select number_of_times_wishlisted from most_viewed where product_id='$product_id[$m]'");
-		while($ans2=$notw->fetch_assoc())
-		{
-			$vow[]=$ans2['number_of_times_wishlisted'];	
-		}
-		$vow[0]=$vow[0]+1;
-		$con->query("update most_viewed set number_of_times_wishlisted='$vow[0]' where product_id='$product_id[$m]'");
-		
-	}*/
-
-	//most viewed
 	
 
 ?>
@@ -153,6 +128,53 @@
 			
 			
 		
+			
+			
+		<php if(isset($_SESSION['user_name'])) { ?>
+			
+		<!--user related-->
+		<div id="user_viewed">
+		<h5 class="text-center">Products related to your search</h5>
+		
+		<?php
+			
+			$user=$_SESSION['user_name'];
+			
+			$user_viewed=$con->query("select p.product_name,p.product_id,u.number_of_times_viewed from products as p,user_viewed as u where p.product_id=u.product_id and user_name='$user' order by u.number_of_times_viewed desc limit 4");
+			$uv_product_id=Array();
+			$uv_product_name=Array();
+			while($uv=$user_viewed->fetch_assoc())
+			{
+				$uv_product_id[]=$uv['product_id'];
+				$uv_product_name[]=$uv['product_name'];
+			}
+			
+		?>
+        
+			
+		<div class="row m-4 d-flex justify-content-center">
+			<?php for($k=0;$k<4;$k++) { ?>
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-3">
+					<div class="card text-center">
+						<a href="products/product_description.php?product_id=<?=$uv_product_id[$k]?>&&product_name=<?=$uv_product_name[$k]?>&&show=0" class="stretched-link">
+  						<img class="card-img-top" src="..." alt="Category" onerror="this.src='assets/black.png';">
+  							<div class="text-center">
+    								<p class="card-title mob" style="color:black;"><?=$uv_product_name[$k];?></p>
+  							</div>
+						</a>
+					</div>
+				</div>
+			<?php } ?>
+		</div>
+			
+			
+		<br><br>	
+		
+			
+		<?php } ?>	
+			
+			
+			
 			
 			
 			
