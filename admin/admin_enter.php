@@ -49,13 +49,11 @@
 	<?php if($admin_enter_main=="yes") { ?>
 	
 		<div class="text-center m-4">
-            <a class="btn btn-primary" href="#" role="button">Check DB</a>
-			<a class="btn btn-primary" href="#" role="button">Enter Data</a>
-            <a class="btn btn-primary" href="#" role="button">Check Seller Requests</a>
-			<a class="btn btn-primary" href="#" role="button">Check User Requests</a>
+            <a class="btn btn-primary m-2" href="check_db.php" role="button">Check DB</a>
+			<a class="btn btn-primary m-2" href="enter_data.php" role="button">Enter Data</a>
+            <a class="btn btn-primary m-2" href="sell_request.php" role="button">Check Seller Requests</a>
+			<a class="btn btn-primary m-2" href="user_request.php" role="button">Check User Requests</a>
 	   </div>
-	
-	
 	
 	<?php } ?>
 	
