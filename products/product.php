@@ -28,8 +28,6 @@
 		$bestsell[]=$bso['product_id'];
 	}
 
-	print_r($bestsell);
-
 	//best seller
 	
   
