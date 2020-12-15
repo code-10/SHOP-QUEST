@@ -2,12 +2,34 @@
 
 <?php
 	
+	$user=$_SESSION['user_name'];
     session_start();
     include_once '../libraries/chocolates.php';
 	$con=getCon();
     
     $product_id=$_GET['product_id'];
     $product_name=$_GET['product_name'];
+
+
+	if(isset($_SESSION['user_name']))
+	{
+		if(rowExists('most_viewed','product_id',$product_id)){
+		
+			$notvu=$con->query("select number_of_times_viewed from user_viewed where product_id='$product_id' and user_name='$user'");
+			$notvcu=Array();
+			while($getcount=$notvu->fetch_assoc())
+				$notvcu[]=$getcount['number_of_times_viewed'];
+			$notvccu=$notvcu[0]+1;
+			$con->query("update user_viewed set number_of_times_viewed='$notvccu' where product_id='$product_id' and user_name='$user'");
+		
+		}
+		else{
+		
+			$con->query("insert into user_viewed(user_name,product_id,number_of_times_viewed) values('$user''$product_id',1)");
+		
+		}
+		
+	}
 
 
 	//most viewed
