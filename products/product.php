@@ -139,13 +139,13 @@
   
     $con = getCon();
     if($id_s==1)
-      $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id");
+      $res = $con->query("select products.product_id,product_name,min(price) as price,rating,rating_no from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id");
     else if($id_s==2)
-        $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price");
+        $res = $con->query("select products.product_id,product_name,min(price) as price,rating,rating_no from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price");
     else if($id_s==3)
-      $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price desc");
+      $res = $con->query("select products.product_id,product_name,min(price) as price,rating,rating_no from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price desc");
     else
-      $res = $con->query("select products.product_id,product_name,min(price) as price,rating from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by rating desc");
+      $res = $con->query("select products.product_id,product_name,min(price) as price,rating,rating_no from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by rating desc");
   
     
     
@@ -153,6 +153,7 @@
     $product_name=Array();
     $product_price=Array();
     $product_rating=Array();
+    $product_rating_no=Array();
     
     while($ele = $res->fetch_assoc())
     {
@@ -160,6 +161,7 @@
         $product_name[]=$ele['product_name'];
         $product_price[]=$ele['price'];
         $product_rating[]=$ele['rating'];
+	$product_rating_no[]=$ele['rating_no'];
     }
    
     $n=count($product_id);
@@ -187,7 +189,7 @@
 	   	<span class="badge badge-success">Best Seller</span>
 	   <?php } ?>
             <h5><?=$product_name[$c-1]?></h5>
-          <h5>Rating : <?=$product_rating[$c-1]?>&nbsp;&nbsp;</h5>
+          <h5>Rating : <?=$product_rating[$c-1]?> (<?=$product_rating_no[$c-1]?>)</h5>
            <h5>Price : <?=$product_price[$c-1]?>&nbsp;&nbsp;</h5> 
            </figcaption>
       </figure>
