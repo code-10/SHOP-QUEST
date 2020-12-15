@@ -303,7 +303,7 @@
 				
                     
                     <div class="row m-4">
-                        <p class="p-4">Description : <?=$product_description;?></p>
+                        <p class="p-4 text-left">Description : <?=$product_description;?></p>
                     </div>
 				
 				
@@ -322,10 +322,21 @@
 				
 			$rc=count($rd);
 				
-			print_r($rd);
-			print_r($run);
+			//print_r($rd);
+			//print_r($run);
 				
-		    ?>		
+		    ?>	
+				
+			
+		    <?php if($rc>0) { ?>
+			
+			<ul class="list-group list-group-flush">
+				<?php for($f=0;$f<$rc;$f++) { ?>
+  					<li class="list-group-item"><?=$run[$f]?> - <?=$rd[$f]?></li>
+				<?php } ?>
+			</ul>	
+				
+		    <?php } ?>
                     
                  </div>
                 
