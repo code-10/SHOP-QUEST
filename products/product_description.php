@@ -314,7 +314,7 @@
 			$rd=Array();	
 			while($ro=$review->fetch_assoc())
 			{
-				$rd[]=$rd['review'];
+				$rd[]=$ro['review'];
 			}
 				
 			$rc=count($rd);
