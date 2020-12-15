@@ -13,7 +13,7 @@
 
 	if(isset($_SESSION['user_name']))
 	{
-		if(rowExists('most_viewed','product_id',$product_id)){
+		if(rowExists('user_viewed','product_id',$product_id)){
 		
 			$notvu=$con->query("select number_of_times_viewed from user_viewed where product_id='$product_id' and user_name='$user'");
 			$notvcu=Array();
