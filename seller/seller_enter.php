@@ -146,7 +146,7 @@
 	
       <?php } else if($sell_a_product=="yes") { ?>
       		
-            <a class="btn btn-primary m-4" href="seller_enter.php?my_sell_requests=yes" role="button">My sell requests</a>
+            <a class="btn btn-primary m-4" href="seller_enter.php?seller_enter_main=yes" role="button">Back to seller main menu</a>
             <form class="jumbotron m-4" method="POST" action="seller_enter.php">
 		  			<label for="category">Category</label>
                   	<div class="form-group">
@@ -200,7 +200,7 @@
       
       <?php } else if($my_sell_requests=="yes") { ?>
       		
-            <a class="btn btn-primary m-4" href="seller_enter.php?sell_a_product=yes" role="button">Sell a product</a>
+            <a class="btn btn-primary m-4" href="seller_enter.php?seller_enter_main=yes" role="button">Back to seller main menu</a>
 	
 			<? for($k=0;$k<$n;$k++) { ?>
 				<div class="card m-4">
