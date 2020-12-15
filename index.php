@@ -142,6 +142,8 @@
 				$uv_product_id[]=$uv['product_id'];
 				$uv_product_name[]=$uv['product_name'];
 			}
+	
+			$uvc=min(count($uv_product_id),4);
 			
 		?>
         
@@ -149,7 +151,7 @@
 		<h5 class="text-center">Products related to your search</h5>
 			
 		<div class="row m-4 d-flex justify-content-center">
-			<?php for($k=0;$k<4;$k++) { ?>
+			<?php for($k=0;$k<$uvc;$k++) { ?>
 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-3">
 					<div class="card text-center">
 						<a href="products/product_description.php?product_id=<?=$uv_product_id[$k]?>&&product_name=<?=$uv_product_name[$k]?>&&show=0" class="stretched-link">
@@ -190,11 +192,13 @@
 				$mw_product_name[]=$mw['product_name'];
 			}
 			
+			$mwc=min(count($mw_product_id),4);
+			
 		?>
         
 			
 		<div class="row m-4 d-flex justify-content-center">
-			<?php $c=1; for($i=0;$i<4;$i++) { ?>
+			<?php $c=1; for($i=0;$i<$mwc;$i++) { ?>
 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-3">
 					<div class="card text-center">
 						<a href="products/product_description.php?product_id=<?=$mw_product_id[$i]?>&&product_name=<?=$mw_product_name[$i]?>&&show=0" class="stretched-link">
