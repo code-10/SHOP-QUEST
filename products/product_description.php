@@ -16,7 +16,7 @@
 	{
 		if(rowExists('user_viewed','product_id',$product_id)){
 		
-			echo "not first time":$user;
+			echo "not first time";$user;
 			$notvu=$con->query("select number_of_times_viewed from user_viewed where product_id='$product_id' and user_name='$user'");
 			$notvcu=Array();
 			while($getcount=$notvu->fetch_assoc())
