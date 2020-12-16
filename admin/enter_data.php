@@ -19,7 +19,7 @@
                 $con = getCon();
               if(($con->query("insert into categories(cat_id,cat_name) values('$cat_id','$cat_name')"))===True){
                 //echo "YES";
-                header("Location:admin_enter.php");
+                header("Location:admin_enter.php?admin_enter_main=yes");
                 die();
         }
         else
@@ -35,7 +35,7 @@
         
         if(($con->query("insert into sub_categories(sub_cat_id,sub_cat_name,cat_id) values('".mysqli_real_escape_string($con,$sub_cat_id)."','".mysqli_real_escape_string($con,$sub_cat_name)."','".mysqli_real_escape_string($con,$cat_id)."')"))===True){
                 //echo "YES";
-                header("Location:admin_enter.php");
+                header("Location:admin_enter.php?admin_enter_main=yes");
                 die();
         }
         else
@@ -57,7 +57,7 @@
         
         if(($con->query("insert into products(product_id,product_name,sub_cat_id,product_brand,product_description,rating) values('".mysqli_real_escape_string($con,$product_id)."','".mysqli_real_escape_string($con,$product_name)."','".mysqli_real_escape_string($con,$sub_cat_id)."','".mysqli_real_escape_string($con,$product_brand)."','".mysqli_real_escape_string($con,$product_description)."','".mysqli_real_escape_string($con,$product_rating)."')"))===True){
                 //echo "YES";
-                header("Location:admin_enter.php");
+                header("Location:admin_enter.php?admin_enter_main=yes");
                 die();
         }
         else
@@ -76,7 +76,7 @@
         
         if(($con->query("insert into unique_product(product_id,price,quantity,seller_user_name,color,size) values('".mysqli_real_escape_string($con,$product_id)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$seller_user_name)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')"))===True){
                 //echo "YES";
-                header("Location:admin_enter.php");
+                header("Location:admin_enter.php?admin_enter_main=yes");
                 die();
         }
         else
