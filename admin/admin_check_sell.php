@@ -1,7 +1,7 @@
  <?php include_once '../header.php'; ?>
  
  <?php
-        
+        session_start();
         $user=$_SESSION['user_name'];
         if($user!="root")
         {
