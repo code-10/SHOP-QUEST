@@ -103,7 +103,6 @@
         	<div class="mt-2 mb-2 text-center">
 		</div>
 		
-		<!--<a href='sub_categories/sub_category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link"><h5><?=$categories[$c-1];?></h5></a>-->
 		
 		<!--Loop category-->
 		<div id="category">
@@ -143,7 +142,8 @@
 				$uv_product_name[]=$uv['product_name'];
 			}
 	
-			$uvc=min(count($uv_product_id),4);
+			$countofuv=count($uv_product_id);
+			$uvc=min($countofuv,4);
 			
 			if($uvc>0) { 
 		?>
