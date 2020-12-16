@@ -14,9 +14,9 @@
 
 	if(isset($_SESSION['user_name']))
 	{
-		if(rowExists('user_viewed','product_id',$product_id)){
+		$check=$con->query("select number_of_times_viewed from user_viewed where product_id='$product_id' and user_name='$user'");
+		if($check->num_rows>0){
 		
-			echo "not first time";$user;
 			$notvu=$con->query("select number_of_times_viewed from user_viewed where product_id='$product_id' and user_name='$user'");
 			$notvcu=Array();
 			while($getcount=$notvu->fetch_assoc())
@@ -27,7 +27,6 @@
 		}
 		else{
 		
-			echo "first time";$user;
 			$con->query("insert into user_viewed(user_name,product_id,number_of_times_viewed) values('$user','$product_id',1)");
 		
 		}
