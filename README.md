@@ -1,2 +1,1 @@
-# SHOP-QUEST
-An E-commerce Website
+# SHOP-QUEST An E-commerce Website
