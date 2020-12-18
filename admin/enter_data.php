@@ -20,6 +20,7 @@
       $cat_fill=$con->query("select count(*) as c from categories");
       while($cat=$cat_fill->fetch_assoc())
            $cat_id_fill[]=$cat['c'];
+	$cat_id_fill_use=$cat_id_fill[0]+1;
       //
         
       //to get sub_cat_id to fill in add category
@@ -189,7 +190,7 @@
     <form class="jumbotron m-4" method="POST" action="enter_data.php">
      <div class="form-group">
         <label for="inputcat_id">category id</label>
-        <input type="number" class="form-control" id="inputcat_id" placeholder="categoryid" name="cat_id" value="<?=$cat_id_fill[0]+1?>" disabled>
+        <input type="number" class="form-control" id="inputcat_id" placeholder="categoryid" name="cat_id" value="<?=$cat_id_fill_use;?>" disabled>
     </div>
     <div class="form-group">
         <label for="inputcat_name">category name</label>
