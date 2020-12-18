@@ -84,10 +84,7 @@
                 $cat_id = $_POST['cat_id'];
                 $cat_name = $_POST['cat_name'];
 		
-		echo $cat_id_fill_use;
-		echo $cat_name;
-		
-              if(($con->query("insert into categories(cat_id,cat_name) values('$cat_id','$cat_name')"))===True){
+              if(($con->query("insert into categories(cat_id,cat_name) values('$cat_id_fill_use','$cat_name')"))===True){
                 //echo "YES";
                 //header("Location:admin_enter.php?admin_enter_main=yes");
                 //die();
