@@ -222,7 +222,7 @@
 	    <label for="cat_name">category name</label>
     		<select class="form-control" id="qty" name="cat_id">
 		      <?php for($j=0;$j<$catsc;$j++) { ?>
-    			<option value="<?=$catss_id[$j]?>"><?=$catss_name[$i]?></option>
+    			<option value="<?=$catss_id[$j]?>"><?=$catss_name[$j]?></option>
                       <?php } ?>
     		</select>
     </div>
