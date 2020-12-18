@@ -44,8 +44,22 @@
 
 
 
-	//to get products to fill in add cproducts
-      	$pro=$con->query("select * from products");
+	//to fill product
+      	$product_id_res=$con->query("select count(*) as pc from products");
+	$unique_type_id_res=$con->query("select count(*) as upc from unique_product");
+	$sub_categories_res=$con->query("select count(*) as sc from sub_categories");
+
+	$product_id_c=Array();
+	$unique_type_id_c=Array();
+	$sub_categories_c=Array();
+
+	while($pic=$product_id_res->fetch_assoc())
+		$product_id_c[]=$pic['pc'];
+	while($utic=$unique_type_id_res->fetch_assoc())
+		$unique_type_id_c[]=$utic['pc'];
+	while($scc=$sub_categories_res->fetch_assoc())
+		$sub_categories_c[]=$scc['pc'];
+		
       //
 
 
@@ -210,15 +224,15 @@
     <form class="jumbotron m-4" method="POST" action="enter_data.php">
      <div class="form-group">
         <label for="inputproduct_id">product id</label>
-        <input type="number" min="1" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="" disabled>
+        <input type="number" min="1" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$product_id_c[0]+1?>" disabled>
     </div>
     <div class="form-group">
         <label for="inputsub_cat_id">Sub category id</label>
-        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id" value="" disabled>
+        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id" value="<?=$unique_type_id_c[0]+1?>" disabled>
     </div>
     <div class="form-group">
         <label for="input_unique_type_id">Unique type id</label>
-        <input type="number" min="1" class="form-control" id="inputunique_type_id" placeholder="unique type id" name="unique_type_id" value="" disabled>
+        <input type="number" min="1" class="form-control" id="inputunique_type_id" placeholder="unique type id" name="unique_type_id" value="<?=$sub_categories_c[0]+1?>" disabled>
     </div>
     <div class="form-group">
         <label for="inputproduct_name">product name</label>
