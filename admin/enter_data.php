@@ -64,15 +64,11 @@
 
 	//to fill product
       	$product_id_res=$con->query("select count(*) as pc from products");
-	$unique_type_id_res=$con->query("select count(*) as upc from unique_product");
 
 	$product_id_c=Array();
-	$unique_type_id_c=Array();
 
 	while($pic=$product_id_res->fetch_assoc())
 		$product_id_c[]=$pic['pc'];
-	while($utic=$unique_type_id_res->fetch_assoc())
-		$unique_type_id_c[]=$utic['upc'];
 		
       //
 
@@ -117,12 +113,18 @@
 
         if (isset($_POST['products'])) {
                 $con = getCon();
+		
                 $product_id = $_POST['product_id'];
-                $product_name = $_POST['product_name'];
                 $sub_cat_id = $_POST['sub_cat_id'];
+                $product_name = $_POST['product_name'];
                 $product_brand = $_POST['product_brand'];
-                $product_description = $_POST['product_description'];
-                $product_rating = $_POST['product_rating'];
+		$price = $_POST['price'];
+		$color = $_POST['color'];
+                $size = $_POST['size'];
+		$product_description = $_POST['product_description'];
+                $quantity = $_POST['quantity'];
+                $seller_user_name = $_POST['seller_user_name'];
+                
         
         if(($con->query("insert into products(product_id,product_name,sub_cat_id,product_brand,product_description,rating) values('".mysqli_real_escape_string($con,$product_id)."','".mysqli_real_escape_string($con,$product_name)."','".mysqli_real_escape_string($con,$sub_cat_id)."','".mysqli_real_escape_string($con,$product_brand)."','".mysqli_real_escape_string($con,$product_description)."','".mysqli_real_escape_string($con,$product_rating)."')"))===True){
                 //echo "YES";
@@ -133,15 +135,7 @@
                 echo $con->error;
         }
 
-
-         if (isset($_POST['uniq_prod'])) {
-                $con = getCon();
-                $product_id = $_POST['uniq_product_id'];
-                $price = $_POST['price'];
-                $quantity = $_POST['quantity'];
-                $seller_user_name = $_POST['seller_user_name'];
-                $color = $_POST['color'];
-                $size = $_POST['size'];
+                
         
         if(($con->query("insert into unique_product(product_id,price,quantity,seller_user_name,color,size) values('".mysqli_real_escape_string($con,$product_id)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$seller_user_name)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')"))===True){
                 //echo "YES";
@@ -152,7 +146,7 @@
                 echo $con->error;
         }
 
-
+	}
 
 
 
@@ -242,16 +236,12 @@
     </div>
     <div class="form-group">
 	    <label for="cat_name">category and sub category name</label>
-    		<select class="form-control" id="qty" name="cat_id">
+    		<select class="form-control" id="qty" name="sub_cat_id">
 		      <?php for($i=0;$i<$cats;$i++) { ?>
     			<option value="<?=$sub_cats_id[$i]?>"><?=$cats_name[$i]?> - <?=$sub_cats_name[$i]?></option>
                       <?php } ?>
     		</select>
     </div> 
-    <div class="form-group">
-        <label for="input_unique_type_id">Unique type id</label>
-        <input type="number" min="1" class="form-control" id="inputunique_type_id" placeholder="unique type id" name="unique_type_id" value="<?=$unique_type_id_c[0]+1?>" disabled>
-    </div>
     <div class="form-group">
         <label for="inputproduct_name">product name</label>
         <input type="text" class="form-control" id="inputproduct_name" placeholder="product name" name="product_name" required>
@@ -273,17 +263,21 @@
         <input type="text" class="form-control" id="inputsize" placeholder="for mobiles like 4GB i.e ram size else s,m etc" name="size" required>
     </div>
     <div class="form-group">
-        <label for="inputquantity">Quantity</label>
-        <input type="number" min="1" max="420" class="form-control" id="inputquantity" placeholder="quantity" name="quantity" required>
-    </div>   
-    <div class="form-group">
         <label for="inputproduct_description">product description</label>
         <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description" required></textarea>
     </div>
     <div class="form-group">
+        <label for="inputquantity">Quantity</label>
+        <input type="number" min="1" max="420" class="form-control" id="inputquantity" placeholder="quantity" name="quantity" required>
+    </div>   
+    <div class="form-group">
         <label for="inputseller">Seller User Name</label>
         <input type="text" class="form-control" id="inputseller" placeholder="seller user name" name="seller_user_name" required>
     </div> 
+    <div class="form-group">
+        <label for="inputproduct_rating">product rating</label>
+        <input type="number" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" value="0" disabled>
+    </div>
     <button type="submit" name="products" class="btn btn-dark">Add product</button>
     </form>   
     
