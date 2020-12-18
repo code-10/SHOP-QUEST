@@ -242,17 +242,16 @@
     </div>
     <div class="form-group">
         <label for="inputquantity">Quantity</label>
-        <input type="number" min="1" class="form-control" id="inputquantity" placeholder="quantity" name="quantity"  value="500" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="inputseller">Seller User Name</label>
-        <input type="text" class="form-control" id="inputseller" placeholder="seller user name" name="seller_user_name"  value="sharma" required>
-    </div>    
+        <input type="number" min="1" max="420" class="form-control" id="inputquantity" placeholder="quantity" name="quantity" required>
+    </div>   
     <div class="form-group">
         <label for="inputproduct_description">product description</label>
-        <textarea type="text" class="form-control" id="inputproduct_description" rows="100" cols="8" placeholder="product description" name="product_description" required></textarea>
-    </div>	    
+        <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="inputseller">Seller User Name</label>
+        <input type="text" class="form-control" id="inputseller" placeholder="seller user name" name="seller_user_name" required>
+    </div> 
     <button type="submit" name="products" class="btn btn-dark">Add product</button>
     </form>   
     
