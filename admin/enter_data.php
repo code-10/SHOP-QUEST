@@ -210,50 +210,27 @@
     <form class="jumbotron m-4" method="POST" action="enter_data.php">
      <div class="form-group">
         <label for="inputproduct_id">product id</label>
-        <input type="number" min="1" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" required>
+        <input type="number" min="1" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="" disabled>
+    </div>
+    <div class="form-group">
+        <label for="inputsub_cat_id">Sub category id</label>
+        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id" value="" disabled>
+    </div>
+    <div class="form-group">
+        <label for="input_unique_type_id">Unique type id</label>
+        <input type="number" min="1" class="form-control" id="inputunique_type_id" placeholder="unique type id" name="unique_type_id" value="" disabled>
     </div>
     <div class="form-group">
         <label for="inputproduct_name">product name</label>
         <input type="text" class="form-control" id="inputproduct_name" placeholder="product name" name="product_name" required>
     </div>
     <div class="form-group">
-        <label for="inputsub_cat_id">Sub category id</label>
-        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id" required>
-    </div>
-    <div class="form-group">
         <label for="inputproduct_brand">product brand</label>
         <input type="text" class="form-control" id="inputproduct_brand" placeholder="product brand" name="product_brand" required>
     </div>
     <div class="form-group">
-        <label for="inputproduct_description">product description</label>
-        <input type="text" class="form-control" id="inputproduct_description" placeholder="product description" name="product_description" required>
-    </div>
-    <div class="form-group">
-        <label for="inputproduct_rating">product rating</label>
-        <input type="number" min="1" max="5" step="any" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" required>
-    </div>
-    <button type="submit" name="products" class="btn btn-dark">Sure!</button>
-    </form>   
-    
-    
-    
-    <!--Unique product-->
-    <form class="jumbotron m-4" method="POST" action="enter_data.php">
-     <div class="form-group">
-        <label for="inputproduct_id">product id</label>
-        <input type="number" min="1" class="form-control" id="inputproduct_id" placeholder="product id" name="uniq_product_id" required>
-    </div>
-    <div class="form-group">
         <label for="inputprice">price</label>
         <input type="number" min="1" class="form-control" id="inputprice" placeholder="price" name="price" required>
-    </div>
-    <div class="form-group">
-        <label for="inputquantity">Quantity</label>
-        <input type="number" min="1" class="form-control" id="inputquantity" placeholder="quantity" name="quantity"  value="500" required>
-    </div>
-    <div class="form-group">
-        <label for="inputseller">Seller User Name</label>
-        <input type="text" class="form-control" id="inputseller" placeholder="seller user name" name="seller_user_name"  value="sharma" required>
     </div>
     <div class="form-group">
         <label for="inputcolor">Color</label>
@@ -263,23 +240,25 @@
         <label for="inputsize">size</label>
         <input type="text" class="form-control" id="inputsize" placeholder="for mobiles like 4GB i.e ram size else s,m etc" name="size" required>
     </div>
-    <button type="submit" name="uniq_prod" class="btn btn-dark">Sure!</button>
+    <div class="form-group">
+        <label for="inputquantity">Quantity</label>
+        <input type="number" min="1" class="form-control" id="inputquantity" placeholder="quantity" name="quantity"  value="500" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="inputseller">Seller User Name</label>
+        <input type="text" class="form-control" id="inputseller" placeholder="seller user name" name="seller_user_name"  value="sharma" required>
+    </div>    
+    <div class="form-group">
+        <label for="inputproduct_description">product description</label>
+        <input type="text" class="form-control" id="inputproduct_description" placeholder="product description" name="product_description" required>
+    </div>	    
+    <button type="submit" name="products" class="btn btn-dark">Add product</button>
     </form>   
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    
+    
+    
+ 
   
   
   
