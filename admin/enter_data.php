@@ -34,7 +34,7 @@
       $cats_id=Array();
       $cats_name=Array();
       $cats_f=$con->query("select * from categories");
-      while($catt=$catsf->fetch_assoc()){
+      while($catt=$cats_f->fetch_assoc()){
            $cats_id[]=$catt['cat_id'];
            $cats_name[]=$catt['cat_name'];
       }
