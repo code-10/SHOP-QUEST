@@ -12,10 +12,16 @@
       	} 
 
       
+      //to get cat_id to fill in add category
+      $cat_id_fill=Array();
+      $cat_fill=$con->query("select count(*) as c from categories");
+      while($cat=$cat_fill->fetch_assoc())
+           $cat_id_fill[]=$cat['c'];
+      //
         
         if (isset($_POST['categories_submit'])) {
                 $cat_id = $_POST['cat_id'];
-        $cat_name = $_POST['cat_name'];
+                $cat_name = $_POST['cat_name'];
                 $con = getCon();
               if(($con->query("insert into categories(cat_id,cat_name) values('$cat_id','$cat_name')"))===True){
                 //echo "YES";
@@ -126,13 +132,13 @@
     <form class="jumbotron m-4" method="POST" action="enter_data.php">
      <div class="form-group">
         <label for="inputcat_id">category id</label>
-        <input type="number" min="1" class="form-control" id="inputcat_id" placeholder="categoryid" name="cat_id" required>
+        <input type="number" class="form-control" id="inputcat_id" placeholder="categoryid" name="cat_id" value="<?=$cat_id_fill[0]?>" disabled>
     </div>
     <div class="form-group">
         <label for="inputcat_name">category name</label>
         <input type="text" class="form-control" id="inputcat_name" placeholder="categoryname" name="cat_name" required>
     </div>
-    <button type="submit" name="categories_submit" class="btn btn-dark">Sure!</button>
+    <button type="submit" name="categories_submit" class="btn btn-dark">Add New category</button>
     </form>
     
             
