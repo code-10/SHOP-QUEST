@@ -30,30 +30,22 @@
       //
 
 
-      //to get cat_id to fill in add category
+      //to get cat_id to fill in add category and subcategory
       $cats_id=Array();
       $cats_name=Array();
-      $cats_f=$con->query("select * from categories");
+      $sub_cats_id=Array();
+      $sub_cats_name=Array();
+      $cats_f=$con->query("select s.cat_id,s.cat_name,sc.sub_cat_id,sc.sub_cat_name from categories as s,sub_categories as sc where sc.cat_id=s.cat_id");
       while($catt=$cats_f->fetch_assoc()){
            $cats_id[]=$catt['cat_id'];
            $cats_name[]=$catt['cat_name'];
+	   $sub_cats_id[]=$catt['sub_cat_id'];
+           $sub_cats_name[]=$catt['sub_cat_name'];
       }
 
       $cats=count($cats_id);
       //
 
-
-	//to get sub_cat_id to fill in add category
-      $sub_cats_id=Array();
-      $sub_cats_name=Array();
-      $sub_cats_f=$con->query("select * from sub_categories");
-      while($sub_catt=$sub_cats_f->fetch_assoc()){
-           $sub_cats_id[]=$sub_catt['sub_cat_id'];
-           $sub_cats_name[]=$sub_catt['sub_cat_name'];
-      }
-
-      $sub_cats=count($sub_cats_id);
-      //
 
 	//to fill product
       	$product_id_res=$con->query("select count(*) as pc from products");
@@ -237,18 +229,10 @@
 	    <label for="cat_name">category name</label>
     		<select class="form-control" id="qty" name="cat_id">
 		      <?php for($i=0;$i<$cats;$i++) { ?>
-    			<option value="<?=$cats_id[$i]?>"><?=$cats_id[$i]?> - <?=$cats_name[$i]?></option>
+    			<option value="<?=$sub_cats_id[$i]?>"><?=$cats_name[$i]?> - <?=$sub_cats_name[$i]?></option>
                       <?php } ?>
     		</select>
-    </div>
-    <div class="form-group">
-	    <label for="sub_cat_name">sub category name</label>
-    		<select class="form-control" id="qty" name="sub_cat_id">
-		      <?php for($j=0;$j<$sub_cats;$j++) { ?>
-    			<option value="<?=$sub_cats_id[$j]?>"><?=$sub_cats_id[$j]?> - <?=$sub_cats_name[$j]?></option>
-                      <?php } ?>
-    		</select>
-    </div>   
+    </div> 
     <div class="form-group">
         <label for="input_unique_type_id">Unique type id</label>
         <input type="number" min="1" class="form-control" id="inputunique_type_id" placeholder="unique type id" name="unique_type_id" value="<?=$unique_type_id_c[0]+1?>" disabled>
