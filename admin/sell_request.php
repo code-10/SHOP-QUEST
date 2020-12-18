@@ -85,7 +85,7 @@
   <!--Enter data into categories-->
     <div class="jumbotron">
         <div class="text-center">
-            <a href="admin_enter.php"><button type="button" class="btn btn-dark m-2">Enter</button></a>
+              <h4>Seller requests</h4>
         </div>
     </div>
      
