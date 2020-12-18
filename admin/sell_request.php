@@ -110,9 +110,9 @@
     <h6 class="card-text">waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     <? } ?>
     
-    <a href='admin_check_sell.php?storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-primary">Edit to Approve</a>
-    <a href="#" name="delete_info" class="btn btn-primary">delete</a>
-    <a href="#" name="archive_info" class="btn btn-primary">Archive</a>
+    <a href='admin_check_sell.php?storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-primary m-2">Edit to Approve</a>
+    <a href="#" name="delete_info" class="btn btn-primary m-2">delete</a>
+    <a href="#" name="archive_info" class="btn btn-primary m-2">Archive</a>
 
 </div>
 </div>  
