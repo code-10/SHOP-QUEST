@@ -48,8 +48,8 @@
       $sub_cats_name=Array();
       $sub_cats_f=$con->query("select * from sub_categories");
       while($sub_catt=$sub_cats_f->fetch_assoc()){
-           $sub_cats_id[]=$sub_catt['cat_id'];
-           $sub_cats_name[]=$sub_catt['cat_name'];
+           $sub_cats_id[]=$sub_catt['sub_cat_id'];
+           $sub_cats_name[]=$sub_catt['sub_cat_name'];
       }
 
       $sub_cats=count($sub_cats_id);
