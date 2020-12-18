@@ -43,22 +43,29 @@
       //
 
 
+	//to get sub_cat_id to fill in add category
+      $sub_cats_id=Array();
+      $sub_cats_name=Array();
+      $sub_cats_f=$con->query("select * from sub_categories");
+      while($sub_catt=$sub_cats_f->fetch_assoc()){
+           $sub_cats_id[]=$sub_catt['cat_id'];
+           $sub_cats_name[]=$sub_catt['cat_name'];
+      }
+
+      $cats=count($cats_id);
+      //
 
 	//to fill product
       	$product_id_res=$con->query("select count(*) as pc from products");
 	$unique_type_id_res=$con->query("select count(*) as upc from unique_product");
-	$sub_categories_res=$con->query("select count(*) as sc from sub_categories");
 
 	$product_id_c=Array();
 	$unique_type_id_c=Array();
-	$sub_categories_c=Array();
 
 	while($pic=$product_id_res->fetch_assoc())
 		$product_id_c[]=$pic['pc'];
 	while($utic=$unique_type_id_res->fetch_assoc())
-		$unique_type_id_c[]=$utic['pc'];
-	while($scc=$sub_categories_res->fetch_assoc())
-		$sub_categories_c[]=$scc['pc'];
+		$unique_type_id_c[]=$utic['upc'];
 		
       //
 
@@ -224,15 +231,27 @@
     <form class="jumbotron m-4" method="POST" action="enter_data.php">
      <div class="form-group">
         <label for="inputproduct_id">product id</label>
-        <input type="number" min="1" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$product_id_c[0]+1?>" disabled>
+        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$product_id_c[0]+1?>" disabled>
     </div>
     <div class="form-group">
-        <label for="inputsub_cat_id">Sub category id</label>
-        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id" value="<?=$unique_type_id_c[0]+1?>" disabled>
+	    <label for="cat_name">category name</label>
+    		<select class="form-control" id="qty" name="cat_id">
+		      <?php for($i=0;$i<$cats;$i++) { ?>
+    			<option value="<?=$cats_id[$i]?>"><?=$cats_id[$i]?> - <?=$cats_name[$i]?></option>
+                      <?php } ?>
+    		</select>
     </div>
+    <div class="form-group">
+	    <label for="sub_cat_name">sub category name</label>
+    		<select class="form-control" id="qty" name="sub_cat_id">
+		      <?php for($i=0;$i<$sub_cats;$i++) { ?>
+    			<option value="<?=$sub_cats_id[$i]?>"><?=$sub_cats_id[$i]?> - <?=$sub_sub_cats_name[$i]?></option>
+                      <?php } ?>
+    		</select>
+    </div>   
     <div class="form-group">
         <label for="input_unique_type_id">Unique type id</label>
-        <input type="number" min="1" class="form-control" id="inputunique_type_id" placeholder="unique type id" name="unique_type_id" value="<?=$sub_categories_c[0]+1?>" disabled>
+        <input type="number" min="1" class="form-control" id="inputunique_type_id" placeholder="unique type id" name="unique_type_id" value="<?=$unique_type_id_c[0]+1?>" disabled>
     </div>
     <div class="form-group">
         <label for="inputproduct_name">product name</label>
