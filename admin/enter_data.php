@@ -13,6 +13,7 @@
             die(); 
       	} 
 
+
       
       //to get cat_id to fill in add category
       $cat_id_fill=Array();
@@ -21,6 +22,28 @@
            $cat_id_fill[]=$cat['c'];
       //
         
+      //to get sub_cat_id to fill in add category
+      $sub_cat_id_fill=Array();
+      $sub_cat_fill=$con->query("select count(*) as c from sub_categories");
+      while($subcat=$sub_cat_fill->fetch_assoc())
+           $sub_cat_id_fill[]=$subcat['c'];
+      //
+
+
+      //to get sub_cat_id to fill in add category
+      $cats_id=Array();
+      $cats_name=Array();
+      $cats_f=$con->query("select * from categories");
+      while($catt=$catsf->fetch_assoc()){
+           $cats_id[]=$catt['cat_id'];
+           $cats_name[]=$catt['cat_name'];
+      }
+
+      $cats=count($cats_id);
+      //
+
+
+
         if (isset($_POST['categories_submit'])) {
                 $cat_id = $_POST['cat_id'];
                 $cat_name = $_POST['cat_name'];
@@ -131,6 +154,7 @@
   
   
  <!--categories-->
+      <h5>Add a new category</h5>
     <form class="jumbotron m-4" method="POST" action="enter_data.php">
      <div class="form-group">
         <label for="inputcat_id">category id</label>
@@ -145,19 +169,23 @@
     
             
                                              
-     <!--Sub_categories-->                                         
+     <!--Sub_categories--> 
+      <h5>Add a new sub category</h5>
      <form class="jumbotron m-4" method="POST" action="enter_data.php">
      <div class="form-group">
         <label for="inputsub_cat_id">Sub category id</label>
-        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id" required>
+        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id" value="<?=$sub_cat_id_fill[0]+1?>" disabled>
     </div>
     <div class="form-group">
         <label for="inputsub_cat_name">Sub category name</label>
         <input type="text" class="form-control" id="inputsub_cat_name" placeholder="subcategoryname" name="sub_cat_name" required>
     </div>
     <div class="form-group">
-        <label for="inputcat_id">category id</label>
-        <input type="number" min="1" class="form-control" id="inputcat_id" placeholder="categoryid" name="cat_id" required>
+    		<select class="form-control" id="qty" name="cat_id">
+		      <?php for($i=1;$i<=$cats;$i++) { ?>
+    				<option value="<?=$cats_id[$i]?>"><?=$cats_id[$i]?> - <?=$cats_name?></option>
+                  <?php } ?>
+    		</select>
     </div>
     
     <button type="submit" name="sub_categories_submit" class="btn btn-dark">Sure!</button>
