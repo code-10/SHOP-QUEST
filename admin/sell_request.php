@@ -112,6 +112,7 @@
     
     <a href='admin_check_sell.php?storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-primary">Edit to Approve</a>
     <a href="#" name="delete_info" class="btn btn-primary">delete</a>
+    <a href="#" name="archive_info" class="btn btn-primary">Archive</a>
 
 </div>
 </div>  
