@@ -30,6 +30,21 @@
       //
 
 
+
+      //to get cat_id to fill in add category
+      $catss_id=Array();
+      $catss_name=Array();
+      $catss_f=$con->query("select * from categories");
+      while($catts=$catss_f->fetch_assoc()){
+           $catss_id[]=$catts['cat_id'];
+           $catss_name[]=$catts['cat_name'];
+      }
+
+      $catsc=count($catss_id);
+      //
+
+
+
       //to get cat_id to fill in add category and subcategory
       $cats_id=Array();
       $cats_name=Array();
@@ -206,8 +221,8 @@
     <div class="form-group">
 	    <label for="cat_name">category name</label>
     		<select class="form-control" id="qty" name="cat_id">
-		      <?php for($i=0;$i<$cats;$i++) { ?>
-    			<option value="<?=$cats_id[$i]?>"><?=$cats_id[$i]?> - <?=$cats_name[$i]?></option>
+		      <?php for($j=0;$j<$catsc;$j++) { ?>
+    			<option value="<?=$catss_id[$j]?>"><?=$catss_name[$i]?></option>
                       <?php } ?>
     		</select>
     </div>
@@ -226,7 +241,7 @@
         <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$product_id_c[0]+1?>" disabled>
     </div>
     <div class="form-group">
-	    <label for="cat_name">category name</label>
+	    <label for="cat_name">category and sub category name</label>
     		<select class="form-control" id="qty" name="cat_id">
 		      <?php for($i=0;$i<$cats;$i++) { ?>
     			<option value="<?=$sub_cats_id[$i]?>"><?=$cats_name[$i]?> - <?=$sub_cats_name[$i]?></option>
