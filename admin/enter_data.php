@@ -28,6 +28,7 @@
       $sub_cat_fill=$con->query("select count(*) as c from sub_categories");
       while($subcat=$sub_cat_fill->fetch_assoc())
            $sub_cat_id_fill[]=$subcat['c'];
+	$sub_cat_id_fill_use=$sub_cat_id_fill[0]+1;
       //
 
 
@@ -70,6 +71,8 @@
 
 	while($pic=$product_id_res->fetch_assoc())
 		$product_id_c[]=$pic['pc'];
+
+	$product_id_c_use=$product_id_c[0]+1;
 		
       //
 
@@ -86,8 +89,8 @@
 		
               if(($con->query("insert into categories(cat_id,cat_name) values('$cat_id_fill_use','$cat_name')"))===True){
                 //echo "YES";
-                //header("Location:admin_enter.php?admin_enter_main=yes");
-                //die();
+                header("Location:admin_enter.php?admin_enter_main=yes");
+                die();
         }
         else
                 echo $con->error;  
@@ -97,10 +100,10 @@
         if (isset($_POST['sub_categories_submit'])) {
                 $con = getCon();
                 $sub_cat_id = $_POST['sub_cat_id'];
-        $sub_cat_name = $_POST['sub_cat_name'];
-        $cat_id = $_POST['cat_id'];
+        	$sub_cat_name = $_POST['sub_cat_name'];
+        	$cat_id = $_POST['cat_id'];
         
-        if(($con->query("insert into sub_categories(sub_cat_id,sub_cat_name,cat_id) values('".mysqli_real_escape_string($con,$sub_cat_id)."','".mysqli_real_escape_string($con,$sub_cat_name)."','".mysqli_real_escape_string($con,$cat_id)."')"))===True){
+        if(($con->query("insert into sub_categories(sub_cat_id,sub_cat_name,cat_id) values('".mysqli_real_escape_string($con,$sub_cat_id_fill_use)."','".mysqli_real_escape_string($con,$sub_cat_name)."','".mysqli_real_escape_string($con,$cat_id)."')"))===True){
                 //echo "YES";
                 header("Location:admin_enter.php?admin_enter_main=yes");
                 die();
@@ -129,7 +132,7 @@
                 $seller_user_name = $_POST['seller_user_name'];
                 
         
-        	if(($con->query("insert into products(product_id,product_name,sub_cat_id,product_brand,product_description,rating) values('".mysqli_real_escape_string($con,$product_id)."','".mysqli_real_escape_string($con,$product_name)."','".mysqli_real_escape_string($con,$sub_cat_id)."','".mysqli_real_escape_string($con,$product_brand)."','".mysqli_real_escape_string($con,$product_description)."','".mysqli_real_escape_string($con,$product_rating)."')"))===True){
+        	if(($con->query("insert into products(product_id,product_name,sub_cat_id,product_brand,product_description,rating) values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$product_name)."','".mysqli_real_escape_string($con,$sub_cat_id)."','".mysqli_real_escape_string($con,$product_brand)."','".mysqli_real_escape_string($con,$product_description)."','".mysqli_real_escape_string($con,$product_rating)."')"))===True){
                 	//echo "YES";
                 	header("Location:admin_enter.php?admin_enter_main=yes");
                 	die();
@@ -207,7 +210,7 @@
      <form class="jumbotron m-4" method="POST" action="enter_data.php">
      <div class="form-group">
         <label for="inputsub_cat_id">Sub category id</label>
-        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id" value="<?=$sub_cat_id_fill[0]+1?>" disabled>
+        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id" value="<?=$sub_cat_id_fill_use?>" disabled>
     </div>
     <div class="form-group">
         <label for="inputsub_cat_name">Sub category name</label>
@@ -233,7 +236,7 @@
     <form class="jumbotron m-4" method="POST" action="enter_data.php">
      <div class="form-group">
         <label for="inputproduct_id">product id</label>
-        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$product_id_c[0]+1?>" disabled>
+        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$product_id_c_use?>" disabled>
     </div>
     <div class="form-group">
 	    <label for="cat_name">category and sub category name</label>
