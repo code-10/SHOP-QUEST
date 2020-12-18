@@ -251,7 +251,7 @@
     </div>    
     <div class="form-group">
         <label for="inputproduct_description">product description</label>
-        <input type="text" class="form-control" id="inputproduct_description" placeholder="product description" name="product_description" required>
+        <textarea type="text" class="form-control" id="inputproduct_description" rows="100" cols="8" placeholder="product description" name="product_description" required></textarea>
     </div>	    
     <button type="submit" name="products" class="btn btn-dark">Add product</button>
     </form>   
