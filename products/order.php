@@ -53,7 +53,7 @@
 	      
 	   
 	      
-	    header("Location:successful.php?order_placed=yes");
+	    header("Location:user_orders.php?order_placed=yes");
             die();       
       }
 
