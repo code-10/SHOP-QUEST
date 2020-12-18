@@ -55,7 +55,7 @@
       
          <div class="text-center">
             <a href="../products/wishlist.php"><button type="button" class="btn btn-dark">Your Wishlist</button></a><br><br>    
-            <a href="../products/successful.php?your_orders=yes"><button type="button" class="btn btn-dark">Your Orders</button></a><br><br>
+            <a href="../products/user_orders.php?your_orders=yes"><button type="button" class="btn btn-dark">Your Orders</button></a><br><br>
         </div>
       
     </div>
