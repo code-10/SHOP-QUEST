@@ -5,6 +5,8 @@
       
       session_start(); 
 
+      $con=getCon();
+
       if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
       	{
             header("Location:../index.php");
