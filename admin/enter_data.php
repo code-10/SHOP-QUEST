@@ -132,7 +132,7 @@
     <form class="jumbotron m-4" method="POST" action="enter_data.php">
      <div class="form-group">
         <label for="inputcat_id">category id</label>
-        <input type="number" class="form-control" id="inputcat_id" placeholder="categoryid" name="cat_id" value="<?=$cat_id_fill[0]?>" disabled>
+        <input type="number" class="form-control" id="inputcat_id" placeholder="categoryid" name="cat_id" value="<?=$cat_id_fill[0]+1?>" disabled>
     </div>
     <div class="form-group">
         <label for="inputcat_name">category name</label>
