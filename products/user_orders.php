@@ -137,7 +137,7 @@
 				<p style="margin-top=0;margin-bottom:0;"><?=$total_price[$i]?></p>
 			</div>
 			<div class="col-lg-2 col-12 col-md-2 text-center">
-				<a href="successful.php?order_details=yes&&order_id_detail=<?=$order_id[$i]?>"><button class="btn btn-dark">View details</button></a>
+				<a href="user_orders.php?order_details=yes&&order_id_detail=<?=$order_id[$i]?>"><button class="btn btn-dark">View details</button></a>
 			</div>
 			<div class="col-lg-2 col-12 col-md-2 text-center">
 				<div class="spinner-grow text-primary" role="status">
