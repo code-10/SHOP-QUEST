@@ -52,7 +52,7 @@
            $sub_cats_name[]=$sub_catt['cat_name'];
       }
 
-      $cats=count($cats_id);
+      $sub_cats=count($sub_cats_id);
       //
 
 	//to fill product
@@ -244,8 +244,8 @@
     <div class="form-group">
 	    <label for="sub_cat_name">sub category name</label>
     		<select class="form-control" id="qty" name="sub_cat_id">
-		      <?php for($i=0;$i<$sub_cats;$i++) { ?>
-    			<option value="<?=$sub_cats_id[$i]?>"><?=$sub_cats_id[$i]?> - <?=$sub_sub_cats_name[$i]?></option>
+		      <?php for($j=0;$i<$sub_cats;$j++) { ?>
+    			<option value="<?=$sub_cats_id[$j]?>"><?=$sub_cats_id[$j]?> - <?=$sub_sub_cats_name[$j]?></option>
                       <?php } ?>
     		</select>
     </div>   
