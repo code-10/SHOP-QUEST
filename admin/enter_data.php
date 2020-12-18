@@ -112,6 +112,7 @@
         
 
         if (isset($_POST['products'])) {
+		
                 $con = getCon();
 		
                 $product_id = $_POST['product_id'];
@@ -126,26 +127,24 @@
                 $seller_user_name = $_POST['seller_user_name'];
                 
         
-        if(($con->query("insert into products(product_id,product_name,sub_cat_id,product_brand,product_description,rating) values('".mysqli_real_escape_string($con,$product_id)."','".mysqli_real_escape_string($con,$product_name)."','".mysqli_real_escape_string($con,$sub_cat_id)."','".mysqli_real_escape_string($con,$product_brand)."','".mysqli_real_escape_string($con,$product_description)."','".mysqli_real_escape_string($con,$product_rating)."')"))===True){
-                //echo "YES";
-                header("Location:admin_enter.php?admin_enter_main=yes");
-                die();
-        }
-        else
-                echo $con->error;
-        }
-
-                
+        	if(($con->query("insert into products(product_id,product_name,sub_cat_id,product_brand,product_description,rating) values('".mysqli_real_escape_string($con,$product_id)."','".mysqli_real_escape_string($con,$product_name)."','".mysqli_real_escape_string($con,$sub_cat_id)."','".mysqli_real_escape_string($con,$product_brand)."','".mysqli_real_escape_string($con,$product_description)."','".mysqli_real_escape_string($con,$product_rating)."')"))===True){
+                	//echo "YES";
+                	header("Location:admin_enter.php?admin_enter_main=yes");
+                	die();
+        	}
+       		else
+                	echo $con->error;
         
-        if(($con->query("insert into unique_product(product_id,price,quantity,seller_user_name,color,size) values('".mysqli_real_escape_string($con,$product_id)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$seller_user_name)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')"))===True){
-                //echo "YES";
-                header("Location:admin_enter.php?admin_enter_main=yes");
-                die();
-        }
-        else
-                echo $con->error;
-        }
 
+        
+        	if(($con->query("insert into unique_product(product_id,price,quantity,seller_user_name,color,size) values('".mysqli_real_escape_string($con,$product_id)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$seller_user_name)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')"))===True){
+                	//echo "YES";
+                	header("Location:admin_enter.php?admin_enter_main=yes");
+                	die();
+       	 	}
+        	else
+                	echo $con->error;
+  
 	}
 
 
