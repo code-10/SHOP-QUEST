@@ -245,7 +245,7 @@
 	    <label for="sub_cat_name">sub category name</label>
     		<select class="form-control" id="qty" name="sub_cat_id">
 		      <?php for($j=0;$j<$sub_cats;$j++) { ?>
-    			<option value="<?=$sub_cats_id[$j]?>"><?=$sub_cats_id[$j]?> - <?=$sub_sub_cats_name[$j]?></option>
+    			<option value="<?=$sub_cats_id[$j]?>"><?=$sub_cats_id[$j]?> - <?=$sub_cats_name[$j]?></option>
                       <?php } ?>
     		</select>
     </div>   
