@@ -154,7 +154,7 @@
   
   
  <!--categories-->
-      <h5>Add a new category</h5>
+      <h5 class="m-4">Add a new category</h5>
     <form class="jumbotron m-4" method="POST" action="enter_data.php">
      <div class="form-group">
         <label for="inputcat_id">category id</label>
@@ -170,7 +170,7 @@
             
                                              
      <!--Sub_categories--> 
-      <h5>Add a new sub category</h5>
+      <h5 class="m-4">Add a new sub category</h5>
      <form class="jumbotron m-4" method="POST" action="enter_data.php">
      <div class="form-group">
         <label for="inputsub_cat_id">Sub category id</label>
@@ -181,10 +181,11 @@
         <input type="text" class="form-control" id="inputsub_cat_name" placeholder="subcategoryname" name="sub_cat_name" required>
     </div>
     <div class="form-group">
+	    <label for="cat_name">category name</label>
     		<select class="form-control" id="qty" name="cat_id">
-		      <?php for($i=1;$i<=$cats;$i++) { ?>
-    				<option value="<?=$cats_id[$i]?>"><?=$cats_id[$i]?> - <?=$cats_name?></option>
-                  <?php } ?>
+		      <?php for($i=0;$i<$cats;$i++) { ?>
+    			<option value="<?=$cats_id[$i]?>"><?=$cats_id[$i]?> - <?=$cats_name[$i]?></option>
+                      <?php } ?>
     		</select>
     </div>
     
