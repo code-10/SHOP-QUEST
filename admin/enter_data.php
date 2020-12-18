@@ -30,7 +30,7 @@
       //
 
 
-      //to get sub_cat_id to fill in add category
+      //to get cat_id to fill in add category
       $cats_id=Array();
       $cats_name=Array();
       $cats_f=$con->query("select * from categories");
@@ -41,6 +41,16 @@
 
       $cats=count($cats_id);
       //
+
+
+
+	//to get products to fill in add cproducts
+      	$pro=$con->query("select * from products");
+      //
+
+
+
+
 
 
 
@@ -164,7 +174,7 @@
         <label for="inputcat_name">category name</label>
         <input type="text" class="form-control" id="inputcat_name" placeholder="categoryname" name="cat_name" required>
     </div>
-    <button type="submit" name="categories_submit" class="btn btn-dark">Add New category</button>
+    <button type="submit" name="categories_submit" class="btn btn-dark">Add New Category</button>
     </form>
     
             
@@ -189,13 +199,14 @@
     		</select>
     </div>
     
-    <button type="submit" name="sub_categories_submit" class="btn btn-dark">Sure!</button>
+    <button type="submit" name="sub_categories_submit" class="btn btn-dark">Add New Sub Category</button>
     </form>                                        
                                               
     
     
     
     <!--products-->
+	<h5 class="m-4">Add a Product</h5>
     <form class="jumbotron m-4" method="POST" action="enter_data.php">
      <div class="form-group">
         <label for="inputproduct_id">product id</label>
