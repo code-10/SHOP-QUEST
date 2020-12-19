@@ -286,13 +286,13 @@
     <p class="card-text">quantity : <?=$quantity[$i]?></p>
     
     <? if($approved[$i]==1) { ?>
-    	<h6 class="card-text">Approved&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
+    	<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 	<a href='sell_request.php?admin_edit_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit</a>
     	<a href='sell_request.php?admin_delete_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Delete from website</a>
     <? } else if($approved[$i]==2) { ?>
-	 <h6 class="card-text">Approved&nbsp&nbsp<span class="badge badge-warning">Rejected</span></h6> 
+	 <h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6> 
     <? } else { ?>
-    	<h6 class="card-text">waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
+    	<h6 class="card-text">Status&nbsp&nbsp waiting for approval<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     	<a href='sell_request.php?admin_check_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit and Approve</a>
     	<a href='sell_request.php?admin_reject_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Reject</a>
     <? } ?>
