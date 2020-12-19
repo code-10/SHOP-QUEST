@@ -2,6 +2,8 @@
 <?php include_once '../libraries/chocolates.php'; ?>
 
 <?php 
+
+	$con=getCon();
       
       session_start(); 
 
@@ -13,6 +15,9 @@
 
       $sell_request_main=$_GET['sell_request_main'];
       $admin_check_sell=$_GET['admin_check_sell'];
+      $admin_reject_sell=$_GET['admin_reject_sell'];
+	
+
 
 ?>
 
@@ -47,6 +52,12 @@
       
 	$con=getCon();
       
+	
+	
+	
+	
+	
+	
       //to fill product
       	$product_id_res=$con->query("select count(*) as pc from products");
 
@@ -82,10 +93,20 @@
       
       
       
+      $storeinfoid=$_GET['storeinfoid'];
       
-      
-      
-      
+      //admin reject
+      	if($admin_reject_sell=="yes")
+	{
+		$con->query("update store_info set approved=2 where store_info_id='$storeinfoid'");
+		header("Location:sell_request.php?sell_request_main=yes");
+                die();
+	}
+	
+	
+	
+	
+	
       
       
       
@@ -225,8 +246,8 @@
         {
           if($con->query($sql1)===True)
           {
-              //header("Location:sell_request.php?sell_request_main=yes");
-                //die();
+              	header("Location:sell_request.php?sell_request_main=yes");
+                die();
           }
         }
       }
@@ -264,15 +285,17 @@
     <p class="card-text">size  : <?=$size[$i]?></p>
     <p class="card-text">quantity : <?=$quantity[$i]?></p>
     
-    <? if($approved[$i]) { ?>
-    <h6 class="card-text">Approved&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
-    
+    <? if($approved[$i]==1) { ?>
+    	<h6 class="card-text">Approved&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
+	<a href='sell_request.php?admin_edit_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit</a>
+    	<a href='sell_request.php?admin_delete_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Delete from website</a>
+    <? } else if($approved[$i]==2) { ?>
+	 <h6 class="card-text">Approved&nbsp&nbsp<span class="badge badge-warning">Rejected</span></h6> 
     <? } else { ?>
-    <h6 class="card-text">waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
+    	<h6 class="card-text">waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
+    	<a href='sell_request.php?admin_check_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit and Approve</a>
+    	<a href='sell_request.php?admin_reject_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Reject</a>
     <? } ?>
-    
-    <a href='sell_request.php?admin_check_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit and Approve</a>
-    <a href="#" name="reject_application" class="btn btn-danger m-2">Reject</a>
 
 </div>
 </div>  
