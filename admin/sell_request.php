@@ -271,9 +271,9 @@
     <h6 class="card-text">waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     <? } ?>
     
-    <a href='sell_request.php?admin_check_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-primary m-2">Edit to Approve</a>
-    <a href="#" name="delete_info" class="btn btn-primary m-2">delete</a>
-    <a href="#" name="archive_info" class="btn btn-primary m-2">Archive</a>
+    <a href='sell_request.php?admin_check_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit and Approve</a>
+    <a href="#" name="edit_application" class="btn btn-primary m-2">Edit</a>
+    <a href="#" name="reject_application" class="btn btn-danger m-2">Reject</a>
 
 </div>
 </div>  
