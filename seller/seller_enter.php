@@ -259,7 +259,7 @@
 				<? if($approved[$k]==2) { ?>
 					<h6 class="card-text"><span class="badge badge-warning">Success</span></h6>
 				<? } else { ?>
-					<a href="seller_enter.php?arhive=yes&&store_info_id_a=<?=$store_info_id[0]?>" class="btn btn-warning">Archive</a>
+					<a href="seller_enter.php?archive=yes&&store_info_id_a=<?=$store_info_id[0]?>" class="btn btn-warning">Archive</a>
     				<? } ?>	
 						
     				<a href="seller_enter.php?delete=yes&&store_info_id_d=<?=$store_info_id[0]?>" class="btn btn-danger">delete</a>
