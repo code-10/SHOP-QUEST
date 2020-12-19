@@ -38,11 +38,15 @@
 	if($archive=="yes")
 	{
 		$con->query("update store_info set approved=2 where store_info_id='$store_info_id_a'");	
+		header("Location:seller_enter.php?my_sell_requests=yes");
+                die();
 	}
 
 	if($delete=="yes")
 	{
 		$con->query("delete from store_info where store_info_id='$store_info_id_d'");	
+		header("Location:seller_enter.php?my_sell_requests=yes");
+                die();
 	}
 	
 
@@ -113,7 +117,7 @@
   				$color=array();
   				$size=array();
   				$approved=array();
-  				$storeinfoid=array();
+  				$store_info_id=array();
 	
   
   				while($ele = $res->fetch_assoc())
