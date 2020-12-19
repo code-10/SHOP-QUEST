@@ -45,6 +45,7 @@
   
  <?php
       
+	$con=getCon();
       
       //to fill product
       	$product_id_res=$con->query("select count(*) as pc from products");
