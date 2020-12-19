@@ -16,11 +16,23 @@
 		$con=getCon();
 
       
-      $seller_enter_main=$_GET['seller_enter_main'];
-      $sell_a_product=$_GET['sell_a_product'];
-      $my_sell_requests=$_GET['my_sell_requests'];
+      	$seller_enter_main=$_GET['seller_enter_main'];
+      	$sell_a_product=$_GET['sell_a_product'];
+      	$my_sell_requests=$_GET['my_sell_requests'];
+		$edit=$_GET['edit'];
+		$archive=$_GET['archive'];
+		$delete=$_GET['delete'];
+		$store_info_id_a=$_GET['store_info_id_a'];
+		$store_info_id_d=$_GET['store_info_id_d'];
 
 
+		if($delete=="yes")
+		{
+			$con->query("delete from store_info where store_info_id='$store_info_id_d'");
+			header("Location:seller_enter.php?my_sell_requests=yes");
+            die();
+		}
+		
 	
 	
 
