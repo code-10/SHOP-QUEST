@@ -248,7 +248,6 @@
       
       <?php if($sell_request_main=="yes") { ?>
       <? for($i=0;$i<$n;$i++) { ?>
-	<div class="row">
 <div class="card m-4">
   <div class="card-header">seller name : <?=$seller_name[$i]?></div>
   <div class="card-body">
@@ -276,7 +275,6 @@
 </div>
 </div>  
 		
-	</div>
   <? } ?>   
   
   <?php } else if($admin_check_sell=="yes") { ?>
