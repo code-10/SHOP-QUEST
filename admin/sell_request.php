@@ -13,7 +13,6 @@
 
       $sell_request_main=$_GET['sell_request_main'];
       $admin_check_sell=$_GET['admin_check_sell'];
-      $approve_sell=$_GET['approve_sell'];
 
 ?>
 
@@ -179,7 +178,7 @@
         {
           if($con->query($sql1)===True)
           {
-              header("Location:sell_request.php");
+              header("Location:sell_request.php?sell_request_main=yes");
                 die();
           }
         }
@@ -302,8 +301,6 @@
         <label for="inputapprove">approve status - [1/0]</label>
         <input type="number" class="form-control" id="inputapprove" placeholder="" value="1" name="approve" required> 
     </div>     
-    <?php $val=true;?>
-    <input type="hidden" name="approve_sell" value="<?=$val?>" />
     <button type="submit" name="verify_product" class="btn btn-dark">Approve</button>
     </form>     
       
