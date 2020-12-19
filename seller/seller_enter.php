@@ -229,9 +229,11 @@
     					<p class="card-text">quantity : <?=$quantity[$k]?></p>
     
     				<? if($approved[$k]==1) { ?>
-    					<h6 class="card-text">Approved&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
-    				<? } else { ?>
-    					<h6 class="card-text">waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
+    					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
+    				<? } else if($approved[$k]==2){ ?>
+					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6>
+				<? } else { ?>		
+    					<h6 class="card-text">Status - waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     				<? } ?>
 
 				</div>
