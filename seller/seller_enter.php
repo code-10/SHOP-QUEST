@@ -222,7 +222,7 @@
     				<? } ?>
 				
     				<a href="#" class="btn btn-primary">Edit</a>
-				<a href="#" class="btn btn-info">Archive</a>
+				<a href="#" class="btn btn-warning">Archive</a>
     				<a href="#" class="btn btn-danger">delete</a>
 
 				</div>
