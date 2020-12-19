@@ -211,6 +211,8 @@
       $storeinfoid=$_POST['storeinfoid'];
       //$done=1;      
 
+	echo $storeinfoid;	      
+	      
       //for updating store info
       $sql1="update store_info set approved=1 where store_info_id='$storeinfoid'";
       $sql2="insert into products(product_id,product_name,sub_cat_id,product_brand,product_description,rating) values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$productname)."','".mysqli_real_escape_string($con,$subcategoryid)."','".mysqli_real_escape_string($con,$productbrand)."','".mysqli_real_escape_string($con,$productdescription)."','".mysqli_real_escape_string($con,$rating)."')";
@@ -222,8 +224,8 @@
         {
           if($con->query($sql1)===True)
           {
-              header("Location:sell_request.php?sell_request_main=yes");
-                die();
+              //header("Location:sell_request.php?sell_request_main=yes");
+                //die();
           }
         }
       }
