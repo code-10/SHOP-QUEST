@@ -20,18 +20,11 @@
       	$sell_a_product=$_GET['sell_a_product'];
       	$my_sell_requests=$_GET['my_sell_requests'];
 		$edit=$_GET['edit'];
-		$archive=$_GET['archive'];
-		$delete=$_GET['delete'];
 		$store_info_id_a=$_GET['store_info_id_a'];
 		$store_info_id_d=$_GET['store_info_id_d'];
 
 
-		if($delete=="yes")
-		{
-			$con->query("delete from store_info where store_info_id='$store_info_id_d'");
-			header("Location:seller_enter.php?my_sell_requests=yes");
-            die();
-		}
+		
 		
 	
 	
@@ -240,12 +233,6 @@
     				<? } else { ?>
     					<h6 class="card-text">waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     				<? } ?>
-				
-				<a href="seller_enter.php?edit=yes" class="btn btn-primary">Edit</a>
-				
-				<a href="seller_enter.php?archive=yes&&store_info_id_a=<?=$store_info_id[$k]?>" class="btn btn-warning">Archive</a>
-    						
-    				<a href="seller_enter.php?delete=yes&&store_info_id_d=<?=$store_info_id[$k]?>" class="btn btn-danger">delete</a>
 
 				</div>
 			</div>  
