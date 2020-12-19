@@ -209,9 +209,10 @@
       //For Store info
       $approved=$_POST['approve'];
       $storeinfoid=$_POST['storeinfoid'];
+      $store_info_id=$_POST['store_info_id'];
       //$done=1;      
 
-	echo $storeinfoid;	      
+	echo $store_info_id;	      
 	      
       //for updating store info
       $sql1="update store_info set approved=1 where store_info_id='$storeinfoid'";
@@ -351,6 +352,9 @@
         <label for="inputapprove">approve status - [1/0]</label>
         <input type="number" class="form-control" id="inputapprove" placeholder="" value="1" name="approve" required> 
     </div>     
+	       
+    <input type="hidden" name="store_info_id" value="<?=$storeinfoid[0]?>" />	       
+	       
     <button type="submit" name="verify_product" class="btn btn-dark">Approve</button>
     </form>     
       
