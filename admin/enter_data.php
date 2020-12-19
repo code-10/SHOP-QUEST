@@ -132,7 +132,7 @@
                 $seller_user_name = $_POST['seller_user_name'];
                 
         
-        	if(($con->query("insert into products(product_id,product_name,sub_cat_id,product_brand,product_description,rating) values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$product_name)."','".mysqli_real_escape_string($con,$sub_cat_id)."','".mysqli_real_escape_string($con,$product_brand)."','".mysqli_real_escape_string($con,$product_description)."','".mysqli_real_escape_string($con,$product_rating)."')"))===True){
+        	if(($con->query("insert into products(product_id,product_name,sub_cat_id,product_brand,product_description,rating,rating_no,rating_sum) values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$product_name)."','".mysqli_real_escape_string($con,$sub_cat_id)."','".mysqli_real_escape_string($con,$product_brand)."','".mysqli_real_escape_string($con,$product_description)."','".mysqli_real_escape_string($con,$product_rating)."',0,0)"))===True){
                 	//echo "YES";
                 	header("Location:admin_enter.php?admin_enter_main=yes");
                 	die();
@@ -142,7 +142,7 @@
         
 
         
-        	if(($con->query("insert into unique_product(product_id,price,quantity,seller_user_name,color,size,rating,rating_no,rating_sum) values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$seller_user_name)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."',0,0,0)"))===True){
+        	if(($con->query("insert into unique_product(product_id,price,quantity,seller_user_name,color,size) values('".mysqli_real_escape_string($con,$product_id)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$seller_user_name)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')"))===True){
                 	//echo "YES";
                 	header("Location:admin_enter.php?admin_enter_main=yes");
                 	die();
