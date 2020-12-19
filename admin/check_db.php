@@ -89,6 +89,12 @@
 </nav>
 
      
+        
+ <div class="jumbotron">
+        <div class="text-center">
+              <h4>Database Details</h4>
+        </div>
+    </div>       
    
         
         
