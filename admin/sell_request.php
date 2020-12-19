@@ -144,7 +144,7 @@
       
       
       
-      if($approve_sell)
+      if(isset($_POST['verify_product']))
       {
             $con=getCon();
 
