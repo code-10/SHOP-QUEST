@@ -243,7 +243,7 @@
       		
             <a class="btn btn-primary m-4" href="seller_enter.php?seller_enter_main=yes" role="button">Back to seller main menu</a>
 	
-			<? for($k=0;$k<$n;$k++) { ?>
+			<?php for($k=0;$k<$n;$k++) { ?>
 				<div class="card m-4">
   					<div class="card-header">Product name : <?=$product_name[$k]?></div>
   					<div class="card-body">
