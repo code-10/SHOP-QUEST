@@ -220,9 +220,10 @@
     				<? } else { ?>
     					<h6 class="card-text">waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     				<? } ?>
-    
+				
     				<a href="#" class="btn btn-primary">Edit</a>
-    				<a href="#" class="btn btn-primary">delete</a>
+				<a href="#" class="btn btn-info">Archive</a>
+    				<a href="#" class="btn btn-danger">delete</a>
 
 				</div>
 			</div>  
