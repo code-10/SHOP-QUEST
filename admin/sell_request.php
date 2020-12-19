@@ -45,6 +45,49 @@
   
  <?php
       
+      
+      //to fill product
+      	$product_id_res=$con->query("select count(*) as pc from products");
+
+	$product_id_c=Array();
+
+	while($pic=$product_id_res->fetch_assoc())
+		$product_id_c[]=$pic['pc'];
+
+	$product_id_c_use=$product_id_c[0]+1;
+		
+      //
+      
+      
+      
+      
+      
+      //to get cat_id to fill in add category and subcategory
+      $cats_id=Array();
+      $cats_name=Array();
+      $sub_cats_id=Array();
+      $sub_cats_name=Array();
+      $cats_f=$con->query("select s.cat_id,s.cat_name,sc.sub_cat_id,sc.sub_cat_name from categories as s,sub_categories as sc where sc.cat_id=s.cat_id");
+      while($catt=$cats_f->fetch_assoc()){
+           $cats_id[]=$catt['cat_id'];
+           $cats_name[]=$catt['cat_name'];
+	     $sub_cats_id[]=$catt['sub_cat_id'];
+           $sub_cats_name[]=$catt['sub_cat_name'];
+      }
+
+      $cats=count($cats_id);
+      //    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       //get info from stpore info
         if($sell_request_main=="yes"){
         $con=getCon();
@@ -148,7 +191,7 @@
             $con=getCon();
 
   
-      $subcategoryid=$_POST['subcatid'];
+      $subcategoryid=$_POST['sub_cat_id'];
       $productid=$_POST['product_id'];
       $productname=$_POST['product_name'];
       $productbrand=$_POST['product_brand'];
@@ -243,13 +286,17 @@
     </div>
          <!--sub cat id-->
      <div class="form-group">
-        <label for="inputsubcat">Sub category id - (fill it)</label>
-        <input type="number" class="form-control" id="inputsubcat" placeholder="" name="subcatid" required>
-    </div>
+	    <label for="cat_name">category and sub category name</label>
+    		<select class="form-control" id="qty" name="sub_cat_id">
+		      <?php for($i=0;$i<$cats;$i++) { ?>
+    			<option value="<?=$sub_cats_id[$i]?>"><?=$cats_name[$i]?> - <?=$sub_cats_name[$i]?></option>
+                      <?php } ?>
+    		</select>
+    </div> 
          <!--product id-->
      <div class="form-group">
-        <label for="inputproductid">product_id - (fill it)</label>
-        <input type="number" class="form-control" id="inputproduct_id" placeholder="" name="product_id" required>
+        <label for="inputproduct_id">product id</label>
+        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$product_id_c_use?>" disabled>
     </div>
          <!--product name-->
     <div class="form-group">
@@ -268,8 +315,8 @@
     </div>    
          <!--product rating-->
      <div class="form-group">
-        <label for="inputrating">product rating - (fill it)</label>
-        <input type="number" class="form-control" id="inputrating" placeholder="" name="rating" required>
+        <label for="inputrating">product rating</label>
+        <input type="number" class="form-control" id="inputrating" placeholder="rating" name="rating" value="0" disabled>
     </div>     
          <!--price-->
     <div class="form-group">
@@ -294,7 +341,7 @@
          <!--storeinfoid-->
     <div class="form-group">
         <label for="inputstoreinfoid">store info id</label>
-        <input type="number" class="form-control" id="inputstoreinfoid" placeholder="" value="<?=$storeinfoid[0]?>" name="storeinfoid" required> 
+        <input type="number" class="form-control" id="inputstoreinfoid" placeholder="" value="<?=$storeinfoid[0]?>" name="storeinfoid" disabled> 
     </div>
          <!--approve status-->
     <div class="form-group">
