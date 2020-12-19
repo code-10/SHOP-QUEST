@@ -97,7 +97,7 @@
         $res=$con->query($sql);
   
   $category=array();
-  $subcategory=array();
+  $sub_category=array();
   $product_name=array();
   $product_brand=array();
   $product_description=array();
@@ -112,7 +112,7 @@
   while($ele = $res->fetch_assoc())
   {
       $category[]=$ele['category'];
-      $subcategory[]=$ele['sub_category'];
+      $sub_category[]=$ele['sub_category'];
       $product_name[]=$ele['product_name'];
       $product_brand[]=$ele['product_brand'];
       $product_description[]=$ele['product_description'];
