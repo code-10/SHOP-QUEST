@@ -213,6 +213,7 @@
 				<div class="card m-4">
   					<div class="card-header">Product name : <?=$product_name[$k]?></div>
   					<div class="card-body">
+					<p class="card-text">store_info_id : <?=$store_info_id[$k]?></p>	
     					<p class="card-text">category : <?=$category[$k]?></p>
     					<p class="card-text">sub category : <?=$sub_category[$k]?></p>
     					<p class="card-text">product brand  : <?=$product_brand[$k]?></p>
@@ -230,9 +231,9 @@
 				
 				<a href="seller_enter.php?edit=yes" class="btn btn-primary">Edit</a>
 				
-				<a href="seller_enter.php?archive=yes&&store_info_id_a=<?=$store_info_id[0]?>" class="btn btn-warning">Archive</a>
+				<a href="seller_enter.php?archive=yes&&store_info_id_a=<?=$store_info_id[$k]?>" class="btn btn-warning">Archive</a>
     						
-    				<a href="seller_enter.php?delete=yes&&store_info_id_d=<?=$store_info_id[0]?>" class="btn btn-danger">delete</a>
+    				<a href="seller_enter.php?delete=yes&&store_info_id_d=<?=$store_info_id[$k]?>" class="btn btn-danger">delete</a>
 
 				</div>
 			</div>  
