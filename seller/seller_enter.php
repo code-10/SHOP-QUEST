@@ -1,11 +1,3 @@
-<?php   
-
-	//0 - waiting
-	//1 - approved
-	//2 - archived
-
-
-?>
 
 <?php include_once '../header.php'; ?>
 <?php include_once '../libraries/chocolates.php'; ?>
@@ -27,35 +19,9 @@
       $seller_enter_main=$_GET['seller_enter_main'];
       $sell_a_product=$_GET['sell_a_product'];
       $my_sell_requests=$_GET['my_sell_requests'];
-      $edit=$_GET['edit'];
-      $archive=$_GET['archive'];
-      $unarchive=$_GET['unarchive'];
-      $delete=$_GET['delete'];
-      $store_info_id_a=$_GET['store_info_id_a'];
-      $store_info_id_d=$_GET['store_info_id_d'];
 
 
-	//for archive just set approve to 2
-	if($archive=="yes")
-	{
-		$con->query("update store_info set approved=2 where store_info_id='$store_info_id_a'");	
-		header("Location:seller_enter.php?my_sell_requests=yes");
-                die();
-	}
-
-	if($unarchive=="yes")
-	{
-		$con->query("update store_info set approved=0 where store_info_id='$store_info_id_a'");	
-		header("Location:seller_enter.php?my_sell_requests=yes");
-                die();
-	}
-
-	if($delete=="yes")
-	{
-		$con->query("delete from store_info where store_info_id='$store_info_id_d'");	
-		header("Location:seller_enter.php?my_sell_requests=yes");
-                die();
-	}
+	
 	
 
 
@@ -263,14 +229,9 @@
     				<? } ?>
 				
 				<a href="seller_enter.php?edit=yes" class="btn btn-primary">Edit</a>
-						
-				<? if($approved[$k]==2) { ?>
-					<h6 class="card-text"><span class="badge badge-warning">Archived</span></h6>
-					<a href="seller_enter.php?unarchive=yes&&store_info_id_a=<?=$store_info_id[0]?>" class="btn btn-warning">Un Archive</a>
-				<? } else { ?>
-					<a href="seller_enter.php?archive=yes&&store_info_id_a=<?=$store_info_id[0]?>" class="btn btn-warning">Archive</a>
-    				<? } ?>	
-						
+				
+				<a href="seller_enter.php?archive=yes&&store_info_id_a=<?=$store_info_id[0]?>" class="btn btn-warning">Archive</a>
+    						
     				<a href="seller_enter.php?delete=yes&&store_info_id_d=<?=$store_info_id[0]?>" class="btn btn-danger">delete</a>
 
 				</div>
