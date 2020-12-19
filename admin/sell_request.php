@@ -272,7 +272,6 @@
     <? } ?>
     
     <a href='sell_request.php?admin_check_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit and Approve</a>
-    <a href="#" name="edit_application" class="btn btn-primary m-2">Edit</a>
     <a href="#" name="reject_application" class="btn btn-danger m-2">Reject</a>
 
 </div>
