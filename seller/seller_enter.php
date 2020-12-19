@@ -1,3 +1,12 @@
+<?php   
+
+	//0 - waiting
+	//1 - approved
+	//2 - archived
+
+
+?>
+
 <?php include_once '../header.php'; ?>
 <?php include_once '../libraries/chocolates.php'; ?>
 
@@ -18,6 +27,26 @@
       $seller_enter_main=$_GET['seller_enter_main'];
       $sell_a_product=$_GET['sell_a_product'];
       $my_sell_requests=$_GET['my_sell_requests'];
+      $edit=$_GET['edit'];
+      $archive=$_GET['archive'];
+      $delete=$_GET['delete'];
+      $store_info_id_a=$_GET['store_info_id_a'];
+      $store_info_id_d=$_GET['store_info_id_d'];
+
+
+	//for archive just set approve to 2
+	if($archive=="yes")
+	{
+		$con->query("update store_info set approved=2 where store_info_id='$store_info_id_a'");	
+	}
+
+	if($delete=="yes")
+	{
+		$con->query("delete from store_info where store_info_id='$store_info_id_d'");	
+	}
+	
+
+
 
       $categories=Array();
       $sub_categories=Array();
@@ -99,7 +128,7 @@
       					$color[]=$ele['color'];
       					$size[]=$ele['size'];
       					$approved[]=$ele['approved'];
-      					$storeinfoid[]=$ele['store_info_id'];
+      					$store_info_id[]=$ele['store_info_id'];
   				}
   
   				$n=count($product_name);
@@ -215,15 +244,21 @@
     					<p class="card-text">size  : <?=$size[$k]?></p>
     					<p class="card-text">quantity : <?=$quantity[$k]?></p>
     
-    				<? if($approved[$k]) { ?>
+    				<? if($approved[$k]==1) { ?>
     					<h6 class="card-text">Approved&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
     				<? } else { ?>
     					<h6 class="card-text">waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     				<? } ?>
 				
-    				<a href="#" class="btn btn-primary">Edit</a>
-				<a href="#" class="btn btn-warning">Archive</a>
-    				<a href="#" class="btn btn-danger">delete</a>
+				<a href="seller_enter.php?edit=yes" class="btn btn-primary">Edit</a>
+						
+				<? if($approved[$k]==2) { ?>
+					<h6 class="card-text"><span class="badge badge-warning">Success</span></h6>
+				<? } else { ?>
+					<a href="seller_enter.php?arhive=yes&&store_info_id_a=<?=$store_info_id[0]?>" class="btn btn-warning">Archive</a>
+    				<? } ?>	
+						
+    				<a href="seller_enter.php?delete=yes&&store_info_id_d=<?=$store_info_id[0]?>" class="btn btn-danger">delete</a>
 
 				</div>
 			</div>  
