@@ -2,7 +2,7 @@
 
 <body>
    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a href="../index.php" class="navbar-brand">ShopShop</a>
+      <a href="../index.php" class="navbar-brand">ShopQuest</a>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,7 +27,7 @@
    <div class="jumbotron">
       <div class="text-center">
          <p class="display-3">About</p>
-      <p class="m-4"><a href="https://github.com/code-10/SHOP-QUEST"><i class="fa fa-github mr-2" style="color:black;"></i>Github Repository - Shopquest</a></p>
+      <p class="m-1"><a href="https://github.com/code-10/SHOP-QUEST" style="color:black;"><i class="fa fa-github mr-2"></i>Github Repository - ShopQuest</a></p>
       </div>
    </div>
 </body>
