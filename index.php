@@ -100,7 +100,7 @@
             	   ?>
         
 		<!--github repo-->
-		<!--<div class="alert alert-success text-center" role="alert"><a href="https://github.com/code-10/SHOP-QUEST" style="color:black;">Github Repository</a></div>-->
+		<div class="alert alert-primary text-center" role="alert"><a href="https://github.com/code-10/SHOP-QUEST" style="color:black;"><i class="fa fa-github mr-2"></i>Github Repository</a></div>
 		
 		
 		<!--just space-->
