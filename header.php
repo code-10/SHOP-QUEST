@@ -1,3 +1,5 @@
+<?php?>
+
 <!--HTML boiler plate-->
 <!DOCTYPE html>
 <html lang="en">
