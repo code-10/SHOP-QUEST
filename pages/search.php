@@ -1,4 +1,15 @@
-<?php include '../header.php'; include_once '../libraries/chocolates.php'; session_start(); ?>
+<?php 
+
+	include '../header.php'; 
+	include_once '../libraries/chocolates.php'; 
+	session_start(); 
+
+	$visit = $_SERVER['REQUEST_URI'];
+  	$visit = substr($visit,1);
+
+  	$_SESSION['visit'] = $visit; 
+
+?>
 
 <body>
    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
