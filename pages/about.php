@@ -1,4 +1,4 @@
-<?php include '../header.php'; ?>
+<?php include '../header.php'; session_start(); ?>
 
 <body>
    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
