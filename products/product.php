@@ -190,7 +190,7 @@
 	   <?php } ?>
             <h5><?=$product_name[$c-1]?></h5>
           <h5>Rating : <?=$product_rating[$c-1]?> (<?=$product_rating_no[$c-1]?>)</h5>
-           <h5>Price : <?=$product_price[$c-1]?>&nbsp;&nbsp;</h5> 
+           <h5>Price : <i class="fa fa-rupee"></i> <?=$product_price[$c-1]?>&nbsp;&nbsp;</h5> 
            </figcaption>
       </figure>
     </div>
