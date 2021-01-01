@@ -1,4 +1,4 @@
-
+<?php?>
     <!-- Footer -->
 <footer class="page-footer font-small special-color-dark pt-4">
 
