@@ -99,6 +99,10 @@
   
             	   ?>
         
+		<!--github repo-->
+		<div class="alert alert-success" role="alert"><a href="https://github.com/code-10/SHOP-QUEST">Github Repository</a></div>
+		
+		
 		<!--just space-->
         	<div class="mt-2 mb-2 text-center">
 		</div>
