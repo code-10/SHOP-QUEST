@@ -27,6 +27,7 @@
    <div class="jumbotron">
       <div class="text-center">
          <p class="display-3">About</p>
+         <p class="m-4"><a href="https://github.com/code-10/SHOP-QUEST"><i class="fab fa-github"></i>Shopquest</a></p>
       </div>
    </div>
 </body>
