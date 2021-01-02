@@ -273,12 +273,12 @@
         	data-key="<?php echo $razor_api_key; ?>"
         	data-amount="10000"
         	data-buttontext="Pay with Razorpay"
-        	data-name="PHPExpertise.com"
-        	data-description="Test Txn with RazorPay"
-        	data-image="https://your-awesome-site.com/your_logo.jpg"
-        	data-prefill.name="Harshil Mathur"
-        	data-prefill.email="support@razorpay.com"
-        	data-theme.color="#F37254">
+        	data-name="ShopQuest"
+        	data-description="Pay for ShopQuest"
+        	data-image="../assets/black.png"
+        	data-prefill.name="John Doe"
+        	data-prefill.email=""
+        	data-theme.color="#9932CC">
 	</script>
     	<input type="hidden" value="Hidden Element" name="hidden">
 	</form>
