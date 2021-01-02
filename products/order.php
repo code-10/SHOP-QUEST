@@ -255,6 +255,17 @@
 	<!--razor pay-->
 	<div class="text-center">
 		
+	<?php
+		if ($_POST) {
+			
+			$razorpay_payment_id = $_POST['razorpay_payment_id'];
+	
+			//echo "Razorpay success ID: ". $razorpay_payment_id;
+			if($razorpay_payment_id)
+				echo '<h5 class="badge bg-success p-2">Payment Successful</h5>';
+		}
+	?>	
+		
 	<?php $razor_api_key = "rzp_test_OI6pn5SyocGvBv"; ?>
 	
 	<style>
@@ -287,16 +298,7 @@
 	<!--razor pay end-->
 	
 	
-	
-   
-	<?php
-		if ($_POST) {
-			
-			$razorpay_payment_id = $_POST['razorpay_payment_id'];
-	
-			echo "Razorpay success ID: ". $razorpay_payment_id;
-		}
-	?>
+
 	
 	
 	
