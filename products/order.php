@@ -244,7 +244,7 @@
 	
 
 	
-		    <div class="container">
+		    <div class="container text-center">
 			    
 			    
 			    <!--razor pay-->
@@ -253,6 +253,7 @@
 	
 	<style>
       .razorpay-payment-button {
+	     margin:16px;
         color: #ffffff !important;
         background-color: #000000;
         border-color: #7266ba;
