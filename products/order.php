@@ -248,5 +248,50 @@
 
 	</form>
 	
+	
+	
+	
+	
+	
+	
+	
+	<?php $razor_api_key = "rzp_test_OI6pn5SyocGvBv"; ?>
+	
+	<style>
+      .razorpay-payment-button {
+        color: #ffffff !important;
+        background-color: #7266ba;
+        border-color: #7266ba;
+        font-size: 14px;
+        padding: 10px;
+      }
+    </style>
+	<form action="order.php" method="POST">
+    	<script
+        	src="https://checkout.razorpay.com/v1/checkout.js"
+        	data-key="<?php echo $razor_api_key; ?>"
+        	data-amount="10000"
+        	data-buttontext="Pay with Razorpay"
+        	data-name="PHPExpertise.com"
+        	data-description="Test Txn with RazorPay"
+        	data-image="https://your-awesome-site.com/your_logo.jpg"
+        	data-prefill.name="Harshil Mathur"
+        	data-prefill.email="support@razorpay.com"
+        	data-theme.color="#F37254">
+	</script>
+    	<input type="hidden" value="Hidden Element" name="hidden">
+    	</form>
+	
           
+	<?php
+		if ($_POST) {
+			$razorpay_payment_id = $_POST['razorpay_payment_id'];
+	
+			echo "Razorpay success ID: ". $razorpay_payment_id;
+		}
+	?>
+	
+	
+	
+	
  <?php include_once '../footer.php';
