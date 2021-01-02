@@ -241,10 +241,19 @@
 </div>
 	
 	
+	<?php
+		if ($_POST) {
+			
+			$razorpay_payment_id = $_POST['razorpay_payment_id'];
+			
+		}
+			
+	?>
+	
 	
 		    <div class="container text-center">
 			    <input type="hidden" name="final_price" value="<?=$final_price?>" />
-			    <button type="submit" class="btn btn-dark btn-block mb-4" name="done">Place your order</button>
+			    <button type="submit" class="btn btn-dark btn-block mb-4" name="done" <?php if(!$razorpay_payment_id) { ?> disabled <?php } ?>   >Place your order</button>
 		    </div>
 
 	</form>
