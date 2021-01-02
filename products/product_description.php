@@ -223,7 +223,7 @@
 		    	</h5>	
 			<h4 class="text-center mt-2" style="font-size:24px;"><?=$product_color[$show]?>, <?=$product_size[$show]?></h4>
 				
-                    <h5 class="card-text ml-4 mr-4">Rating : <?=$product_rating;?> (<?=$product_rating_no[0]?>) </h5>
+                    <h5 class="card-text ml-4 mr-4">Rating : <?=$product_rating;?> (<?=round($product_rating_no[0],2)?>) </h5>
 		    <h4 class="card-text ml-4 mr-4 mb-4">Price : <i class="fa fa-rupee"></i> <?=$product_price[$show];?></h4>	
                     <p class="card-text ml-4 mr-4">Brand : <?=$product_brand;?> | Seller : <?=$product_seller[$show]?></p>
                     		
