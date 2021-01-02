@@ -130,6 +130,17 @@
 			<h4 class="text-center m-2"><a href="../index.php"><button type="button" class="btn btn-dark">Continue Shopping</button></a></h4>
 		</div>
         <?php } else if($your_orders=="yes") { ?>
+	
+		<?php 
+					
+					$status=Array();
+					$statusoforder = $con->query("select status from orders where user_name='$user' order by order_date desc");
+					while($elesoc=$statusoforder->fetch_assoc())
+						$status[]=$elesoc['status'];
+					$soc=count($status);
+						       
+		?>
+	
 		<?php for($i=0;$i<$count_orders;$i++) { ?>
 		<div class="row m-4 d-flex justify-content-center">
 			<div class="col-lg-2 col-12 col-md-2 text-center">
@@ -146,23 +157,13 @@
 			</div>
 			<div class="col-lg-2 col-12 col-md-2 text-center">
 				
-				<?php 
-					
-					$status=Array();
-					$statusoforder = $con->query("select status from orders where user_name='$user' order by order_date desc");
-					while($elesoc=$statusoforder->fetch_assoc())
-						$status[]=$elesoc['status'];
-					$soc=count($status);
-						       
-				?>
-				<?php for($so=0;$so<$soc;$so++) { ?>
-				<?php if($status[$so]==0){ ?>
+			
+				<?php if($status[$i]==0){ ?>
 					<div class="spinner-grow text-primary" role="status">
   						<span class="sr-only">Loading...</span>
 					</div>
 				<?php } else { ?>
 					<span class="badge badge-success">Delivered</span>
-				<?php } ?>
 				<?php } ?>
 				
 			</div>
