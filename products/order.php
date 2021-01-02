@@ -239,7 +239,7 @@
 				<input type="number" class="form-control"  name="price" placeholder="Just enter the total price" value="<?=$final_price?>" disabled>
   			</div>
 	</div>
-</div>
+
 	
 	
 	<?php
@@ -258,7 +258,7 @@
 		    </div>
 
 	</form>
-	
+</div>
 	
 	
 	
