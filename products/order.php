@@ -8,12 +8,13 @@
       
       	$user=$_SESSION['user_name'];
       	$final_price=$_POST['final_price'];
+	$address=$_POST['address'];
 
 	
       if(isset($_POST['done']))
       {
 	     
-	    $con->query("insert into orders(user_name,total_price) values('$user','$final_price')");
+	    $con->query("insert into orders(user_name,total_price,address) values('$user','$final_price','$address')");
 	    
 	    $order_id=$con->query("select * from orders where user_name='$user' order by order_date desc");
 	    $order_id_store=Array();
