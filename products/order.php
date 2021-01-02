@@ -260,7 +260,6 @@
         padding: 10px;
       }
     </style>
-	<form action="order.php" method="POST">
     	<script
         	src="https://checkout.razorpay.com/v1/checkout.js"
         	data-key="<?php echo $razor_api_key; ?>"
@@ -274,7 +273,6 @@
         	data-theme.color="#F37254">
 	</script>
     	<input type="hidden" value="Hidden Element" name="hidden">
-    	</form>
 	<!--razor pay end-->
 			    
 			    
