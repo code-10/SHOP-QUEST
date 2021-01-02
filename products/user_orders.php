@@ -145,9 +145,25 @@
 				<a href="user_orders.php?order_details=yes&&order_id_detail=<?=$order_id[$i]?>"><button class="btn btn-dark">View details</button></a>
 			</div>
 			<div class="col-lg-2 col-12 col-md-2 text-center">
-				<div class="spinner-grow text-primary" role="status">
-  					<span class="sr-only">Loading...</span>
-				</div>
+				
+				<?php 
+					
+					$status=Array();
+					$statusoforder = $con->query("select status from orders where user_name='$user' order by order_date desc");
+					while($elesoc=$statusoforder->fetch_assoc())
+						$status[]=$elesoc['status'];
+						       
+				?>
+				<?php for($so=0;$so<$soc;$so++) { ?>
+				<?php if($status[$so]==0){ ?>
+					<div class="spinner-grow text-primary" role="status">
+  						<span class="sr-only">Loading...</span>
+					</div>
+				<?php } else { ?>
+					<span class="badge badge-success">Delivered</span>
+				<?php } ?>
+				<?php } ?>
+				
 			</div>
 		</div>
 		<hr>
