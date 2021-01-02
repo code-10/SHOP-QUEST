@@ -276,6 +276,13 @@
 	?>	
 		
 	<?php $razor_api_key = "rzp_test_OI6pn5SyocGvBv"; ?>
+		
+	<?php 
+		
+		//converting rupees to paisa
+		$razor_price=$final_price*100;
+			
+	?>
 	
 	<style>
       .razorpay-payment-button {
@@ -291,7 +298,7 @@
     	<script
         	src="https://checkout.razorpay.com/v1/checkout.js"
         	data-key="<?php echo $razor_api_key; ?>"
-        	data-amount="10000"
+        	data-amount="<?php echo $razor_price; ?>"
         	data-buttontext="Pay with Razorpay"
         	data-name="ShopQuest"
         	data-description="Pay for ShopQuest"
