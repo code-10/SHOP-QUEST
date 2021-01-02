@@ -152,6 +152,7 @@
 					$statusoforder = $con->query("select status from orders where user_name='$user' order by order_date desc");
 					while($elesoc=$statusoforder->fetch_assoc())
 						$status[]=$elesoc['status'];
+					$soc=count($status);
 						       
 				?>
 				<?php for($so=0;$so<$soc;$so++) { ?>
