@@ -242,14 +242,12 @@
 	
 			
 	
+
 	
-	
-	
-	
-	
-	
-	
-	<!--razor pay-->
+		    <div class="container">
+			    
+			    
+			    <!--razor pay-->
 	
 	<?php $razor_api_key = "rzp_test_OI6pn5SyocGvBv"; ?>
 	
@@ -278,17 +276,15 @@
     	<input type="hidden" value="Hidden Element" name="hidden">
     	</form>
 	<!--razor pay end-->
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		    <div class="container">
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
+			    
 			    <input type="hidden" name="final_price" value="<?=$final_price?>" />
 			    <button type="submit" class="btn btn-dark btn-block mb-4" name="done">Pay and Place your order</button>
 		    </div>
@@ -298,6 +294,7 @@
    
 	<?php
 		if ($_POST) {
+			
 			$razorpay_payment_id = $_POST['razorpay_payment_id'];
 	
 			echo "Razorpay success ID: ". $razorpay_payment_id;
