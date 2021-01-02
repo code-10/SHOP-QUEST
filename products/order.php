@@ -241,12 +241,6 @@
 </div>
 	
 			
-		    <div class="container">
-			    <input type="hidden" name="final_price" value="<?=$final_price?>" />
-			    <button type="submit" class="btn btn-dark btn-block mb-4" name="done">Pay and Place your order</button>
-		    </div>
-
-	</form>
 	
 	
 	
@@ -254,13 +248,15 @@
 	
 	
 	
+	
+	<!--razor pay-->
 	
 	<?php $razor_api_key = "rzp_test_OI6pn5SyocGvBv"; ?>
 	
 	<style>
       .razorpay-payment-button {
         color: #ffffff !important;
-        background-color: #7266ba;
+        background-color: #000000;
         border-color: #7266ba;
         font-size: 14px;
         padding: 10px;
@@ -281,8 +277,25 @@
 	</script>
     	<input type="hidden" value="Hidden Element" name="hidden">
     	</form>
+	<!--razor pay end-->
 	
-          
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		    <div class="container">
+			    <input type="hidden" name="final_price" value="<?=$final_price?>" />
+			    <button type="submit" class="btn btn-dark btn-block mb-4" name="done">Pay and Place your order</button>
+		    </div>
+
+	</form>
+	
+   
 	<?php
 		if ($_POST) {
 			$razorpay_payment_id = $_POST['razorpay_payment_id'];
