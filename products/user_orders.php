@@ -1,5 +1,6 @@
 <?php 
-	include_once '../header.php'; session_start(); 
+	include_once '../header.php';
+	session_start(); 
 	include_once '../libraries/chocolates.php';
 
 	$con=getCon();
@@ -123,7 +124,11 @@
 					</div>
 	
 	<?php if($order_placed=="yes") { ?>
-		<div class="container"><h4 class="text-center m-4 alert alert-success">Your Order is successful, Thank you.</h4></div>
+		<div class="container">
+			<h4 class="text-center m-4 alert alert-success">Your Order is successful, Thank you.</h4>
+			<h4><a href="../products/user_orders.php?your_orders=yes"><button type="button" class="btn btn-dark m-4 text-center">Check your Orders</button></a></h4>
+			<h4><a href="../index.php"><button type="button" class="btn btn-dark m-4 text-center">Continue Shopping</button></a></h4>
+		</div>
         <?php } else if($your_orders=="yes") { ?>
 		<?php for($i=0;$i<$count_orders;$i++) { ?>
 		<div class="row m-4 d-flex justify-content-center">
