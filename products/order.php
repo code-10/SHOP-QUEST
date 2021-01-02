@@ -14,7 +14,7 @@
       if(isset($_POST['done']))
       {
 	     
-	    $con->query("insert into orders(user_name,total_price,address) values('$user','$final_price','$address')");
+	    $con->query("insert into orders(user_name,total_price,user_address) values('$user','$final_price','$address')");
 	    
 	    $order_id=$con->query("select * from orders where user_name='$user' order by order_date desc");
 	    $order_id_store=Array();
