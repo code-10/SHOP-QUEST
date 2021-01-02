@@ -240,15 +240,12 @@
 	</div>
 </div>
 	
-			
 	
-
 	
-		    <div class="container text-center">
-			    
-			    
-			    <!--razor pay-->
 	
+	<!--razor pay-->
+	<div class="text-center">
+		
 	<?php $razor_api_key = "rzp_test_OI6pn5SyocGvBv"; ?>
 	
 	<style>
@@ -261,6 +258,7 @@
         padding: 10px;
       }
     </style>
+	<form action="charge.php" method="POST">
     	<script
         	src="https://checkout.razorpay.com/v1/checkout.js"
         	data-key="<?php echo $razor_api_key; ?>"
@@ -274,16 +272,15 @@
         	data-theme.color="#F37254">
 	</script>
     	<input type="hidden" value="Hidden Element" name="hidden">
+	</form>
+		
+	</div>
 	<!--razor pay end-->
-			    
-			    
-			    
-			    
-			    
-			    
-			    
-			    
-			    
+			
+	
+
+	
+		    <div class="container text-center">
 			    <input type="hidden" name="final_price" value="<?=$final_price?>" />
 			    <button type="submit" class="btn btn-dark btn-block mb-4" name="done">Pay and Place your order</button>
 		    </div>
