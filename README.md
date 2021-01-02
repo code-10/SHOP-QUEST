@@ -18,3 +18,8 @@ features for admin
 - view or enter data into the database
 - approve or reject seller requests
 - approve return or replace requests from customers
+
+Exclusive features
+- best seller tags
+- most viewed products
+- products related to user's search
