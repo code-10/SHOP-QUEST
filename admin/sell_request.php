@@ -18,7 +18,7 @@
       $admin_reject_sell=$_GET['admin_reject_sell'];
 	
 
-	print_r($_SESSION['sql5']);
+	var_dump($_SESSION['sql5']);
 
 
 ?>
