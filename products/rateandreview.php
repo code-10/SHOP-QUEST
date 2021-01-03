@@ -50,7 +50,7 @@
 	    
 	$con->query("update products set rating_no='$rno',rating_sum='$rsum',rating='$final_rating' where product_id='$product_id_rar[0]'");
 	    
-	header("Location:successful.php?order_details=yes&&order_id_detail=".$order_id_rate);
+	header("Location:user_orders.php?order_details=yes&&order_id_detail=".$order_id_rate);
         die();    
 	   
 	    
