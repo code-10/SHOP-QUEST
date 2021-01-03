@@ -235,17 +235,15 @@
 
 	echo $store_info_id;	      
 	      
+	$user=$_SESSION['user_name'];
       //for updating store info
       $sql1="update store_info set approved=1 where store_info_id='$storeinfoid'";
       $sql2="insert into products(product_id,product_name,sub_cat_id,product_brand,product_description,rating) values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$productname)."','".mysqli_real_escape_string($con,$subcategoryid)."','".mysqli_real_escape_string($con,$productbrand)."','".mysqli_real_escape_string($con,$productdescription)."','".mysqli_real_escape_string($con,$rating)."')";
       $sql3="insert into unique_product(product_id,price,quantity,seller_user_name,color,size) values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$sellername)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')";
       
-	  //to store what admin edited
-	  //$sql4="insert into store_info(store_product_id,admin_sub_category,admin_product_name,admin_product_brand,admin_product_description,admin_price,admin_quantity,admin_color,admin_size) 
-	  //values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$subcategoryid)."','".mysqli_real_escape_string($con,$productname)."','".mysqli_real_escape_string($con,$productbrand)."','".mysqli_real_escape_string($con,$productdescription)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')";
-		
-	  $sql4="update store_info set store_product_id='".mysqli_real_escape_string($con,$product_id_c_use)."',admin_sub_category='".mysqli_real_escape_string($con,$subcategoryid)."',admin_product_name='".mysqli_real_escape_string($con,$productname)."',admin_product_brand='".mysqli_real_escape_string($con,$productbrand)."',admin_product_description='".mysqli_real_escape_string($con,$productdescription)."',admin_price='".mysqli_real_escape_string($con,$price)."',admin_quantity='".mysqli_real_escape_string($con,$quantity)."',admin_color='".mysqli_real_escape_string($con,$color)."',admin_size='".mysqli_real_escape_string($con,$size)."'";  
+ 	$sql4="update store_info set store_product_id='".mysqli_real_escape_string($con,$product_id_c_use)."',admin_sub_category='".mysqli_real_escape_string($con,$subcategoryid)."',admin_product_name='".mysqli_real_escape_string($con,$productname)."',admin_product_brand='".mysqli_real_escape_string($con,$productbrand)."',admin_product_description='".mysqli_real_escape_string($con,$productdescription)."',admin_price='".mysqli_real_escape_string($con,$price)."',admin_quantity='".mysqli_real_escape_string($con,$quantity)."',admin_color='".mysqli_real_escape_string($con,$color)."',admin_size='".mysqli_real_escape_string($con,$size)."'";  
 	    
+	$sql5="update store_info set store_unique_type_id = (select unique_type_id from unique_product where product_id='".mysqli_real_escape_string($con,$product_id_c_use)."' and seller_user_name='$user') where store_info_id='$store_info_id'";
 	      
       if($con->query($sql2)===True)
       {
@@ -253,10 +251,14 @@
         {
           if($con->query($sql1)===True)
           {
-	   			if($con->query($sql4)===True){
-              		header("Location:sell_request.php?sell_request_main=yes");
-                	die();
-				}
+	   	if($con->query($sql4)===True)
+		{	
+			if($con->query($sql5)===True)
+			{
+              			header("Location:sell_request.php?sell_request_main=yes");
+                		die();
+			}
+		}
           }
         }
       }
@@ -376,7 +378,7 @@
          <!--storeinfoid-->
     <div class="form-group">
         <label for="inputstoreinfoid">store info id</label>
-        <input type="number" class="form-control" id="inputstoreinfoid" placeholder="" value="<?=$storeinfoid[0]?>" name="storeinfoid" required> 
+        <input type="number" class="form-control" id="inputstoreinfoid" placeholder="" value="<?=$storeinfoid[0]?>" name="storeinfoid" disabled> 
     </div>
          <!--approve status-->
     <div class="form-group">
