@@ -18,6 +18,8 @@
       $admin_reject_sell=$_GET['admin_reject_sell'];
 	
 
+	print_r($_SESSION['sql5']);
+
 
 ?>
 
@@ -244,6 +246,8 @@
  	$sql4="update store_info set store_product_id='".mysqli_real_escape_string($con,$product_id_c_use)."',admin_sub_category='".mysqli_real_escape_string($con,$subcategoryid)."',admin_product_name='".mysqli_real_escape_string($con,$productname)."',admin_product_brand='".mysqli_real_escape_string($con,$productbrand)."',admin_product_description='".mysqli_real_escape_string($con,$productdescription)."',admin_price='".mysqli_real_escape_string($con,$price)."',admin_quantity='".mysqli_real_escape_string($con,$quantity)."',admin_color='".mysqli_real_escape_string($con,$color)."',admin_size='".mysqli_real_escape_string($con,$size)."'";  
 	    
 	$sql5="update store_info set store_unique_type_id = (select unique_type_id from unique_product where product_id='".mysqli_real_escape_string($con,$product_id_c_use)."' and seller_user_name='$user') where store_info_id='$storeinfoid'";
+	      
+	$_SESSION['sql5']=$sql5;      
 	      
       if($con->query($sql2)===True)
       {
