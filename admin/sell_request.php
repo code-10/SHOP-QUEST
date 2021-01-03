@@ -240,14 +240,20 @@
       $sql2="insert into products(product_id,product_name,sub_cat_id,product_brand,product_description,rating) values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$productname)."','".mysqli_real_escape_string($con,$subcategoryid)."','".mysqli_real_escape_string($con,$productbrand)."','".mysqli_real_escape_string($con,$productdescription)."','".mysqli_real_escape_string($con,$rating)."')";
       $sql3="insert into unique_product(product_id,price,quantity,seller_user_name,color,size) values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$sellername)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')";
       
+	  //to store what admin edited
+	  $sql4="insert into store_info(store_product_id,admin_sub_category,admin_product_name,admin_product_brand,admin_product_description,admin_price,admin_quantity,admin_color,admin_size) 
+	  values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$subcategoryid)."','".mysqli_real_escape_string($con,$productname)."','".mysqli_real_escape_string($con,$productbrand)."','".mysqli_real_escape_string($con,$productdescription)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')";
+		  
       if($con->query($sql2)===True)
       {
         if($con->query($sql3)===True)
         {
           if($con->query($sql1)===True)
           {
-              	header("Location:sell_request.php?sell_request_main=yes");
-                die();
+	   			if($con->query($sql4)===True){
+              		header("Location:sell_request.php?sell_request_main=yes");
+                	die();
+				}
           }
         }
       }
