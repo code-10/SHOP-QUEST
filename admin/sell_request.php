@@ -378,7 +378,7 @@
          <!--storeinfoid-->
     <div class="form-group">
         <label for="inputstoreinfoid">store info id</label>
-        <input type="number" class="form-control" id="inputstoreinfoid" placeholder="" value="<?=$storeinfoid[0]?>" name="storeinfoid" disabled> 
+        <input type="number" class="form-control" id="inputstoreinfoid" placeholder="" value="<?=$storeinfoid[0]?>" name="storeinfoid" required> 
     </div>
          <!--approve status-->
     <div class="form-group">
