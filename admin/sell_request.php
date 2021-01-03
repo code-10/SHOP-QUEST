@@ -18,8 +18,6 @@
       $admin_reject_sell=$_GET['admin_reject_sell'];
 	
 
-	var_dump($_SESSION['sql5']);
-
 
 ?>
 
@@ -235,8 +233,6 @@
       $store_info_id=$_POST['store_info_id'];
       //$done=1;      
 
-	echo $store_info_id;	      
-	      
 	$user=$_SESSION['user_name'];
       //for updating store info
       $sql1="update store_info set approved=1 where store_info_id='$storeinfoid'";
@@ -247,10 +243,15 @@
 	    
 	//$sql5="update store_info set store_unique_type_id = (select unique_type_id from unique_product where product_id='".mysqli_real_escape_string($con,$product_id_c_use)."' and seller_user_name='$user') where store_info_id='$storeinfoid'";
 	
-	$sql5="select unique_type_id from unique_product where product_id='".mysqli_real_escape_string($con,$product_id_c_use)."' and seller_user_name='$user'";
+	$sql5="select unique_type_id from unique_product where product_id='$product_id_c_use' and seller_user_name='$user'";
 	      
 	$res5=$con->query($sql5);
-	$_SESSION['sql5']=$res5;
+	$ans=Array();
+	while($giveit=$res5->fetch_assoc())
+		$ans[]=$giveit['unique_type_id'];
+	    
+	echo $ans[0];
+	
 	      
       if($con->query($sql2)===True)
       {
@@ -260,11 +261,11 @@
           {
 	   	if($con->query($sql4)===True)
 		{	
-			if($con->query($sql5)===True)
-			{
+			//if($con->query($sql5)===True)
+			//{
               			header("Location:sell_request.php?sell_request_main=yes");
                 		die();
-			}
+			//}
 		}
           }
         }
