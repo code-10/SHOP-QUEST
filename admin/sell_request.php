@@ -17,7 +17,8 @@
       $admin_check_sell=$_GET['admin_check_sell'];
       $admin_reject_sell=$_GET['admin_reject_sell'];
 	
-	echo $_SESSION['ans'];
+	echo "working";
+	print_r($_SESSION['ans']);
 
 ?>
 
