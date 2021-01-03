@@ -241,9 +241,12 @@
       $sql3="insert into unique_product(product_id,price,quantity,seller_user_name,color,size) values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$sellername)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')";
       
 	  //to store what admin edited
-	  $sql4="insert into store_info(store_product_id,admin_sub_category,admin_product_name,admin_product_brand,admin_product_description,admin_price,admin_quantity,admin_color,admin_size) 
-	  values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$subcategoryid)."','".mysqli_real_escape_string($con,$productname)."','".mysqli_real_escape_string($con,$productbrand)."','".mysqli_real_escape_string($con,$productdescription)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')";
-		  
+	  //$sql4="insert into store_info(store_product_id,admin_sub_category,admin_product_name,admin_product_brand,admin_product_description,admin_price,admin_quantity,admin_color,admin_size) 
+	  //values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$subcategoryid)."','".mysqli_real_escape_string($con,$productname)."','".mysqli_real_escape_string($con,$productbrand)."','".mysqli_real_escape_string($con,$productdescription)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')";
+		
+	  $sql4="update store_info set store_product_id='".mysqli_real_escape_string($con,$product_id_c_use)."',admin_sub_category='".mysqli_real_escape_string($con,$subcategoryid)."',admin_product_name='".mysqli_real_escape_string($con,$productname)."',admin_product_brand='".mysqli_real_escape_string($con,$productbrand)."',admin_product_description='".mysqli_real_escape_string($con,$productdescription)."',admin_price='".mysqli_real_escape_string($con,$price)."',admin_quantity='".mysqli_real_escape_string($con,$quantity)."',admin_color='".mysqli_real_escape_string($con,$color)."',admin_size='".mysqli_real_escape_string($con,$size)."'";  
+	    
+	      
       if($con->query($sql2)===True)
       {
         if($con->query($sql3)===True)
