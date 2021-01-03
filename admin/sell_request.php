@@ -17,7 +17,7 @@
       $admin_check_sell=$_GET['admin_check_sell'];
       $admin_reject_sell=$_GET['admin_reject_sell'];
 	
-
+	echo $_SESSION['ans'];
 
 ?>
 
@@ -250,7 +250,7 @@
 	while($giveit=$res5->fetch_assoc())
 		$ans[]=$giveit['unique_type_id'];
 	    
-	echo $ans[0];
+	$_SESSION['ans']=$ans[0];
 	
 	      
       if($con->query($sql2)===True)
