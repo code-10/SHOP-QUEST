@@ -247,7 +247,7 @@
 	    
 	$sql5="update store_info set store_unique_type_id = (select unique_type_id from unique_product where product_id='".mysqli_real_escape_string($con,$product_id_c_use)."' and seller_user_name='$user') where store_info_id='$storeinfoid'";
 	      
-	$_SESSION['sql5']=$sql5;      
+	$_SESSION['sql5']=$con->query($sql5);      
 	      
       if($con->query($sql2)===True)
       {
