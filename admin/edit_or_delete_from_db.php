@@ -43,6 +43,9 @@
 			$p_edit_product_rating[]=$ans['rating'];
 		}
 		
+		print_r($p_edit_product_description);
+		print_r($p_edit_product_rating);
+		
 	}
 	else if(isset($_POST['edit_info_u']))
 	{
@@ -123,7 +126,7 @@
     </div>
     <div class="form-group">
         <label for="inputproduct_rating">product rating</label>
-        <input type="number" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" value="<?=$p_product_rating[0]?>" required>
+        <input type="number" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" value="<?=$p_edit_product_rating[0]?>" required>
     </div>
     <button type="submit" name="edit_product" class="btn btn-dark">Edit product</button>
     </form> 	
