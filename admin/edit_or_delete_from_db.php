@@ -29,21 +29,18 @@
 		$fp_product_description=$_POST['product_description'];
 		$fp_product_rating=$_POST['product_rating'];
 		
-		echo $fp_sub_cat_id;echo "<br>";
+		/*echo $fp_sub_cat_id;echo "<br>";
 		echo $fp_product_id;echo "<br>";
 		echo $fp_product_name;echo "<br>";
 		echo $fp_product_brand;echo "<br>";
 		echo $fp_product_description;echo "<br>";
-		echo $fp_product_rating;echo "<br>";
+		echo $fp_product_rating;echo "<br>";*/
 		
 		$sql="update products set product_name='".mysqli_real_escape_string($con,$fp_product_name)."',product_brand='".mysqli_real_escape_string($con,$fp_product_brand)."',product_description='".mysqli_real_escape_string($con,$fp_product_description)."',rating='".mysqli_real_escape_string($con,$fp_product_rating)."' where product_id='$fp_product_id'";
 		
-		$con->query($sql);
+		$con->query($sql);	
 		
-		echo $con->error;
-		
-		
-		
+		header("Location:check_db.php");		
 				
 	}
 	else if(isset($_POST['edit_unique_product']))
