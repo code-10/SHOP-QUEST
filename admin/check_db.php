@@ -166,7 +166,7 @@
                         
                 </div>
             </div>
-        <?php else if($view=="products") { ?>
+        <?php } else if($view=="products") { ?>
 
         <div class="card">
                 <div class="card-body">
