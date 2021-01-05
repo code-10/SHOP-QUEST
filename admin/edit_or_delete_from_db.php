@@ -22,6 +22,9 @@
 	$edit_delete_product_id=$_POST['edit_delete_product_id'];
 	$edit_delete_unique_type_id=$_POST['edit_delete_unique_type_id'];
 
+	echo $edit_delete_product_id;
+	echo $edit_delete_unique_type_id;
+
 	if(isset($_POST['edit_info_p']))
 	{
 		
