@@ -40,7 +40,7 @@
 		
 		$con->query($sql);	
 		
-		header("Location:check_db.php");		
+		header("Location:check_db.php?view=products");		
 				
 	}
 	else if(isset($_POST['edit_unique_product']))
@@ -76,7 +76,7 @@
 		$con->query($sql1);
 		$con->query($sql2);
 		
-		header("Location:check_db.php");	
+		header("Location:check_db.php?view=unique_product");	
 		
 	}
 
