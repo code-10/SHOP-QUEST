@@ -278,6 +278,7 @@
         </div>
     </div>
      
+	<a class="btn btn-primary m-4" href="admin_enter.php?admin_enter_main=yes" role="button">Back to main menu</a>
 	
 	<div class="text-center m-4">
             <a class="btn btn-primary m-2" href="sell_request.php?sell_request_main=yes&&aprstatus=0" role="button">Pending</a>
