@@ -216,12 +216,14 @@
     <form class="jumbotron m-4" method="POST" action="edit_or_delete_from_db.php">
      <div class="form-group">
         <label for="inputproduct_id">product id</label>
-        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$u_edit_unique_product_id[0]?>" disabled>
+        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id_show" value="<?=$u_edit_unique_product_id[0]?>" disabled>
     </div>
+    <input type="hidden" name="product_id" value="<?=$u_edit_unique_product_id[0]?>" />
     <div class="form-group">
         <label for="inputunique_type_id">Unique type id</label>
-        <input type="number" class="form-control" id="inputunique_type" placeholder="unique_type_id" name="unique_type" value="<?=$u_edit_unique_product_unique_type_id[0]?>" disabled>
+        <input type="number" class="form-control" id="inputunique_type" placeholder="unique_type_id" name="unique_type_id_show" value="<?=$u_edit_unique_product_unique_type_id[0]?>" disabled>
     </div>
+    <input type="hidden" name="unique_type_id" value="<?=$u_edit_unique_product_unique_type_id[0]?>" />
     <div class="form-group">
         <label for="inputproduct_name">product name</label>
         <input type="text" class="form-control" id="inputproduct_name" placeholder="product name" name="product_name" value="<?=$u_edit_unique_product_name[0]?>" required>
