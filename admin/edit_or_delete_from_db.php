@@ -29,15 +29,14 @@
 		$fp_product_description=$_POST['product_description'];
 		$fp_product_rating=$_POST['product_rating'];
 		
-		/*echo $fp_sub_cat_id;echo "<br>";
+		echo $fp_sub_cat_id;echo "<br>";
 		echo $fp_product_id;echo "<br>";
 		echo $fp_product_name;echo "<br>";
 		echo $fp_product_brand;echo "<br>";
 		echo $fp_product_description;echo "<br>";
-		echo $fp_product_rating;echo "<br>";*/
+		echo $fp_product_rating;echo "<br>";
 		
-		$con->query("update products set product_name='$fp_product_name',product_brand='$fp_product_brand',product_description='$fp_product_description',rating='$fp_product_rating' where product_id='$fp_product_id'");
-		header("Location:check_db.php");
+		
 		
 	}
 	else if(isset($_POST['edit_unique_product']))
