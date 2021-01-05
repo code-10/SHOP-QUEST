@@ -79,6 +79,91 @@
     </div>       
    
         
+	<?php if(isset($_POST['edit_info_p'])) { ?>
+	
+	<h5 class="m-4">Edit Product</h5>
+    <form class="jumbotron m-4" method="POST" action="edit_or_delete_from_db.php">
+     <div class="form-group">
+        <label for="inputsub_cat_id">Sub category id</label>
+        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id" value="fill" disabled>
+    </div>
+     <div class="form-group">
+        <label for="inputproduct_id">product id</label>
+        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="fill" disabled>
+    </div>
+    <div class="form-group">
+        <label for="inputproduct_name">product name</label>
+        <input type="text" class="form-control" id="inputproduct_name" placeholder="product name" name="product_name" value="fill" required>
+    </div>
+    <div class="form-group">
+        <label for="inputproduct_brand">product brand</label>
+        <input type="text" class="form-control" id="inputproduct_brand" placeholder="product brand" name="product_brand" avlue="fill" required>
+    </div>
+    <div class="form-group">
+        <label for="inputproduct_description">product description</label>
+        <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description" value="fill" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="inputproduct_rating">product rating</label>
+        <input type="number" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" value="fill" required>
+    </div>
+    <button type="submit" name="edit_product" class="btn btn-dark">Edit product</button>
+    </form> 	
+
+<?php } else if(isset($_POST['edit_info_u'])) { ?>
+	
+	<!--products-->
+	<h5 class="m-4">Edit a Unique Product</h5>
+    <form class="jumbotron m-4" method="POST" action="edit_or_delete_from_db.php">
+     <div class="form-group">
+        <label for="inputproduct_id">product id</label>
+        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="fill" disabled>
+    </div>
+    <div class="form-group">
+        <label for="inputunique_type_id">Unique type id</label>
+        <input type="number" class="form-control" id="inputunique_type" placeholder="unique_type_id" name="unique_type" value="fill" disabled>
+    </div>
+    <div class="form-group">
+        <label for="inputproduct_name">product name</label>
+        <input type="text" class="form-control" id="inputproduct_name" placeholder="product name" name="product_name" value="fill" required>
+    </div>
+    <div class="form-group">
+        <label for="inputproduct_brand">product brand</label>
+        <input type="text" class="form-control" id="inputproduct_brand" placeholder="product brand" name="product_brand" value="fill" required>
+    </div>
+    <div class="form-group">
+        <label for="inputprice">price</label>
+        <input type="number" min="1" class="form-control" id="inputprice" placeholder="price" name="price" value="fill" required>
+    </div>
+    <div class="form-group">
+        <label for="inputcolor">Color</label>
+        <input type="text" class="form-control" id="inputcolor" placeholder="color" name="color" value="fill" required>
+    </div>
+    <div class="form-group">
+        <label for="inputsize">size</label>
+        <input type="text" class="form-control" id="inputsize" placeholder="for mobiles like 4GB i.e ram size else s,m etc" name="size" value="fill" required>
+    </div>
+    <div class="form-group">
+        <label for="inputproduct_description">product description</label>
+        <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description" value="fill" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="inputquantity">Quantity</label>
+        <input type="number" min="1" max="420" class="form-control" id="inputquantity" placeholder="quantity" name="quantity" value="fill" required>
+    </div>   
+    <div class="form-group">
+        <label for="inputseller">Seller User Name</label>
+        <input type="text" class="form-control" id="inputseller" placeholder="seller user name" name="seller_user_name" value="fill" required>
+    </div> 
+    <div class="form-group">
+        <label for="inputproduct_rating">product rating</label>
+        <input type="number" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" value="fill" disabled>
+    </div>
+    <button type="submit" name="products" class="btn btn-dark">Add product</button>
+    </form> 
+	
+<?php } ?>
+	
         
   
   
