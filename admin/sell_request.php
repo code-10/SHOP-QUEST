@@ -285,9 +285,14 @@
             <a class="btn btn-primary m-2" href="sell_request.php?sell_request_main=yes&&aprstatus=2" role="button">Rejected</a>
 	</div>
 	
-      
+       $aprstatus=$_GET['aprstatus'];
+	
+	
       <?php if($sell_request_main=="yes") { ?>
       <? for($i=0;$i<$n;$i++) { ?>
+	
+	if($aprstatus!=$approved[$i])
+		continue;
 <div class="card m-4">
   <div class="card-header">seller name : <?=$seller_name[$i]?></div>
   <div class="card-body">
