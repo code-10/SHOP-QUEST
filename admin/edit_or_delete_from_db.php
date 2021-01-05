@@ -204,13 +204,13 @@
     </div>
     <div class="form-group">
         <label for="inputproduct_description">product description</label>
-        <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description_show" required><?=$p_edit_product_description[0]?></textarea>
+        <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description" required><?=$p_edit_product_description[0]?></textarea>
     </div>
     <div class="form-group">
         <label for="inputproduct_rating">product rating</label>
         <input type="number" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" value="<?=$p_edit_product_rating[0]?>" required>
     </div>
-    <input type="hidden" name="product_description" value="<?=$p_edit_product_description[0]?>" />
+    <!--<input type="hidden" name="product_description" value="<?=$p_edit_product_description[0]?>" />-->
     <button type="submit" name="edit_product" class="btn btn-dark">Edit product</button>
     </form> 	
 
