@@ -289,8 +289,8 @@
       <?php if($sell_request_main=="yes") { ?>
       <? for($i=0;$i<$n;$i++) { ?>
 	
-	if($aprstatus!=$approved[$i])
-		continue;
+	<? if($aprstatus!=$approved[$i]) ?>
+		<? continue; ?>
 <div class="card m-4">
   <div class="card-header">seller name : <?=$seller_name[$i]?></div>
   <div class="card-body">
