@@ -188,7 +188,7 @@
                                         <p class="card-text"><h6>Product_rating</h6> <?=$p['rating']?></p>
 
                                         <form method="POST" action="edit_or_delete_from_db.php">
-                                                <input type="hidden" name="edit_delete_product_id" value="<?=$product_id[$i]?>" />
+                                                <input type="hidden" name="edit_delete_product_id" value="<?=$p['product_id']?>" />
 					        <button type="submit" class="fa fa-edit btn btn-success btn-sm pm" name="edit_info_p"></button> 
                                                 <button type="submit" class="fa fa-trash btn btn-danger btn-sm pm" name="delete_info_p"></button> 
 				        </form>
@@ -228,7 +228,7 @@
                                         <p class="card-text"><h6>Product_size</h6> <?=$p['size']?></p>
 
                                          <form method="POST" action="edit_or_delete_from_db.php">
-                                                <input type="hidden" name="edit_delete_unique_type_id" value="<?=$unique_type_id[$i]?>" />
+                                                <input type="hidden" name="edit_delete_unique_type_id" value="<?=$p['unique_type_id']?>" />
 					        <button type="submit" class="fa fa-edit btn btn-success btn-sm pm" name="edit_info_u"></button> 
                                                 <button type="submit" class="fa fa-trash btn btn-danger btn-sm pm" name="delete_info_u"></button> 
 				        </form>
