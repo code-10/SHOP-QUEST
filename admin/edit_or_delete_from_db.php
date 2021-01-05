@@ -253,7 +253,7 @@
     </div>
     <div class="form-group">
         <label for="inputquantity">Quantity</label>
-        <input type="number" min="1" max="420" class="form-control" id="inputquantity" placeholder="quantity" name="quantity" value="<?=$u_edit_unique_product_quantity[0]?>" required>
+        <input type="number" min="0" max="420" class="form-control" id="inputquantity" placeholder="quantity" name="quantity" value="<?=$u_edit_unique_product_quantity[0]?>" required>
     </div>   
     <div class="form-group">
         <label for="inputseller">Seller User Name</label>
