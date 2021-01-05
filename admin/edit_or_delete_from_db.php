@@ -27,7 +27,7 @@
 		$fp_product_name=$_POST['product_name'];
 		$fp_product_brand=$_POST['product_brand'];
 		$fp_product_description=$_POST['product_description'];
-		$fp_product_rating=$_POST['rating'];
+		$fp_product_rating=$_POST['product_rating'];
 		
 		echo $fp_sub_cat_id;echo "<br>";
 		echo $fp_product_id;echo "<br>";
@@ -42,7 +42,7 @@
 		$fu_product_name=$_POST['product_name'];
 		$fu_product_brand=$_POST['product_brand'];
 		$fu_product_description=$_POST['product_description'];
-		$fu_product_rating=$_POST['rating'];
+		$fu_product_rating=$_POST['product_rating'];
 		$fu_unique_type_id[]=$_POST['unique_type_id'];
 		$fu_price[]=$_POST['price'];
 		$fu_size[]=$_POST['size'];
