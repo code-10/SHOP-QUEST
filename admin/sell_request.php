@@ -7,11 +7,11 @@
       
       session_start(); 
 
-      /*if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
+      if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
       	{
             header("Location:../index.php");
             die(); 
-      	} */
+      	} 
 
       $sell_request_main=$_GET['sell_request_main'];
       $admin_check_sell=$_GET['admin_check_sell'];
