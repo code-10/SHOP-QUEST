@@ -22,7 +22,7 @@
 
 	if(isset($_POST['edit_product']))
 	{
-		$fp_sub_cat_id=$_POST['sub_Cat_id'];
+		$fp_sub_cat_id=$_POST['sub_cat_id'];
 		$fp_product_id=$_POST['product_id'];
 		$fp_product_name=$_POST['product_name'];
 		$fp_product_brand=$_POST['product_brand'];
