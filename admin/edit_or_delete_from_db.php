@@ -37,11 +37,15 @@
 		echo $fp_product_rating;echo "<br>";
 		
 		$sql="update products set product_name='$fp_product_name',product_brand='$fp_product_brand',product_description='$fp_product_description',rating='$fp_product_rating' where product_id='$fp_product_id'";
-		if($con->query($sql)===True)
+		
+		$res=$con->query($sql);
+		echo $res;
+		
+		/*if($con->query($sql)===True)
 		{
               		header("Location:check_db.php");
                 	die();
-		}
+		}*/
 		
 				
 	}
