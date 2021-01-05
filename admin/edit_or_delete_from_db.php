@@ -120,7 +120,7 @@
     </div>
     <div class="form-group">
         <label for="inputproduct_description">product description</label>
-        <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description" value="<?=$p_edit_product_description[0]?>" required></textarea>
+        <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description" required><?=$p_edit_product_description[0]?></textarea>
     </div>
     <div class="form-group">
         <label for="inputproduct_rating">product rating</label>
