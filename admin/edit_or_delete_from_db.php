@@ -68,12 +68,12 @@
 			$u_edit_unique_product_brand[]=$ans2['product_brand'];
 			$u_edit_unique_product_description[]=$ans2['product_description'];
 			$u_edit_unique_product_rating[]=$ans2['rating'];	
-			$u_edit_unique_product_unique_type_id=$ans2['unique_type_id'];
-			$u_edit_unique_product_price=$ans2['price'];
-			$u_edit_unique_product_size=$ans2['size'];
-			$u_edit_unique_product_color=$ans2['color'];
-			$u_edit_unique_product_quantity=$ans2['quantity'];
-			$u_edit_unique_product_seller_user_name=$ans2['seller_user_name'];
+			$u_edit_unique_product_unique_type_id[]=$ans2['unique_type_id'];
+			$u_edit_unique_product_price[]=$ans2['price'];
+			$u_edit_unique_product_size[]=$ans2['size'];
+			$u_edit_unique_product_color[]=$ans2['color'];
+			$u_edit_unique_product_quantity[]=$ans2['quantity'];
+			$u_edit_unique_product_seller_user_name[]=$ans2['seller_user_name'];
 		}
 		
 	}
