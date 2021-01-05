@@ -119,7 +119,7 @@
                      <? foreach($category as $cat) { ?>
                         
                         <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
-                                <div class="card-body m-2">
+                                <div class="card-body">
                                         <p class="card-text">Cat_id : <?=$cat['cat_id']?></p>
                                         <p class="card-text">Cat_name : <?=$cat['cat_name']?></p>
                                 </div>
@@ -147,7 +147,7 @@
                    <? foreach($sub_category as $cat) { ?>
                         
                         <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
-                                <div class="card-body m-2">
+                                <div class="card-body">
                                         <p class="card-text">Sub_cat_id : <?=$cat['sub_cat_id']?></p>
                                         <p class="card-text">Sub_cat_name : <?=$cat['sub_cat_name']?></p>
                                         <p class="card-text">Cat_id : <?=$cat['cat_id']?></p>
@@ -170,9 +170,26 @@
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                 <div class="card-body">
+                        
+                        <div class="row m-2">
+                        
                    <? foreach($products as $p) { ?>
-                        <p><?=$p['product_id']."=>".$p['product_name']."=>".$p['sub_cat_id']."=>".$p['product_brand']."=>".$p['product_description']."=>".$p['rating']?></p>
-                        <? } ?>
+                        
+                        <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
+                                <div class="card-body">
+                                        <p class="card-text">sub_cat_id : <?=$cat['sub_cat_id']?></p>
+                                        <p class="card-text">Product_id : <?=$cat['product_id']?></p>
+                                        <p class="card-text">Product_name : <?=$cat['product_name']?></p>
+                                        <p class="card-text">Product_brand : <?=$cat['product_brand']?></p>
+                                        <p class="card-text">Product_description : <?=$cat['product_description']?></p>
+                                        <p class="card-text">Product_rating : <?=$cat['rating']?></p>
+                                </div>
+                        </div>
+                        
+                    <? } ?>
+                                
+                        </div>
+                        
                 </div>
             </div>
         </div> 
