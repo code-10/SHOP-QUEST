@@ -43,12 +43,12 @@
 		$fu_product_brand=$_POST['product_brand'];
 		$fu_product_description=$_POST['product_description'];
 		$fu_product_rating=$_POST['rating'];
-		$fu_unique_type_id[]=$ans2['unique_type_id'];
-		$fu_price[]=$ans2['price'];
-		$fu_size[]=$ans2['size'];
-		$fu_color[]=$ans2['color'];
-		$fu_quantity[]=$ans2['quantity'];
-		$fu_seller_user_name[]=$ans2['seller_user_name'];
+		$fu_unique_type_id[]=$_POST['unique_type_id'];
+		$fu_price[]=$_POST['price'];
+		$fu_size[]=$_POST['size'];
+		$fu_color[]=$_POST['color'];
+		$fu_quantity[]=$_POST['quantity'];
+		$fu_seller_user_name[]=$_POST['seller_user_name'];
 		
 		echo $fu_product_id;echo "<br>";
 		echo $fu_product_name;echo "<br>";
