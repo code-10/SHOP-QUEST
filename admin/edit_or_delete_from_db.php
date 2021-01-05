@@ -36,8 +36,10 @@
 		echo $fp_product_description;echo "<br>";
 		echo $fp_product_rating;echo "<br>";
 		
+		$edit_this_product_id=$_POST['edit_this_product_id'];
 		$con->query("update products set product_name='$fp_product_name',product_brand='$fp_product_brand',product_description='$fp_product_description',rating='$fp_product_rating' where product_id='$edit_this_product_id'");
 		
+		header("Location:check_db.php");		
 	}
 	else if(isset($_POST['edit_unique_product']))
 	{
