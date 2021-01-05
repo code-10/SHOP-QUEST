@@ -38,7 +38,7 @@
 		
 		$sql="update products set product_name='$fp_product_name',product_brand='$fp_product_brand',product_description='$fp_product_description',rating='$fp_product_rating' where product_id='$fp_product_id'";
 		
-		$res=$con->query();
+		$res=$con->query($sql);
 		
 		echo $con->error;
 		
