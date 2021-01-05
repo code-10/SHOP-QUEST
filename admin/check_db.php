@@ -9,7 +9,11 @@
             $category[]=$ele;
         
        
-        
+        /*if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
+      	{
+            header("Location:../index.php");
+            die(); 
+      	} */
 
 
         $sub_category=Array();
@@ -111,10 +115,10 @@
                 <div class="card-body">
                      <? foreach($category as $cat) { ?>
                         
-                        <div class="card">
+                        <div class="card m-2">
                                 <div class="card-body">
-                                        <p class="card-text p-2"><?=$cat['cat_id']?></p>
-                                        <p class="card-text p-2"><?=$cat['cat_name']?></p>
+                                        <p class="card-text">Cat_id : <?=$cat['cat_id']?></p>
+                                        <p class="card-text">Cat_name : <?=$cat['cat_name']?></p>
                                 </div>
                         </div>
                         
