@@ -183,6 +183,13 @@
                                         <p class="card-text"><h6>Product_brand</h6> <?=$p['product_brand']?></p>
                                         <p class="card-text"><h6>Product_description</h6> <?=$p['product_description']?></p>
                                         <p class="card-text"><h6>Product_rating</h6> <?=$p['rating']?></p>
+
+                                        <form method="POST" action="#">
+                                                <input type="hidden" name="product_id" value="<?=$product_id[$i]?>" />
+					        <button type="submit" class="fa fa-edit btn btn-dark btn-sm pm" name="edit_info" style="background-color:black;color:white;"></button> 
+                                                <button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="delete_info" style="background-color:black;color:white;"></button> 
+				        </form>
+
                                 </div>
                         </div>
                         
@@ -216,6 +223,13 @@
                                         <p class="card-text"><h6>Product_seller_user_name</h6> <?=$p['seller_user_name']?></p>
                                         <p class="card-text"><h6>Product_color</h6> <?=$p['color']?></p>
                                         <p class="card-text"><h6>Product_size</h6> <?=$p['size']?></p>
+
+                                         <form method="POST" action="#">
+                                                <input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$i]?>" />
+					        <button type="submit" class="fa fa-edit btn btn-dark btn-sm pm" name="edit_info" style="background-color:black;color:white;"></button> 
+                                                <button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="delete_info" style="background-color:black;color:white;"></button> 
+				        </form>
+                                        
                                 </div>
                         </div>
                         
