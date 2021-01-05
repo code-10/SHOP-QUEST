@@ -17,6 +17,55 @@
         
 ?>
 
+
+<?php
+
+	if(isset($_POST['edit_product']))
+	{
+		$fp_sub_cat_id=$_POST['sub_Cat_id'];
+		$fp_product_id=$_POST['product_id'];
+		$fp_product_name=$_POST['product_name'];
+		$fp_product_brand=$_POST['product_brand'];
+		$fp_product_description=$_POST['product_description'];
+		$fp_product_rating=$_POST['rating'];
+		
+		echo $fp_sub_cat_id;echo "<br>";
+		echo $fp_product_id;echo "<br>";
+		echo $fp_product_name;echo "<br>";
+		echo $fp_product_brand;echo "<br>";
+		echo $fp_product_description;echo "<br>";
+		echo $fp_product_rating;echo "<br>";
+	}
+	else if(isset($_POST['edit_unique_product']))
+	{
+		$fu_product_id=$_POST['product_id'];
+		$fu_product_name=$_POST['product_name'];
+		$fu_product_brand=$_POST['product_brand'];
+		$fu_product_description=$_POST['product_description'];
+		$fu_product_rating=$_POST['rating'];
+		$fu_unique_type_id[]=$ans2['unique_type_id'];
+		$fu_price[]=$ans2['price'];
+		$fu_size[]=$ans2['size'];
+		$fu_color[]=$ans2['color'];
+		$fu_quantity[]=$ans2['quantity'];
+		$fu_seller_user_name[]=$ans2['seller_user_name'];
+		
+		echo $fu_product_id;echo "<br>";
+		echo $fu_product_name;echo "<br>";
+		echo $fu_product_brand;echo "<br>";
+		echo $fu_product_description;echo "<br>";
+		echo $fu_product_rating;echo "<br>";
+		echo $fu_unique_type_id;echo "<br>";
+		echo $fu_price;echo "<br>";
+		echo $fu_size;echo "<br>";
+		echo $fu_color;echo "<br>";
+		echo $fu_quantity;echo "<br>";
+		echo $fu_seller_user_name;echo "<br>";
+		
+	}
+
+?>
+
 <?php
 
 	$edit_delete_product_id=$_POST['edit_delete_product_id'];
@@ -148,12 +197,13 @@
     </div>
     <div class="form-group">
         <label for="inputproduct_description">product description</label>
-        <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description" required><?=$p_edit_product_description[0]?></textarea>
+        <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description_show" required><?=$p_edit_product_description[0]?></textarea>
     </div>
     <div class="form-group">
         <label for="inputproduct_rating">product rating</label>
         <input type="number" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" value="<?=$p_edit_product_rating[0]?>" required>
     </div>
+    <input type="hidden" name="product_description" value="<?=$p_edit_product_description[0]?>" />
     <button type="submit" name="edit_product" class="btn btn-dark">Edit product</button>
     </form> 	
 
