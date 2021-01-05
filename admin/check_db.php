@@ -131,7 +131,7 @@
                      <? foreach($category as $cat) { ?>
                         
                         <div class="col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
-				<div class="card">
+				<div class="card-body">
                                         <p class="card-text"><h6>Cat_id</h6> <?=$cat['cat_id']?></p>
                                         <p class="card-text"><h6>Cat_name</h6> <?=$cat['cat_name']?></p>
                         	</div>
