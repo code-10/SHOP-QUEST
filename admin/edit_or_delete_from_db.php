@@ -206,7 +206,7 @@
         <label for="inputproduct_rating">product rating</label>
         <input type="number" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" value="<?=$u_edit_unique_product_rating[0]?>" required>
     </div>
-    <button type="submit" name="products" class="btn btn-dark">Add product</button>
+    <button type="submit" name="edit_unique_product" class="btn btn-dark">Edit Unique product</button>
     </form> 
 	
 <?php } ?>
