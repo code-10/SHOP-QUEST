@@ -40,6 +40,8 @@
 		
 		$con->query($sql);
 		
+		echo $con->error;
+		
 		
 		
 				
