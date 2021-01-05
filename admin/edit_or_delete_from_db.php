@@ -47,6 +47,34 @@
 	}
 	else if(isset($_POST['edit_info_u']))
 	{
+		$u_edit_unique_product_id=Array();
+		$u_edit_unique_product_name=Array();
+		$u_edit_unique_product_brand=Array();
+		$u_edit_unique_product_description=Array();
+		$u_edit_unique_product_rating=Array();
+		$u_edit_unique_product_unique_type_id=Array();
+		$u_edit_unique_product_price=Array();
+		$u_edit_unique_product_size=Array();
+		$u_edit_unique_product_color=Array();
+		$u_edit_unique_product_quantity=Array();
+		$u_edit_unique_product_seller_user_name=Array();
+		
+		$u_edit_unique_product=$con->query("select up.product_id,up.unique_type_id,p.product_name,p.product_brand,up.price,up.size,up.color,up.quantity,p.rating,up.seller_user_name,p.product_description from products as p, unique_product as up where up.product_id=p.product_id");
+		
+		while($ans2=$u_edit_unique_product->fetch_assoc())
+		{
+			$u_edit_unique_product_id[]=$ans2['product_id'];
+			$u_edit_unique_product_name[]=$ans2['product_name'];
+			$u_edit_unique_product_brand[]=$ans2['product_brand'];
+			$u_edit_unique_product_description[]=$ans2['product_description'];
+			$u_edit_unique_product_rating[]=$ans2['rating'];	
+			$u_edit_unique_product_unique_type_id=$ans2['unique_type_id'];
+			$u_edit_unique_product_price=$ans2['price'];
+			$u_edit_unique_product_size=$ans2['size'];
+			$u_edit_unique_product_color=$ans2['color'];
+			$u_edit_unique_product_quantity=$ans2['quantity'];
+			$u_edit_unique_product_seller_user_name=$ans2['seller_user_name'];
+		}
 		
 	}
 	else if(isset($_POST['delete_info_p']))
@@ -136,47 +164,47 @@
     <form class="jumbotron m-4" method="POST" action="edit_or_delete_from_db.php">
      <div class="form-group">
         <label for="inputproduct_id">product id</label>
-        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="fill" disabled>
+        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$u_edit_unique_product_id[0]?>" disabled>
     </div>
     <div class="form-group">
         <label for="inputunique_type_id">Unique type id</label>
-        <input type="number" class="form-control" id="inputunique_type" placeholder="unique_type_id" name="unique_type" value="fill" disabled>
+        <input type="number" class="form-control" id="inputunique_type" placeholder="unique_type_id" name="unique_type" value="<?=$u_edit_unique_product_unique_type_id[0]?>" disabled>
     </div>
     <div class="form-group">
         <label for="inputproduct_name">product name</label>
-        <input type="text" class="form-control" id="inputproduct_name" placeholder="product name" name="product_name" value="fill" required>
+        <input type="text" class="form-control" id="inputproduct_name" placeholder="product name" name="product_name" value="<?=$u_edit_unique_product_name[0]?>" required>
     </div>
     <div class="form-group">
         <label for="inputproduct_brand">product brand</label>
-        <input type="text" class="form-control" id="inputproduct_brand" placeholder="product brand" name="product_brand" value="fill" required>
+        <input type="text" class="form-control" id="inputproduct_brand" placeholder="product brand" name="product_brand" value="<?=$u_edit_unique_product_brand[0]?>" required>
     </div>
     <div class="form-group">
         <label for="inputprice">price</label>
-        <input type="number" min="1" class="form-control" id="inputprice" placeholder="price" name="price" value="fill" required>
+        <input type="number" min="1" class="form-control" id="inputprice" placeholder="price" name="price" value="<?=$u_edit_unique_product_price[0]?>" required>
     </div>
     <div class="form-group">
         <label for="inputcolor">Color</label>
-        <input type="text" class="form-control" id="inputcolor" placeholder="color" name="color" value="fill" required>
+        <input type="text" class="form-control" id="inputcolor" placeholder="color" name="color" value="<?=$u_edit_unique_product_color[0]?>" required>
     </div>
     <div class="form-group">
         <label for="inputsize">size</label>
-        <input type="text" class="form-control" id="inputsize" placeholder="for mobiles like 4GB i.e ram size else s,m etc" name="size" value="fill" required>
+        <input type="text" class="form-control" id="inputsize" placeholder="for mobiles like 4GB i.e ram size else s,m etc" name="size" value="<?=$u_edit_unique_product_size[0]?>" required>
     </div>
     <div class="form-group">
         <label for="inputproduct_description">product description</label>
-        <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description" value="fill" required></textarea>
+        <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description" value="fill" required><?=$u_edit_unique_product_description[0]?></textarea>
     </div>
     <div class="form-group">
         <label for="inputquantity">Quantity</label>
-        <input type="number" min="1" max="420" class="form-control" id="inputquantity" placeholder="quantity" name="quantity" value="fill" required>
+        <input type="number" min="1" max="420" class="form-control" id="inputquantity" placeholder="quantity" name="quantity" value="<?=$u_edit_unique_product_quantity[0]?>" required>
     </div>   
     <div class="form-group">
         <label for="inputseller">Seller User Name</label>
-        <input type="text" class="form-control" id="inputseller" placeholder="seller user name" name="seller_user_name" value="fill" required>
+        <input type="text" class="form-control" id="inputseller" placeholder="seller user name" name="seller_user_name" value="<?=$u_edit_unique_product_seller_user_name[0]?>" required>
     </div> 
     <div class="form-group">
         <label for="inputproduct_rating">product rating</label>
-        <input type="number" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" value="fill" disabled>
+        <input type="number" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" value="<?=$u_edit_unique_product_rating[0]?>" disabled>
     </div>
     <button type="submit" name="products" class="btn btn-dark">Add product</button>
     </form> 
