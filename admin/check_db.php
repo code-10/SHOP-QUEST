@@ -101,13 +101,28 @@
         <div class="text-center">
               <h4>Database Details</h4>
         </div>
-    </div>       
+    </div>  
+	
+	
+	<?php
+	
+		$view=$_GET['view'];
+	
+	?>
+	
+	<div class="text-center m-4">
+            <a class="btn btn-primary m-2" href="check_db.php?view=category" role="button">Category</a>
+	    <a class="btn btn-primary m-2" href="check_db.php?view=sub_category" role="button">Sub_category</a>
+            <a class="btn btn-primary m-2" href="check_db.php?view=products" role="button">Products</a>
+	    <a class="btn btn-primary m-2" href="check_db.php?view=unique_product" role="button">Unique_product</a>
+	</div>
+	
    
         
 	<a class="btn btn-dark ml-4" href="admin_enter.php?admin_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
         
         
-
+	<?php if($view=="category") { ?>
             <div class="card">
                 <div class="card-body">
                         
@@ -128,7 +143,7 @@
                         
                 </div>
             </div>
-        
+        <?php } else if($view=="sub_category") { ?>
             
         <div class="card">
                 <div class="card-body">
@@ -151,7 +166,7 @@
                         
                 </div>
             </div>
-            
+        <?php else if($view=="products") { ?>
 
         <div class="card">
                 <div class="card-body">
@@ -184,6 +199,7 @@
                         
                 </div>
             </div>
+	<?php } else if($view=="unique_product") { ?>
             
         <div class="card">
                 <div class="card-body">
@@ -217,7 +233,7 @@
 
                 </div>
             </div> 
-            
+            <?php } ?>
         
   
   
