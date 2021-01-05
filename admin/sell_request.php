@@ -93,7 +93,7 @@
       
       
       $storeinfoid=$_GET['storeinfoid'];
-      
+      $aprstatus=$_GET['aprstatus'];
       //admin reject
       	if($admin_reject_sell=="yes")
 	{
@@ -284,8 +284,6 @@
 	    <a class="btn btn-primary m-2" href="sell_request.php?sell_request_main=yes&&aprstatus=1" role="button">Approved</a>
             <a class="btn btn-primary m-2" href="sell_request.php?sell_request_main=yes&&aprstatus=2" role="button">Rejected</a>
 	</div>
-	
-       $aprstatus=$_GET['aprstatus'];
 	
 	
       <?php if($sell_request_main=="yes") { ?>
