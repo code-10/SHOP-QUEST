@@ -114,12 +114,12 @@
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
                         
-                     <div class="row">
+                     <div class="row m-2">
                         
                      <? foreach($category as $cat) { ?>
                         
-                        <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                <div class="card-body">
+                        <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
+                                <div class="card-body m-2">
                                         <p class="card-text">Cat_id : <?=$cat['cat_id']?></p>
                                         <p class="card-text">Cat_name : <?=$cat['cat_name']?></p>
                                 </div>
@@ -141,10 +141,13 @@
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
+                        
+                        <div class="row m-2">
+                        
                    <? foreach($sub_category as $cat) { ?>
                         
-                        <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                <div class="card-body">
+                        <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
+                                <div class="card-body m-2">
                                         <p class="card-text">Sub_cat_id : <?=$cat['sub_cat_id']?></p>
                                         <p class="card-text">Sub_cat_name : <?=$cat['sub_cat_name']?></p>
                                         <p class="card-text">Cat_id : <?=$cat['cat_id']?></p>
@@ -152,6 +155,9 @@
                         </div>
                         
                    <? } ?>
+                        
+                        </div>
+                        
                 </div>
             </div>
         </div>
