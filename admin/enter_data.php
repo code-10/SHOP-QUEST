@@ -187,6 +187,8 @@
               <h4>Enter Data</h4>
         </div>
     </div>
+	
+<a class="btn btn-primary m-4" href="admin_enter.php?admin_enter_main=yes" role="button">Back to main menu</a>
   
   
  <!--categories-->
