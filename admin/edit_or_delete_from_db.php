@@ -36,7 +36,7 @@
 		echo $fp_product_description;echo "<br>";
 		echo $fp_product_rating;echo "<br>";
 		
-		$sql="update products set product_name='".mysqli_real_escape_string($con,$fp_product_name)."',product_brand='".mysqli_real_escape_string($con,$fp_product_brand)."',product_description='".mysqli_real_escape_string($con,$fp_product_description)."',rating=''".mysqli_real_escape_string($con,$fp_product_rating)."' where product_id='$fp_product_id'";
+		$sql="update products set product_name='".mysqli_real_escape_string($con,$fp_product_name)."',product_brand='".mysqli_real_escape_string($con,$fp_product_brand)."',product_description='".mysqli_real_escape_string($con,$fp_product_description)."',rating='".mysqli_real_escape_string($con,$fp_product_rating)."' where product_id='$fp_product_id'";
 		
 		$con->query($sql);
 		
