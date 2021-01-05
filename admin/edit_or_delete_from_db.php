@@ -103,27 +103,27 @@
     <form class="jumbotron m-4" method="POST" action="edit_or_delete_from_db.php">
      <div class="form-group">
         <label for="inputsub_cat_id">Sub category id</label>
-        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id" value="<?=$p_edit_sub_cat_id?>" disabled>
+        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id" value="<?=$p_edit_sub_cat_id[0]?>" disabled>
     </div>
      <div class="form-group">
         <label for="inputproduct_id">product id</label>
-        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$p_edit_product_id?>" disabled>
+        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$p_edit_product_id[0]?>" disabled>
     </div>
     <div class="form-group">
         <label for="inputproduct_name">product name</label>
-        <input type="text" class="form-control" id="inputproduct_name" placeholder="product name" name="product_name" value="<?=$p_edit_product_name?>" required>
+        <input type="text" class="form-control" id="inputproduct_name" placeholder="product name" name="product_name" value="<?=$p_edit_product_name[0]?>" required>
     </div>
     <div class="form-group">
         <label for="inputproduct_brand">product brand</label>
-        <input type="text" class="form-control" id="inputproduct_brand" placeholder="product brand" name="product_brand" value="<?=$p_edit_product_brand?>" required>
+        <input type="text" class="form-control" id="inputproduct_brand" placeholder="product brand" name="product_brand" value="<?=$p_edit_product_brand[0]?>" required>
     </div>
     <div class="form-group">
         <label for="inputproduct_description">product description</label>
-        <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description" value="<?=$p_edit_product_description?>" required></textarea>
+        <textarea type="text" class="form-control" id="inputproduct_description" rows="8" cols="4" placeholder="product description" name="product_description" value="<?=$p_edit_product_description[0]?>" required></textarea>
     </div>
     <div class="form-group">
         <label for="inputproduct_rating">product rating</label>
-        <input type="number" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" value="<?=$p_product_rating?>" required>
+        <input type="number" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" value="<?=$p_product_rating[0]?>" required>
     </div>
     <button type="submit" name="edit_product" class="btn btn-dark">Edit product</button>
     </form> 	
