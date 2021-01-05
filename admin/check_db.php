@@ -211,7 +211,7 @@
                                         <p class="card-text"><h6>Product_description</h6> <?=$p['product_description']?></p>
                                         <p class="card-text"><h6>Product_rating</h6> <?=$p['rating']?></p>
 
-                                        <form method="POST" action="edit_or_delete_from_db.php.php">
+                                        <form method="POST" action="edit_or_delete_from_db.php">
                                                 <input type="hidden" name="edit_delete_product_id" value="<?=$product_id[$i]?>" />
 					        <button type="submit" class="fa fa-edit btn btn-dark btn-sm pm" name="edit_info_p" style="background-color:black;color:white;"></button> 
                                                 <button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="delete_info_p" style="background-color:black;color:white;"></button> 
