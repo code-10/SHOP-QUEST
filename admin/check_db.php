@@ -135,7 +135,7 @@
                                         <p class="card-text"><h6>Cat_id</h6> <?=$cat['cat_id']?></p>
                                         <p class="card-text"><h6>Cat_name</h6> <?=$cat['cat_name']?></p>
                         	</div>
-                        
+                        </div>
                      <? } ?>
 			</div>	
 		  </div>
@@ -148,7 +148,7 @@
                         
                    <? foreach($sub_category as $cat) { ?>
                         
-                        <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
+                        <div class="col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
                                 <div class="card-body">
                                         <p class="card-text"><h6>Sub_cat_id</h6> <?=$cat['sub_cat_id']?></p>
                                         <p class="card-text"><h6>Sub_cat_name</h6> <?=$cat['sub_cat_name']?></p>
@@ -169,7 +169,7 @@
                         
                    <? foreach($products as $p) { ?>
                         
-                        <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
+                        <div class="col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
                                 <div class="card-body">
                                         <p class="card-text"><h6>Sub_cat_id</h6> <?=$p['sub_cat_id']?></p>
                                         <p class="card-text"><h6>Product_id</h6> <?=$p['product_id']?></p>
@@ -200,7 +200,7 @@
                         
                    <? foreach($uniq_prod as $p) { ?>
                         
-                        <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
+                        <div class="col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
                                 <div class="card-body">
                                         <p class="card-text"><h6>Product_id</h6> <?=$p['product_id']?></p>
                                         <p class="card-text"><h6>Unique_type_id</h6> <?=$p['unique_type_id']?></p>
