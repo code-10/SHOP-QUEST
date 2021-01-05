@@ -104,7 +104,7 @@
     </div>       
    
         
-	<a class="btn btn-primary m-4" href="admin_enter.php?admin_enter_main=yes" role="button">Back to main menu</a>
+	<a class="btn btn-dark ml-4" href="admin_enter.php?admin_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
         
         
 <div class="bs-example">
