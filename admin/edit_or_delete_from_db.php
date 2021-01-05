@@ -43,8 +43,6 @@
 			$p_edit_product_rating[]=$ans['rating'];
 		}
 		
-		print_r($p_edit_product_description);
-		print_r($p_edit_product_rating);
 		
 	}
 	else if(isset($_POST['edit_info_u']))
