@@ -70,6 +70,14 @@
 		echo $fu_seller_user_name;echo "<br>";
 		
 		
+		$sql1="";
+		$sql2="";
+		
+		$con->query($sql1);
+		$con->query($sql2);
+		
+		header("Location:check_db.php");	
+		
 	}
 
 ?>
