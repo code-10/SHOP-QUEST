@@ -115,14 +115,13 @@
                 <div class="card-body">
                      <? foreach($category as $cat) { ?>
                         
-                        <div class="card m-2">
+                        <div class="card m-2 col-4">
                                 <div class="card-body">
                                         <p class="card-text">Cat_id : <?=$cat['cat_id']?></p>
                                         <p class="card-text">Cat_name : <?=$cat['cat_name']?></p>
                                 </div>
                         </div>
                         
-                        <!--<p><?=$cat['cat_id']."=>".$cat['cat_name']?></p>-->
                      <? } ?>
                 </div>
             </div>
@@ -137,8 +136,17 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
                    <? foreach($sub_category as $cat) { ?>
-                        <p><?=$cat['sub_cat_id']."=>".$cat['sub_cat_name']."=>".$cat['cat_id']?></p>
-                        <? } ?>
+                        
+                        <div class="card m-2 col-4">
+                                <div class="card-body">
+                                        <p class="card-text">Sub_cat_id : <?=$cat['sub_cat_id']?></p>
+                                        <p class="card-text">Sub_cat_name : <?=$cat['sub_cat_name']?></p>
+                                        <p class="card-text">Cat_id : <?=$cat['cat_id']?></p>
+                                </div>
+                        </div>
+                        
+                        <!--<p><?=$cat['sub_cat_id']."=>".$cat['sub_cat_name']."=>".$cat['cat_id']?></p>-->
+                   <? } ?>
                 </div>
             </div>
         </div>
