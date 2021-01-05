@@ -36,7 +36,7 @@
 		echo $fp_product_description;echo "<br>";
 		echo $fp_product_rating;echo "<br>";
 		
-		
+		$con->query("update products set product_name='$fp_product_name',product_brand='$fp_product_brand',product_description='$fp_product_description',rating='$fp_product_rating' where product_id='$edit_this_product_id'");
 		
 	}
 	else if(isset($_POST['edit_unique_product']))
@@ -209,6 +209,7 @@
         <label for="inputproduct_rating">product rating</label>
         <input type="number" class="form-control" id="inputproduct_rating" placeholder="product rating" name="product_rating" value="<?=$p_edit_product_rating[0]?>" required>
     </div>
+    <input type="hidden" name="edit_this_product_id" value="<?=$edit_delete_product_id?>" />
     <button type="submit" name="edit_product" class="btn btn-dark">Edit product</button>
     </form> 	
 
