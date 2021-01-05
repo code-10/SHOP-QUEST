@@ -120,8 +120,8 @@
                         
                         <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
                                 <div class="card-body">
-                                        <p class="card-text">Cat_id : <?=$cat['cat_id']?></p>
-                                        <p class="card-text">Cat_name : <?=$cat['cat_name']?></p>
+                                        <p class="card-text"><h6>Cat_id</h6> : <?=$cat['cat_id']?></p>
+                                        <p class="card-text"><h6>Cat_name</h6> : <?=$cat['cat_name']?></p>
                                 </div>
                         </div>
                         
@@ -148,9 +148,9 @@
                         
                         <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
                                 <div class="card-body">
-                                        <p class="card-text">Sub_cat_id : <?=$cat['sub_cat_id']?></p>
-                                        <p class="card-text">Sub_cat_name : <?=$cat['sub_cat_name']?></p>
-                                        <p class="card-text">Cat_id : <?=$cat['cat_id']?></p>
+                                        <p class="card-text"><h6>Sub_cat_id</h6> : <?=$cat['sub_cat_id']?></p>
+                                        <p class="card-text"><h6>Sub_cat_name</h6> : <?=$cat['sub_cat_name']?></p>
+                                        <p class="card-text"><h6>Cat_id</h6> : <?=$cat['cat_id']?></p>
                                 </div>
                         </div>
                         
@@ -177,12 +177,12 @@
                         
                         <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
                                 <div class="card-body">
-                                        <p class="card-text">sub_cat_id : <?=$cat['sub_cat_id']?></p>
-                                        <p class="card-text">Product_id : <?=$cat['product_id']?></p>
-                                        <p class="card-text">Product_name : <?=$cat['product_name']?></p>
-                                        <p class="card-text">Product_brand : <?=$cat['product_brand']?></p>
-                                        <p class="card-text">Product_description : <?=$cat['product_description']?></p>
-                                        <p class="card-text">Product_rating : <?=$cat['rating']?></p>
+                                        <p class="card-text"><h6>Sub_cat_id</h6> : <?=$p['sub_cat_id']?></p>
+                                        <p class="card-text"><h6>Product_id</h6> : <?=$p['product_id']?></p>
+                                        <p class="card-text"><h6>Product_name</h6> : <?=$p['product_name']?></p>
+                                        <p class="card-text"><h6>Product_brand</h6> : <?=$p['product_brand']?></p>
+                                        <p class="card-text"><h6>Product_description</h6> : <?=$p['product_description']?></p>
+                                        <p class="card-text"><h6>Product_rating</h6> : <?=$p['rating']?></p>
                                 </div>
                         </div>
                         
@@ -202,9 +202,27 @@
             </div>
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                 <div class="card-body">
+                        
+                        <div class="row m-2">
+                        
                    <? foreach($uniq_prod as $p) { ?>
-                        <p><?=$p['unique_type_id']."=>".$p['product_id']."=>".$p['price']."=>".$p['quantity']."=>".$p['seller_user_name']."=>".$p['color']."=>".$p['size']?></p>
+                        
+                        <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
+                                <div class="card-body">
+                                        <p class="card-text"><h6>Product_id</h6> : <?=$p['product_id']?></p>
+                                        <p class="card-text"><h6>Unique_type_id</h6> : <?=$p['unique_type_id']?></p>
+                                        <p class="card-text"><h6>Product_price</h6> : <?=$p['price']?></p>
+                                        <p class="card-text"><h6>Product_quantity</h6> : <?=$p['pquantity']?></p>
+                                        <p class="card-text"><h6>Product_seller_user_name</h6> : <?=$p['seller_user_name']?></p>
+                                        <p class="card-text"><h6>Product_color</h6> : <?=$p['color']?></p>
+                                        <p class="card-text"><h6>Product_size</h6> : <?=$p['size']?></p>
+                                </div>
+                        </div>
+                        
                         <? } ?>
+
+                        </div>
+
                 </div>
             </div>
         </div>        
