@@ -108,7 +108,7 @@
 		$u_edit_unique_product_quantity=Array();
 		$u_edit_unique_product_seller_user_name=Array();
 		
-		$u_edit_unique_product=$con->query("select up.product_id,up.unique_type_id,p.product_name,p.product_brand,up.price,up.size,up.color,up.quantity,p.rating,up.seller_user_name,p.product_description from products as p, unique_product as up where up.product_id=p.product_id");
+		$u_edit_unique_product=$con->query("select up.product_id,up.unique_type_id,p.product_name,p.product_brand,up.price,up.size,up.color,up.quantity,p.rating,up.seller_user_name,p.product_description from products as p, unique_product as up where up.product_id=p.product_id and up.unique_type_id='$edit_delete_unique_type_id'");
 		
 		while($ans2=$u_edit_unique_product->fetch_assoc())
 		{
