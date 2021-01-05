@@ -278,6 +278,13 @@
         </div>
     </div>
      
+	
+	<div class="text-center m-4">
+            <a class="btn btn-primary m-2" href="sell_request.php?sell_request_main=yes&&aprstatus=0" role="button">Pending</a>
+	    <a class="btn btn-primary m-2" href="sell_request.php?sell_request_main=yes&&aprstatus=1" role="button">Approved</a>
+            <a class="btn btn-primary m-2" href="sell_request.php?sell_request_main=yes&&aprstatus=2" role="button">Rejected</a>
+	</div>
+	
       
       <?php if($sell_request_main=="yes") { ?>
       <? for($i=0;$i<$n;$i++) { ?>
