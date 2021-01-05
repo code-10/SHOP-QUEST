@@ -181,12 +181,14 @@
     <form class="jumbotron m-4" method="POST" action="edit_or_delete_from_db.php">
      <div class="form-group">
         <label for="inputsub_cat_id">Sub category id</label>
-        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id" value="<?=$p_edit_sub_cat_id[0]?>" disabled>
+        <input type="number" min="1" class="form-control" id="inputsub_cat_id" placeholder="subcategoryid" name="sub_cat_id_show" value="<?=$p_edit_sub_cat_id[0]?>" disabled>
     </div>
+    <input type="hidden" name="sub_cat_id" value="<?=$p_edit_sub_cat_id[0]?>" />
      <div class="form-group">
         <label for="inputproduct_id">product id</label>
-        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$p_edit_product_id[0]?>" disabled>
+        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id_show" value="<?=$p_edit_product_id[0]?>" disabled>
     </div>
+    <input type="hidden" name="product_id" value="<?=$p_edit_product_id[0]?>" />
     <div class="form-group">
         <label for="inputproduct_name">product name</label>
         <input type="text" class="form-control" id="inputproduct_name" placeholder="product name" name="product_name" value="<?=$p_edit_product_name[0]?>" required>
