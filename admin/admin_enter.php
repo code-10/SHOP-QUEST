@@ -51,7 +51,7 @@
 		<div class="text-center m-4">
             <a class="btn btn-primary m-2" href="check_db.php" role="button">Check DB</a>
 			<a class="btn btn-primary m-2" href="enter_data.php" role="button">Enter Data</a>
-            <a class="btn btn-primary m-2" href="sell_request.php?sell_request_main=yes" role="button">Check Seller Requests</a>
+            <a class="btn btn-primary m-2" href="sell_request.php?sell_request_main=yes&&aprstatus=0" role="button">Check Seller Requests</a>
 			<a class="btn btn-primary m-2" href="user_request.php" role="button">Check User Requests</a>
 	   </div>
 	
