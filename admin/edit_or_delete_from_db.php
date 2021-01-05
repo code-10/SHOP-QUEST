@@ -57,7 +57,7 @@
 		$fu_quantity=$_POST['quantity'];
 		$fu_seller_user_name=$_POST['seller_user_name'];
 		
-		echo $fu_product_id;echo "<br>";
+		/*echo $fu_product_id;echo "<br>";
 		echo $fu_product_name;echo "<br>";
 		echo $fu_product_brand;echo "<br>";
 		echo $fu_product_description;echo "<br>";
@@ -67,11 +67,11 @@
 		echo $fu_size;echo "<br>";
 		echo $fu_color;echo "<br>";
 		echo $fu_quantity;echo "<br>";
-		echo $fu_seller_user_name;echo "<br>";
+		echo $fu_seller_user_name;echo "<br>";*/
 		
 		
-		$sql1="";
-		$sql2="";
+		$sql1="update products set product_name='".mysqli_real_escape_string($con,$fu_product_name)."',product_brand='".mysqli_real_escape_string($con,$fu_product_brand)."',product_description='".mysqli_real_escape_string($con,$fu_product_description)."',rating='".mysqli_real_escape_string($con,$fu_product_rating)."' where product_id='$fu_product_id'";
+		$sql2="update unique_product set price='".mysqli_real_escape_string($con,$fu_price)."',color='".mysqli_real_escape_string($con,$fu_color)."',size='".mysqli_real_escape_string($con,$fu_size)."',quantity='".mysqli_real_escape_string($con,$fu_quantity)."',seller_user_name='".mysqli_real_escape_string($con,$fu_seller_user_name)."'";
 		
 		$con->query($sql1);
 		$con->query($sql2);
