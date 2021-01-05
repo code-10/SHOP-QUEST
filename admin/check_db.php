@@ -40,6 +40,33 @@
         
 ?>
 
+<?php
+
+	$edit_delete_product_id=$_POST['edit_delete_product_id'];
+	$edit_delete_unique_type_id=$_POST['edit_delete_unique_type_id'];
+
+	if(isset($_POST['edit_info_p']))
+	{
+		
+	}
+	else if(isset($_POST['edit_info_u']))
+	{
+		
+	}
+	else if(isset($_POST['delete_info_p']))
+	{
+		$con->query("delete from unique_product where product_id='$edit_delete_product_id'");
+		$con->query("delete from products where product_id='$edit_delete_product_id'");
+	}
+	else if(isset($_POST['delete_info_u']))
+	{
+		$con->query("delete from unique_product where unique_type_id='$edit_delete_unique_type_id'");
+	}
+
+?>
+
+
+
 <style>
     .bs-example{
         margin: 20px;
@@ -184,10 +211,10 @@
                                         <p class="card-text"><h6>Product_description</h6> <?=$p['product_description']?></p>
                                         <p class="card-text"><h6>Product_rating</h6> <?=$p['rating']?></p>
 
-                                        <form method="POST" action="#">
-                                                <input type="hidden" name="product_id" value="<?=$product_id[$i]?>" />
-					        <button type="submit" class="fa fa-edit btn btn-dark btn-sm pm" name="edit_info" style="background-color:black;color:white;"></button> 
-                                                <button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="delete_info" style="background-color:black;color:white;"></button> 
+                                        <form method="POST" action="edit_or_delete_from_db.php.php">
+                                                <input type="hidden" name="edit_delete_product_id" value="<?=$product_id[$i]?>" />
+					        <button type="submit" class="fa fa-edit btn btn-dark btn-sm pm" name="edit_info_p" style="background-color:black;color:white;"></button> 
+                                                <button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="delete_info_p" style="background-color:black;color:white;"></button> 
 				        </form>
 
                                 </div>
@@ -224,10 +251,10 @@
                                         <p class="card-text"><h6>Product_color</h6> <?=$p['color']?></p>
                                         <p class="card-text"><h6>Product_size</h6> <?=$p['size']?></p>
 
-                                         <form method="POST" action="#">
-                                                <input type="hidden" name="unique_type_id" value="<?=$unique_type_id[$i]?>" />
-					        <button type="submit" class="fa fa-edit btn btn-dark btn-sm pm" name="edit_info" style="background-color:black;color:white;"></button> 
-                                                <button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="delete_info" style="background-color:black;color:white;"></button> 
+                                         <form method="POST" action="edit_or_delete_from_db.php">
+                                                <input type="hidden" name="edit_delete_unique_type_id" value="<?=$unique_type_id[$i]?>" />
+					        <button type="submit" class="fa fa-edit btn btn-dark btn-sm pm" name="edit_info_u" style="background-color:black;color:white;"></button> 
+                                                <button type="submit" class="fa fa-trash btn btn-dark btn-sm pm" name="delete_info_u" style="background-color:black;color:white;"></button> 
 				        </form>
                                         
                                 </div>
