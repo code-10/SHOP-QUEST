@@ -31,7 +31,7 @@
 		$p_edit_product_description=Array();
 		$p_edit_product_rating=Array();
 		
-		$edit_product=$con->query("select * from products where product_id='$p_edit_delete_product_id'");
+		$p_edit_product=$con->query("select * from products where product_id='$p_edit_delete_product_id'");
 		
 		while($ans=$p_edit_product->fetch_assoc())
 		{
