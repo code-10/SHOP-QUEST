@@ -222,7 +222,7 @@
                                         <p class="card-text"><h6>Product_id</h6> <?=$p['product_id']?></p>
                                         <p class="card-text"><h6>Unique_type_id</h6> <?=$p['unique_type_id']?></p>
                                         <p class="card-text"><h6>Product_price</h6> <?=$p['price']?></p>
-                                        <p class="card-text"><h6>Product_quantity</h6> <?=$p['pquantity']?></p>
+                                        <p class="card-text"><h6>Product_quantity</h6> <?=$p['quantity']?></p>
                                         <p class="card-text"><h6>Product_seller_user_name</h6> <?=$p['seller_user_name']?></p>
                                         <p class="card-text"><h6>Product_color</h6> <?=$p['color']?></p>
                                         <p class="card-text"><h6>Product_size</h6> <?=$p['size']?></p>
