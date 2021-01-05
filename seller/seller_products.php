@@ -46,7 +46,7 @@
   $user=$_SESSION['user_name'];
     $con = getCon();
   echo $user;  
-      $res = $con->query("select products.product_id,product_name from products inner join unique_product on products.product_id=unique_product.product_id ");
+      $res = $con->query("select products.product_id,product_name from products inner join unique_product on products.product_id=unique_product.product_id where unique_product.seller_user_name='$user'");
   
     $product_id=Array();
     $product_name=Array();
