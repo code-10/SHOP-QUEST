@@ -297,7 +297,7 @@
     <? if($approved[$i]==1) { ?>
     	<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 	<a href='sell_request.php?admin_edit_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit</a>
-    	<a href='sell_request.php?admin_delete_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Delete from website</a>
+    	//<a href='sell_request.php?admin_delete_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Delete from website</a>
     <? } else if($approved[$i]==2) { ?>
 	 <h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6> 
     <? } else { ?>
