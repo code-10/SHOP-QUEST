@@ -104,6 +104,8 @@
     </div>  
 	
 	
+	<a class="btn btn-dark ml-4" href="admin_enter.php?admin_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
+	
 	<?php
 	
 		$view=$_GET['view'];
@@ -119,30 +121,26 @@
 	
    
         
-	<a class="btn btn-dark ml-4" href="admin_enter.php?admin_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
-        
         
 	<?php if($view=="category") { ?>
-            <div class="card">
-                <div class="card-body">
+            
                         
                      <div class="row m-2">
                         
                      <? foreach($category as $cat) { ?>
                         
-                        <div class="card col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
+                        <div class="col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px;">
+				<div class="card">
                                 <div class="card-body">
                                         <p class="card-text"><h6>Cat_id</h6> <?=$cat['cat_id']?></p>
                                         <p class="card-text"><h6>Cat_name</h6> <?=$cat['cat_name']?></p>
                                 </div>
-                        </div>
+                        	</div>
                         
                      <? } ?>
                         
                     </div>
                         
-                </div>
-            </div>
         <?php } else if($view=="sub_category") { ?>
             
         <div class="card">
