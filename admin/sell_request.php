@@ -102,7 +102,19 @@
                 die();
 	}
 	
-	
+	//admin_update
+	if($admin_update=="yes")
+	{
+		$con->query("update store_info set quantity=approved,aproved=1 where store_info_id='$storeinfoid'");
+		header("Location:sell_request.php?sell_request_main=yes");
+                die();
+	}
+	else if($admin_update=="no")
+	{
+		$con->query("update store_info set aproved=1 where store_info_id='$storeinfoid'");
+		header("Location:sell_request.php?sell_request_main=yes");
+                die();
+	}
 	
 	
 	
@@ -311,12 +323,15 @@
     	 <a href='sell_request.php?admin_delete_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Delete from website</a> -->
     <? } else if($approved[$i]==2) { ?>
 	 <h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6> 
-    <? } else { ?>
+    <? } else if($approved[$i]==0){ ?>
     	<h6 class="card-text">Status&nbsp&nbsp - waiting for approval<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     	<a href='sell_request.php?admin_check_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit and Approve</a>
     	<a href='sell_request.php?admin_reject_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Reject</a>
+    <? } else { ?>
+	  <h6 class="card-text">Status&nbsp&nbsp - waiting for approval<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
+    	<a href='sell_request.php?admin_update=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Update</a>
+    	<a href='sell_request.php?admin_update=no&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Don't Update</a>
     <? } ?>
-
 </div>
 </div>  
 		
