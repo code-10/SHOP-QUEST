@@ -19,7 +19,7 @@
 	echo $order_id_rar; echo "<br>";
 	echo $quantity_rar; echo "<br>";*/
 	    
-	$con->query("insert into process_return_or_replace(user_name,order_id,unique_type_id,quantity,reason) values('".mysqli_real_escape_string($con,$user)."','".mysqli_real_escape_string($con,$order_id_rar)."','".mysqli_real_escape_string($con,$unique_type_id_rar)."','".mysqli_real_escape_string($con,$quantity_rar)."','".mysqli_real_escape_string($con,$reason)."')");
+	$con->query("insert into process_return_or_replace(user_name,order_id,unique_type_id,quantity,reason,status) values('".mysqli_real_escape_string($con,$user)."','".mysqli_real_escape_string($con,$order_id_rar)."','".mysqli_real_escape_string($con,$unique_type_id_rar)."','".mysqli_real_escape_string($con,$quantity_rar)."','".mysqli_real_escape_string($con,$reason)."',0)");
     	
 	header("Location:user_orders.php?order_details=yes&&request_sent=yes&&order_id_detail=".$order_id_rar);
 	
