@@ -242,7 +242,7 @@ echo $aprstatus;
     				<? if($approved[$k]==1) { ?>
     					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 				
-				<form>
+				<form method="GET" action="db_update.php" >
 					<div class="form-group">
         				<label for="inputquantity">New Quantity</label>
         				<input type="number" min="0" max="420" class="form-control" id="inputquantity" placeholder="quantity" name="quantity" >
