@@ -302,7 +302,7 @@
       <?php if($sell_request_main=="yes") { ?>
       <? for($i=0;$i<$n;$i++) { ?>
 	
-	<? if($aprstatus!=$approved[$i]) 
+	<? if($aprstatus!=$approved[$i]&&!($aprstatus==0 && $approved[$i]>2)) 
 		 continue; ?>
 <div class="card m-4">
   <div class="card-header">seller name : <?=$seller_name[$i]?></div>
