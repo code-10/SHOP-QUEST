@@ -15,6 +15,7 @@
 		$con=getCon();
     
     $con->query("update store_info set quantity='$quantity', approved=0 where store_info_id='$store_info_id'");
+	echo $con->error;
     
     
    
