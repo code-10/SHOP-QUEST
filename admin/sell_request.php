@@ -105,8 +105,8 @@
 	$qty=$_GET['qty'];
 	//admin_update
 	if($admin_update=="yes")
-	{
-		$con->query("update store_info set quantity=qty,approved=1 where store_info_id='$storeinfoid'");
+	{	
+		$con->query("update store_info set quantity='$qty',approved=1 where store_info_id='$storeinfoid'");
 		header("Location:sell_request.php?sell_request_main=yes");
                 die();
 	}
