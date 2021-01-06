@@ -9,11 +9,11 @@
             $category[]=$ele;
         
        
-        /*if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
+        if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
       	{
             header("Location:../index.php");
             die(); 
-      	}*/
+      	}
 
 
         $sub_category=Array();
@@ -71,7 +71,7 @@
 
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a href="../index.php" class="navbar-brand">ShopShop</a>
+    <a href="../index.php" class="navbar-brand">ShopQuest</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
