@@ -106,7 +106,12 @@
 	//admin_update
 	if($admin_update=="yes")
 	{	
-		$con->query("update store_info set quantity='$qty',approved=1 where store_info_id='$storeinfoid'");
+		$con->query("update store_info set quantity=quantity+'$qty',approved=1 where store_info_id='$storeinfoid'");
+		$res=$con->query("select  store_unique_type_id from store_info where store_info_id='$storeinfoid'");
+		 $ele = $res->fetch_assoc()
+  		$uniq_id=$ele['store_unique_type_id'];
+		$con->query("update unique_product set quantity=quantity+'$qty' where unique_type_id='$uniq_id'");
+		
 		header("Location:sell_request.php?sell_request_main=yes");
                 die();
 	}
