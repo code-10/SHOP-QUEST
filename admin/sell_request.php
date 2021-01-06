@@ -101,17 +101,18 @@
 		header("Location:sell_request.php?sell_request_main=yes");
                 die();
 	}
-	
+	$admin_update=$_GET['admin_update'];
+	$qty=$_GET['qty'];
 	//admin_update
 	if($admin_update=="yes")
 	{
-		$con->query("update store_info set quantity=approved,aproved=1 where store_info_id='$storeinfoid'");
+		$con->query("update store_info set quantity=qty,approved=1 where store_info_id='$storeinfoid'");
 		header("Location:sell_request.php?sell_request_main=yes");
                 die();
 	}
 	else if($admin_update=="no")
 	{
-		$con->query("update store_info set aproved=1 where store_info_id='$storeinfoid'");
+		$con->query("update store_info set approved=1 where store_info_id='$storeinfoid'");
 		header("Location:sell_request.php?sell_request_main=yes");
                 die();
 	}
@@ -330,7 +331,7 @@
     <? } else { ?>
 	  <p class="card-text">new quantity : <?=$approved[$i]?></p>
 	  <h6 class="card-text">Status&nbsp&nbsp - waiting for approval<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
-    	<a href='sell_request.php?admin_update=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Update</a>
+    	<a href='sell_request.php?admin_update=yes&&storeinfoid=<?=$storeinfoid[$i]?>&&qty=<?=$approved[$i]?>' class="btn btn-success m-2">Update</a>
     	<a href='sell_request.php?admin_update=no&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-danger m-2">Don't Update</a>
     <? } ?>
 </div>
