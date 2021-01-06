@@ -3,7 +3,7 @@
         include_once '../header.php';
         session_start();
         include '../libraries/chocolates.php';
-        $category=Array();
+
         $con = getCon();  
        
         /*if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
@@ -53,7 +53,47 @@
     </div>  
 	
 	
-	<a class="btn btn-dark ml-4" href="admin_enter.php?admin_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
+	<a class="btn btn-dark m-4" href="admin_enter.php?admin_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
+	
+	<?php 
+		
+		$rar_category=Array();
+		$rar_sub_category=Array();
+		$rar_product_name=Array();
+		$rar_color=Array();
+		$rar_size=Array();
+		$rar_quantity=Array();
+		$rar_rating=Array();
+		$rar_product_brand=Array();
+		$rar_product_description=Array();
+		$rar_price=Array();
+		$rar_seller_user_name=Array();
+		$rar_unique_type_id=Array();
+	
+		$rar_process = $con->query("select c.cat_name,sc.sub_cat_name,p.product_name,p.product_brand,p.product_description,p.rating,up.price,up.quantity,up.size,up.color,up.seller_user_name,up.unique_type_id from categories as c,sub_categories as sc,products as p,unique_product as up,process_return_or_replace as pr where pr.unique_type_id=up.unique_type_id and p.product_id=up.product_id and p.sub_cat_id=sc.sub_cat_id and c.cat_id=sc.cat_id");
+	
+		while($rar_do=$rar_process->fetch_assoc()){
+			$rar_category[]=$rar_do[''];
+			$rar_sub_category[]=$rar_do[''];
+			$rar_product_name[]=$rar_do[''];
+			$rar_color[]=$rar_do[''];
+			$rar_size[]=$rar_do[''];
+			$rar_quantity[]=$rar_do[''];
+			$rar_rating[]=$rar_do[''];
+			$rar_product_brand[]=$rar_do[''];
+			$rar_product_description[]=$rar_do[''];
+			$rar_price[]=$rar_do[''];
+			$rar_seller_user_name[]=$rar_do[''];
+			$rar_unique_type_id[]=$rar_do[''];
+		}
+		
+	
+	?>
+	
+	
+	
+	
+	
 	
   
   <?php include_once '../footer.php'; ?>
