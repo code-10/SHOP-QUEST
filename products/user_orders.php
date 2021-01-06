@@ -210,7 +210,7 @@
 						</div>
 						<!--rate and review end-->
 						
-						<br><br>
+						<br>
 						
 						<!--return or replace-->
 						<button class="btn btn-primary btn-sm ml-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse<?=$c?>" aria-expanded="false" aria-controls="collapseExample">
