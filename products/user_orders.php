@@ -185,6 +185,8 @@
 						<p class="card-text">Product rating : <?=$product_rating[$j]?></p>
 						<p class="card-text">Product review : <?=$product_review[$j]?></p>
 						
+						
+						<!--rate and review-->
 						<button class="btn btn-primary btn-sm ml-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse<?=$j?>" aria-expanded="false" aria-controls="collapseExample">
     							Rate and Review
   						</button>
@@ -206,8 +208,28 @@
 								</form>
   							</div>
 						</div>
+						<!--rate and review end-->
 						
-    						<a href="#" class="btn btn-primary btn-sm m-2">Replace or Return</a>
+						
+						<!--return or replace-->
+						<button class="btn btn-primary btn-sm ml-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse<?=$j?>" aria-expanded="false" aria-controls="collapseExample">
+    							Return or Replace
+  						</button>
+						<div class="collapse m-2" id="collapse<?=$j?>">
+  							<div class="card card-body" style="padding:8px;">
+								<form method="POST" action="returnorreplace.php" class="input-group d-flex justify-content-center">
+									<p>Reason</p>
+								<div class="form-group m-2 col-12">
+    									<textarea class="form-control" id="review" rows="3"  cols="100" placeholder="Your review" name="reason"></textarea>
+  								</div>
+									
+								<button class="btn btn-dark" name="submit_return_or_replace" type="submit">Submit</button>
+								</form>
+  							</div>
+						</div>
+						<!--return or replace end-->
+						
+						
   					</div>
 				</div>
 				</div>
