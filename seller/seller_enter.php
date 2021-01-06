@@ -153,7 +153,7 @@
 	
       	    <div class="text-center m-4">
             	<a class="btn btn-primary" href="seller_enter.php?sell_a_product=yes" role="button">Sell a product</a>
-            	<a class="btn btn-primary" href="seller_enter.php?my_sell_requests=yes" role="button">My sell requests</a>
+            	<a class="btn btn-primary" href="seller_enter.php?my_sell_requests=yes&&aprstatus=0" role="button">My sell requests</a>
 	   </div>
 	
       <?php } else if($sell_a_product=="yes") { ?>
@@ -214,7 +214,16 @@
       		
             <a class="btn btn-primary m-4" href="seller_enter.php?seller_enter_main=yes" role="button">Back to seller main menu</a>
 	
+	<div class="text-center m-4">
+            <a class="btn btn-primary m-2" href="seller_enter.php?sell_request_main=yes&&aprstatus=0" role="button">Pending</a>
+	    <a class="btn btn-primary m-2" href="seller_enter.php?sell_request_main=yes&&aprstatus=1" role="button">Approved</a>
+	</div>
+	
 			<?php for($k=0;$k<$n;$k++) { ?>
+	
+			<? if($aprstatus!=$approved[$i]) 
+		 			continue; ?>
+	
 				<div class="card m-4">
   					<div class="card-header">Product name : <?=$product_name[$k]?></div>
   					<div class="card-body">
