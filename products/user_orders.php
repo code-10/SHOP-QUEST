@@ -210,10 +210,8 @@
 						</div>
 						<!--rate and review end-->
 						
-						<br>
-						
 						<!--return or replace-->
-						<button class="btn btn-primary btn-sm ml-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample">
+						<button class="btn btn-primary btn-sm ml-2 mt-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample">
     							Return or Replace
   						</button>
 						<div class="collapse m-2" id="collapse_r<?=$c?>">
@@ -223,7 +221,13 @@
 								<div class="form-group m-2 col-12">
     									<textarea class="form-control" id="reason" rows="3"  cols="100" placeholder="Your reason" name="reason"></textarea>
   								</div>
-									
+								
+								<div class="form-group m-2 col-12">
+									<input type="hidden" name="unique_type_id_rar" value="<?=$unique_type_id[$j]?>" />
+									<input type="hidden" name="order_id_rar" value="<?=$order_id_detail?>" />
+									<input type="hidden" name="quantity_rar" value="<<?=$product_qty[$j]?>" />
+  								</div>
+								
 								<button class="btn btn-dark" name="submit_return_or_replace" type="submit">Submit</button>
 								</form>
   							</div>
