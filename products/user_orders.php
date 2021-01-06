@@ -8,6 +8,9 @@
 	$user=$_SESSION['user_name'];
 	
 
+
+	$request_sent=$_GET['request_sent'];
+
 	//differentiate and inputs
 	$order_id_detail=$_GET['order_id_detail'];
 	$order_details=$_GET['order_details'];
