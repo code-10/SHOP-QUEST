@@ -73,18 +73,18 @@
 		$rar_process = $con->query("select c.cat_name,sc.sub_cat_name,p.product_name,p.product_brand,p.product_description,p.rating,up.price,up.quantity,up.size,up.color,up.seller_user_name,up.unique_type_id from categories as c,sub_categories as sc,products as p,unique_product as up,process_return_or_replace as pr where pr.unique_type_id=up.unique_type_id and p.product_id=up.product_id and p.sub_cat_id=sc.sub_cat_id and c.cat_id=sc.cat_id");
 	
 		while($rar_do=$rar_process->fetch_assoc()){
-			$rar_category[]=$rar_do[''];
-			$rar_sub_category[]=$rar_do[''];
-			$rar_product_name[]=$rar_do[''];
-			$rar_color[]=$rar_do[''];
-			$rar_size[]=$rar_do[''];
-			$rar_quantity[]=$rar_do[''];
-			$rar_rating[]=$rar_do[''];
-			$rar_product_brand[]=$rar_do[''];
-			$rar_product_description[]=$rar_do[''];
-			$rar_price[]=$rar_do[''];
-			$rar_seller_user_name[]=$rar_do[''];
-			$rar_unique_type_id[]=$rar_do[''];
+			$rar_category[]=$rar_do['cat_name'];
+			$rar_sub_category[]=$rar_do['sub_cat_name'];
+			$rar_product_name[]=$rar_do['product_name'];
+			$rar_color[]=$rar_do['color'];
+			$rar_size[]=$rar_do['size'];
+			$rar_quantity[]=$rar_do['quantity'];
+			$rar_rating[]=$rar_do['rating'];
+			$rar_product_brand[]=$rar_do['product_brand'];
+			$rar_product_description[]=$rar_do['product_description'];
+			$rar_price[]=$rar_do['price'];
+			$rar_seller_user_name[]=$rar_do['seller_user_name'];
+			$rar_unique_type_id[]=$rar_do['unique_type_id'];
 		}
 		
 	
