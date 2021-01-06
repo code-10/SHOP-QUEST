@@ -10,7 +10,8 @@
             header("Location:../index.php");
             die(); 
       	} 
-
+	$store_info_id=$_GET['store_info_id'];
+	$quantity=$_GET['quantity'];
 
 		$con=getCon();
     
