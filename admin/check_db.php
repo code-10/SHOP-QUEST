@@ -9,11 +9,11 @@
             $category[]=$ele;
         
        
-        if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
+        /*if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
       	{
             header("Location:../index.php");
             die(); 
-      	} 
+      	}*/
 
 
         $sub_category=Array();
