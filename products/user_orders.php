@@ -217,6 +217,13 @@
 						<button class="btn btn-primary btn-sm ml-2 mt-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($request_sent=="yes") { ?> disabled <?php } ?> >
     							Return or Replace
   						</button>
+						
+						<?php if($request_sent=="yes") { ?>
+						<div class="spinner-grow text-primary" role="status">
+  							<span class="sr-only">Loading...</span>
+						</div>
+						<?php } ?>
+						
 						<div class="collapse m-2" id="collapse_r<?=$c?>">
   							<div class="card card-body" style="padding:8px;">
 								<form method="POST" action="returnorreplace.php" class="input-group d-flex justify-content-center">
