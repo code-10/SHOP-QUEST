@@ -154,7 +154,7 @@
       	    <div class="text-center m-4">
             	<a class="btn btn-primary" href="seller_enter.php?sell_a_product=yes" role="button">Sell a product</a>
             	<a class="btn btn-primary" href="seller_enter.php?my_sell_requests=yes" role="button">My sell requests</a>
-		<a class="btn btn-primary" href="seller_products.php?my_sell_requests=yes" role="button">My products</a>
+		<a class="btn btn-primary" href="collapse_seller_product.php?my_sell_requests=yes" role="button">My products</a>
 	   </div>
 	
       <?php } else if($sell_a_product=="yes") { ?>
