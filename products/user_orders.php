@@ -15,11 +15,11 @@
 	$your_orders=$_GET['your_orders'];
 		
 
-	if(!(isset($_SESSION['user_name'])))
+	/*if(!(isset($_SESSION['user_name'])))
       	{
             header("Location:../index.php");
             die(); 
-      	} 
+      	}*/ 
 
 
 
