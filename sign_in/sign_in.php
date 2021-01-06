@@ -41,6 +41,7 @@
 		$error=$_GET['error'];
 		$commonpassword=$_GET['commonpassword'];
 		$invalidusername=$_GET['invalidusername'];
+		$badusername=$_GET['badusername'];
 	
 	?>
 	<div class="container">
@@ -60,9 +61,11 @@
 		                	echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Email is already registered</div></h4>";
 		            	else if($nouser)
 					echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>You don't have a Shopquest Account, Kindly Register</div></h4>";
+				else if($badusername)
+		                	echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Bad Username</div></h4>";
 				else if($error)
 		                	echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Something happened try again</div></h4>";
-						
+					
 			?>
 		</div>
 	</div>
