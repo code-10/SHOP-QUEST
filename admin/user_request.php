@@ -12,7 +12,7 @@
             die(); 
       	}*/
 
-        
+        $do_it=$_GET['do_it'];
         
         
 ?>
@@ -111,9 +111,9 @@
 				<p class="card-text">quantity : <?=$rar_quantity[$i]?></p>
 				<p class="card-text">seller_user_name : <?=$rar_seller_user_name[$i]?></p>
 				
-				<a href='#' class="btn btn-primary btn-sm m-2">Replace</a>
-				<a href='#' class="btn btn-primary btn-sm m-2">Return</a>
-				<a href='#' class="btn btn-danger btn-sm m-2">Reject</a>
+				<a href='user_request.php?do_it=replace' class="btn btn-primary btn-sm m-2">Replace</a>
+				<a href='user_request.php?do_it=return' class="btn btn-primary btn-sm m-2">Return</a>
+				<a href='user_request.php?do_it=reject' class="btn btn-danger btn-sm m-2">Reject</a>
 				
   			</div>
 		</div>
