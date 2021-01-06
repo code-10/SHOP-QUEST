@@ -218,7 +218,8 @@
             <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&aprstatus=0" role="button">Pending</a>
 	    <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&aprstatus=1" role="button">Approved</a>
 	</div>
-	
+			
+			<? $aprstatus=$_GET['aprstatus']; ?>
 			<?php for($k=0;$k<$n;$k++) { ?>
 	
 			<? if($aprstatus!=$approved[$i]) 
