@@ -213,10 +213,10 @@
 						<br>
 						
 						<!--return or replace-->
-						<button class="btn btn-primary btn-sm ml-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse<?=$c?>" aria-expanded="false" aria-controls="collapseExample">
+						<button class="btn btn-primary btn-sm ml-2" style="display:block;" type="button" data-toggle="collapse_r" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample">
     							Return or Replace
   						</button>
-						<div class="collapse m-2" id="collapse<?=$c?>">
+						<div class="collapse m-2" id="collapse_r<?=$c?>">
   							<div class="card card-body" style="padding:8px;">
 								<form method="POST" action="returnorreplace.php" class="input-group d-flex justify-content-center">
 									<p>Reason</p>
