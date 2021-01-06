@@ -8,8 +8,15 @@ if (isset($_POST['register_user']))
     //$u = str_replace(' ', '', $u);
     $e = $_POST['email'];
     $p = $_POST['password'];
-    $u=strtolower($u);
+    $u = strtolower($u);
 
+    if(!preg_match('/^[0-9A-Za-z!@#$% ]+$/',$u) || preg_match('/^ /',$u) || preg_match('/ $/',$u)) {
+        
+        $badusername = true;
+        header("Location:sign_in.php?signinwhich=register&&badusername=" . $badusername . "user_name=" . $u . "email=" . $e);
+        die();
+        
+    }
     
     if (rowExists('commonpasswords', 'possible_password', $p) || $u == $p)
     {
