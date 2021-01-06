@@ -219,6 +219,8 @@
 							while($get_it=$get_status->fetch_assoc())
 								$got_status[]=$get_it['status'];
 									    
+							echo $got_status[0];
+									    
 						?>
 						
 						
