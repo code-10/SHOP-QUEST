@@ -211,7 +211,7 @@
 						<!--rate and review end-->
 						
 						<!--return or replace-->
-						<button class="btn btn-primary btn-sm ml-2 mt-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample">
+						<button class="btn btn-primary btn-sm ml-2 mt-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($request_sent=="yes") { ?> disabled <?php } ?> >
     							Return or Replace
   						</button>
 						<div class="collapse m-2" id="collapse_r<?=$c?>">
