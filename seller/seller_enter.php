@@ -159,7 +159,7 @@ echo $aprstatus;
 	
       <?php } else if($sell_a_product=="yes") { ?>
       		
-            <a class="btn btn-primary m-4" href="seller_enter.php?seller_enter_main=yes" role="button">Back to seller main menu</a>
+	    <a class="btn btn-dark ml-4" href="seller_enter.php?seller_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
             <form class="jumbotron m-4" method="POST" action="seller_enter.php">
 		  			<label for="category">Category</label>
                   	<div class="form-group">
@@ -213,7 +213,7 @@ echo $aprstatus;
       
       <?php } else if($my_sell_requests=="yes") { ?>
       		
-            <a class="btn btn-primary m-4" href="seller_enter.php?seller_enter_main=yes" role="button">Back to seller main menu</a>
+            <a class="btn btn-dark ml-4" href="seller_enter.php?seller_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
 	
 	<div class="text-center m-4">
             <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&aprstatus=0" role="button">Pending</a>
