@@ -217,10 +217,10 @@
 						<button class="btn btn-primary btn-sm ml-2 mt-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($request_sent=="yes") { ?> disabled <?php } ?> >
     							
 							<?php if($request_sent=="yes") { ?>
-								<div class="spinner-grow text-primary" role="status">
+								Processing 
+								<div class="spinner-grow text-light spinner-grow-sm" role="status">
   									<span class="sr-only">Loading...</span>
 								</div>
-								Processing
 							<?php } else { ?>
 								Return or Replace
 							<?php } ?>
