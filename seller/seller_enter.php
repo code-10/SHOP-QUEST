@@ -221,10 +221,10 @@ echo $aprstatus;
 	</div>
 			
 			
-			<?php for($k=0;$k<$n;$k++) { ?>
+			<?php for($k=0;$k<$n;$k++) { 
 	
-			<? //if($aprstatus!=$approved[$i]) 
-		 			//continue; ?>
+			 if($aprstatus!=$approved[$i]&&!($aprstatus==0 && $approved[$i]>2)) 
+		 		continue; ?>
 	
 				<div class="card m-4">
   					<div class="card-header">Product name : <?=$product_name[$k]?></div>
