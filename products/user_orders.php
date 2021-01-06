@@ -213,14 +213,27 @@
 						
 						<?php
 						
-							
+							$get_status=$con->query("select status from process_return_or_replace where user_name='".mysqli_real_escape_string($con,$user)."' and order_id='".mysqli_real_escape_string($con,$order_id_detail)."' and unique_type_id='".mysqli_real_escape_string($con,$unique_type_id[$j])."' and quantity='".mysqli_real_escape_string($con,$product_qty[$j])."'");	
 						
+							$got_status=Array();
+							while($get_it=$get_status->fetch_assoc())
+								$got_status[]=$get_it['status'];
+									    
 						?>
 						
 						
 						<!--return or replace-->
 						<button class="btn btn-primary btn-sm ml-2 mt-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample">
+							
+							<?php if($got_status[0]==0) { ?>
+								Processing 
+									<div class="spinner-grow spinner-grow-sm" role="status">
+  										<span class="sr-only">Loading...</span>
+									</div>
+							<?php } else { ?>
 								Return or Replace
+							<?php } ?>
+							
   						</button>
 						
 						
