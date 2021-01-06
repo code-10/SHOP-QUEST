@@ -7,7 +7,7 @@
         $user=$_SESSION['user_name'];
         $product_id=Array();
         $product_name=Array();
-        $res = $con->query("select products.product_id,product_name from products inner join unique_product on products.product_id=unique_product.product_id where seller_user_name='$user'");
+        $res = $con->query("select distinct products.product_id,product_name from products inner join unique_product on products.product_id=unique_product.product_id where seller_user_name='$user'");
         while($ele = $res->fetch_assoc())
         {
          $product_id[]=$ele['product_id'];
