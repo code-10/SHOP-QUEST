@@ -173,7 +173,7 @@
 	<?php } else if($order_details=="yes") { ?>
 	
 		<div class="row m-4 d-flex justify-content-center">
-			<?php for($j=0;$j<$order_details_count;$j++) { ?>
+			<?php $c=0; for($j=0;$j<$order_details_count;$j++) { ?>
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-12">
 					<div class="card m-2">
   					<div class="card-body">
@@ -210,12 +210,13 @@
 						</div>
 						<!--rate and review end-->
 						
+						<br><br>
 						
 						<!--return or replace-->
-						<button class="btn btn-primary btn-sm ml-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse<?=$j?>" aria-expanded="false" aria-controls="collapseExample">
+						<button class="btn btn-primary btn-sm ml-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse<?=$c?>" aria-expanded="false" aria-controls="collapseExample">
     							Return or Replace
   						</button>
-						<div class="collapse m-2" id="collapse<?=$j?>">
+						<div class="collapse m-2" id="collapse<?=$c?>">
   							<div class="card card-body" style="padding:8px;">
 								<form method="POST" action="returnorreplace.php" class="input-group d-flex justify-content-center">
 									<p>Reason</p>
@@ -233,7 +234,7 @@
   					</div>
 				</div>
 				</div>
-			<?php } ?>
+			<?php $c++; } ?>
 		</div>	
 	<?php } ?>
 													
