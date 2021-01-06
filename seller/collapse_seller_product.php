@@ -99,7 +99,7 @@
          $qty[]=$ele['quantity'];
         }    ?>
         
-    <button type="button" class="collapsible"><? = $product_name[$i] ?></button>
+    <button type="button" class="collapsible"><?=$product_name[$i]?></button>
     <div class="content">
         <p><?=$size[$i]?></p>
     </div>
