@@ -8,9 +8,6 @@
 	$user=$_SESSION['user_name'];
 	
 
-
-	$request_sent=$_GET['request_sent'];
-
 	//differentiate and inputs
 	$order_id_detail=$_GET['order_id_detail'];
 	$order_details=$_GET['order_details'];
@@ -222,17 +219,8 @@
 						
 						
 						<!--return or replace-->
-						<button class="btn btn-primary btn-sm ml-2 mt-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($request_sent=="yes") { ?> disabled <?php } ?> >
-    							
-							<!--<?php if() { ?>
-								Processing 
-								<div class="spinner-grow text-light spinner-grow-sm" role="status">
-  									<span class="sr-only">Loading...</span>
-								</div>
-							<?php } else { ?>-->
+						<button class="btn btn-primary btn-sm ml-2 mt-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample">
 								Return or Replace
-							<!--<?php } ?>-->
-							
   						</button>
 						
 						
