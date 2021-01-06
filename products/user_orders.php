@@ -219,13 +219,11 @@
 							while($get_it=$get_status->fetch_assoc())
 								$got_status[]=$get_it['status'];
 									    
-							echo $got_status[0];
-									    
 						?>
 						
 						
 						<!--return or replace-->
-						<button class="btn btn-primary btn-sm ml-2 mt-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample">
+						<button class="btn btn-primary btn-sm ml-2 mt-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1) { ?> disabled <?php } ?> >
 							
 							<?php if($got_status[0]==1) { ?>
 								Processing 
