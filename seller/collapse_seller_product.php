@@ -101,7 +101,7 @@
         
     <button type="button" class="collapsible"><? = $product_name[$i] ?></button>
     <div class="content">
-        <p><?=$size[$i]   $color[$i]   $size[$i]   $qty[$i] ?></p>
+        <p><?=$size[$i]?></p>
     </div>
   
   
