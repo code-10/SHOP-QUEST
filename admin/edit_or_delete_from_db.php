@@ -5,11 +5,11 @@
         $category=Array();
         $con = getCon();  
        
-        if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
+        /*if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
       	{
             header("Location:../index.php");
             die(); 
-      	} 
+      	}*/
 
 
         
