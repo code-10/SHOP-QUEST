@@ -225,7 +225,7 @@
 								<div class="form-group m-2 col-12">
 									<input type="hidden" name="unique_type_id_rar" value="<?=$unique_type_id[$j]?>" />
 									<input type="hidden" name="order_id_rar" value="<?=$order_id_detail?>" />
-									<input type="hidden" name="quantity_rar" value="<<?=$product_qty[$j]?>" />
+									<input type="hidden" name="quantity_rar" value="<?=$product_qty[$j]?>" />
   								</div>
 								
 								<button class="btn btn-dark" name="submit_return_or_replace" type="submit">Submit</button>
