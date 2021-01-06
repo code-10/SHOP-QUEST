@@ -61,7 +61,7 @@
     </div>
    
     
-    <br><hr><br>
+    <br><br>
     
     <?php
         $user=$_SESSION['user_name'];
