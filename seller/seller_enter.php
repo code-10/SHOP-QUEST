@@ -215,8 +215,8 @@
             <a class="btn btn-primary m-4" href="seller_enter.php?seller_enter_main=yes" role="button">Back to seller main menu</a>
 	
 	<div class="text-center m-4">
-            <a class="btn btn-primary m-2" href="seller_enter.php?sell_request_main=yes&&aprstatus=0" role="button">Pending</a>
-	    <a class="btn btn-primary m-2" href="seller_enter.php?sell_request_main=yes&&aprstatus=1" role="button">Approved</a>
+            <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&aprstatus=0" role="button">Pending</a>
+	    <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&aprstatus=1" role="button">Approved</a>
 	</div>
 	
 			<?php for($k=0;$k<$n;$k++) { ?>
