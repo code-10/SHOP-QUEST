@@ -328,6 +328,7 @@
     	<a href='sell_request.php?admin_check_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit and Approve</a>
     	<a href='sell_request.php?admin_reject_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Reject</a>
     <? } else { ?>
+	  <p class="card-text">new quantity : <?=$approved[$i]?></p>
 	  <h6 class="card-text">Status&nbsp&nbsp - waiting for approval<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     	<a href='sell_request.php?admin_update=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Update</a>
     	<a href='sell_request.php?admin_update=no&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Don't Update</a>
