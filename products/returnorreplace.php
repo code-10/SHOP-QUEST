@@ -14,11 +14,16 @@
 	$order_id_rar=$_POST['order_id_rar'];
 	$quantity_rar=$_POST['quantity_rar'];
 	    
-	echo $reason; echo "<br>";
+	/*echo $reason; echo "<br>";
 	echo $unique_type_id_rar; echo "<br>";
 	echo $order_id_rar; echo "<br>";
-	echo $quantity_rar; echo "<br>";
-    
+	echo $quantity_rar; echo "<br>";*/
+	    
+	$con->query("insert into process_return_or_replace(user_name,order_id,unique_type_id,quantity,reason) values('".mysqli_real_escape_string($con,$user)."','".mysqli_real_escape_string($con,$order_id_rar)."','".mysqli_real_escape_string($con,$unique_type_id_rar)."','".mysqli_real_escape_string($con,$quantity_rar)."','".mysqli_real_escape_string($con,$reason)."')");
+    	
+	header("Location:user_orders.php?order_details=yes&&request_sent=yes&&order_id_detail=".$order_id_rar);
+	
+	    
     }
   
 ?>
