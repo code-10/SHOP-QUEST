@@ -220,7 +220,7 @@
 								<form method="POST" action="returnorreplace.php" class="input-group d-flex justify-content-center">
 									<p>Reason</p>
 								<div class="form-group m-2 col-12">
-    									<textarea class="form-control" id="review" rows="3"  cols="100" placeholder="Your review" name="reason"></textarea>
+    									<textarea class="form-control" id="reason" rows="3"  cols="100" placeholder="Your reason" name="reason"></textarea>
   								</div>
 									
 								<button class="btn btn-dark" name="submit_return_or_replace" type="submit">Submit</button>
