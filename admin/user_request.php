@@ -125,13 +125,13 @@
 				<p class="card-text">quantity : <?=$rar_quantity[$i]?></p>
 				<p class="card-text">seller_user_name : <?=$rar_seller_user_name[$i]?></p>
 				
-				<?php if($status[$i]==1) { ?>
+				<?php if($rar_status[$i]==1) { ?>
 					<a href='user_request.php?do_it=replace' class="btn btn-primary btn-sm m-2">Replace</a>
 					<a href='user_request.php?do_it=return' class="btn btn-primary btn-sm m-2">Return</a>
 					<a href='user_request.php?do_it=reject' class="btn btn-danger btn-sm m-2">Reject</a>
-				<?php } else if($status[$i]==2) { ?>
+				<?php } else if($rar_status[$i]==2) { ?>
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
-				<?php } else if($status[$i]==3) { ?>
+				<?php } else if($rar_status[$i]==3) { ?>
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6> 
 				<?php } ?>
 				
