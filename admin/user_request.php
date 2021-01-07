@@ -70,8 +70,9 @@
 		$rar_seller_user_name=Array();
 		$rar_unique_type_id=Array();
 		$rar_user_name=Array();
+		$rar_status=Array();
 	
-		$rar_process = $con->query("select c.cat_name,sc.sub_cat_name,p.product_name,p.product_brand,p.product_description,p.rating,up.price,pr.quantity,up.size,up.color,up.seller_user_name,up.unique_type_id,pr.user_name from categories as c,sub_categories as sc,products as p,unique_product as up,process_return_or_replace as pr where pr.unique_type_id=up.unique_type_id and p.product_id=up.product_id and p.sub_cat_id=sc.sub_cat_id and c.cat_id=sc.cat_id");
+		$rar_process = $con->query("select c.cat_name,sc.sub_cat_name,p.product_name,p.product_brand,p.product_description,p.rating,up.price,pr.quantity,up.size,up.color,up.seller_user_name,up.unique_type_id,pr.user_name,pr.status from categories as c,sub_categories as sc,products as p,unique_product as up,process_return_or_replace as pr where pr.unique_type_id=up.unique_type_id and p.product_id=up.product_id and p.sub_cat_id=sc.sub_cat_id and c.cat_id=sc.cat_id");
 	
 		while($rar_do=$rar_process->fetch_assoc()){
 			$rar_category[]=$rar_do['cat_name'];
@@ -87,6 +88,7 @@
 			$rar_seller_user_name[]=$rar_do['seller_user_name'];
 			$rar_unique_type_id[]=$rar_do['unique_type_id'];
 			$rar_user_name[]=$rar_do['user_name'];
+			$rar_status[]=$rar_do['status'];
 		}
 		
 		$n=count($rar_unique_type_id);
@@ -94,8 +96,22 @@
 	?>
 	
 	
+	
+	
+	
+	
+	<div class="text-center m-4">
+            <a class="btn btn-primary m-2" href="user_request.php?show_this=0" role="button">Pending</a>
+	    <a class="btn btn-primary m-2" href="user_request.php?show_this=1" role="button">Approved</a>
+            <a class="btn btn-primary m-2" href="user_request.php?show_this=2" role="button">Rejected</a>
+	</div>
+	
+	
+	
 	<?php for($i=0;$i<$n;$i++) { ?>
 		
+		<? if($show_this!=$status[$i]&&!($status==0 && $status[$i]>2)) continue; ?>
+	
 		<div class="card m-4">
   			<h5 class="card-header"><?=$rar_user_name[$i]?></h5>
   			<div class="card-body">
@@ -111,12 +127,20 @@
 				<p class="card-text">quantity : <?=$rar_quantity[$i]?></p>
 				<p class="card-text">seller_user_name : <?=$rar_seller_user_name[$i]?></p>
 				
-				<a href='user_request.php?do_it=replace' class="btn btn-primary btn-sm m-2">Replace</a>
-				<a href='user_request.php?do_it=return' class="btn btn-primary btn-sm m-2">Return</a>
-				<a href='user_request.php?do_it=reject' class="btn btn-danger btn-sm m-2">Reject</a>
+				<?php if($status[$i]==0) { ?>
+					<a href='user_request.php?do_it=replace' class="btn btn-primary btn-sm m-2">Replace</a>
+					<a href='user_request.php?do_it=return' class="btn btn-primary btn-sm m-2">Return</a>
+					<a href='user_request.php?do_it=reject' class="btn btn-danger btn-sm m-2">Reject</a>
+				<?php } else if($status[$i]==1) { ?>
+					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
+				<?php } else if($status[$i]==2) { ?>
+					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6> 
+				<?php } ?>
 				
   			</div>
 		</div>
+	
+		<?php } ?>
 	
 	<?php } ?>
 	
