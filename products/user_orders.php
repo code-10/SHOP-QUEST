@@ -224,7 +224,7 @@
 						
 						<?php if($got_status[0]==1) { ?>
 								<div class="card-text m-2">Processing 
-									<div class="spinner-grow spinner-grow-sm m-2" role="status">
+									<div class="spinner-grow spinner-grow-sm" role="status">
   										<span class="sr-only">Loading...</span>
 									</div></div>
 							<?php } else if($got_status[0]==2) { ?>
