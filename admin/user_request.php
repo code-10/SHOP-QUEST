@@ -110,7 +110,7 @@
 	
 	<?php for($i=0;$i<$n;$i++) { ?>
 		
-		<? if($show_this!=$status[$i]&&!($status==0 && $status[$i]>2)) continue; ?>
+		<? if($show_this!=$status[$i]&&!($status[$i]>2)) continue; ?>
 	
 		<div class="card m-4">
   			<h5 class="card-header"><?=$rar_user_name[$i]?></h5>
