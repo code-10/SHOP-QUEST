@@ -126,7 +126,7 @@
 	<div class="text-center m-4">
             <a class="btn btn-primary m-2" href="user_request.php?show_this=1" role="button">Pending</a>
 	    <a class="btn btn-primary m-2" href="user_request.php?show_this=2" role="button">Approved</a>
-            <a class="btn btn-primary m-2" href="user_request.php?show_this=3" role="button">Rejected</a>
+            <a class="btn btn-primary m-2" href="user_request.php?show_this=4" role="button">Rejected</a>
 	</div>
 	
 	
@@ -155,8 +155,10 @@
 					<a href='user_request.php?do_it=return&&rar_process_id_sent=<?=$rar_process_id[$i]?>' class="btn btn-primary btn-sm m-2">Return</a>
 					<a href='user_request.php?do_it=reject&&rar_process_id_sent=<?=$rar_process_id[$i]?>' class="btn btn-danger btn-sm m-2">Reject</a>
 				<?php } else if($rar_status[$i]==2) { ?>
-					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
+					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">RETURNED</span></h6>
 				<?php } else if($rar_status[$i]==3) { ?>
+					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">REPLACED</span></h6>
+				<?php } else if($rar_status[$i]==4) { ?>
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6> 
 				<?php } ?>
 				
