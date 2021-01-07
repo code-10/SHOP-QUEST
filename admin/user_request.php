@@ -32,7 +32,7 @@
 	else if($do_it=="reject")
 	{
 		$con->query("update process_return_or_replace set status=3 where process_return_or_replace_id='$rar_process_id_sent'");
-		header("Location:user_request?show_this=3");
+		header("Location:user_request.php?show_this=3");
 		die();
 	}
 
