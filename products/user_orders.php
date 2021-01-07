@@ -223,16 +223,16 @@
 						
 						
 						<?php if($got_status[0]==1) { ?>
-								Processing 
-									<div class="spinner-grow spinner-grow-sm" role="status">
+								<div class="card-text m-2">Processing 
+									<div class="spinner-grow spinner-grow-sm m-2" role="status">
   										<span class="sr-only">Loading...</span>
-									</div>
+									</div></div>
 							<?php } else if($got_status[0]==2) { ?>
-								<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">RETURN Success</span></h6>
+								<h6 class="card-text m-2">Status&nbsp&nbsp<span class="badge badge-success">RETURN Success</span></h6>
 							<?php } else if($got_status[0]==3) { ?>
-								<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">REPLACE Success</span></h6>
+								<h6 class="card-text m-2">Status&nbsp&nbsp<span class="badge badge-success">REPLACE Success</span></h6>
 							<?php } else if($got_status[0]==4) { ?>
-								<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Return or replace not processed</span></h6>
+								<h6 class="card-text m-2">Status&nbsp&nbsp<span class="badge badge-danger">Return or replace not processed</span></h6>
 							<?php } else { ?>
 								<button class="btn btn-primary btn-sm ml-2 mt-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
 									Return or Replace
