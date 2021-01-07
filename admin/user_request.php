@@ -14,8 +14,28 @@
 
         $do_it=$_GET['do_it'];
 	$show_this=$_GET['show_this'];
+	$rar_process_id_sent=$_GET['rar_process_id_sent'];
         
         
+?>
+
+<?php
+
+	if($do_it=="return")
+	{
+		
+	}
+	else if($do_it=="replace")
+	{
+		
+	}
+	else if($do_it=="reject")
+	{
+		$con->query("update process_return_or_replace set status=3 where process_return_or_replace_id='$rar_process_id_sent'");
+		header("Location:user_request?show_this=3");
+		die();
+	}
+
 ?>
 
 
@@ -72,8 +92,9 @@
 		$rar_unique_type_id=Array();
 		$rar_user_name=Array();
 		$rar_status=Array();
+		$rar_process_id=Array();
 	
-		$rar_process = $con->query("select c.cat_name,sc.sub_cat_name,p.product_name,p.product_brand,p.product_description,p.rating,up.price,pr.quantity,up.size,up.color,up.seller_user_name,up.unique_type_id,pr.user_name,pr.status from categories as c,sub_categories as sc,products as p,unique_product as up,process_return_or_replace as pr where pr.unique_type_id=up.unique_type_id and p.product_id=up.product_id and p.sub_cat_id=sc.sub_cat_id and c.cat_id=sc.cat_id");
+		$rar_process = $con->query("select c.cat_name,sc.sub_cat_name,p.product_name,p.product_brand,p.product_description,p.rating,up.price,pr.quantity,up.size,up.color,up.seller_user_name,up.unique_type_id,pr.user_name,pr.status,pr.process_return_or_replace_id from categories as c,sub_categories as sc,products as p,unique_product as up,process_return_or_replace as pr where pr.unique_type_id=up.unique_type_id and p.product_id=up.product_id and p.sub_cat_id=sc.sub_cat_id and c.cat_id=sc.cat_id");
 	
 		while($rar_do=$rar_process->fetch_assoc()){
 			$rar_category[]=$rar_do['cat_name'];
@@ -90,6 +111,7 @@
 			$rar_unique_type_id[]=$rar_do['unique_type_id'];
 			$rar_user_name[]=$rar_do['user_name'];
 			$rar_status[]=$rar_do['status'];
+			$rar_process_id[]=$rar_do['process_return_or_replace_id'];
 		}
 		
 		$n=count($rar_unique_type_id);
@@ -129,9 +151,9 @@
 				<p class="card-text">seller_user_name : <?=$rar_seller_user_name[$i]?></p>
 				
 				<?php if($rar_status[$i]==1) { ?>
-					<a href='user_request.php?do_it=replace' class="btn btn-primary btn-sm m-2">Replace</a>
-					<a href='user_request.php?do_it=return' class="btn btn-primary btn-sm m-2">Return</a>
-					<a href='user_request.php?do_it=reject' class="btn btn-danger btn-sm m-2">Reject</a>
+					<a href='user_request.php?do_it=replace&&rar_process_id_sent=<?=$rar_process_id[$i]?>' class="btn btn-primary btn-sm m-2">Replace</a>
+					<a href='user_request.php?do_it=return&&rar_process_id_sent=<?=$rar_process_id[$i]?>' class="btn btn-primary btn-sm m-2">Return</a>
+					<a href='user_request.php?do_it=reject&&rar_process_id_sent=<?=$rar_process_id[$i]?>' class="btn btn-danger btn-sm m-2">Reject</a>
 				<?php } else if($rar_status[$i]==2) { ?>
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 				<?php } else if($rar_status[$i]==3) { ?>
