@@ -125,7 +125,7 @@
 	
 	<div class="text-center m-4">
             <a class="btn btn-primary m-2" href="user_request.php?show_this=1" role="button">Pending</a>
-	    <a class="btn btn-primary m-2" href="user_request.php?show_this=2" role="button">Approved</a>
+	    <a class="btn btn-primary m-2" href="user_request.php?show_this=2&&show_this=3" role="button">Approved</a>
             <a class="btn btn-primary m-2" href="user_request.php?show_this=4" role="button">Rejected</a>
 	</div>
 	
