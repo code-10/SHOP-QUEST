@@ -27,7 +27,6 @@
 		
 		
 	 $aprstatus=$_GET['aprstatus'];
-echo $aprstatus;
 	
 
 
