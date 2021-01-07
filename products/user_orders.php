@@ -230,6 +230,12 @@
 									<div class="spinner-grow spinner-grow-sm" role="status">
   										<span class="sr-only">Loading...</span>
 									</div>
+							<?php } else if($got_status[0]==2) { ?>
+								<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">RETURN Success</span></h6>
+							<?php } else if($got_status[0]==3) { ?>
+								<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">REPLACE Success</span></h6>
+							<?php } else if($got_status[0]==4) { ?>
+								<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Return or replace not processed</span></h6>
 							<?php } else { ?>
 								Return or Replace
 							<?php } ?>
