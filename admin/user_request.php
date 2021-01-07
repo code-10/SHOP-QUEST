@@ -13,6 +13,7 @@
       	}*/
 
         $do_it=$_GET['do_it'];
+	$show_this=$_GET['show_this'];
         
         
 ?>
