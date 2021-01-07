@@ -23,11 +23,15 @@
 
 	if($do_it=="return")
 	{
-		
+		$con->query("update process_return_or_replace set status=2 where process_return_or_replace_id='$rar_process_id_sent'");
+		header("Location:user_request.php?show_this=2");
+		die();
 	}
 	else if($do_it=="replace")
 	{
-		
+		$con->query("update process_return_or_replace set status=3 where process_return_or_replace_id='$rar_process_id_sent'");
+		header("Location:user_request.php?show_this=2");
+		die();
 	}
 	else if($do_it=="reject")
 	{
