@@ -15,7 +15,7 @@
         $do_it=$_GET['do_it'];
 	$show_this=$_GET['show_this'];
 	$rar_process_id_sent=$_GET['rar_process_id_sent'];
-        
+        $show_another=$_GET['show_another'];
         
 ?>
 
@@ -125,7 +125,7 @@
 	
 	<div class="text-center m-4">
             <a class="btn btn-primary m-2" href="user_request.php?show_this=1" role="button">Pending</a>
-	    <a class="btn btn-primary m-2" href="user_request.php?show_this=2&&show_this=3" role="button">Approved</a>
+	    <a class="btn btn-primary m-2" href="user_request.php?show_this=2&&show_another=3" role="button">Approved</a>
             <a class="btn btn-primary m-2" href="user_request.php?show_this=4" role="button">Rejected</a>
 	</div>
 	
@@ -133,7 +133,7 @@
 	
 	<?php for($i=0;$i<$n;$i++) { ?>
 	
-		<? if($show_this!=$rar_status[$i]) continue; ?>
+		<? if($show_this!=$rar_status[$i]&&$show_another!=$rar_status[$i]) continue; ?>
 	
 		<div class="card m-4">
   			<h5 class="card-header"><?=$rar_user_name[$i]?></h5>
