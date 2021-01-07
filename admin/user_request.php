@@ -101,16 +101,14 @@
 	
 	
 	<div class="text-center m-4">
-            <a class="btn btn-primary m-2" href="user_request.php?show_this=0" role="button">Pending</a>
-	    <a class="btn btn-primary m-2" href="user_request.php?show_this=1" role="button">Approved</a>
-            <a class="btn btn-primary m-2" href="user_request.php?show_this=2" role="button">Rejected</a>
+            <a class="btn btn-primary m-2" href="user_request.php?show_this=1" role="button">Pending</a>
+	    <a class="btn btn-primary m-2" href="user_request.php?show_this=2" role="button">Approved</a>
+            <a class="btn btn-primary m-2" href="user_request.php?show_this=3" role="button">Rejected</a>
 	</div>
 	
 	
 	
 	<?php for($i=0;$i<$n;$i++) { ?>
-		
-		<? if($show_this!=$status[$i]&&!($status[$i]>2)) continue; ?>
 	
 		<div class="card m-4">
   			<h5 class="card-header"><?=$rar_user_name[$i]?></h5>
@@ -127,13 +125,13 @@
 				<p class="card-text">quantity : <?=$rar_quantity[$i]?></p>
 				<p class="card-text">seller_user_name : <?=$rar_seller_user_name[$i]?></p>
 				
-				<?php if($status[$i]==0) { ?>
+				<?php if($status[$i]==1) { ?>
 					<a href='user_request.php?do_it=replace' class="btn btn-primary btn-sm m-2">Replace</a>
 					<a href='user_request.php?do_it=return' class="btn btn-primary btn-sm m-2">Return</a>
 					<a href='user_request.php?do_it=reject' class="btn btn-danger btn-sm m-2">Reject</a>
-				<?php } else if($status[$i]==1) { ?>
-					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 				<?php } else if($status[$i]==2) { ?>
+					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
+				<?php } else if($status[$i]==3) { ?>
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6> 
 				<?php } ?>
 				
