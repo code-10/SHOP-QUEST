@@ -111,7 +111,7 @@
 	
 	<?php for($i=0;$i<$n;$i++) { ?>
 	
-		<? if($show_this!=$rar_status[$i]&&!($show_this==1 && $rar_status[$i]>3)) continue; ?>
+		<? if($show_this!=$rar_status[$i]) continue; ?>
 	
 		<div class="card m-4">
   			<h5 class="card-header"><?=$rar_user_name[$i]?></h5>
