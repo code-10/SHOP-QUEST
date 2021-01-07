@@ -110,6 +110,8 @@
 	
 	<?php for($i=0;$i<$n;$i++) { ?>
 	
+		<? if($aprstatus!=$approved[$i]) continue; ?>
+	
 		<div class="card m-4">
   			<h5 class="card-header"><?=$rar_user_name[$i]?></h5>
   			<div class="card-body">
