@@ -208,7 +208,7 @@
 	
 		<div class="row">
 			<div class="col-lg-6 col-xs-2 col-sm-2 col-md-6">
-				<img src="..." class="img-fluid" alt="product" onerror="this.src='../assets/black.png';">
+				<img src="../assets/categories/sub_categories/mobile/<?=$product_id?>.<?=$product_id?>.jpeg" class="img-fluid" alt="product" onerror="this.src='../assets/black.png';">
 			</div>
 			
 			<div class="col-lg-6 col-xs-2 col-sm-2 col-md-6">
