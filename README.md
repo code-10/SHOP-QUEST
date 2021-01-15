@@ -8,6 +8,7 @@ Features for normal user
 - view orders and order details
 - rate and review 
 - replace or return
+- Razorpay payment gateway
 
 Features for seller
 - all the features of normal user
