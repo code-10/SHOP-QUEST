@@ -306,7 +306,8 @@
 	
 	
       <?php if($sell_request_main=="yes") { ?>
-      <? for($i=0;$i<$n;$i++) { ?>
+      
+	<!--<? for($i=0;$i<$n;$i++) { ?>
 	
 	<? if($aprstatus!=$approved[$i]&&!($aprstatus==0 && $approved[$i]>2)) 
 		 continue; ?>
@@ -321,12 +322,11 @@
     <p class="card-text">price : <?=$price[$i]?></p>
     <p class="card-text">color : <?=$color[$i]?></p>
     <p class="card-text">size  : <?=$size[$i]?></p>
-    <p class="card-text">quantity : <?=$quantity[$i]?></p>
+    <p class="card-text">quantity : <?=$quantity[$i]?></p>-->
     
-    <? if($approved[$i]==1) { ?>
+    <!--<? if($approved[$i]==1) { ?>
     	<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
-	<!-- <a href='sell_request.php?admin_edit_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit</a>
-    	 <a href='sell_request.php?admin_delete_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Delete from website</a> -->
+	
     <? } else if($approved[$i]==2) { ?>
 	 <h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6> 
     <? } else if($approved[$i]==0){ ?>
@@ -340,7 +340,7 @@
     	<a href='sell_request.php?admin_update=no&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-danger m-2">Don't Update</a>
     <? } ?>
 </div>
-</div>  
+</div> -->
 		
   <? } ?>   
   
