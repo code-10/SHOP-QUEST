@@ -239,18 +239,7 @@
     					<p class="card-text">quantity : <?=$quantity[$k]?></p>
     
     				<? if($approved[$k]==1) { ?>
-    					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
-				
-				<form method="GET" action="db_update.php" >
-					<div class="form-group">
-        				<label for="inputquantity">New Quantity</label>
-        				<input type="number" min="0" max="420" class="form-control" id="inputquantity" placeholder="quantity" name="quantity" >
-					</div>
-					<input type="hidden" name="store_info_id" value="<?=$store_info_id[$k]?>" />
-					<button type="submit" class="btn btn-dark">Update</button>
-				</form>	
-							
-						
+    					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>			
     				<? } else if($approved[$k]==2){ ?>
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6>
 				<? } else { ?>		
