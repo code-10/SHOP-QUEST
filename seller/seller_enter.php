@@ -247,7 +247,7 @@
     					<h6 class="card-text">Status - waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     				<? } ?>
 
-				</div>
+				
 			<div>
 				
  		 <? } ?>
