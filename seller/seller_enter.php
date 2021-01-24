@@ -223,7 +223,7 @@
 			
 			<?php for($k=0;$k<$n;$k++) { ?>
 	
-			<? if($show_stat!=$approved[$k]) continue; ?>
+			<? if($show_stat==$approved[$k]) { ?>
 		 		
 				<div class="card m-4">
   					<div class="card-header">Product name : <?=$product_name[$k]?></div>
@@ -237,7 +237,8 @@
     					<p class="card-text">color : <?=$color[$k]?></p>
     					<p class="card-text">size  : <?=$size[$k]?></p>
     					<p class="card-text">quantity : <?=$quantity[$k]?></p>
-    
+					</div>
+					
     				<? if($approved[$k]==1) { ?>
     					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>			
     				<? } else if($approved[$k]==2){ ?>
@@ -247,6 +248,8 @@
     				<? } ?>
 
 				</div>
+	
+			<?php } ?>
 	
  		 <? } ?>
 	
