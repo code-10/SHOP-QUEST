@@ -239,16 +239,9 @@
 
 					
     				<? if($approved[$k]==1) { ?>
-    					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>			
-    				<? } else if($approved[$k]==2){ ?>
-					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6>
-				<? } else { ?>		
-    					<h6 class="card-text">Status - waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
-    				<? } ?>
-						
-				</div>
-	
-				<!--add variant-->
+    					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
+					
+					<!--add variant-->
 				<div class="collapse m-2" id="collapse_r<?=$c?>">
   					<div class="card card-body" style="padding:8px;">
 						<form method="POST" action="seller_enter.php" class="input-group d-flex justify-content-center">
@@ -277,6 +270,14 @@
   					</div>
 				</div>		
 				<!--add variant end-->
+						
+    				<? } else if($approved[$k]==2){ ?>
+					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6>
+				<? } else { ?>		
+    					<h6 class="card-text">Status - waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
+    				<? } ?>
+						
+				</div>
 					
 			</div>
 				
