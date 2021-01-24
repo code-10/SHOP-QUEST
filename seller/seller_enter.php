@@ -214,11 +214,11 @@
       		
             <a class="btn btn-dark m-4" href="seller_enter.php?seller_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
 	
-	<div class="text-center m-4">
+	<!--<div class="text-center m-4">
             <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=0" role="button">Pending</a>
 	    <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=1" role="button">Approved</a>
             <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=2" role="button">Rejected</a>
-	</div>
+	</div>-->
 			
 			
 			<?php for($k=0;$k<$n;$k++) { ?>
@@ -237,7 +237,7 @@
     					<p class="card-text">color : <?=$color[$k]?></p>
     					<p class="card-text">size  : <?=$size[$k]?></p>
     					<p class="card-text">quantity : <?=$quantity[$k]?></p>
-					</div>
+
 					
     				<? if($approved[$k]==1) { ?>
     					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>			
@@ -248,7 +248,8 @@
     				<? } ?>
 
 				</div>
-	
+			<div>
+				
  		 <? } ?>
 	
       <?php } ?>
