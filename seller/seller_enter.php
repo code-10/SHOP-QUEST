@@ -222,7 +222,7 @@
 			
 			<?php for($k=0;$k<$n;$k++) { ?>
 	
-			<?// if(!($aprstatus==$approved[$i]||($aprstatus==0 && $approved[$i]>2))) { continue;} ?>
+			<? if(!($aprstatus==$approved[$i]||($aprstatus==0 && $approved[$i]>2))) { continue;} ?>
 		 		
 	
 				<div class="card m-4">
