@@ -214,7 +214,7 @@
       		
             <a class="btn btn-dark m-4" href="seller_enter.php?seller_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
 	
-	div class="text-center m-4">
+	<div class="text-center m-4">
             <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=0" role="button">Pending</a>
 	    <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=1" role="button">Approved</a>
             <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=2" role="button">Rejected</a>
@@ -223,7 +223,7 @@
 			
 			<?php for($k=0;$k<$n;$k++) { ?>
 	
-			<? if($show_stat!=$approved[$k]&&!($show_stat==0 && $approved[$k]>2)) continue; ?>
+			<?php if($show_stat!=$approved[$k]&&!($show_stat==0 && $approved[$k]>2)) continue; ?>
 		 		
 				<div class="card m-4">
   					<div class="card-header">Product name : <?=$product_name[$k]?></div>
