@@ -322,7 +322,7 @@
     <p class="card-text">price : <?=$price[$i]?></p>
     <p class="card-text">color : <?=$color[$i]?></p>
     <p class="card-text">size  : <?=$size[$i]?></p>
-    <p class="card-text">quantity : <?=$quantity[$i]?></p>-->
+    <p class="card-text">quantity : <?=$quantity[$i]?></p>
     
     <? if($approved[$i]==1) { ?>
     	<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
