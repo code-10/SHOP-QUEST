@@ -248,6 +248,36 @@
 						
 				</div>
 	
+				<!--add variant-->
+				<div class="collapse m-2" id="collapse_r<?=$c?>">
+  					<div class="card card-body" style="padding:8px;">
+						<form method="POST" action="seller_enter.php" class="input-group d-flex justify-content-center">
+								<p>Add variant details</p>
+								<div class="form-group m-2 col-12">
+    									<div class="form-group">
+        									<label for="inputsize">size</label>
+        										<input type="text" class="form-control" id="inputsize" placeholder="size" name="v_size" required>
+    									</div>	
+    									<div class="form-group">
+        									<label for="inputcolor">color</label>
+        										<input type="text" class="form-control" id="inputcolor" placeholder="color" name="v_color" required>
+    									</div>
+    									<div class="form-group">
+        									<label for="inputcolor">Price</label>
+        										<input type="number" class="form-control" id="inputprice" placeholder="price" name="v_price" required>
+    									</div>
+    									<div class="form-group">
+        									<label for="inputqty">quantity</label>
+        										<input type="number" class="form-control" id="inputqty" placeholder="quantity" name="v_qty" required>
+    									</div>
+  								</div>
+								
+								<button class="btn btn-dark" name="submit_return_or_replace" type="submit">Add Varient</button>
+						</form>
+  					</div>
+				</div>		
+				<!--add variant end-->
+					
 			</div>
 				
  		 <?php } ?>
