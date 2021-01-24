@@ -116,6 +116,26 @@
   				$n=count($product_name);
 	
 		}
+
+		if(isset($_POST['submit_variant']))
+		{
+			
+			$v_quantity=$_POST['v_qty'];
+      			$v_size=$_POST['v_size'];
+      			$v_color=$_POST['v_color'];
+      			$v_price=$_POST['v_price'];
+			$v_category=$_POST['v_category'];
+      			$v_sub_category=$_POST['v_sub_category'];
+      			$v_product_name=$_POST['v_product_name'];
+      			$v_product_brand=$_POST['v_product_brand'];
+      			$v_product_description=$_POST['v_product_description'];
+			$v_seller_user_name=$_POST['v_seller_user_name'];
+			
+			//add to store_info
+			
+			
+			
+		}
       
 
 ?>
@@ -220,7 +240,7 @@
 	</div>
 			
 			
-			<?php for($k=0;$k<$n;$k++) { ?>
+			<?php $c=0; for($k=0;$k<$n;$k++) { ?>
 	
 			<?php if($show_stat!=$approved[$k]&&!($show_stat==0 && $approved[$k]>2)) continue; ?>
 		 		
@@ -267,8 +287,16 @@
         										<input type="number" class="form-control" id="inputqty" placeholder="quantity" name="v_qty" required>
     									</div>
   								</div>
+								<div class="form-group m-2 col-12">
+									<input type="hidden" name="v_product_brand" value="<?=$product_brand[$k]?>" />
+									<input type="hidden" name="v_product_name" value="<?=$product_name[$k]?>" />
+									<input type="hidden" name="v_product_description" value="<?=$product_description[$k]?>" />
+									<input type="hidden" name="v_seller_user_name" value="<?=$_SESSION['user_name']?>" />
+									<input type="hidden" name="v_category" value="<?=$category[$k]?>" />
+									<input type="hidden" name="v_sub_category" value="<?=$sub_category[$k]?>" />
+  								</div>
 								
-								<button class="btn btn-dark" name="submit_return_or_replace" type="submit">Add Varient</button>
+								<button class="btn btn-dark" name="submit_variant" type="submit">Add Variant</button>
 						</form>
   					</div>
 				</div>		
@@ -284,7 +312,7 @@
 					
 			</div>
 				
- 		 <?php } ?>
+ 		 <?php $c++; } ?>
 	
       <?php } ?>
   
