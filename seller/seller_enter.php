@@ -241,6 +241,9 @@
     				<? if($approved[$k]==1) { ?>
     					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 					
+					<button class="btn btn-primary btn-sm ml-2 mt-2" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
+						Add a Variant
+					</button>
 					<!--add variant-->
 				<div class="collapse m-2" id="collapse_r<?=$c?>">
   					<div class="card card-body" style="padding:8px;">
