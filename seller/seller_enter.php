@@ -215,9 +215,9 @@
             <a class="btn btn-dark m-4" href="seller_enter.php?seller_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
 	
 	<div class="text-center m-4">
-            <a class="btn btn-primary m-2" href="user_request.php?show_stat=1" role="button">Pending</a>
-	    <a class="btn btn-primary m-2" href="user_request.php?show_stat=2" role="button">Approved</a>
-            <a class="btn btn-primary m-2" href="user_request.php?show_stat=4" role="button">Rejected</a>
+            <a class="btn btn-primary m-2" href="sell_request.php?my_sell_requests=yes&&show_stat=1" role="button">Pending</a>
+	    <a class="btn btn-primary m-2" href="sell_request.php?my_sell_requests=yes&&show_stat=2" role="button">Approved</a>
+            <a class="btn btn-primary m-2" href="sell_request.php?my_sell_requests=yes&&show_stat=4" role="button">Rejected</a>
 	</div>
 			
 			
