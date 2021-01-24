@@ -223,7 +223,7 @@
 			
 			<?php for($k=0;$k<$n;$k++) { ?>
 	
-			<? if($show_stat==$approved[$k]) { ?>
+			<? //if($show_stat==$approved[$k]) { ?>
 		 		
 				<div class="card m-4">
   					<div class="card-header">Product name : <?=$product_name[$k]?></div>
@@ -248,8 +248,6 @@
     				<? } ?>
 
 				</div>
-	
-			<?php } ?>
 	
  		 <? } ?>
 	
