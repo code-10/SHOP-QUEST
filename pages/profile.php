@@ -30,7 +30,7 @@
     
     
   <!--profile-->
-    <div class="jumbotron">
+    <div class="p-4" style="background-color:black;">
         <div class="text-center">
             <?php if(isset($_SESSION['user_name'])&&$_SESSION['user_name']=="root"){
                         
@@ -54,8 +54,8 @@
         </div>
       
          <div class="text-center">
-            <a href="../products/wishlist.php"><button type="button" class="btn btn-dark">Your Wishlist</button></a><br><br>    
-            <a href="../products/user_orders.php?your_orders=yes"><button type="button" class="btn btn-dark">Your Orders</button></a><br><br>
+            <a href="../products/wishlist.php"><button type="button" class="btn btn-outline-light">Your Wishlist</button></a><br><br>    
+            <a href="../products/user_orders.php?your_orders=yes"><button type="button" class="btn btn-outline-light">Your Orders</button></a><br><br>
         </div>
       
     </div>
