@@ -43,7 +43,7 @@
                         $user=$_SESSION['user_name'];
                         $user[0]=strtoupper($user[0]);
                         
-                        echo '<h1 class="display-6 mb-5" style="color:white;"> <i class="fa fa-user-circle-o" style="background-color:white;"></i>  '.$user.'</h1>';
+                        echo '<h1 class="display-6 mb-5" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$user.'</h1>';
                     }
                     else
                     {
