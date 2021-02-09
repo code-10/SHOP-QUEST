@@ -182,7 +182,7 @@
    <div class="col-sm-6 col-lg-3 col-6 text-center">
       <figure class="figure">
         <a href='../products/product_description.php?product_id=<?=$product_id[$c-1]?>&&product_name=<?=$product_name[$c-1]?>&&show=0'>
-          <img src="../assets/categories/sub_categories/mobile/<?=$product_id[$c-1]?>.jpeg" class="figure-img img-fluid rounded mx-auto d-block" alt="product" onerror="this.src='../assets/black.png';">
+          <img src="..." class="figure-img img-fluid rounded mx-auto d-block" alt="product" onerror="this.src='../assets/black.png';">
         </a>
         <figcaption class="text-center">
 	<?php if($bestsell[0]==$product_id[$c-1]) { ?>
