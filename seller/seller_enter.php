@@ -231,6 +231,22 @@
             <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=2" role="button">Rejected</a>
 	</div>
 			
+	
+	<?php
+	
+		$sql0 = "select * from store_info where approved=0";
+		$res0 = $con->query($sql0);
+		echo $res0;echo "<br>";
+		$sql1 = "select * from store_info where approved=1";
+		$res1 = $con->query($sql1);
+		echo $res1;"<br>";
+		$sql2 = "select * from store_info where approved=2";
+		$res2 = $con->query($sql2);
+		echo $res2;"<br>";	 
+		
+		
+	
+	?>
 			
 			<?php $c=0; for($k=0;$k<$n;$k++) { ?>
 	
