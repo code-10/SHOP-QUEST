@@ -242,9 +242,9 @@
 	?>
 	
 	<div class="text-center m-4">
-            <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=0" role="button">Pending<span class="badge badge-light"><?=$res0i->num_rows;?></span></a>
-	    <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=1" role="button">Approved<span class="badge badge-light"><?=$res1i->num_rows;?></span></a>
-            <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=2" role="button">Rejected<span class="badge badge-light"><?=$res2i->num_rows;?></span></a>
+            <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=0" role="button">Pending<span class="badge badge-light ml-2"><?=$res0i->num_rows;?></span></a>
+	    <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=1" role="button">Approved<span class="badge badge-light ml-2"><?=$res1i->num_rows;?></span></a>
+            <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=2" role="button">Rejected<span class="badge badge-light ml-2"><?=$res2i->num_rows;?></span></a>
 	</div>
 			
 			
