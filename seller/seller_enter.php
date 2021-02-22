@@ -123,9 +123,10 @@
 		{
 			$quantity_to_add=$_POST['store_unique_type_id_send'];
 			$quantity=$_POST['stock_quantity'];
+			$store_info_id_sent=$_POST['store_info_id_send'];
 			
-			echo $quantity_to_add;echo "<br>";
-			echo $quantity;
+			
+			
 		}
 
 
@@ -268,6 +269,7 @@
   								</div>
 								<div class="form-group m-2 col-12">
 									<input type="hidden" name="store_unique_type_id_send" value="<?=$store_unique_type_id[$k]?>" />
+									<input type="hidden" name="store_info_id_send" value="<?=$store_info_id[$k]?>" />
   								</div>
 								
 								<button class="btn btn-dark" name="add_stock" type="submit">Add stock</button>
