@@ -6,11 +6,11 @@
       
       session_start(); 
 
-      if(!(isset($_SESSION['user_name'])))
+      /*if(!(isset($_SESSION['user_name'])))
       	{
             header("Location:../index.php");
             die(); 
-      	} 
+      	} */
 
 
 		$con=getCon();
@@ -236,13 +236,15 @@
 	
 		$sql0 = "select * from store_info where approved=0";
 		$res0 = $con->query($sql0);
-		print_r($res0);echo "<br>";
+		echo $res0->num_rows;echo "<br>";
+	
 		$sql1 = "select * from store_info where approved=1";
 		$res1 = $con->query($sql1);
-		print_r($res1);"<br>";
+		echo $res1->num_rows;echo "<br>";
+	
 		$sql2 = "select * from store_info where approved=2";
 		$res2 = $con->query($sql2);
-		print_r($res2);"<br>";	 
+		echo $res2->num_rows;echo "<br>";	 
 		
 		
 	
