@@ -225,30 +225,28 @@
       		
             <a class="btn btn-dark m-4" href="seller_enter.php?seller_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
 	
-	<div class="text-center m-4">
-            <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=0" role="button">Pending<span class="badge badge-light"><?=$res0->num_rows;?></span></a>
-	    <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=1" role="button">Approved<span class="badge badge-light"><?=$res1->num_rows;?></span></a>
-            <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=2" role="button">Rejected<span class="badge badge-light"><?=$res2->num_rows;?></span></a>
-	</div>
-			
-	
 	<?php
 	
 		$sql0 = "select * from store_info where approved=0";
-		$res0 = $con->query($sql0);
+		$res0i = $con->query($sql0);
 		//echo $res0->num_rows;echo "<br>";
 	
 		$sql1 = "select * from store_info where approved=1";
-		$res1 = $con->query($sql1);
+		$res1i = $con->query($sql1);
 		//echo $res1->num_rows;echo "<br>";
 	
 		$sql2 = "select * from store_info where approved=2";
-		$res2 = $con->query($sql2);
+		$res2i = $con->query($sql2);
 		//echo $res2->num_rows;echo "<br>";	 
-		
-		
 	
 	?>
+	
+	<div class="text-center m-4">
+            <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=0" role="button">Pending<span class="badge badge-light"><?=$res0i->num_rows;?></span></a>
+	    <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=1" role="button">Approved<span class="badge badge-light"><?=$res1i->num_rows;?></span></a>
+            <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=2" role="button">Rejected<span class="badge badge-light"><?=$res2i->num_rows;?></span></a>
+	</div>
+			
 			
 			<?php $c=0; for($k=0;$k<$n;$k++) { ?>
 	
