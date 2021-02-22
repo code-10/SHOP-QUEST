@@ -96,6 +96,7 @@
   				$size=array();
   				$approved=array();
   				$store_info_id=array();
+				$store_unique_type_id=array();
 	
   
   				while($ele = $res->fetch_assoc())
@@ -111,32 +112,22 @@
       					$size[]=$ele['size'];
       					$approved[]=$ele['approved'];
       					$store_info_id[]=$ele['store_info_id'];
+					$store_unique_type_id[]=$ele['store_unique_type_id'];
   				}
   
   				$n=count($product_name);
 	
 		}
 
-		if(isset($_POST['submit_variant']))
+		if(isset($_POST['add_stock'])) 
 		{
+			$quantity_to_add=$_POST['store_unique_type_id_send'];
+			$quantity=$_POST['stock_quantity'];
 			
-			$v_quantity=$_POST['v_qty'];
-      			$v_size=$_POST['v_size'];
-      			$v_color=$_POST['v_color'];
-      			$v_price=$_POST['v_price'];
-			$v_category=$_POST['v_category'];
-      			$v_sub_category=$_POST['v_sub_category'];
-      			$v_product_name=$_POST['v_product_name'];
-      			$v_product_brand=$_POST['v_product_brand'];
-      			$v_product_description=$_POST['v_product_description'];
-			$v_seller_user_name=$_POST['v_seller_user_name'];
-			
-			//add to store_info
-			
-			
-			
+			echo $quantity_to_add;echo "<br>";
+			echo $quantity;
 		}
-      
+
 
 ?>
 
@@ -261,6 +252,29 @@
     				<? if($approved[$k]==1) { ?>
     					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 					
+					<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
+						Add stock
+					</button>
+						
+					<div class="collapse m-2" id="collapse_r<?=$c?>">
+  					<div class="card card-body" style="padding:8px;">
+						<form method="POST" action="seller_enter.php" class="input-group d-flex justify-content-center">
+								<p>Add quantity of stock</p>
+								<div class="form-group m-2 col-12">
+    									<div class="form-group">
+        									<label for="inputqty">quantity</label>
+        										<input type="number" class="form-control" id="inputqty" placeholder="quantity" name="stock_quantity" required>
+    									</div>
+  								</div>
+								<div class="form-group m-2 col-12">
+									<input type="hidden" name="store_unique_type_id_send" value="<?=$store_unique_type_id[$k]?>" />
+  								</div>
+								
+								<button class="btn btn-dark" name="add_stock" type="submit">Add stock</button>
+						</form>
+  					</div>
+				</div>	
+						
 					<!--<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
 						Add a Variant
 					</button>
