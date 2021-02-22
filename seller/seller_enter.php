@@ -121,11 +121,12 @@
 
 		if(isset($_POST['add_stock'])) 
 		{
-			$quantity_to_add=$_POST['store_unique_type_id_send'];
-			$quantity=$_POST['stock_quantity'];
+			//$unique_type_id_to_add=$_POST['store_unique_type_id_send'];
+			$quantity_to_add=$_POST['stock_quantity'];
 			$store_info_id_sent=$_POST['store_info_id_send'];
 			
-			
+			$sql_stock = "update store_info set stock_quantity = '$quantity_to_add',stock_quantity_status = 1 where store_info_id = '$store_info_id_sent'";
+			$con->query($sql_stock);
 			
 		}
 
