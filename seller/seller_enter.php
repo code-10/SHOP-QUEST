@@ -236,13 +236,13 @@
 	
 		$sql0 = "select * from store_info where approved=0";
 		$res0 = $con->query($sql0);
-		echo $res0;echo "<br>";
+		print_r($res0);echo "<br>";
 		$sql1 = "select * from store_info where approved=1";
 		$res1 = $con->query($sql1);
-		echo $res1;"<br>";
+		print_r($res1);"<br>";
 		$sql2 = "select * from store_info where approved=2";
 		$res2 = $con->query($sql2);
-		echo $res2;"<br>";	 
+		print_r($res2);"<br>";	 
 		
 		
 	
