@@ -227,7 +227,7 @@
 	
 	<?php
 	
-		$sql0 = "select * from store_info where approved=0";
+		/*$sql0 = "select * from store_info where approved=0";
 		$res0i = $con->query($sql0);
 		$res0 = $res0i->num_rows;
 		echo $res0;echo "<br>";
@@ -240,7 +240,7 @@
 		$sql2 = "select * from store_info where approved=2";
 		$res2i = $con->query($sql2);
 		$res2 = $res2i->num_rows;
-		echo $res2;echo "<br>";	 
+		echo $res2;echo "<br>";	*/
 	
 	?>
 	
