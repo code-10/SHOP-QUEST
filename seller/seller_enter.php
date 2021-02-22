@@ -128,6 +128,8 @@
 			$sql_stock = "update store_info set stock_quantity = '$quantity_to_add',stock_quantity_status = 1 where store_info_id = '$store_info_id_sent'";
 			$con->query($sql_stock);
 			
+			header("Location:seller_enter.php?my_sell_requests=yes&&show_stat=1");
+                	die();
 		}
 
 
