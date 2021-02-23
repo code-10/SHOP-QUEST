@@ -357,6 +357,9 @@
 			
 			$con->query("update store_info set stock_quantity=0,stock_quantity_status=0 where store_info_id='$store_info_id_u'");
 			
+			header("Location:sell_request.php?sell_request_main=yes&&aprstatus=1");
+                	die();
+			
 		}	
 	
 	
