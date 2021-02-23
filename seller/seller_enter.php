@@ -245,6 +245,11 @@
 		$res2 = $res2i->num_rows;
 		//echo $res2;echo "<br>";	
 	
+		$dynamic_quantity = array();
+		$res = $con->query("select up.quantity from unique_product as up,store_info as si where up.unique_type_id=si.store_unique_type_id;");
+		while($ele = $res->fetch_assoc())
+			$dynamic_quantity[]=$ele['quantity'];
+	
 	?>
 	
 	<div class="text-center m-4">
@@ -269,10 +274,11 @@
     					<p class="card-text">price : <?=$price[$k]?></p>
     					<p class="card-text">color : <?=$color[$k]?></p>
     					<p class="card-text">size  : <?=$size[$k]?></p>
-    					<p class="card-text">quantity : <?=$quantity[$k]?></p>
+    					
 
 					
     				<? if($approved[$k]==1) { ?>
+					<p class="card-text">quantity : <?=$dynamic_quantity[$k]?></p>
     					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 					
 					<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
@@ -341,6 +347,7 @@
 				<!--add variant end-->
 						
     				<? } else if($approved[$k]==2){ ?>
+					<p class="card-text">quantity : <?=$quantity[$k]?></p>
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6>
 				<? } else { ?>		
     					<h6 class="card-text">Status - waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
