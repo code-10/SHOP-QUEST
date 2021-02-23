@@ -311,7 +311,7 @@
 							
 					<div class="row">
 						<?php for($zz=0;$zz<=$cov;$zz++) { ?>
-						<?php if($zz==$cov-1) { ?>
+						<?php if($zz==$cov) { ?>
 						<div class="col-12 col-sm-6">
 							<div class="card border-dark m-4">
   								<div class="card-body text-center">
