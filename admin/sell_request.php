@@ -175,9 +175,9 @@
   
   		$n=count($storeinfoid);
 		
-		print_r($stock_quantity);
-		echo "<br>";
-		print_r($stock_quantity_status);
+		//print_r($stock_quantity);
+		//echo "<br>";
+		//print_r($stock_quantity_status);
     
         }
       
