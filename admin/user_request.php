@@ -71,7 +71,7 @@
 
      
         
- <div class="jumbotron">
+ <div class="p-4" style="background-color:black;color:white;">
         <div class="text-center">
               <h4>Return or Replace</h4>
         </div>
