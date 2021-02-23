@@ -390,7 +390,7 @@
 	<? if($aprstatus!=$approved[$i]&&!($aprstatus==0 && $approved[$i]>2)) 
 		 continue; ?>
 <div class="card m-4">
-  <div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$c?>" aria-expanded="false" aria-controls="collapseExample">seller name : <?=$seller_name[$i]?></div>
+  <div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$c?>" aria-expanded="false" aria-controls="collapseExample">seller name : <?=$seller_name[$i]?> <strong><?php if($stock_quantity_status[$i]==1) { ?> <span class="badge badge-warning ml-2">Stock Request - Awaiting Admin</span> <?php } ?></strong></div>
   
 <div class="collapse m-2" id="collapse_m<?=$c?>">	
 <div class="card-body">
