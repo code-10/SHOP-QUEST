@@ -284,16 +284,16 @@
 					<div class="row">
 						<?php for($zz=0;$zz<4;$zz++) { ?>
 						<?php if($zz==3) { ?>
-						<div class="col-12 col-sm-5 p-4">
-							<div class="card border-dark">
+						<div class="col-12 col-sm-6">
+							<div class="card border-dark m-4">
   								<div class="card-body text-center">
     									<a href="#" class="btn btn-primary">Add a Variant</a>
   								</div>
 							</div>
 						</div>
 						<?php } else { ?>
-						<div class="col-12 col-sm-5">
-							<div class="card border-dark">
+						<div class="col-12 col-sm-6">
+							<div class="card border-dark m-4">
   								<div class="card-body">
     									<h5 class="card-title">Variant 1</h5>
     									<p class="card-text">Details</p>
