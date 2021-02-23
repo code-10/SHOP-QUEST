@@ -283,20 +283,21 @@
     						
 					<div class="row">
 						<?php for($zz=0;$zz<4;$zz++) { ?>
-						<div class="col-12 col-sm-5 m-4">
-							<div class="card">
-  								<div class="card-body">
-    									<h5 class="card-title">Variant 1</h5>
-    									<p class="card-text">Details</p>
-    									<a href="#" class="btn btn-primary">Add Stock</a>
-  								</div>
-							</div>
-						</div>
 						<?php if($zz==3) { ?>
 						<div class="col-12 col-sm-5 m-4">
 							<div class="card">
-  								<div class="card-body">
-    									<a href="#" class="btn btn-primary text-center">Add a Variant</a>
+  								<div class="card-body text-center">
+    									<a href="#" class="btn btn-primary">Add a Variant</a>
+  								</div>
+							</div>
+						</div>
+						<?php } else { ?>
+						<div class="col-12 col-sm-5 m-4">
+							<div class="card">
+  								<div class="card-body text-center">
+    									<h5 class="card-title">Variant 1</h5>
+    									<p class="card-text">Details</p>
+    									<a href="#" class="btn btn-primary">Add Stock</a>
   								</div>
 							</div>
 						</div>
