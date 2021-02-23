@@ -131,41 +131,49 @@
       
       //get info from stpore info
         if($sell_request_main=="yes"){
+		
         $con=getCon();
         $sql="select * from store_info";
     
         $res=$con->query($sql);
   
-  $category=array();
-  $sub_category=array();
-  $product_name=array();
-  $product_brand=array();
-  $product_description=array();
-  $price=array();
-  $quantity=array();
-  $color=array();
-  $size=array();
-  $approved=array();
-  $storeinfoid=array();
-  $seller_name=array();
+  	$category=array();
+  	$sub_category=array();
+  	$product_name=array();
+  	$product_brand=array();
+  	$product_description=array();
+  	$price=array();
+  	$quantity=array();
+  	$color=array();
+  	$size=array();
+  	$approved=array();
+  	$storeinfoid=array();
+  	$seller_name=array();
+	$store_unique_type_id=array();
+  	$stock_quantity=array();
+	$stock_quantity_status=array();
+	
+		
+  	while($ele = $res->fetch_assoc())
+  	{
+      		$category[]=$ele['category'];
+      		$sub_category[]=$ele['sub_category'];
+      		$product_name[]=$ele['product_name'];
+      		$product_brand[]=$ele['product_brand'];
+      		$product_description[]=$ele['product_description'];
+	     	$price[]=$ele['price'];
+      		$quantity[]=$ele['quantity'];
+      		$color[]=$ele['color'];
+      		$size[]=$ele['size'];
+      		$approved[]=$ele['approved'];
+      		$storeinfoid[]=$ele['store_info_id'];
+      		$seller_name[]=$ele['seller_user_name'];
+      		$stock_quantity[]=$ele['stock_quantity'];
+      		$stock_quantity_status[]=$ele['stock_quantity_status'];
+		$store_unique_type_id[]=$ele['store_unique_type_id'];
+  	}
   
-  while($ele = $res->fetch_assoc())
-  {
-      $category[]=$ele['category'];
-      $sub_category[]=$ele['sub_category'];
-      $product_name[]=$ele['product_name'];
-      $product_brand[]=$ele['product_brand'];
-      $product_description[]=$ele['product_description'];
-      $price[]=$ele['price'];
-      $quantity[]=$ele['quantity'];
-      $color[]=$ele['color'];
-      $size[]=$ele['size'];
-      $approved[]=$ele['approved'];
-      $storeinfoid[]=$ele['store_info_id'];
-      $seller_name[]=$ele['seller_user_name'];
-  }
-  
-  $n=count($storeinfoid);
+  		$n=count($storeinfoid);
     
         }
       
@@ -318,6 +326,12 @@
 		$res2i = $con->query($sql2);
 		$res2 = $res2i->num_rows;
 	
+	
+		$dynamic_quantity = array();
+		$res = $con->query("select up.quantity from unique_product as up,store_info as si where up.unique_type_id=si.store_unique_type_id;");
+		while($ele = $res->fetch_assoc())
+			$dynamic_quantity[]=$ele['quantity'];
+	
 	?>
 	
 	
@@ -332,7 +346,7 @@
 	
       <?php if($sell_request_main=="yes") { ?>
       
-	<? for($i=0;$i<$n;$i++) { ?>
+	<? $q=0; for($i=0;$i<$n;$i++) { ?>
 	
 	<? if($aprstatus!=$approved[$i]&&!($aprstatus==0 && $approved[$i]>2)) 
 		 continue; ?>
@@ -347,23 +361,30 @@
     <p class="card-text">price : <?=$price[$i]?></p>
     <p class="card-text">color : <?=$color[$i]?></p>
     <p class="card-text">size  : <?=$size[$i]?></p>
-    <p class="card-text">quantity : <?=$quantity[$i]?></p>
+   
     
     <? if($approved[$i]==1) { ?>
+	<p class="card-text">quantity : <?=$dynamic_quantity[$q]?> <?php if($stock_quantity_status[$k]==1) { ?><i class="spinner-grow spinner-grow-sm" role="status"></i><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock updated</strong><?php } ?></p>
+	<?php $q++; ?>
+	<?php if($stock_quantity[$k]>0) { ?>
+		<p class="card-text">quantity to add : <?=$stock_quantity[$k]?> <i class="spinner-grow spinner-grow-sm" role="status"></i></p>	
+    	<?php } ?>
     	<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 	
     <? } else if($approved[$i]==2) { ?>
+	 <p class="card-text">quantity : <?=$quantity[$i]?></p>
 	 <h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6> 
     <? } else if($approved[$i]==0){ ?>
     	<h6 class="card-text">Status&nbsp&nbsp - waiting for approval<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     	<a href='sell_request.php?admin_check_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit and Approve</a>
     	<a href='sell_request.php?admin_reject_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Reject</a>
-    <? } else { ?>
+    <? } ?>
+	<!--<? else { ?>
 	  <p class="card-text">new quantity : <?=$approved[$i]?></p>
 	  <h6 class="card-text">Status&nbsp&nbsp - waiting for approval<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     	<a href='sell_request.php?admin_update=yes&&storeinfoid=<?=$storeinfoid[$i]?>&&qty=<?=$approved[$i]?>' class="btn btn-success m-2">Update</a>
     	<a href='sell_request.php?admin_update=no&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-danger m-2">Don't Update</a>
-    <? } ?>
+    <? } ?>-->
 </div>
 </div> 
 		
