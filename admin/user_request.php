@@ -155,13 +155,15 @@
 	
 	
 	
-	<?php for($i=0;$i<$n;$i++) { ?>
+	<?php $c=0; for($i=0;$i<$n;$i++) { ?>
 	
 		<? if($show_this!=$rar_status[$i]&&$show_another!=$rar_status[$i]) continue; ?>
 	
 		<div class="card m-4">
-  			<h5 class="card-header"><?=$rar_user_name[$i]?></h5>
-  			<div class="card-body">
+  			<h5 class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$c?>" aria-expanded="false" aria-controls="collapseExample"><?=$rar_user_name[$i]?></h5>
+  			
+			<div class="collapse m-2" id="collapse_m<?=$c?>">
+			<div class="card-body">
     				<p class="card-text">product name : <?=$rar_product_name[$i]?></p>
 				<p class="card-text">product brand : <?=$rar_product_brand[$i]?></p>
 				<p class="card-text">category : <?=$rar_category[$i]?></p>
@@ -186,10 +188,11 @@
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6> 
 				<?php } ?>
 				
+				</div>
   			</div>
 		</div>
 	
-	<?php } ?>
+	<?php $c++;} ?>
 	
 	
 	
