@@ -270,7 +270,7 @@
 	
 			<?php if($show_stat!=$approved[$k]&&!($show_stat==0 && $approved[$k]>2)) continue; ?>
 		 		
-				<div class="card m-4">
+				<div class="card m-4 border-dark">
   					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$cc?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$product_name[$k]?> <strong><?php if($stock_quantity_status[$k]==1) { ?> <span class="badge badge-warning ml-2">Stock Request - Awaiting Admin</span> <?php } ?></strong></div>
   					
 					<div class="collapse m-2" id="collapse_m<?=$cc?>">
@@ -284,8 +284,8 @@
 					<div class="row">
 						<?php for($zz=0;$zz<4;$zz++) { ?>
 						<?php if($zz==3) { ?>
-						<div class="col-12 col-sm-5 m-4">
-							<div class="card">
+						<div class="col-12 col-sm-5 m-4 p-4">
+							<div class="card border-dark">
   								<div class="card-body text-center">
     									<a href="#" class="btn btn-primary">Add a Variant</a>
   								</div>
@@ -293,11 +293,11 @@
 						</div>
 						<?php } else { ?>
 						<div class="col-12 col-sm-5 m-4">
-							<div class="card">
-  								<div class="card-body text-center">
+							<div class="card border-dark">
+  								<div class="card-body">
     									<h5 class="card-title">Variant 1</h5>
     									<p class="card-text">Details</p>
-    									<a href="#" class="btn btn-primary">Add Stock</a>
+    									<a href="#" class="btn btn-primary text-center">Add Stock</a>
   								</div>
 							</div>
 						</div>
