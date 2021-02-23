@@ -7,11 +7,11 @@
       
       session_start(); 
 
-      /*if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
+      if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
       {
             header("Location:../index.php");
             die(); 
-      }*/
+      }
 
       $sell_request_main=$_GET['sell_request_main'];
       $admin_check_sell=$_GET['admin_check_sell'];
@@ -94,6 +94,8 @@
       
       $storeinfoid=$_GET['storeinfoid'];
       $aprstatus=$_GET['aprstatus'];
+	
+	
       //admin reject
       	if($admin_reject_sell=="yes")
 	{
@@ -298,10 +300,33 @@
      
 	<a class="btn btn-dark ml-4" href="admin_enter.php?admin_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
 	
+	
+	
+	
+	<?php
+	
+		$sql0 = "select * from store_info where approved=0";
+		$res0i = $con->query($sql0);
+		$res0 = $res0i->num_rows;
+		//echo $res1;echo "<br>";
+	
+		$sql1 = "select * from store_info where approved=1";
+		$res1i = $con->query($sql1);
+		$res1 = $res1i->num_rows;
+	
+		$sql2 = "select * from store_info where approved=2";
+		$res2i = $con->query($sql2);
+		$res2 = $res2i->num_rows;
+	
+	?>
+	
+	
+
+	
 	<div class="text-center m-4">
-            <a class="btn btn-primary m-2" href="sell_request.php?sell_request_main=yes&&aprstatus=0" role="button">Pending</a>
-	    <a class="btn btn-primary m-2" href="sell_request.php?sell_request_main=yes&&aprstatus=1" role="button">Approved</a>
-            <a class="btn btn-primary m-2" href="sell_request.php?sell_request_main=yes&&aprstatus=2" role="button">Rejected</a>
+            <a <?php if($aprstatus==0) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=0" role="button">Pending<span class="badge badge-light ml-2"><?=$res0;?></span></a>
+	    <a <?php if($aprstatus==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=1" role="button">Approved<span class="badge badge-light ml-2"><?=$res1;?></span></a>
+            <a <?php if($aprstatus==2) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=2" role="button">Rejected<span class="badge badge-light ml-2"><?=$res2;?></span></a>
 	</div>
 	
 	
