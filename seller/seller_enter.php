@@ -97,7 +97,8 @@
   				$approved=array();
   				$store_info_id=array();
 				$store_unique_type_id=array();
-	
+				$stock_quantity=array();
+				$stock_quantity_status=array();
   
   				while($ele = $res->fetch_assoc())
   				{
@@ -113,6 +114,8 @@
       					$approved[]=$ele['approved'];
       					$store_info_id[]=$ele['store_info_id'];
 					$store_unique_type_id[]=$ele['store_unique_type_id'];
+					$stock_quantity[]=$ele['stock_quantity'];
+					$stock_quantity_status[]=$ele['stock_quantity_status'];
   				}
   
   				$n=count($product_name);
@@ -278,11 +281,12 @@
 
 					
     				<? if($approved[$k]==1) { ?>
-					<p class="card-text">quantity : <?=$dynamic_quantity[$q]?> <i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock updated</strong></p>
+					<p class="card-text">quantity : <?=$dynamic_quantity[$q]?> <?php if($stock_quantity_status[$k]==1) { ?>Awaiting Admin<?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock updated</strong><?php } ?></p>
 					<?php $q++; ?>
+					<p class="card-text">quantity to add : <?=$stock_quantity[$k]?></p>	
     					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 					
-					<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
+					<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($stock_quantity_status[$k]==1) { ?> disabled <?php } ?> >
 						Add stock
 					</button>
 						
