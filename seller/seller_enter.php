@@ -259,7 +259,7 @@
 	</div>
 			
 			
-			<?php $c=0; for($k=0;$k<$n;$k++) { ?>
+			<?php $q=0;$c=0; for($k=0;$k<$n;$k++) { ?>
 	
 			<?php if($show_stat!=$approved[$k]&&!($show_stat==0 && $approved[$k]>2)) continue; ?>
 		 		
@@ -278,7 +278,8 @@
 
 					
     				<? if($approved[$k]==1) { ?>
-					<p class="card-text">quantity : <?=$dynamic_quantity[$k]?></p>
+					<p class="card-text">quantity : <?=$dynamic_quantity[$q]?></p>
+					<?php $q++; ?>
     					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 					
 					<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
