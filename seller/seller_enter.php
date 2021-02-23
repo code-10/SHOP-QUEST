@@ -280,9 +280,24 @@
     						<p class="card-text">sub category : <?=$sub_category[$k]?></p>
     						<p class="card-text">product brand  : <?=$product_brand[$k]?></p>
     						<p class="card-text">product description : <?=$product_description[$k]?></p>
-    						<p class="card-text">price : <?=$price[$k]?></p>
+    						
+					<div class="row">
+						<?php for($zz=0;$zz<4;$zz++) { ?>
+						<div class="col-6">
+							<div class="card">
+  								<div class="card-body">
+    									<h5 class="card-title">Variant 1</h5>
+    									<p class="card-text">Details</p>
+    									<a href="#" class="btn btn-primary">Add Stock</a>
+  								</div>
+							</div>
+						</div>
+						<?php } ?>
+					</div>	
+							
+						<!--<p class="card-text">price : <?=$price[$k]?></p>
     						<p class="card-text">color : <?=$color[$k]?></p>
-						<p class="card-text">size  : <?=$size[$k]?></p>
+						<p class="card-text">size  : <?=$size[$k]?></p>-->
 
 					
     				<? if($approved[$k]==1) { ?>
