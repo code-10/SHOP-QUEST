@@ -253,6 +253,11 @@
 	?>
 	
 	<div class="text-center m-4">
+            <i class="fa fa-caret-down"></i>
+	    <i class="fa fa-caret-down"></i>
+	    <i class="fa fa-caret-down"></i>
+	</div>
+	<div class="text-center m-4">
             <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=0" role="button">Pending<span class="badge badge-light ml-2"><?=$res0;?></span></a>
 	    <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=1" role="button">Approved<span class="badge badge-light ml-2"><?=$res1;?></span></a>
             <a class="btn btn-primary m-2" href="seller_enter.php?my_sell_requests=yes&&show_stat=2" role="button">Rejected<span class="badge badge-light ml-2"><?=$res2;?></span></a>
