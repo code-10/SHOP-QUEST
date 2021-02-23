@@ -335,7 +335,7 @@
 											
 											echo '<p class="card-text">price : '.$get_unique_details_price[0].'</p>
     											      <p class="card-text">color : '.$get_unique_details_color[0].'</p>
-											      <p class="card-text">size  : '.$get_unique_details_size[0].'</p>
+											      <p class="card-text">size : '.$get_unique_details_size[0].'</p>
 											      <p class="card-text">quantity : '.$get_unique_details_quantity[0].'</p>';
 										}
 							      		?>
