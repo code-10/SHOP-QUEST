@@ -291,13 +291,27 @@
 
 					
     				<? if($approved[$k]==1) { ?>
+						
+					<!--get all unique products-->
+						<?php  
+							
+							$get_unique_type_id=array();
+							$get_unique = $con->query("select * from unique_products where product_id='$store_product_id[$k]'");
+							while($get_unique_ele = $get_unique->fetch_assoc())
+								$get_unique_type_id[]=$get_unique_ele['unique_type_id'];
+							
+							$cov = count($get_unique_type_id);
+							 
+						?>	
+							
+					<!--get all unique products end-->
 							
 					<!--variant logic start-->
 					<?=$store_product_id[$k];?>		
 							
 					<div class="row">
-						<?php for($zz=0;$zz<4;$zz++) { ?>
-						<?php if($zz==3) { ?>
+						<?php for($zz=0;$zz<=$cov;$zz++) { ?>
+						<?php if($zz==$cov-1) { ?>
 						<div class="col-12 col-sm-6">
 							<div class="card border-dark m-4">
   								<div class="card-body text-center">
