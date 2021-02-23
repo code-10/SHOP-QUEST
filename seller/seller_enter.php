@@ -266,7 +266,7 @@
 	</div>
 			
 			
-			<?php $q=0;$c=0; for($k=0;$k<$n;$k++) { ?>
+			<?php $q=0;$c=0;$cc=0; for($k=0;$k<$n;$k++) { ?>
 	
 			<?php if($show_stat!=$approved[$k]&&!($show_stat==0 && $approved[$k]>2)) continue; ?>
 		 		
@@ -292,11 +292,11 @@
     					<?php } ?>
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 					
-					<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($stock_quantity_status[$k]==1&&$stock_quantity[$k]>0) { ?> disabled <?php } ?> >
+					<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$cc?>" aria-expanded="false" aria-controls="collapseExample" <?php if($stock_quantity_status[$k]==1&&$stock_quantity[$k]>0) { ?> disabled <?php } ?> >
 						Add stock
 					</button>
 						
-					<div class="collapse m-2" id="collapse_r<?=$c?>">
+					<div class="collapse m-2" id="collapse_r<?=$cc?>">
   					<div class="card card-body" style="padding:8px;">
 						<form method="POST" action="seller_enter.php" class="input-group d-flex justify-content-center">
 								<p>Add quantity of stock</p>
