@@ -278,7 +278,7 @@
 
 					
     				<? if($approved[$k]==1) { ?>
-					<p class="card-text">quantity : <?=$dynamic_quantity[$q]?> <i class="fa fa-badge-check"></i>stock updated</p>
+					<p class="card-text">quantity : <?=$dynamic_quantity[$q]?> <i class="fa fa-check-circle ml-2" style="color:green;font-size:20px;"></i>stock updated</p>
 					<?php $q++; ?>
     					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 					
