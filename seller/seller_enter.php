@@ -96,6 +96,7 @@
   				$size=array();
   				$approved=array();
   				$store_info_id=array();
+				$store_product_id=array();
 				$store_unique_type_id=array();
 				$stock_quantity=array();
 				$stock_quantity_status=array();
@@ -116,6 +117,7 @@
 					$store_unique_type_id[]=$ele['store_unique_type_id'];
 					$stock_quantity[]=$ele['stock_quantity'];
 					$stock_quantity_status[]=$ele['stock_quantity_status'];
+					$store_product_id[]=$ele['store_product_id'];
   				}
   
   				$n=count($product_name);
@@ -259,6 +261,7 @@
 	
 	?>
 	
+	
 	<div class="text-center m-4">
             <a <?php if($show_stat==0) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=0" role="button">Pending<span class="badge badge-light ml-2"><?=$res0;?></span></a>
 	    <a <?php if($show_stat==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=1" role="button">Approved <span class="badge badge-light ml-2 mr-2"><?=$res1;?></span> - Add Stock <span class="badge badge-warning ml-2"><?=$res4?>/<?=$res1;?></span></a>
@@ -281,6 +284,17 @@
     						<p class="card-text">product brand  : <?=$product_brand[$k]?></p>
     						<p class="card-text">product description : <?=$product_description[$k]?></p>
     						
+							
+						<!--<p class="card-text">price : <?=$price[$k]?></p>
+    						<p class="card-text">color : <?=$color[$k]?></p>
+						<p class="card-text">size  : <?=$size[$k]?></p>-->
+
+					
+    				<? if($approved[$k]==1) { ?>
+							
+					<!--variant logic start-->
+					<?=$store_product_id[$k];?>		
+							
 					<div class="row">
 						<?php for($zz=0;$zz<4;$zz++) { ?>
 						<?php if($zz==3) { ?>
@@ -304,13 +318,10 @@
 						<?php } ?>
 						<?php } ?>
 					</div>	
+					<!--variant logic end-->
 							
-						<!--<p class="card-text">price : <?=$price[$k]?></p>
-    						<p class="card-text">color : <?=$color[$k]?></p>
-						<p class="card-text">size  : <?=$size[$k]?></p>-->
-
-					
-    				<? if($approved[$k]==1) { ?>
+							
+							
 					<p class="card-text">quantity : <?=$dynamic_quantity[$q]?> <?php if($stock_quantity_status[$k]==1) { ?><i class="spinner-grow spinner-grow-sm" role="status"></i><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock updated</strong><?php } ?></p>
 					<?php $q++; ?>
 					<?php if($stock_quantity[$k]>0) { ?>
