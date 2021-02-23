@@ -271,17 +271,18 @@
 			<?php if($show_stat!=$approved[$k]&&!($show_stat==0 && $approved[$k]>2)) continue; ?>
 		 		
 				<div class="card m-4">
-  					<div class="card-header">Product name : <?=$product_name[$k]?></div>
-  					<div class="card-body">
-					<p class="card-text">store_info_id : <?=$store_info_id[$k]?></p>	
-    					<p class="card-text">category : <?=$category[$k]?></p>
-    					<p class="card-text">sub category : <?=$sub_category[$k]?></p>
-    					<p class="card-text">product brand  : <?=$product_brand[$k]?></p>
-    					<p class="card-text">product description : <?=$product_description[$k]?></p>
-    					<p class="card-text">price : <?=$price[$k]?></p>
-    					<p class="card-text">color : <?=$color[$k]?></p>
-    					<p class="card-text">size  : <?=$size[$k]?></p>
-    					
+  					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$cc?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$product_name[$k]?></div>
+  					
+					<div class="collapse m-2" id="collapse_m<?=$cc?>">
+						<div class="card-body">
+						<p class="card-text">store_info_id : <?=$store_info_id[$k]?></p>	
+    						<p class="card-text">category : <?=$category[$k]?></p>
+    						<p class="card-text">sub category : <?=$sub_category[$k]?></p>
+    						<p class="card-text">product brand  : <?=$product_brand[$k]?></p>
+    						<p class="card-text">product description : <?=$product_description[$k]?></p>
+    						<p class="card-text">price : <?=$price[$k]?></p>
+    						<p class="card-text">color : <?=$color[$k]?></p>
+						<p class="card-text">size  : <?=$size[$k]?></p>
 
 					
     				<? if($approved[$k]==1) { ?>
@@ -363,7 +364,8 @@
 				<? } else { ?>		
     					<h6 class="card-text">Status - waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     				<? } ?>
-						
+					
+					</div>
 				</div>
 					
 			</div>
