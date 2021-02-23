@@ -128,9 +128,9 @@
 	
 	
 	<div class="text-center m-4">
-            <a class="btn btn-primary m-2" href="user_request.php?show_this=1" role="button">Pending</a>
-	    <a class="btn btn-primary m-2" href="user_request.php?show_this=2&&show_another=3" role="button">Approved</a>
-            <a class="btn btn-primary m-2" href="user_request.php?show_this=4" role="button">Rejected</a>
+            <a if($show_this==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="user_request.php?show_this=1" role="button">Pending</a>
+	    <a if($show_this==2&&$show_another==3) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="user_request.php?show_this=2&&show_another=3" role="button">Approved</a>
+            <a if($show_this==4) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="user_request.php?show_this=4" role="button">Rejected</a>
 	</div>
 	
 	
