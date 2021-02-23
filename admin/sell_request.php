@@ -363,7 +363,14 @@
 			header("Location:sell_request.php?sell_request_main=yes&&aprstatus=1");
                 	die();
 			
-		}	
+		}
+		else if($update_stock_u=="no")
+		{
+			$con->query("update store_info set stock_quantity=0,stock_quantity_status=0 where store_info_id='$store_info_id_u'");
+			
+			header("Location:sell_request.php?sell_request_main=yes&&aprstatus=1");
+                	die();
+		}
 	
 	
 	?>
@@ -399,7 +406,7 @@
 	<p class="card-text">quantity : <?=$dynamic_quantity[$q]?> <?php if($stock_quantity_status[$i]==1) { ?><i class="spinner-grow spinner-grow-sm" role="status"></i><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock updated</strong><?php } ?></p>
 	<?php $q++; ?>
 	<?php if($stock_quantity[$i]>0) { ?>
-		<p class="card-text">request quantity to add : <?=$stock_quantity[$i]?> <a href="sell_request.php?update_stock=yes&&store_info_id=<?=$storeinfoid[$i]?>&&update_unique_type_id=<?=$store_unique_type_id[$i]?>&&stock_quantity=<?=$stock_quantity[$i]?>" class="btn btn-primary btn-sm ml-2" role="button" aria-pressed="true">Update Stock</a></p>	
+		<p class="card-text">request quantity to add : <?=$stock_quantity[$i]?> <a href="sell_request.php?update_stock=yes&&store_info_id=<?=$storeinfoid[$i]?>&&update_unique_type_id=<?=$store_unique_type_id[$i]?>&&stock_quantity=<?=$stock_quantity[$i]?>" class="btn btn-success btn-sm ml-2" role="button" aria-pressed="true">Update Stock</a> <a href="sell_request.php?update_stock=no&&store_info_id=<?=$storeinfoid[$i]?>&&update_unique_type_id=<?=$store_unique_type_id[$i]?>&&stock_quantity=<?=$stock_quantity[$i]?>" class="btn btn-danger btn-sm ml-2" role="button" aria-pressed="true">Reject</a></p>	
     	<?php } ?>
     	<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 	
