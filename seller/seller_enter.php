@@ -395,9 +395,17 @@
 				<!--add variant end-->
 						
     				<? } else if($approved[$k]==2){ ?>
+					<p class="card-text">price : <?=$price[$k]?></p>
+    					<p class="card-text">color : <?=$color[$k]?></p>
+					<p class="card-text">size  : <?=$size[$k]?></p>	
+							
 					<p class="card-text">quantity : <?=$quantity[$k]?></p>
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6>
-				<? } else { ?>		
+				<? } else { ?>	
+					<p class="card-text">price : <?=$price[$k]?></p>
+    					<p class="card-text">color : <?=$color[$k]?></p>
+					<p class="card-text">size  : <?=$size[$k]?></p>			
+							
     					<h6 class="card-text">Status - waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     				<? } ?>
 					
