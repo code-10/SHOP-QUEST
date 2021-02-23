@@ -380,9 +380,9 @@
     <? if($approved[$i]==1) { ?>
 	<p class="card-text">quantity : <?=$dynamic_quantity[$q]?> <?php if($stock_quantity_status[$i]==1) { ?><i class="spinner-grow spinner-grow-sm" role="status"></i><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock updated</strong><?php } ?></p>
 	<?php $q++; ?>
-	<?php echo "stock ".$stock_quantity[$i]; if($stock_quantity[$i]>0) { ?>
+	<?php //if($stock_quantity[$i]>0) { ?>
 		<p class="card-text">request quantity to add : <?=$stock_quantity[$i]?> <a href="sell_request?update_stock=yes&&store_info_id=<?=$storeinfoid[$i]?>&&update_unique_type_id=<?=$store_unique_type_id[$i]?>&&stock_quantity=<?=$stock_quantity[$i]?>" class="btn btn-primary btn-sm ml-2" role="button" aria-pressed="true">Update Stock</a></p>	
-    	<?php } ?>
+    	<?php //} ?>
     	<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 	
     <? } else if($approved[$i]==2) { ?>
