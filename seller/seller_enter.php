@@ -288,7 +288,7 @@
     					<?php } ?>
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 					
-					<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($stock_quantity_status[$k]==1) { ?> disabled <?php } ?> >
+					<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($stock_quantity_status[$k]==1&&$stock_quantity[$k]>0) { ?> disabled <?php } ?> >
 						Add stock
 					</button>
 						
@@ -299,7 +299,7 @@
 								<div class="form-group m-2 col-12">
     									<div class="form-group">
         									<label for="inputqty">quantity</label>
-        										<input type="number" class="form-control" id="inputqty" placeholder="quantity" name="stock_quantity" required>
+        										<input type="number" min="1" max="10" class="form-control" id="inputqty" placeholder="quantity" name="stock_quantity" required>
     									</div>
   								</div>
 								<div class="form-group m-2 col-12">
