@@ -385,13 +385,15 @@
 	
       <?php if($sell_request_main=="yes") { ?>
       
-	<? $q=0; for($i=0;$i<$n;$i++) { ?>
+	<? $q=0;$c=0; for($i=0;$i<$n;$i++) { ?>
 	
 	<? if($aprstatus!=$approved[$i]&&!($aprstatus==0 && $approved[$i]>2)) 
 		 continue; ?>
 <div class="card m-4">
-  <div class="card-header">seller name : <?=$seller_name[$i]?></div>
-  <div class="card-body">
+  <div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$c?>" aria-expanded="false" aria-controls="collapseExample">seller name : <?=$seller_name[$i]?></div>
+  
+<div class="collapse m-2" id="collapse_m<?=$c?>">	
+<div class="card-body">
     <p class="card-text">Product name : <?=$product_name[$i]?></p>
     <p class="card-text">category : <?=$category[$i]?></p>
     <p class="card-text">sub category : <?=$sub_category[$i]?></p>
@@ -418,16 +420,11 @@
     	<a href='sell_request.php?admin_check_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit and Approve</a>
     	<a href='sell_request.php?admin_reject_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Reject</a>
     <? } ?>
-	<!--<? //else { ?>
-	  <p class="card-text">new quantity : <?=$approved[$i]?></p>
-	  <h6 class="card-text">Status&nbsp&nbsp - waiting for approval<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
-    	<a href='sell_request.php?admin_update=yes&&storeinfoid=<?=$storeinfoid[$i]?>&&qty=<?=$approved[$i]?>' class="btn btn-success m-2">Update</a>
-    	<a href='sell_request.php?admin_update=no&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-danger m-2">Don't Update</a>
-    <? //} ?>-->
+	</div>
 </div>
 </div> 
 		
-  <? } ?>   
+  <? $c++;} ?>   
   
   <?php } else if($admin_check_sell=="yes") { ?>
       
