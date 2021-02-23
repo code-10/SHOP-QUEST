@@ -327,6 +327,9 @@
 		$res2i = $con->query($sql2);
 		$res2 = $res2i->num_rows;
 	
+		$sql4 = "select * from store_info where stock_quantity_status=1";
+		$res4i = $con->query($sql4);
+		$res4 = $res4i->num_rows;
 	
 		$dynamic_quantity = array();
 		$res = $con->query("select up.quantity from unique_product as up,store_info as si where up.unique_type_id=si.store_unique_type_id;");
@@ -368,7 +371,7 @@
 	
 	<div class="text-center m-4">
             <a <?php if($aprstatus==0) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=0" role="button">Pending<span class="badge badge-light ml-2"><?=$res0;?></span></a>
-	    <a <?php if($aprstatus==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=1" role="button">Approved<span class="badge badge-light ml-2"><?=$res1;?></span></a>
+	    <a <?php if($aprstatus==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=1" role="button">Approved<span class="badge badge-light ml-2 mr-2"><?=$res1;?></span> - Add Stock <span class="badge badge-warning ml-2"><?=$res4?>/<?=$res1;?></span></a>
             <a <?php if($aprstatus==2) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=2" role="button">Rejected<span class="badge badge-light ml-2"><?=$res2;?></span></a>
 	</div>
 	
