@@ -341,15 +341,15 @@
 	<?
 		
 		//queries are for updating stock
-		$update_stock=$_GET['update_stock'];
-		$store_info_id=$_GET['store_info_id'];
-		$update_unique_type_id=$_GET['update_unique_type_id'];
-		$stock_quantity=$_GET['stock_quantity'];
+		$update_stock_u=$_GET['update_stock'];
+		$store_info_id_u=$_GET['store_info_id'];
+		$update_unique_type_id_u=$_GET['update_unique_type_id'];
+		$stock_quantity_u=$_GET['stock_quantity'];
 	
-		echo $update_stock; echo "<br>";
-		echo $store_info_id; echo "<br>";
-		echo $update_unique_type_id; echo "<br>";
-		echo $stock_quantity; echo "<br>";
+		echo $update_stock_u; echo "<br>";
+		echo $store_info_id_u; echo "<br>";
+		echo $update_unique_type_id_u; echo "<br>";
+		echo $stock_quantity_u; echo "<br>";
 	
 	
 	?>
