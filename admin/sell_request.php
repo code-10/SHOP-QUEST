@@ -175,9 +175,6 @@
   
   		$n=count($storeinfoid);
 		
-		//print_r($stock_quantity);
-		//echo "<br>";
-		//print_r($stock_quantity_status);
     
         }
       
@@ -346,10 +343,21 @@
 		$update_unique_type_id_u=$_GET['update_unique_type_id'];
 		$stock_quantity_u=$_GET['stock_quantity'];
 	
-		echo $update_stock_u; echo "<br>";
-		echo $store_info_id_u; echo "<br>";
-		echo $update_unique_type_id_u; echo "<br>";
-		echo $stock_quantity_u; echo "<br>";
+		if($update_stock_u=="yes")
+		{
+			$existing_quantity=array();
+			$check_existing=$con->query("select quantity from unique_product where unique_type_id='$update_unique_type_id_u'");
+			while($ele_check = $check_existing->fetch_assoc())
+				$existing_quantity[]=$ele_check['quantity'];
+			
+			$existing_quantity_value=$existing_quantity[0];
+			$update_stock_quantity_u=$existing_quantity_value+$stock_quantity_u;
+			
+			$con->query("update unique_product set quantity='$update_stock_quantity_u' where unique_type_id='$update_unique_type_id_u'");
+			
+			$con->query("update store_info set stock_quantity=0,stock_quantity_status=0 where store_info_id='$store_info_id_u'");
+			
+		}	
 	
 	
 	?>
