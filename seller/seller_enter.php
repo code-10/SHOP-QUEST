@@ -283,11 +283,6 @@
     						<p class="card-text">sub category : <?=$sub_category[$k]?></p>
     						<p class="card-text">product brand  : <?=$product_brand[$k]?></p>
     						<p class="card-text">product description : <?=$product_description[$k]?></p>
-    						
-							
-						<!--<p class="card-text">price : <?=$price[$k]?></p>
-    						<p class="card-text">color : <?=$color[$k]?></p>
-						<p class="card-text">size  : <?=$size[$k]?></p>-->
 
 					
     				<? if($approved[$k]==1) { ?>
@@ -326,6 +321,7 @@
 										$get_unique_details_price = array();
 										$get_unique_details_color = array();
 										$get_unique_details_size = array();
+										$get_unique_details_quantity = array();
 		
 										for($lo=0;$lo<$cov;$lo++){
 											$get_unique_details_res = $con->query("select * from unique_product where unique_type_id='$get_unique_type_id[$lo]'");
@@ -334,11 +330,13 @@
 												$get_unique_details_price[] = $get_unique_details_ele['price'];
 												$get_unique_details_color[] = $get_unique_details_ele['color'];
 												$get_unique_details_size[] = $get_unique_details_ele['size'];
+												$get_unique_details_quantity[] = $get_unique_details_ele['quantity'];
 											}
 											
 											echo '<p class="card-text">price : '.$get_unique_details_price[0].'</p>
     											      <p class="card-text">color : '.$get_unique_details_color[0].'</p>
-											      <p class="card-text">size  : '.$get_unique_details_size[0].'</p>';
+											      <p class="card-text">size  : '.$get_unique_details_size[0].'</p>
+											      <p class="card-text">color : '.$get_unique_details_quantity[0].'</p>';
 										}
 							      		?>
     									<a href="#" class="btn btn-primary text-center">Add Stock</a>
