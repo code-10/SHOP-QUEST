@@ -281,10 +281,10 @@
 
 					
     				<? if($approved[$k]==1) { ?>
-					<p class="card-text">quantity : <?=$dynamic_quantity[$q]?> <?php if($stock_quantity_status[$k]==1) { ?><div class="spinner-grow spinner-grow-sm" role="status"><span class="sr-only">Loading...</span></div><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock updated</strong><?php } ?></p>
+					<p class="card-text">quantity : <?=$dynamic_quantity[$q]?> <?php if($stock_quantity_status[$k]==1) { ?><i class="spinner-grow spinner-grow-sm" role="status"></i><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock updated</strong><?php } ?></p>
 					<?php $q++; ?>
 					<?php if($stock_quantity[$k]>0) { ?>
-						<p class="card-text">quantity to add : <?=$stock_quantity[$k]?> <div class="spinner-grow spinner-grow-sm" role="status"><span class="sr-only">Loading...</span></div></p>	
+						<p class="card-text">quantity to add : <?=$stock_quantity[$k]?> <i class="spinner-grow spinner-grow-sm" role="status"></i></p>	
     					<?php } ?>
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 					
