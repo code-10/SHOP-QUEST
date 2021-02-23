@@ -97,7 +97,7 @@
 
      
         
- <div class="jumbotron">
+ <div class="p-4" style="background-color:black;color:white;">
         <div class="text-center">
               <h4>Database Details</h4>
         </div>
