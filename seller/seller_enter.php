@@ -296,7 +296,7 @@
 						<?php  
 							
 							$get_unique_type_id=array();
-							$get_unique = $con->query("select * from unique_products where product_id='$store_product_id[$k]'");
+							$get_unique = $con->query("select * from unique_product where product_id='$store_product_id[$k]'");
 							while($get_unique_ele = $get_unique->fetch_assoc())
 								$get_unique_type_id[]=$get_unique_ele['unique_type_id'];
 							
