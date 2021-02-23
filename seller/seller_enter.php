@@ -301,13 +301,12 @@
 								$get_unique_type_id[]=$get_unique_ele['unique_type_id'];
 							
 							$cov = count($get_unique_type_id);
-							 
+		
 						?>	
 							
 					<!--get all unique products end-->
 							
-					<!--variant logic start-->
-					<?=$store_product_id[$k];?>		
+					<!--variant logic start-->	
 							
 					<div class="row">
 						<?php for($zz=0;$zz<=$cov;$zz++) { ?>
@@ -323,8 +322,25 @@
 						<div class="col-12 col-sm-6">
 							<div class="card border-dark m-4">
   								<div class="card-body">
-    									<h5 class="card-title">Variant 1</h5>
-    									<p class="card-text">Details</p>
+									<?php
+										$get_unique_details_price = array();
+										$get_unique_details_color = array();
+										$get_unique_details_size = array();
+		
+										for($lo=0;$lo<$cov;$lo++){
+											$get_unique_details_res = $con->query("select * from unique_product where unique_type_id='$get_unique_type_id[$lo]'");
+											while($get_unique_details_ele = $get_unique_details_res->fetch_assoc())
+											{
+												$get_unique_details_price[] = $get_unique_details_ele['price'];
+												$get_unique_details_color[] = $get_unique_details_ele['color'];
+												$get_unique_details_size[] = $get_unique_details_ele['size'];
+											}
+											
+											echo '<p class="card-text">price : '.$get_unique_details_price[0].'</p>
+    											      <p class="card-text">color : '.$get_unique_details_color[0].'</p>
+											      <p class="card-text">size  : '.$get_unique_details_size[0].'</p>';
+										}
+							      		?>
     									<a href="#" class="btn btn-primary text-center">Add Stock</a>
   								</div>
 							</div>
