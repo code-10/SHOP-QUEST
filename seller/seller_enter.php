@@ -316,11 +316,11 @@
   					</div>
 				</div>	
 						
-					<!--<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
+					<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_r<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
 						Add a Variant
 					</button>
 					<!--add variant-->
-				<!--<div class="collapse m-2" id="collapse_r<?=$c?>">
+					<div class="collapse m-2" id="collapse_r<?=$c?>">
   					<div class="card card-body" style="padding:8px;">
 						<form method="POST" action="seller_enter.php" class="input-group d-flex justify-content-center">
 								<p>Add variant details</p>
@@ -354,7 +354,7 @@
 								<button class="btn btn-dark" name="submit_variant" type="submit">Add Variant</button>
 						</form>
   					</div>
-				</div>-->		
+				</div>	
 				<!--add variant end-->
 						
     				<? } else if($approved[$k]==2){ ?>
