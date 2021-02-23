@@ -283,7 +283,7 @@
     						
 					<div class="row">
 						<?php for($zz=0;$zz<4;$zz++) { ?>
-						<div class="col-12 col-sm-5 m-2">
+						<div class="col-12 col-sm-5 m-4">
 							<div class="card">
   								<div class="card-body">
     									<h5 class="card-title">Variant 1</h5>
@@ -292,6 +292,15 @@
   								</div>
 							</div>
 						</div>
+						<?php if($zz==3) { ?>
+						<div class="col-12 col-sm-5 m-4">
+							<div class="card">
+  								<div class="card-body">
+    									<a href="#" class="btn btn-primary text-center">Add a Variant</a>
+  								</div>
+							</div>
+						</div>
+						<?php } ?>
 						<?php } ?>
 					</div>	
 							
