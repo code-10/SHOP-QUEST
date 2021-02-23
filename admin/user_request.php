@@ -123,14 +123,34 @@
 	?>
 	
 	
+	<?php
+	
+		$sql1 = "select * from process_return_or_replace where status=1";
+		$res1i = $con->query($sql1);
+		$res1 = $res1i->num_rows;
+		//echo $res1;echo "<br>";
+	
+		$sql2 = "select * from process_return_or_replace where status=2";
+		$res2i = $con->query($sql2);
+		$res2 = $res2i->num_rows;
+	
+		$sql3 = "select * from process_return_or_replace where status=3";
+		$res3i = $con->query($sql3);
+		$res3 = $res3i->num_rows;
+	
+		$sql4 = "select * from process_return_or_replace where status=4";
+		$res4i = $con->query($sql4);
+		$res4 = $res4i->num_rows;
+	
+	?>
 	
 	
 	
 	
 	<div class="text-center m-4">
-            <a if($show_this==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="user_request.php?show_this=1" role="button">Pending</a>
-	    <a if($show_this==2&&$show_another==3) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="user_request.php?show_this=2&&show_another=3" role="button">Approved</a>
-            <a if($show_this==4) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="user_request.php?show_this=4" role="button">Rejected</a>
+            <a <?php if($show_this==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="user_request.php?show_this=1" role="button">Pending<span class="badge badge-light ml-2"><?=$res1;?></span></a>
+	    <a <?php if($show_this==2&&$show_another==3) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="user_request.php?show_this=2&&show_another=3" role="button">Approved <span class="badge badge-light ml-2"><?=$res2+$res3;?></span></a>
+            <a <?php if($show_this==4) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="user_request.php?show_this=4" role="button">Rejected <span class="badge badge-light ml-2"><?=$res4;?></span></a>
 	</div>
 	
 	
