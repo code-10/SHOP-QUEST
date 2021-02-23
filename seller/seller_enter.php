@@ -283,7 +283,7 @@
     						
 					<div class="row">
 						<?php for($zz=0;$zz<4;$zz++) { ?>
-						<div class="col-6">
+						<div class="col-12 col-sm-5 m-2">
 							<div class="card">
   								<div class="card-body">
     									<h5 class="card-title">Variant 1</h5>
