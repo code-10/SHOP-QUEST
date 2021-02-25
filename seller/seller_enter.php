@@ -357,7 +357,7 @@
 					$store_product_id_a[]=$ele_a['store_product_id'];
 				}
 		
-				$approved_count = count($store_product_id);
+				$approved_count = count($store_product_id_a);
 		
 				echo $approved_count;
 		
