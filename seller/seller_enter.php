@@ -252,11 +252,6 @@
 		$res2 = $res2i->num_rows;
 		//echo $res2;echo "<br>";	
 	
-		$dynamic_quantity = array();
-		$res = $con->query("select up.quantity from unique_product as up,store_info as si where up.unique_type_id=si.store_unique_type_id;");
-		while($ele = $res->fetch_assoc())
-			$dynamic_quantity[]=$ele['quantity'];
-	
 		$sql4 = "select * from store_info where stock_quantity_status=1";
 		$res4i = $con->query($sql4);
 		$res4 = $res4i->num_rows;
@@ -319,7 +314,7 @@
 	
 			<?php 
 				$approved_user = $_SESSION['user_name']; 			
-				$approved_sql = "select p.product_name,s.store_info_id,c.cat_name,s.approved,sc.sub_cat_name,p.product_id,up.unique_type_id,p.product_brand,p.product_description from products as p,unique_product as up,store_info as s,categories as c,sub_categories as sc where s.seller_user_name='$approved_user' and p.product_id=s.store_product_id and up.unique_type_id=s.store_unique_type_id and s.store_product_id is not null group by store_product_id";
+				$approved_sql = "select p.product_name,s.store_info_id,c.cat_name,sc.sub_cat_name,p.product_id,up.unique_type_id,p.product_brand,p.product_description from products as p,unique_product as up,store_info as s,categories as c,sub_categories as sc where s.seller_user_name='$approved_user' and p.product_id=s.store_product_id and up.unique_type_id=s.store_unique_type_id and s.store_product_id is not null group by store_product_id";
 				$approved_res = $con->query($approved_sql);
 					
 				
@@ -330,7 +325,6 @@
   				$product_description_a=array();
   				$store_info_id_a=array();		
 				$product_id_a=array();
-				$approved_a=array();
 				$store_unique_type_id_a=array();
 				
 				$stock_quantity_a=array();
@@ -346,7 +340,6 @@
       					$product_description_a[]=$ele_a['product_description'];
       					$store_info_id_a[]=$ele_a['store_info_id'];
 					$product_id_a[]=$ele_a['product_id'];
-      					$approved_a[]=$ele_a['approved'];
 					$store_unique_type_id_a[]=$ele_a['store_unique_type_id'];
 					
 					$stock_quantity_a[]=$ele_a['stock_quantity'];
@@ -376,10 +369,11 @@
 					<?php
 					
 						//to get all unique_products with same product id
-						$unique_product_sql = "select up.unique_type_id,up.price,up.color,up.size from unique_product as up,store_info as s where s.store_unique_type_id=up.unique_type_id and s.store_product_id='$product_id_a[$ai]' and up.seller_user_name='$approved_user'";
+						$unique_product_sql = "select up.unique_type_id,up.quantity,up.price,up.color,up.size,s.approved from unique_product as up,store_info as s where s.store_unique_type_id=up.unique_type_id and s.store_product_id='$product_id_a[$ai]' and up.seller_user_name='$approved_user'";
 						$unique_product_res = $con->query($unique_product_sql);
 					
 						$unique_type_id_to_keep_count=array();
+						$is_approved_again=array();
 						$price_up=array();
   						$quantity_up=array();
   						$color_up=array();
@@ -390,7 +384,9 @@
 							$price_up[]=$unique_product_ele['price'];
   							$color_up[]=$unique_product_ele['color'];
   							$size_up[]=$unique_product_ele['size'];	
+							$quantity_up[]=$unique_product_ele['quantity'];	
 							$unique_type_id_to_keep_count[]=$unique_product_ele['unique_type_id'];	
+							$is_approved_again[]=$unique_product_ele['approved'];	
 						}
 									   
 									   
@@ -415,6 +411,11 @@
 													<p class="card-text">color : <?=$color_up[$upl]?></p>
     													<p class="card-text">size  : <?=$size_up[$upl]?></p>
     													<p class="card-text">price : <?=$price_up[$upl]?></p>	
+													<p class="card-text">price : <?=$quantity_up[$upl]?></p>
+													<?php if($is_approved_again[$upl]==1) { ?>
+														<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
+													<?php } ?>
+													<a href="#" class="btn btn-primary">Add stock</a>
 												</div>
 											</div>
 										</div>
