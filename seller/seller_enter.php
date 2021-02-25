@@ -397,7 +397,7 @@
 							<div class="row">
 								<?php for($upl=0;$upl<=$uc;$upl++) { ?>	
 									<?php if($upl==$uc) { ?>
-										<div class="col-12 col-sm-6">
+										<div class="col-12 col-sm-4">
 											<div class="card border-dark m-4">
   												<div class="card-body text-center">
     													<a href="#" class="btn btn-primary">Add a Variant</a>
@@ -405,7 +405,7 @@
 											</div>
 										</div>
 									<?php } else { ?>
-										<div class="col-12 col-sm-6">
+										<div class="col-12 col-sm-4">
 											<div class="card border-dark m-4">
   												<div class="card-body">
 													<p class="card-text">color : <?=$color_up[$upl]?></p>
