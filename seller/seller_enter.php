@@ -273,10 +273,10 @@
 		<?php if($stock_variant!="yes") { ?>	
 			
 			<?php $q=0;$c=0;$cc=0; for($k=0;$k<$n;$k++) { ?>
+
+    				<? if($approved[$k]==2&&$show_stat==2) { ?>
 	
-			<?php if($show_stat!=$approved[$k]&&!($show_stat==0 && $approved[$k]>2)) { ?>
-		 		
-				<div class="card m-4 border-dark">
+					<div class="card m-4 border-dark">
   					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$cc?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$product_name[$k]?> <strong><?php if($stock_quantity_status[$k]==1) { ?> <span class="badge badge-warning ml-2">Stock Request - Awaiting Admin</span> <?php } ?></strong></div>
   					
 					<div class="collapse m-2" id="collapse_m<?=$cc?>">
@@ -286,8 +286,7 @@
     						<p class="card-text">sub category : <?=$sub_category[$k]?></p>
     						<p class="card-text">product brand  : <?=$product_brand[$k]?></p>
     						<p class="card-text">product description : <?=$product_description[$k]?></p>
-
-    				<? if($approved[$k]==2) { ?>
+					
 					<p class="card-text">price : <?=$price[$k]?></p>
     					<p class="card-text">color : <?=$color[$k]?></p>
 					<p class="card-text">size  : <?=$size[$k]?></p>	
@@ -296,6 +295,18 @@
 							
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6>
 				<? } else { ?>	
+					
+					<div class="card m-4 border-dark">
+  					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$cc?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$product_name[$k]?> <strong><?php if($stock_quantity_status[$k]==1) { ?> <span class="badge badge-warning ml-2">Stock Request - Awaiting Admin</span> <?php } ?></strong></div>
+  					
+					<div class="collapse m-2" id="collapse_m<?=$cc?>">
+						<div class="card-body">
+						<p class="card-text">store_info_id : <?=$store_info_id[$k]?></p>	
+    						<p class="card-text">category : <?=$category[$k]?></p>
+    						<p class="card-text">sub category : <?=$sub_category[$k]?></p>
+    						<p class="card-text">product brand  : <?=$product_brand[$k]?></p>
+    						<p class="card-text">product description : <?=$product_description[$k]?></p>		
+							
 					<p class="card-text">price : <?=$price[$k]?></p>
     					<p class="card-text">color : <?=$color[$k]?></p>
 					<p class="card-text">size  : <?=$size[$k]?></p>			
@@ -306,9 +317,7 @@
 					</div>
 				</div>
 					
-			</div>
-				
-			<?php } ?>	
+			</div>	
 	
  		 	<?php $c++;$cc++; } ?>
 	
