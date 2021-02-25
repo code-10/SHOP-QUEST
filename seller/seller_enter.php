@@ -303,6 +303,8 @@
     					<p class="card-text">color : <?=$color[$k]?></p>
 					<p class="card-text">size  : <?=$size[$k]?></p>			
 							
+					<p class="card-text">quantity : <?=$quantity[$k]?></p>		
+							
     					<h6 class="card-text">Status - waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     				<? } ?>
 				<? } ?>	
@@ -317,7 +319,7 @@
 	
 			<?php 
 				$approved_user = $_SESSION['user_name']; 			
-				$approved_sql = "select * from store_info where seller_user_name='$approved_user' and store_product_id is not null group by store_product_id";
+				$approved_sql = "select p.product_name,s.store_info_id,c.cat_name,s.approved,sc.sub_cat_name,p.product_id,up.unique_type_id,p.product_brand,p.product_description from products as p,unique_product as up,store_info as s,categories as c,sub_categories as sc where s.seller_user_name='$approved_user' and p.product_id=s.store_product_id and up.unique_type_id=s.store_unique_type_id and s.store_product_id is not null group by store_product_id";
 				$approved_res = $con->query($approved_sql);
 					
 				
@@ -326,41 +328,33 @@
   				$product_name_a=array();
   				$product_brand_a=array();
   				$product_description_a=array();
-  				$price_a=array();
-  				$quantity_a=array();
-  				$color_a=array();
-  				$size_a=array();
-  				$approved_a=array();
-  				$store_info_id_a=array();
+  				$store_info_id_a=array();		
 				$store_product_id_a=array();
+				$approved_a=array();
 				$store_unique_type_id_a=array();
+				
 				$stock_quantity_a=array();
 				$stock_quantity_status_a=array();
 		
 		
 				while($ele_a = $approved_res->fetch_assoc())
 				{
-					$category_a[]=$ele_a['category'];
-      					$sub_category_a[]=$ele_a['sub_category'];
+					$category_a[]=$ele_a['cat_name'];
+      					$sub_category_a[]=$ele_a['sub_cat_name'];
       					$product_name_a[]=$ele_a['product_name'];
-      					$product_brand_A[]=$ele_a['product_brand'];
+      					$product_brand_a[]=$ele_a['product_brand'];
       					$product_description_a[]=$ele_a['product_description'];
-      					$price_a[]=$ele_a['price'];
-      					$quantity_a[]=$ele_a['quantity'];
-      					$color_a[]=$ele_a['color'];
-      					$size_a[]=$ele_a['size'];
-      					$approved_a[]=$ele_a['approved'];
       					$store_info_id_a[]=$ele_a['store_info_id'];
+					$store_product_id_a[]=$ele_a['store_product_id'];
+      					$approved_a[]=$ele_a['approved'];
 					$store_unique_type_id_a[]=$ele_a['store_unique_type_id'];
+					
 					$stock_quantity_a[]=$ele_a['stock_quantity'];
 					$stock_quantity_status_a[]=$ele_a['stock_quantity_status'];
-					$store_product_id_a[]=$ele_a['store_product_id'];
+					
 				}
 		
 				$approved_count = count($store_product_id_a);
-		
-				echo $approved_count;
-		
 		
 			?>
 	
@@ -370,17 +364,37 @@
 				<div class="card m-4 border-dark">
   					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$product_name_a[$ai]?></div>
   					
-					<div class="collapse m-2" id="collapse_m<?=$ac?>">
-						<div class="card-body">
-						<p class="card-text">store_info_id : <?=$store_info_id_a[$ai]?></p>	
-    						<p class="card-text">category : <?=$category_a[$ai]?></p>
-    						<p class="card-text">sub category : <?=$sub_category_a[$ai]?></p>
-    						<p class="card-text">product brand  : <?=$product_brand_a[$ai]?></p>
-    						<p class="card-text">product description : <?=$product_description_a[$ai]?></p>	
+						<div class="collapse m-2" id="collapse_m<?=$ac?>">
+							<div class="card-body">
+								<p class="card-text">store_info_id : <?=$store_info_id_a[$ai]?></p>	
+    								<p class="card-text">category : <?=$category_a[$ai]?></p>
+    								<p class="card-text">sub category : <?=$sub_category_a[$ai]?></p>
+    								<p class="card-text">product brand  : <?=$product_brand_a[$ai]?></p>
+    								<p class="card-text">product description : <?=$product_description_a[$ai]?></p>	
+							</div>
 						</div>
-					</div>
 					
 					</div>
+	
+					<?php
+					
+						//to get all unique_products with same product id
+						$unique_product_sql = "";
+						$unique_product_res = $con->query($unique_product_sql);
+					
+						$price_up=array();
+  						$quantity_up=array();
+  						$color_up=array();
+  						$size_up=array();
+									   
+						while($unique_product_ele = $unique_product_res->fetch_assoc())
+						{
+							$price_up[]=$unique_product_ele[''];
+  							$color_up[]=$unique_product_ele[''];
+  							$size_up[]=$unique_product_ele[''];	
+						}
+	
+					?>
 				</div>
 	
 			<?php $ac++; } ?>
