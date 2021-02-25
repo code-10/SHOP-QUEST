@@ -141,11 +141,11 @@
     if($id_s==1)
       $res = $con->query("select products.product_id,product_name,min(price) as price,rating,rating_no,unique_product.seller_user_name from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id");
     else if($id_s==2)
-        $res = $con->query("select products.product_id,product_name,min(price) as price,rating,rating_no from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price");
+        $res = $con->query("select products.product_id,product_name,min(price) as price,rating,rating_no,unique_product.seller_user_name from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price");
     else if($id_s==3)
-      $res = $con->query("select products.product_id,product_name,min(price) as price,rating,rating_no from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price desc");
+      $res = $con->query("select products.product_id,product_name,min(price) as price,rating,rating_no,unique_product.seller_user_name from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by price desc");
     else
-      $res = $con->query("select products.product_id,product_name,min(price) as price,rating,rating_no from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by rating desc");
+      $res = $con->query("select products.product_id,product_name,min(price) as price,rating,rating_no,unique_product.seller_user_name from products inner join unique_product on products.product_id=unique_product.product_id where sub_cat_id = '$sub_cat_id' group by products.product_id order by rating desc");
   
     
     
