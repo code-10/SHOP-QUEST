@@ -287,7 +287,6 @@
     				<? if($approved[$k]==1) { ?>			
 							
 					
-						
     				<? } else if($approved[$k]==2){ ?>
 					<p class="card-text">price : <?=$price[$k]?></p>
     					<p class="card-text">color : <?=$color[$k]?></p>
