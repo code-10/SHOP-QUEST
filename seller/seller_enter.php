@@ -234,17 +234,17 @@
 	
 	<?php
 	
-		$sql0 = "select * from store_info where approved=0";
+		$sql0 = "select * from store_info where approved=0 and seller_user_name='$_SESSION['user_name']'";
 		$res0i = $con->query($sql0);
 		$res0 = $res0i->num_rows;
 		//echo $res0;echo "<br>";
 	
-		$sql1 = "select * from store_info where approved=1";
+		$sql1 = "select * from store_info where approved=1 and seller_user_name='$_SESSION['user_name']'";
 		$res1i = $con->query($sql1);
 		$res1 = $res1i->num_rows;
 		//echo $res1;echo "<br>";
 	
-		$sql2 = "select * from store_info where approved=2";
+		$sql2 = "select * from store_info where approved=2 and seller_user_name='$_SESSION['user_name']'";
 		$res2i = $con->query($sql2);
 		$res2 = $res2i->num_rows;
 		//echo $res2;echo "<br>";	
