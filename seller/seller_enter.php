@@ -415,7 +415,7 @@
 													<?php if($is_approved_again[$upl]==1) { ?>
 														<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 													<?php } ?>
-													<a href="#" class="btn btn-primary">Add stock</a>
+													<a href="#" class="btn btn-primary mt-2">Add stock</a>
 												</div>
 											</div>
 										</div>
