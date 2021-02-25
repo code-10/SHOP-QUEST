@@ -325,7 +325,7 @@
 	
 			<?php 
 				$user_approved = $_SESSION['user_name']; 			
-				$approved_sql = "select * from store_info where seller_user_name='$user' and store_product_id is not null group by store_info_id";
+				$approved_sql = "select * from store_info where seller_user_name='$user_approved' and store_product_id is not null group by store_info_id";
 				$approved_res = $con->query($sql_approved);
 							
 				print_r($approved_res);
