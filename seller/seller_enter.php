@@ -52,7 +52,7 @@
 
 		if(isset($_POST['sell_a_product']))
 		{
-				$approved=0;
+			$approved=0;
       			$seller=$_SESSION['user_name'];
       			$category=$_POST['cat'];
       			$subcategory=$_POST['subcat'];
@@ -320,7 +320,7 @@
 				$approved_sql = "select * from store_info where seller_user_name='$approved_user' and store_product_id is not null group by store_info_id";
 				$approved_res = $con->query($approved_sql);
 							
-				print_r($approved_res);
+				print_r($approved_res->fetch_assoc());
 			?>
 	
       		<?php } ?>
