@@ -285,18 +285,7 @@
     						<p class="card-text">product description : <?=$product_description[$k]?></p>
 
 					
-    				<? if($approved[$k]==1) { ?>
-						
-							
-							
-					<!--temporary-->
-						<p class="card-text">price : <?=$price[$k]?></p>
-    						<p class="card-text">color : <?=$color[$k]?></p>
-						<p class="card-text">size  : <?=$size[$k]?></p>			
-					<!--temporary end-->
-						
-							
-							
+    				<? if($approved[$k]==1) { ?>			
 							
 					<!--get all unique products-->
 						<?php  
@@ -314,7 +303,7 @@
 							
 					<!--variant logic start-->	
 							
-					<!--<div class="row">
+					<div class="row">
 						<?php for($zz=0;$zz<=$cov;$zz++) { ?>
 						<?php if($zz==$cov) { ?>
 						<div class="col-12 col-sm-6">
@@ -356,7 +345,7 @@
 						</div>
 						<?php } ?>
 						<?php } ?>
-					</div>-->
+					</div>
 					<!--variant logic end-->
 							
 							
@@ -392,11 +381,11 @@
   					</div>
 				</div>	
 						
-					<!--<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_v<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
+					<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_v<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
 						Add a Variant
-					</button>-->
+					</button>
 					<!--add variant-->
-					<!--<div class="collapse m-2" id="collapse_v<?=$c?>">
+					<div class="collapse m-2" id="collapse_v<?=$c?>">
   					<div class="card card-body" style="padding:8px;">
 						<form method="POST" action="seller_enter.php" class="input-group d-flex justify-content-center">
 								<p>Add variant details</p>
@@ -430,7 +419,7 @@
 								<button class="btn btn-dark" name="submit_variant" type="submit">Add Variant</button>
 						</form>
   					</div>
-				</div>-->
+				</div>
 				<!--add variant end-->
 						
     				<? } else if($approved[$k]==2){ ?>
