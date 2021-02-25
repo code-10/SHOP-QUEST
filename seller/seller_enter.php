@@ -308,15 +308,18 @@
 					
 			</div>
 				
- 		 	<?php $c++;$cc++; } ?>
+			<?php } ?>	
 	
-		<?php } ?>
+ 		 	<?php $c++;$cc++; } ?>
 	
 		<?php } else if($stock_variant=="yes") { ?>
 	
 			echo "Initial Working";
 	
-      <?php } ?>
+      		<?php } ?>
+	
+	
+	<?php } ?>
 	
 	
 	
