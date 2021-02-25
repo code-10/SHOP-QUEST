@@ -154,6 +154,7 @@
     $product_price=Array();
     $product_rating=Array();
     $product_rating_no=Array();
+    $unique_product_seller=Array();
     
     while($ele = $res->fetch_assoc())
     {
@@ -162,8 +163,11 @@
         $product_price[]=$ele['price'];
         $product_rating[]=$ele['rating'];
 	$product_rating_no[]=$ele['rating_no'];
+        $unique_product_seller[]=$ele['seller_user_name'];
     }
    
+    print_r($unique_product_seller);
+    
     $n=count($product_id);
     
   ?>   
