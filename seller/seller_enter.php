@@ -398,7 +398,7 @@
 						$uc = count($unique_type_id_to_keep_count);			   
 	
 					?>
-							
+							<div class="row">
 								<?php for($upl=0;$upl<=$uc;$upl++) { ?>	
 									<?php if($upl==$uc) { ?>
 										<div class="col-12 col-sm-6">
@@ -419,7 +419,10 @@
 											</div>
 										</div>
 									<?php } ?>			
-								<?php } ?>	
+								<?php } ?>
+							</div>
+								
+								
 							</div>
 						</div>
 					
