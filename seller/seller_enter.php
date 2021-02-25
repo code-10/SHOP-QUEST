@@ -357,12 +357,29 @@
 					$store_product_id[]=$ele_a['store_product_id'];
 				}
 		
-		
-				
+				$approved_count = count($store_product_id);
 		
 		
 		
 			?>
+	
+	
+			<?php $ac=0; for($ai=0;$ai<$approved_count;$ai++) { ?>
+				
+				<div class="card m-4 border-dark">
+  					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$product_name[$k]?> <strong><?php if($stock_quantity_status[$k]==1) { ?> <span class="badge badge-warning ml-2">Stock Request - Awaiting Admin</span> <?php } ?></strong></div>
+  					
+					<div class="collapse m-2" id="collapse_m<?=$ac?>">
+						<div class="card-body">
+						<p class="card-text">store_info_id : <?=$store_info_id[$ai]?></p>	
+    						<p class="card-text">category : <?=$category[$ai]?></p>
+    						<p class="card-text">sub category : <?=$sub_category[$ai]?></p>
+    						<p class="card-text">product brand  : <?=$product_brand[$ai]?></p>
+    						<p class="card-text">product description : <?=$product_description[$ai]?></p>	
+	
+			<?php $ac++; } ?>
+			
+			
 	
       		<?php } ?>
 	
