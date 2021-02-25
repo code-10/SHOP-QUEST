@@ -308,7 +308,7 @@
 				
  		 <?php $c++;$cc++; } ?>
 	
-      <?php if($my_sell_requests_approved=="yes") { ?>
+      <?php else if($my_sell_requests_approved=="yes") { ?>
 	
 	echo "intial working";	
 	
