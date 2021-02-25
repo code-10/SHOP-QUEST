@@ -19,7 +19,7 @@
       	$seller_enter_main=$_GET['seller_enter_main'];
       	$sell_a_product=$_GET['sell_a_product'];
       	$my_sell_requests=$_GET['my_sell_requests'];
-	$my_sell_requests_approved=$_GET['my_sell_requests_approved'];
+	$stock_variant=$_GET['stock_variant'];
 	$edit=$_GET['edit'];
 	$store_info_id_a=$_GET['store_info_id_a'];
 	$store_info_id_d=$_GET['store_info_id_d'];
@@ -266,7 +266,7 @@
 	
 	<div class="text-center m-4">
             <a <?php if($show_stat==0) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=0" role="button">Pending<span class="badge badge-light ml-2"><?=$res0;?></span></a>
-	    <a <?php if($show_stat==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests_approved=yes&&show_stat=1" role="button">Approved <span class="badge badge-light ml-2 mr-2"><?=$res1;?></span> - Add Stock <span class="badge badge-warning ml-2"><?=$res4?>/<?=$res1;?></span> - Add Variant <span class="badge badge-info ml-2"><? echo"0"; ?>/<? echo"0"; ?></span></a>
+	    <a <?php if($show_stat==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=1&&stock_variant=yes" role="button">Approved <span class="badge badge-light ml-2 mr-2"><?=$res1;?></span> - Add Stock <span class="badge badge-warning ml-2"><?=$res4?>/<?=$res1;?></span> - Add Variant <span class="badge badge-info ml-2"><? echo"0"; ?>/<? echo"0"; ?></span></a>
             <a <?php if($show_stat==2) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=2" role="button">Rejected<span class="badge badge-light ml-2"><?=$res2;?></span></a>
 	</div>
 			
@@ -286,7 +286,6 @@
     						<p class="card-text">product brand  : <?=$product_brand[$k]?></p>
     						<p class="card-text">product description : <?=$product_description[$k]?></p>
 
-			
     				<? } if($approved[$k]==2){ ?>
 					<p class="card-text">price : <?=$price[$k]?></p>
     					<p class="card-text">color : <?=$color[$k]?></p>
@@ -309,9 +308,14 @@
 				
  		 <?php $c++;$cc++; } ?>
 	
-      <?php } else if($my_sell_requests_approved=="yes") { ?>
 	
-	echo "intial working";	
+	
+		<?php if($stock_variant=="yes") { ?>
+	
+			echo "Initial Working";
+	
+		<?php } ?>
+	
 	
       <?php } ?>
 	
