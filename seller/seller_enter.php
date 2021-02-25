@@ -371,17 +371,15 @@
     								<p class="card-text">sub category : <?=$sub_category_a[$ai]?></p>
     								<p class="card-text">product brand  : <?=$product_brand_a[$ai]?></p>
     								<p class="card-text">product description : <?=$product_description_a[$ai]?></p>	
-							</div>
-						</div>
-					
-					</div>
+	
 	
 					<?php
 					
 						//to get all unique_products with same product id
-						/*$unique_product_sql = "";
+						$unique_product_sql = "select up.unique_type_id,up.price,up.color,up.size from unique_product as up,store_info as s where s.store_unique_type_id=up.unique_type_id and s.store_product_id='$product_id_a[$ai]' and up.seller_user_name='$approved_user'";
 						$unique_product_res = $con->query($unique_product_sql);
 					
+						$unique_type_id_to_keep_count=array();
 						$price_up=array();
   						$quantity_up=array();
   						$color_up=array();
@@ -389,12 +387,36 @@
 									   
 						while($unique_product_ele = $unique_product_res->fetch_assoc())
 						{
-							$price_up[]=$unique_product_ele[''];
-  							$color_up[]=$unique_product_ele[''];
-  							$size_up[]=$unique_product_ele[''];	
-						}*/
+							$price_up[]=$unique_product_ele['price'];
+  							$color_up[]=$unique_product_ele['color'];
+  							$size_up[]=$unique_product_ele['size'];	
+							$unique_type_id_to_keep_count[]=$unique_product_ele['unique_type_id'];	
+						}
+									   
+									   
+									   
+						$uc = count($unique_type_id_to_keep_count);			   
 	
 					?>
+							
+								<?php for($upl=0;$upl<$uc;$upl++) { ?>	
+								
+									<div class="col-12 col-sm-6">
+										<div class="card border-dark m-4">
+  											<div class="card-body">
+												<p class="card-text">color : <?=$color_up[$upl]?></p>
+    												<p class="card-text">size  : <?=$size_up[$upl]?></p>
+    												<p class="card-text">price : <?=$price_up[$upl]?></p>	
+											</div>
+										</div>
+									</div>
+												
+								<?php?>	
+							</div>
+						</div>
+					
+					</div>				
+								
 				</div>
 	
 			<?php $ac++; } ?>
