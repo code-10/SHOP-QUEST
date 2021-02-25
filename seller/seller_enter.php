@@ -320,7 +320,11 @@
 				$approved_sql = "select * from store_info where seller_user_name='$approved_user' and store_product_id is not null group by store_info_id";
 				$approved_res = $con->query($approved_sql);
 							
-				print_r($approved_res->fetch_assoc());
+				while($show_now = $approved_res->fetch_assoc())
+				{
+					print_r($show_now);	
+					echo "<br>";
+				}
 			?>
 	
       		<?php } ?>
