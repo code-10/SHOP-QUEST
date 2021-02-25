@@ -19,6 +19,7 @@
       	$seller_enter_main=$_GET['seller_enter_main'];
       	$sell_a_product=$_GET['sell_a_product'];
       	$my_sell_requests=$_GET['my_sell_requests'];
+	$my_sell_requests_approved=$_GET['my_sell_requests_approved'];
 	$edit=$_GET['edit'];
 	$store_info_id_a=$_GET['store_info_id_a'];
 	$store_info_id_d=$_GET['store_info_id_d'];
