@@ -319,12 +319,49 @@
 				$approved_user = $_SESSION['user_name']; 			
 				$approved_sql = "select * from store_info where seller_user_name='$approved_user' and store_product_id is not null group by store_info_id";
 				$approved_res = $con->query($approved_sql);
-							
-				while($show_now = $approved_res->fetch_assoc())
+					
+				
+				$category_a=array();
+ 	 			$sub_category_a=array();
+  				$product_name_a=array();
+  				$product_brand_a=array();
+  				$product_description_a=array();
+  				$price_a=array();
+  				$quantity_a=array();
+  				$color_a=array();
+  				$size_a=array();
+  				$approved_a=array();
+  				$store_info_id_a=array();
+				$store_product_id_a=array();
+				$store_unique_type_id_a=array();
+				$stock_quantity_a=array();
+				$stock_quantity_status_a=array();
+		
+		
+				while($ele_a = $approved_res->fetch_assoc())
 				{
-					print_r($show_now);	
-					echo "<br>";
+					$category[]=$ele_a['category'];
+      					$sub_category[]=$ele_a['sub_category'];
+      					$product_name[]=$ele_a['product_name'];
+      					$product_brand[]=$ele_a['product_brand'];
+      					$product_description[]=$ele_a['product_description'];
+      					$price[]=$ele_a['price'];
+      					$quantity[]=$ele_a['quantity'];
+      					$color[]=$ele_a['color'];
+      					$size[]=$ele_a['size'];
+      					$approved[]=$ele_a['approved'];
+      					$store_info_id[]=$ele_a['store_info_id'];
+					$store_unique_type_id[]=$ele_a['store_unique_type_id'];
+					$stock_quantity[]=$ele_a['stock_quantity'];
+					$stock_quantity_status[]=$ele_a['stock_quantity_status'];
+					$store_product_id[]=$ele_a['store_product_id'];
 				}
+		
+		
+				
+		
+		
+		
 			?>
 	
       		<?php } ?>
