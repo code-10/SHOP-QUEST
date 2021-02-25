@@ -25,8 +25,7 @@
 	$show_stat=$_GET['show_stat'];
 
 
-	
-	
+
 
 
 
@@ -339,7 +338,7 @@
 											      //<p class="card-text">quantity : '.$get_unique_details_quantity[0].'</p>';
 										}
 							      		?>
-    									<a href="#" class="btn btn-primary text-center">Add Stock</a>
+    									<a href="#" class="btn btn-primary text-center">Add new Stock</a>
   								</div>
 							</div>
 						</div>
