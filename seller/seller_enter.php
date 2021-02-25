@@ -272,7 +272,7 @@
 			
 			<?php $q=0;$c=0;$cc=0; for($k=0;$k<$n;$k++) { ?>
 	
-			<?php if($show_stat!=$approved[$k]&&!($show_stat==0 && $approved[$k]>2)) continue; ?>
+			<?php if($show_stat==0||$show_stat==2) { ?>
 		 		
 				<div class="card m-4 border-dark">
   					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$cc?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$product_name[$k]?> <strong><?php if($stock_quantity_status[$k]==1) { ?> <span class="badge badge-warning ml-2">Stock Request - Awaiting Admin</span> <?php } ?></strong></div>
