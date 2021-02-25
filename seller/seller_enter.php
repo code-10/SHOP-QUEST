@@ -379,7 +379,7 @@
 					<?php
 					
 						//to get all unique_products with same product id
-						$unique_product_sql = "";
+						/*$unique_product_sql = "";
 						$unique_product_res = $con->query($unique_product_sql);
 					
 						$price_up=array();
@@ -392,7 +392,7 @@
 							$price_up[]=$unique_product_ele[''];
   							$color_up[]=$unique_product_ele[''];
   							$size_up[]=$unique_product_ele[''];	
-						}
+						}*/
 	
 					?>
 				</div>
