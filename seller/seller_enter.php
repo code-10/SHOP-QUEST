@@ -270,6 +270,7 @@
             <a <?php if($show_stat==2) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=2" role="button">Rejected<span class="badge badge-light ml-2"><?=$res2;?></span></a>
 	</div>
 			
+		<?php if($stock_variant!="yes") { ?>	
 			
 			<?php $q=0;$c=0;$cc=0; for($k=0;$k<$n;$k++) { ?>
 	
