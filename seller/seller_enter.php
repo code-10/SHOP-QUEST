@@ -286,7 +286,7 @@
     						<p class="card-text">product description : <?=$product_description[$k]?></p>
 
 			
-    				<? } else if($approved[$k]==2){ ?>
+    				<? } if($approved[$k]==2){ ?>
 					<p class="card-text">price : <?=$price[$k]?></p>
     					<p class="card-text">color : <?=$color[$k]?></p>
 					<p class="card-text">size  : <?=$size[$k]?></p>	
