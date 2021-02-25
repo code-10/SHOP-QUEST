@@ -92,7 +92,7 @@
                 <a href='../products/product.php?sub_cat_id=<?=$sub_cat_id[$c-1]?>&&sub_cat_name=<?=$sub_cat_name[$c-1]?>&&id_s=1'>
                   <img src="..." class="img-fluid" onerror="this.src='../assets/black.png';">
                 </a>
-                <figcaption class="figure-caption text-center">
+                <figcaption class="text-center">
 			<p style="font-size:24px;"><strong><?=$sub_cat_name[$c-1]?></strong></p>
                 </figcaption>
             </figure>
