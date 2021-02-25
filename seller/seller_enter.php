@@ -359,6 +359,7 @@
 		
 				$approved_count = count($store_product_id);
 		
+				echo $approved_count;
 		
 		
 			?>
