@@ -303,7 +303,7 @@
 							
 					<!--variant logic start-->	
 							
-					<div class="row">
+					<!--<div class="row">
 						<?php for($zz=0;$zz<=$cov;$zz++) { ?>
 						<?php if($zz==$cov) { ?>
 						<div class="col-12 col-sm-6">
@@ -333,10 +333,10 @@
 												$get_unique_details_quantity[] = $get_unique_details_ele['quantity'];
 											}
 											
-											echo '<p class="card-text">price : '.$get_unique_details_price[0].'</p>
-    											      <p class="card-text">color : '.$get_unique_details_color[0].'</p>
-											      <p class="card-text">size : '.$get_unique_details_size[0].'</p>
-											      <p class="card-text">quantity : '.$get_unique_details_quantity[0].'</p>';
+											//echo '<p class="card-text">price : '.$get_unique_details_price[0].'</p>
+    											      //<p class="card-text">color : '.$get_unique_details_color[0].'</p>
+											      //<p class="card-text">size : '.$get_unique_details_size[0].'</p>
+											      //<p class="card-text">quantity : '.$get_unique_details_quantity[0].'</p>';
 										}
 							      		?>
     									<a href="#" class="btn btn-primary text-center">Add Stock</a>
@@ -345,7 +345,7 @@
 						</div>
 						<?php } ?>
 						<?php } ?>
-					</div>	
+					</div>-->
 					<!--variant logic end-->
 							
 							
