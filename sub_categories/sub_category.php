@@ -93,7 +93,7 @@
                   <img src="..." class="img-fluid" onerror="this.src='../assets/black.png';">
                 </a>
                 <figcaption class="figure-caption text-center">
-                    <p><?=$sub_cat_name[$c-1]?></p>
+			<p style="font-size:24px;"><strong><?=$sub_cat_name[$c-1]?></strong></p>
                 </figcaption>
             </figure>
         </div>
