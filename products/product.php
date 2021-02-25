@@ -192,9 +192,9 @@
 	<?php if($bestsell[0]==$product_id[$c-1]) { ?>
 	   	<span class="badge badge-success">Best Seller</span>
 	   <?php } ?>
-            <h5><?=$product_name[$c-1]?></h5>
-            <h5>Rating : <?=$product_rating[$c-1]?> (<?=$product_rating_no[$c-1]?>)</h5>
-            <p class="text-muted">seller : <?=$unique_product_seller[$c-1]?></p>
+            <h5><strong><?=$product_name[$c-1]?></strong></h5>
+	    <p class="text-muted">seller : <?=$unique_product_seller[$c-1]?></p>
+            <h5 class="mb-0">Rating : <?=$product_rating[$c-1]?> (<?=$product_rating_no[$c-1]?>)</h5>
             <h5>Price : <?=$product_price[$c-1]?>&nbsp;&nbsp;</h5> 
            </figcaption>
       </figure>
