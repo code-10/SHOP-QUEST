@@ -287,6 +287,17 @@
 					
     				<? if($approved[$k]==1) { ?>
 						
+							
+							
+					<!--temporary-->
+						<p class="card-text">price : <?=$price[$k]?></p>
+    						<p class="card-text">color : <?=$color[$k]?></p>
+						<p class="card-text">size  : <?=$size[$k]?></p>			
+					<!--temporary end-->
+						
+							
+							
+							
 					<!--get all unique products-->
 						<?php  
 							
