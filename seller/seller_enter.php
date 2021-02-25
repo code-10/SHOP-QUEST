@@ -329,7 +329,7 @@
   				$product_brand_a=array();
   				$product_description_a=array();
   				$store_info_id_a=array();		
-				$store_product_id_a=array();
+				$product_id_a=array();
 				$approved_a=array();
 				$store_unique_type_id_a=array();
 				
@@ -345,7 +345,7 @@
       					$product_brand_a[]=$ele_a['product_brand'];
       					$product_description_a[]=$ele_a['product_description'];
       					$store_info_id_a[]=$ele_a['store_info_id'];
-					$store_product_id_a[]=$ele_a['store_product_id'];
+					$product_id_a[]=$ele_a['product_id'];
       					$approved_a[]=$ele_a['approved'];
 					$store_unique_type_id_a[]=$ele_a['store_unique_type_id'];
 					
@@ -354,7 +354,7 @@
 					
 				}
 		
-				$approved_count = count($store_product_id_a);
+				$approved_count = count($product_id_a);
 		
 			?>
 	
