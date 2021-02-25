@@ -311,7 +311,7 @@
 	
 	
 	
-		<?php if($stock_variant=="yes") { ?>
+		<?php } else if($stock_variant=="yes") { ?>
 	
 			echo "Initial Working";
 	
