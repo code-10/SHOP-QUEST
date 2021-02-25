@@ -340,21 +340,21 @@
 		
 				while($ele_a = $approved_res->fetch_assoc())
 				{
-					$category[]=$ele_a['category'];
-      					$sub_category[]=$ele_a['sub_category'];
-      					$product_name[]=$ele_a['product_name'];
-      					$product_brand[]=$ele_a['product_brand'];
-      					$product_description[]=$ele_a['product_description'];
-      					$price[]=$ele_a['price'];
-      					$quantity[]=$ele_a['quantity'];
-      					$color[]=$ele_a['color'];
-      					$size[]=$ele_a['size'];
-      					$approved[]=$ele_a['approved'];
-      					$store_info_id[]=$ele_a['store_info_id'];
-					$store_unique_type_id[]=$ele_a['store_unique_type_id'];
-					$stock_quantity[]=$ele_a['stock_quantity'];
-					$stock_quantity_status[]=$ele_a['stock_quantity_status'];
-					$store_product_id[]=$ele_a['store_product_id'];
+					$category_a[]=$ele_a['category'];
+      					$sub_category_a[]=$ele_a['sub_category'];
+      					$product_name_a[]=$ele_a['product_name'];
+      					$product_brand_A[]=$ele_a['product_brand'];
+      					$product_description_a[]=$ele_a['product_description'];
+      					$price_a[]=$ele_a['price'];
+      					$quantity_a[]=$ele_a['quantity'];
+      					$color_a[]=$ele_a['color'];
+      					$size_a[]=$ele_a['size'];
+      					$approved_a[]=$ele_a['approved'];
+      					$store_info_id_a[]=$ele_a['store_info_id'];
+					$store_unique_type_id_a[]=$ele_a['store_unique_type_id'];
+					$stock_quantity_a[]=$ele_a['stock_quantity'];
+					$stock_quantity_status_a[]=$ele_a['stock_quantity_status'];
+					$store_product_id_a[]=$ele_a['store_product_id'];
 				}
 		
 				$approved_count = count($store_product_id);
@@ -367,15 +367,15 @@
 			<?php $ac=0; for($ai=0;$ai<$approved_count;$ai++) { ?>
 				
 				<div class="card m-4 border-dark">
-  					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$product_name[$ai]?> <strong><?php if($stock_quantity_status[$k]==1) { ?> <span class="badge badge-warning ml-2">Stock Request - Awaiting Admin</span> <?php } ?></strong></div>
+  					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$product_name_a[$ai]?></div>
   					
 					<div class="collapse m-2" id="collapse_m<?=$ac?>">
 						<div class="card-body">
-						<p class="card-text">store_info_id : <?=$store_info_id[$ai]?></p>	
-    						<p class="card-text">category : <?=$category[$ai]?></p>
-    						<p class="card-text">sub category : <?=$sub_category[$ai]?></p>
-    						<p class="card-text">product brand  : <?=$product_brand[$ai]?></p>
-    						<p class="card-text">product description : <?=$product_description[$ai]?></p>	
+						<p class="card-text">store_info_id : <?=$store_info_id_a[$ai]?></p>	
+    						<p class="card-text">category : <?=$category_a[$ai]?></p>
+    						<p class="card-text">sub category : <?=$sub_category_a[$ai]?></p>
+    						<p class="card-text">product brand  : <?=$product_brand_a[$ai]?></p>
+    						<p class="card-text">product description : <?=$product_description_a[$ai]?></p>	
 						</div>
 					</div>
 					
