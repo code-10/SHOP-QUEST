@@ -12,9 +12,6 @@
 
 	$con=getCon();
 
-	
-	
-
 ?>
 
 	<body>
