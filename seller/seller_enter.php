@@ -294,7 +294,7 @@
 					<p class="card-text">quantity : <?=$quantity[$k]?></p>
 							
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6>
-				<? } else { ?>	
+				<? } else if($approved[$k]==0&&$show_stat==0){ ?>	
 					
 					<div class="card m-4 border-dark">
   					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$cc?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$product_name[$k]?> <strong><?php if($stock_quantity_status[$k]==1) { ?> <span class="badge badge-warning ml-2">Stock Request - Awaiting Admin</span> <?php } ?></strong></div>
