@@ -287,12 +287,13 @@
     						<p class="card-text">product brand  : <?=$product_brand[$k]?></p>
     						<p class="card-text">product description : <?=$product_description[$k]?></p>
 
-    				<? } if($approved[$k]==2){ ?>
+    				<? if($approved[$k]==2){ ?>
 					<p class="card-text">price : <?=$price[$k]?></p>
     					<p class="card-text">color : <?=$color[$k]?></p>
 					<p class="card-text">size  : <?=$size[$k]?></p>	
 							
 					<p class="card-text">quantity : <?=$quantity[$k]?></p>
+							
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6>
 				<? } else { ?>	
 					<p class="card-text">price : <?=$price[$k]?></p>
