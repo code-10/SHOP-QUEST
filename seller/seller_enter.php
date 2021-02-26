@@ -301,38 +301,9 @@
 	
 		<?php } else if($stock_variant=="yes") { ?>
 	
-			<?php 
-				$approved_user = $_SESSION['user_name']; 			
-				$approved_sql = "select p.product_name,s.store_info_id,c.cat_name,sc.sub_cat_name,p.product_id,up.unique_type_id,p.product_brand,p.product_description from products as p,unique_product as up,store_info as s,categories as c,sub_categories as sc where s.seller_user_name='$approved_user' and p.product_id=s.store_product_id and up.unique_type_id=s.store_unique_type_id and s.store_product_id is not null group by store_product_id";
-				$approved_res = $con->query($approved_sql);
-					
-				
-				$category_a=array();
- 	 			$sub_category_a=array();
-  				$product_name_a=array();
-  				$product_brand_a=array();
-  				$product_description_a=array();
-  				$store_info_id_a=array();		
-				$product_id_a=array();
-				$store_unique_type_id_a=array();
-				
-		
-		
-				while($ele_a = $approved_res->fetch_assoc())
-				{
-					$category_a[]=$ele_a['cat_name'];
-      					$sub_category_a[]=$ele_a['sub_cat_name'];
-      					$product_name_a[]=$ele_a['product_name'];
-      					$product_brand_a[]=$ele_a['product_brand'];
-      					$product_description_a[]=$ele_a['product_description'];
-      					$store_info_id_a[]=$ele_a['store_info_id'];
-					$product_id_a[]=$ele_a['product_id'];
-					$store_unique_type_id_a[]=$ele_a['store_unique_type_id'];
-
-					
-				}
-		
-				$approved_count = count($product_id_a);
+			<?php
+	
+				$approved_Sql = "";
 		
 			?>
 	
