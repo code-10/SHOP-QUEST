@@ -135,12 +135,16 @@
 			$variant_store_info_id = $_POST['v_store_info_id'];
 			$variant_store_product_id = $_POST['v_store_product_id'];
 			
-			echo $variant_size;echo "<br>";
+			/*echo $variant_size;echo "<br>";
 			echo $variant_color;echo "<br>";
 			echo $variant_price;echo "<br>";
 			echo $variant_quantity;echo "<br>";
 			echo $variant_store_info_id;echo "<br>";
-			echo $variant_store_product_id;echo "<br>";
+			echo $variant_store_product_id;echo "<br>";*/
+			
+			$con->query("insert into variant(price,color,size,quantity,store_info_id,store_product_id,variant_approved)
+			values('".mysqli_real_escape_string($con,$variant_price)."','".mysqli_real_escape_string($con,$variant_color)."','".mysqli_real_escape_string($con,$variant_size)."'
+			'".mysqli_real_escape_string($con,$variant_quantity)."','".mysqli_real_escape_string($con,$variant_store_info_id)."','".mysqli_real_escape_string($con,$variant_store_product_id)."',0)");
 			
 		}
 		
@@ -358,15 +362,12 @@
   					
 						<div class="collapse m-2" id="collapse_m<?=$ac?>">
 							
-							<div class="card-body col-sm-6 col-12">
+							<div class="card-body">
 								<p class="card-text">store_info_id : <?=$approved_store_info_id[$ai]?></p>	
     								<p class="card-text">category : <?=$approved_category[$ai]?></p>
     								<p class="card-text">sub category : <?=$approved_sub_category[$ai]?></p>
     								<p class="card-text">product brand  : <?=$approved_product_brand[$ai]?></p>
     								<p class="card-text">product description : <?=$approved_product_description[$ai]?></p>	
-							</div>
-							<div class="card-body col-sm-6 col-12">
-								variant
 							</div>
 					
 						<div class="col-12 col-sm-4">
