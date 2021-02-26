@@ -467,7 +467,7 @@
     																	</div>
   																</div>
 																<div class="form-group m-2 col-12">
-																	<input type="hidden" name="v_store_info_id" value="<?=$store_info_id[$upl-1]?>" />
+																	<input type="hidden" name="v_store_info_id" value="<?=$store_info_id_up[$upl-1]?>" />
   																</div>
 								
 																<button class="btn btn-dark" name="add_variant" type="submit">Add Variant</button>
