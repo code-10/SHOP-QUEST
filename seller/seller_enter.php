@@ -415,7 +415,10 @@
   												<div class="card-body">
 													<p class="card-text">color : <?=$color_up[$upl]?></p>
     													<p class="card-text">size  : <?=$size_up[$upl]?></p>
-    													<p class="card-text">price : <?=$price_up[$upl]?></p>	
+    													<p class="card-text">price : <?=$price_up[$upl]?></p>
+													<?php if($stock_quantity[$k]>0) { ?>
+														<p class="card-text">New quantity to add : <?=$stock_quantity_up[$upl]?> <i class="spinner-grow spinner-grow-sm" role="status"></i></p>	
+    													<?php } ?>
 													<p class="card-text">quantity : <?=$quantity_up[$upl]?> 
 														<?php if($stock_quantity_status_up[$upl]==1) { ?><i class="spinner-grow spinner-grow-sm" role="status"></i><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>Stock UpToDate</strong><?php } ?>
 													</p>
