@@ -149,14 +149,14 @@
 			$quantity_variant = $_POST['v_quantity'];
 			$store_info_id_variant = $_POST['v_store_info_id'];
 			
-			/*echo $size_variant;echo "<br>";
+			echo $size_variant;echo "<br>";
 			echo $color_variant;echo "<br>";
 			echo $price_variant;echo "<br>";
 			echo $quantity_variant;echo "<br>";
-			echo $store_info_id_variant;echo "<br>";*/
+			echo $store_info_id_variant;echo "<br>";
 			
 			
-			$adding_variant_res = $con->query("select * from store_info where store_info_id='$store_info_id_variant'");
+			/*$adding_variant_res = $con->query("select * from store_info where store_info_id='$store_info_id_variant'");
 			$product_id_variant = array();
 			$seller_user_name_variant = array();
 			$category_variant = array();
@@ -179,6 +179,7 @@
 			values('".mysqli_real_escape_string($con,$user)."','".mysqli_real_escape_string($con,$category_variant[0])."','".mysqli_real_escape_string($con,$sub_category_variant[0])."','".mysqli_real_escape_string($con,$product_name_variant[0])."'
 			,'".mysqli_real_escape_string($con,$product_brand_variant[0])."','".mysqli_real_escape_string($con,$product_description_variant[0])."','".mysqli_real_escape_string($con,$price_variant)."','".mysqli_real_escape_string($con,$quantity_variant)."'
 			,'".mysqli_real_escape_string($con,$color_variant)."','".mysqli_real_escape_string($con,$size_variant)."','".mysqli_real_escape_string($con,$product_id_variant[0])."')");
+			*/
 			
 			header("Location:seller_enter.php?my_sell_requests=yes&&show_stat=1&&stock_variant=yes");
                 	die();
