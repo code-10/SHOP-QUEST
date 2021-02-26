@@ -308,6 +308,10 @@
 				$approved_product_name=array();
 				$approved_product_brand=array();
 				$approved_product_description=array();
+				$approved_color=array();
+				$approved_size=array();
+				$approved_price=array();
+				$approved_quantity=array();
 		
 				while($approved_ele = $approved_res->fetch_assoc())
 				{
@@ -317,6 +321,10 @@
 					$approved_product_name[]=$approved_ele['product_name'];
 					$approved_product_brand[]=$approved_ele['product_brand'];
 					$approved_product_description[]=$approved_ele['product_description'];
+					$approved_color[]=$approved_ele['color'];
+					$approved_size[]=$approved_ele['size'];
+					$approved_price[]=$approved_ele['price'];
+					$approved_quantity[]=$approved_ele['quantity'];
 				}
 		
 				$approved_count=count($approved_store_info_id);
@@ -338,8 +346,19 @@
 							</div>
 						</div>
 					
-						
-					
+						<div class="col-12 col-sm-4">
+							<div class="card border-dark m-4">
+  								<div class="card-body">
+									<p class="card-text">color : <?=$approved_color[$ai]?></p>
+    									<p class="card-text">size  : <?=$approved_size[$ai]?></p>
+    									<p class="card-text">price : <?=$approved_price[$ai]?></p>
+									<p class="card-text">quantity : <?=$approved_quantity[$ai]?></p>
+								</div>
+							</div>
+						</div>
+									
+									
+									
 					</div>				
 								
 				</div>
