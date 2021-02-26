@@ -155,32 +155,6 @@
 			echo $quantity_variant;echo "<br>";
 			echo $store_info_id_variant;echo "<br>";
 			
-			
-			/*$adding_variant_res = $con->query("select * from store_info where store_info_id='$store_info_id_variant'");
-			$product_id_variant = array();
-			$seller_user_name_variant = array();
-			$category_variant = array();
-			$sub_category_variant = array();
-			$product_name_variant = array();
-			$product_brand_variant = array();
-			$product_description_variant = array();
-			while($adding_variant_ele = $adding_variant_res->fetch_assoc())
-			{
-				$product_id_variant[] = $adding_variant_ele['store_product_id'];
-				$seller_user_name_variant[] = $adding_variant_ele['seller_user_name'];
-				$category_variant[] = $adding_variant_ele['category'];
-				$sub_category_variant[] = $adding_variant_ele['sub_category'];
-				$product_name_variant[] = $adding_variant_ele['product_name'];
-				$product_brand_variant[] = $adding_variant_ele['product_brand'];
-				$product_description_variant[] = $adding_variant_ele['product_description'];
-			}
-			
-			$con->query("insert into store_info(seller_user_name,category,sub_category,product_name,product_brand,product_description,price,quantity,color,size,store_product_id) 
-			values('".mysqli_real_escape_string($con,$user)."','".mysqli_real_escape_string($con,$category_variant[0])."','".mysqli_real_escape_string($con,$sub_category_variant[0])."','".mysqli_real_escape_string($con,$product_name_variant[0])."'
-			,'".mysqli_real_escape_string($con,$product_brand_variant[0])."','".mysqli_real_escape_string($con,$product_description_variant[0])."','".mysqli_real_escape_string($con,$price_variant)."','".mysqli_real_escape_string($con,$quantity_variant)."'
-			,'".mysqli_real_escape_string($con,$color_variant)."','".mysqli_real_escape_string($con,$size_variant)."','".mysqli_real_escape_string($con,$product_id_variant[0])."')");
-			*/
-			
 			header("Location:seller_enter.php?my_sell_requests=yes&&show_stat=1&&stock_variant=yes");
                 	die();
 			
@@ -226,27 +200,27 @@
 	
       <?php } else if($sell_a_product=="yes") { ?>
       		
-	    <a class="btn btn-dark m-4" href="seller_enter.php?seller_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
-            <form class="jumbotron m-4" method="POST" action="seller_enter.php">
-		  			<label for="category">Category</label>
-                  	<div class="form-group">
+	    			<a class="btn btn-dark m-4" href="seller_enter.php?seller_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
+            			<form class="jumbotron m-4" method="POST" action="seller_enter.php">
+		  		<label for="category">Category</label>
+                  		<div class="form-group">
     					<select class="form-control" id="category" name="cat">
-							<option value="notselected">Choose...</option>
-                              	<?php for($i=0;$i<$c;$i++) { ?>
+						<option value="notselected">Choose...</option>
+                              				<?php for($i=0;$i<$c;$i++) { ?>
 					      			<option value="<?=$categories[$i]?>"><?=$i+1?> - <?=$categories[$i]?></option>
 				      			<?php } ?>
     					</select>
-  		  			</div>
+  		  		</div>
 		  			<label for="sub_category">Sub_Category</label>
-                  	<div class="form-group">
-    						<select class="form-control" id="category" name="subcat">
-								<option value="notselected">Choose...</option>
-                              	<?php for($j=0;$j<$sc;$j++) { ?>
+                  		<div class="form-group">
+    					<select class="form-control" id="category" name="subcat">
+						<option value="notselected">Choose...</option>
+                              				<?php for($j=0;$j<$sc;$j++) { ?>
 					      			<option value="<?=$sub_categories[$j]?>"><?=$j+1?> - <?=$sub_categories[$j]?></option>
-								<?php } ?>
-    						</select>
-  		   			</div>
-					<div class="form-group">
+							<?php } ?>
+    					</select>
+  		   		</div>
+				<div class="form-group">
         				<label for="inputpro">product</label>
         					<input type="text" class="form-control" id="inputpro" placeholder="product name" name="pro" required>
     		   		</div>
