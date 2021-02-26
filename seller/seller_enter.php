@@ -303,8 +303,19 @@
 	
 			<?php
 	
-				$approved_Sql = "";
+				$approved_sql = "select c.cat_name,sc.sub_cat_name,p.product_id,s.store_info_id,p.product_name,p.product_brand,p.product_description,up.unique_type_id,up.price,up.quantity,up.color,up.size from categories as c,sub_categories as sc,products as p,unique_product as up,store_info as s where s.store_unique_type_id=up.unique_type_id and p.product_id=up.product_id and p.sub_cat_id=sc.sub_cat_id and sc.cat_id=c.cat_id and s.seller_user_name='$user'";
+				$approved_res = $con->query($approved_sql);
+				
 		
+				while($approved_ele = $approved_res->fetch_assoc())
+				{
+					$approved_store_info_id[]=$approved_ele['store_info_id'];
+					$approved_category[]=$approved_ele['cat_name']
+					$approved_sub_category[]=$approved_ele['sub_cat_name']
+					$approved_product_name[]=$approved_ele['product_name']
+					$approved_product_brand[]=$approved_ele['product_brand']
+					$approved_product_description[]=$approved_ele['product_description']
+				}
 			?>
 	
 	
@@ -315,14 +326,16 @@
   					
 						<div class="collapse m-2" id="collapse_m<?=$ac?>">
 							<div class="card-body">
-								<p class="card-text">store_info_id : <?=$store_info_id_a[$ai]?></p>	
-    								<p class="card-text">category : <?=$category_a[$ai]?></p>
-    								<p class="card-text">sub category : <?=$sub_category_a[$ai]?></p>
-    								<p class="card-text">product brand  : <?=$product_brand_a[$ai]?></p>
-    								<p class="card-text">product description : <?=$product_description_a[$ai]?></p>	
-								
+								<p class="card-text">store_info_id : <?=$approved_store_info_id[$ai]?></p>	
+    								<p class="card-text">category : <?=$approved_category[$ai]?></p>
+    								<p class="card-text">sub category : <?=$approved_sub_category[$ai]?></p>
+								<p class="card-text">product name  : <?=$approved_product_name[$ai]?></p>
+    								<p class="card-text">product brand  : <?=$approved_product_brand[$ai]?></p>
+    								<p class="card-text">product description : <?=$approved_product_description[$ai]?></p>	
 							</div>
 						</div>
+					
+						
 					
 					</div>				
 								
