@@ -125,7 +125,25 @@
 	
 		}
 
-
+		
+		if(isset($_POST['add_variant']))
+		{
+			$variant_size = $_POST['v_size'];
+			$variant_color = $_POST['v_color'];
+			$variant_price = $_POST['v_price'];
+			$variant_quantity = $_POST['v_quantity'];
+			$variant_store_info_id = $_POST['v_store_info_id'];
+			$variant_store_product_id = $_POST['v_store_product_id'];
+			
+			echo $variant_size;echo "<br>";
+			echo $variant_color;echo "<br>";
+			echo $variant_price;echo "<br>";
+			echo $variant_quantity;echo "<br>";
+			echo $variant_store_info_id;echo "<br>";
+			echo $variant_store_product_id;echo "<br>";
+			
+		}
+		
 
 ?>
 
@@ -303,6 +321,7 @@
 				$approved_res = $con->query($approved_sql);
 				
 				$approved_store_info_id=array();
+				$approved_store_product_id=array();
 				$approved_category=array();
 				$approved_sub_category=array();
 				$approved_product_name=array();
@@ -318,6 +337,7 @@
 					$approved_store_info_id[]=$approved_ele['store_info_id'];
 					$approved_category[]=$approved_ele['cat_name'];
 					$approved_sub_category[]=$approved_ele['sub_cat_name'];
+					$approved_store_product_id[]=$approved_ele['product_id'];
 					$approved_product_name[]=$approved_ele['product_name'];
 					$approved_product_brand[]=$approved_ele['product_brand'];
 					$approved_product_description[]=$approved_ele['product_description'];
@@ -355,6 +375,65 @@
 								</div>
 							</div>
 						</div>
+							
+					
+						<div class="col-12 col-sm-4">
+							<div class="card border-dark m-4">
+  								<div class="card-body text-center">
+    									<button class="btn btn-primary btn-sm" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_v<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">
+										Add a Variant
+									</button>
+									<!--add variant-->
+									<div class="collapse m-2" id="collapse_v<?=$ac?>">
+  										<div class="card card-body" style="padding:8px;">
+											<form method="POST" action="seller_enter.php" class="input-group d-flex justify-content-center">
+												<p>Add variant details</p>
+													<div class="form-group m-2 col-12">
+    														<div class="form-group row">
+															<div class="col-sm-4">
+        															<label for="inputsize">size</label>
+															</div>
+															<div class="col-sm-8">
+        															<input type="text" class="form-control" id="inputsize" placeholder="size" name="v_size" required>
+															</div>	
+    														</div>	
+    														<div class="form-group row">
+															<div class="col-sm-4">
+        															<label for="inputcolor">color</label>
+															</div>
+															<div class="col-sm-8">
+       																<input type="text" class="form-control" id="inputcolor" placeholder="color" name="v_color" required>
+															</div>
+    														</div>
+    														<div class="form-group row">
+															<div class="col-sm-4">
+        															<label for="inputcolor">Price</label>
+															</div>
+															<div class="col-sm-8">
+        															<input type="number" class="form-control" id="inputprice" placeholder="price" name="v_price" required>
+															</div>
+    														</div>
+    														<div class="form-group row">
+															<div class="col-sm-4">
+        															<label for="inputqty">quantity</label>
+															</div>
+															<div class="col-sm-8">
+        															<input type="number" class="form-control" id="inputqty" placeholder="quantity" name="v_quantity" required>
+															</div>
+    														</div>
+  													</div>
+													<div class="form-group m-2 col-12">
+														<input type="hidden" name="v_store_info_id" value="<?=$approved_store_info_id[$ai]?>" />
+														<input type="hidden" name="v_store_product_id" value="<?=$approved_store_product_id[$ai]?>" />
+  													</div>
+							
+													<button class="btn btn-dark" name="add_variant" type="submit">Add Variant</button>
+											</form>
+  										</div>
+									</div>
+										
+									<!--add variant end-->		
+							
 							
 						</div>
 											
