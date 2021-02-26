@@ -411,7 +411,7 @@
 													<p class="card-text">color : <?=$color_up[$upl]?></p>
     													<p class="card-text">size  : <?=$size_up[$upl]?></p>
     													<p class="card-text">price : <?=$price_up[$upl]?></p>	
-													<p class="card-text">price : <?=$quantity_up[$upl]?></p>
+													<p class="card-text">quantity : <?=$quantity_up[$upl]?></p>
 													<?php if($is_approved_again[$upl]==1) { ?>
 														<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 													<?php } ?>
