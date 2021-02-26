@@ -130,11 +130,14 @@
 			$quantity_to_add=$_POST['stock_quantity'];
 			$store_info_id_sent=$_POST['store_info_id_send'];
 			
-			$sql_stock = "update store_info set stock_quantity = '$quantity_to_add',stock_quantity_status = 1 where store_info_id = '$store_info_id_sent'";
-			$con->query($sql_stock);
+			echo $quantity_to_add;echo "<br>";
+			echo $store_info_id_sent;
 			
-			header("Location:seller_enter.php?my_sell_requests=yes&&show_stat=1");
-                	die();
+			//$sql_stock = "update store_info set stock_quantity = '$quantity_to_add',stock_quantity_status = 1 where store_info_id = '$store_info_id_sent'";
+			//$con->query($sql_stock);
+			
+			//header("Location:seller_enter.php?my_sell_requests=yes&&show_stat=1");
+                	//die();
 		}
 
 
@@ -365,11 +368,12 @@
 					<?php
 					
 						//to get all unique_products with same product id
-						$unique_product_sql = "select up.unique_type_id,up.quantity,up.price,up.color,up.size,s.approved,s.stock_quantity,s.stock_quantity_status from unique_product as up,store_info as s where s.store_unique_type_id=up.unique_type_id and s.store_product_id='$product_id_a[$ai]' and up.seller_user_name='$approved_user'";
+						$unique_product_sql = "select up.unique_type_id,up.quantity,up.price,up.color,up.size,s.approved,s.stock_quantity,s.stock_quantity_status,s.stock_quantity,s.store_info_id from unique_product as up,store_info as s where s.store_unique_type_id=up.unique_type_id and s.store_product_id='$product_id_a[$ai]' and up.seller_user_name='$approved_user'";
 						$unique_product_res = $con->query($unique_product_sql);
 					
 						$unique_type_id_up=array();
 						$is_approved_again=array();
+						$store_info_id_up=array();
 						$price_up=array();
   						$quantity_up=array();
   						$color_up=array();
@@ -387,6 +391,7 @@
 							$is_approved_again[]=$unique_product_ele['approved'];	
 							$stock_quantity_up[]=$unique_product_ele['stock_quantity'];
 							$stock_quantity_status_up[]=$unique_product_ele['stock_quantity_status'];
+							$store_info_id_up[]=$unique_product_ele['store_info_id'];
 						}
 									   
 									   
@@ -395,7 +400,7 @@
 	
 					?>
 							<div class="row">
-								<?php for($upl=0;$upl<=$uc;$upl++) { ?>	
+								<?php $cc=0; for($upl=0;$upl<=$uc;$upl++) { ?>	
 									<?php if($upl==$uc) { ?>
 										<div class="col-12 col-sm-4">
 											<div class="card border-dark m-4">
@@ -412,17 +417,39 @@
     													<p class="card-text">size  : <?=$size_up[$upl]?></p>
     													<p class="card-text">price : <?=$price_up[$upl]?></p>	
 													<p class="card-text">quantity : <?=$quantity_up[$upl]?> 
-														<?php if($stock_quantity_status_up[$upl]==1) { ?><i class="spinner-grow spinner-grow-sm" role="status"></i><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock UpToDate</strong><?php } ?>
+														<?php if($stock_quantity_status_up[$upl]==1) { ?><i class="spinner-grow spinner-grow-sm" role="status"></i><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>Stock UpToDate</strong><?php } ?>
 													</p>
 													<?php if($is_approved_again[$upl]==1) { ?>
 														<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 													<?php } ?>
-													<a href="#" class="btn btn-primary mt-2">Add stock</a>
+													<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_s<?=$cc?>" aria-expanded="false" aria-controls="collapseExample" <?php if($stock_quantity_status_up[$upl]==1&&$stock_quantity_up[$upl]>0) { ?> disabled <?php } ?> >
+														Add stock
+													</button>
+						
+													<div class="collapse m-2" id="collapse_s<?=$cc?>">
+  														<div class="card card-body" style="padding:8px;">
+															<form method="POST" action="seller_enter.php" class="input-group d-flex justify-content-center">
+																<p>Add quantity of stock</p>
+																<div class="form-group m-2 col-12">
+    																	<div class="form-group">
+        																	<label for="inputqty">quantity</label>
+        																		<input type="number" min="1" max="10" class="form-control" id="inputqty" placeholder="quantity" name="stock_quantity" required>
+    																	</div>
+  																</div>
+																<div class="form-group m-2 col-12">
+																	<input type="hidden" name="store_unique_type_id_send" value="<?=$unique_type_id_up[$upl]?>" />
+																	<input type="hidden" name="store_info_id_send" value="<?=$store_info_id_up[$upl]?>" />
+  																</div>
+								
+																<button class="btn btn-dark" name="add_stock" type="submit">Add stock</button>
+															</form>
+  														</div>
+													</div>	
 												</div>
 											</div>
 										</div>
 									<?php } ?>			
-								<?php } ?>
+								<?php $cc++; } ?>
 							</div>
 								
 								
