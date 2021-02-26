@@ -344,7 +344,6 @@
     								<p class="card-text">product brand  : <?=$approved_product_brand[$ai]?></p>
     								<p class="card-text">product description : <?=$approved_product_description[$ai]?></p>	
 							</div>
-						</div>
 					
 						<div class="col-12 col-sm-4">
 							<div class="card border-dark m-4">
@@ -356,9 +355,10 @@
 								</div>
 							</div>
 						</div>
-									
-									
-									
+							
+						</div>
+											
+						
 					</div>				
 								
 				</div>
