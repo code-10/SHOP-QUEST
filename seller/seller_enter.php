@@ -180,7 +180,8 @@
 			,'".mysqli_real_escape_string($con,$product_brand_variant[0])."','".mysqli_real_escape_string($con,$product_description_variant[0])."','".mysqli_real_escape_string($con,$price_variant)."','".mysqli_real_escape_string($con,$quantity_variant)."'
 			,'".mysqli_real_escape_string($con,$color_variant)."','".mysqli_real_escape_string($con,$size_variant)."','".mysqli_real_escape_string($con,$product_id_variant[0])."')");
 			
-			
+			header("Location:seller_enter.php?my_sell_requests=yes&&show_stat=1&&stock_variant=yes");
+                	die();
 			
 		}
 
