@@ -318,6 +318,8 @@
 					$approved_product_brand[]=$approved_ele['product_brand'];
 					$approved_product_description[]=$approved_ele['product_description'];
 				}
+		
+				$approved_count=count($approved_store_info_id);
 			?>
 	
 	
