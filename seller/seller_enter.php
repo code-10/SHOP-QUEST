@@ -125,40 +125,6 @@
 	
 		}
 
-		if(isset($_POST['add_stock'])) 
-		{
-			//$unique_type_id_to_add=$_POST['store_unique_type_id_send'];
-			$quantity_to_add=$_POST['stock_quantity'];
-			$store_info_id_sent=$_POST['store_info_id_send'];
-			
-			//echo $quantity_to_add;echo "<br>";
-			//echo $store_info_id_sent;
-			
-			$sql_stock = "update store_info set stock_quantity = '$quantity_to_add',stock_quantity_status = 1 where store_info_id = '$store_info_id_sent'";
-			$con->query($sql_stock);
-			
-			header("Location:seller_enter.php?my_sell_requests=yes&&show_stat=1&&stock_variant=yes");
-                	die();
-		}
-
-		if(isset($_POST['add_variant']))
-		{
-			$size_variant = $_POST['v_size'];
-			$color_variant = $_POST['v_color'];
-			$price_variant = $_POST['v_price'];
-			$quantity_variant = $_POST['v_quantity'];
-			$store_info_id_variant = $_POST['v_store_info_id'];
-			
-			echo $size_variant;echo "<br>";
-			echo $color_variant;echo "<br>";
-			echo $price_variant;echo "<br>";
-			echo $quantity_variant;echo "<br>";
-			echo $store_info_id_variant;echo "<br>";
-			
-			header("Location:seller_enter.php?my_sell_requests=yes&&show_stat=1&&stock_variant=yes");
-                	die();
-			
-		}
 
 
 ?>
