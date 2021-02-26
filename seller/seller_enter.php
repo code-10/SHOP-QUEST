@@ -241,16 +241,12 @@
 		$res2 = $res2i->num_rows;
 		//echo $res2;echo "<br>";	
 	
-		$sql4 = "select * from store_info where stock_quantity_status=1";
-		$res4i = $con->query($sql4);
-		$res4 = $res4i->num_rows;
-	
 	?>
 	
 	
 	<div class="text-center m-4">
             <a <?php if($show_stat==0) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=0" role="button">Pending<span class="badge badge-light ml-2"><?=$res0;?></span></a>
-	    <a <?php if($show_stat==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=1&&stock_variant=yes" role="button">Approved <span class="badge badge-light ml-2 mr-2"><?=$res1;?></span> - Add Stock <span class="badge badge-warning ml-2"><?=$res4?>/<?=$res1;?></span> - Add Variant</a>
+	    <a <?php if($show_stat==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=1&&stock_variant=yes" role="button">Approved <span class="badge badge-light ml-2 mr-2"><?=$res1;?></span></a>
             <a <?php if($show_stat==2) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=2" role="button">Rejected<span class="badge badge-light ml-2"><?=$res2;?></span></a>
 	</div>
 			
