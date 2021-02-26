@@ -142,9 +142,8 @@
 			echo $variant_store_info_id;echo "<br>";
 			echo $variant_store_product_id;echo "<br>";*/
 			
-			$con->query("insert into variant(price,color,size,quantity,store_info_id,store_product_id,variant_approved)
-			values('".mysqli_real_escape_string($con,$variant_price)."','".mysqli_real_escape_string($con,$variant_color)."','".mysqli_real_escape_string($con,$variant_size)."'
-			'".mysqli_real_escape_string($con,$variant_quantity)."','".mysqli_real_escape_string($con,$variant_store_info_id)."','".mysqli_real_escape_string($con,$variant_store_product_id)."',0)");
+			$con->query("insert into variant(price,color,size,quantity,store_info_id,store_product_id,variant_approved) values('".mysqli_real_escape_string($con,$variant_price)."','".mysqli_real_escape_string($con,$variant_color)."',
+			'".mysqli_real_escape_string($con,$variant_size)."','".mysqli_real_escape_string($con,$variant_quantity)."','".mysqli_real_escape_string($con,$variant_store_info_id)."','".mysqli_real_escape_string($con,$variant_store_product_id)."',0)");
 			
 		}
 		
