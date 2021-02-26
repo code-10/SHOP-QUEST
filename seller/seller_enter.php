@@ -409,7 +409,7 @@
 										<div class="col-12 col-sm-4">
 											<div class="card border-dark m-4">
   												<div class="card-body text-center">
-    													<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_v<?=$cc?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
+    													<button class="btn btn-primary btn-sm" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_v<?=$cc?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
 														Add a Variant
 													</button>
 													<!--add variant-->
@@ -418,9 +418,13 @@
 															<form method="POST" action="#" class="input-group d-flex justify-content-center">
 																<p>Add variant details</p>
 																<div class="form-group m-2 col-12">
-    																	<div class="form-group">
-        																	<label for="inputsize">size</label>
+    																	<div class="form-group row">
+																		<div class="col-sm-4">
+        																		<label for="inputsize">size</label>
+																		</div>
+																		<div class="col-sm-8">
         																		<input type="text" class="form-control" id="inputsize" placeholder="size" name="v_size" required>
+																		</div>	
     																	</div>	
     																	<div class="form-group">
         																	<label for="inputcolor">color</label>
