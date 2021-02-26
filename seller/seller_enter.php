@@ -326,14 +326,13 @@
 			<?php $ac=0; for($ai=0;$ai<$approved_count;$ai++) { ?>
 				
 				<div class="card m-4 border-dark">
-  					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$product_name_a[$ai]?></div>
+  					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$approved_product_name[$ai]?></div>
   					
 						<div class="collapse m-2" id="collapse_m<?=$ac?>">
 							<div class="card-body">
 								<p class="card-text">store_info_id : <?=$approved_store_info_id[$ai]?></p>	
     								<p class="card-text">category : <?=$approved_category[$ai]?></p>
     								<p class="card-text">sub category : <?=$approved_sub_category[$ai]?></p>
-								<p class="card-text">product name  : <?=$approved_product_name[$ai]?></p>
     								<p class="card-text">product brand  : <?=$approved_product_brand[$ai]?></p>
     								<p class="card-text">product description : <?=$approved_product_description[$ai]?></p>	
 							</div>
