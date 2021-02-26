@@ -145,13 +145,14 @@
 			$size_variant = $_POST['v_size'];
 			$color_variant = $_POST['v_color'];
 			$price_variant = $_POST['v_price'];
-			$quantity = $_POST['v_quantity'];
+			$quantity_variant = $_POST['v_quantity'];
+			$store_info_id_variant = $_POST['v_store_info_id'];
 			
 			echo $size_variant;echo "<br>";
 			echo $color_variant;echo "<br>";
 			echo $price_variant;echo "<br>";
 			echo $quantity_variant;echo "<br>";
-			
+			echo $store_info_id_variant;echo "<br>";
 		}
 
 
@@ -466,12 +467,7 @@
     																	</div>
   																</div>
 																<div class="form-group m-2 col-12">
-																	<!--<input type="hidden" name="v_product_brand" value="<?=$product_brand[$k]?>" />
-																	<input type="hidden" name="v_product_name" value="<?=$product_name[$k]?>" />
-																	<input type="hidden" name="v_product_description" value="<?=$product_description[$k]?>" />
-																	<input type="hidden" name="v_seller_user_name" value="<?=$_SESSION['user_name']?>" />
-																	<input type="hidden" name="v_category" value="<?=$category[$k]?>" />
-																	<input type="hidden" name="v_sub_category" value="<?=$sub_category[$k]?>" />-->
+																	<input type="hidden" name="v_store_info_id" value="<?=$store_info_id[$upl-1]?>" />
   																</div>
 								
 																<button class="btn btn-dark" name="add_variant" type="submit">Add Variant</button>
