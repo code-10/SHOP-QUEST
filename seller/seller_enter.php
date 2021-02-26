@@ -302,12 +302,12 @@
 				$approved_sql = "select c.cat_name,sc.sub_cat_name,p.product_id,s.store_info_id,p.product_name,p.product_brand,p.product_description,up.unique_type_id,up.price,up.quantity,up.color,up.size from categories as c,sub_categories as sc,products as p,unique_product as up,store_info as s where s.store_unique_type_id=up.unique_type_id and p.product_id=up.product_id and p.sub_cat_id=sc.sub_cat_id and sc.cat_id=c.cat_id and s.seller_user_name='$user'";
 				$approved_res = $con->query($approved_sql);
 				
-				/*$approved_store_info_id=array();
+				$approved_store_info_id=array();
 				$approved_category=array();
 				$approved_sub_category=array();
 				$approved_product_name=array();
 				$approved_product_brand=array();
-				$approved_product_description=array();*/
+				$approved_product_description=array();
 		
 				while($approved_ele = $approved_res->fetch_assoc())
 				{
