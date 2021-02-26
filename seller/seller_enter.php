@@ -12,6 +12,7 @@
             die(); 
       	} 
 
+	$user = $_SESSION['user_name'];
 
 		$con=getCon();
 
@@ -148,11 +149,39 @@
 			$quantity_variant = $_POST['v_quantity'];
 			$store_info_id_variant = $_POST['v_store_info_id'];
 			
-			echo $size_variant;echo "<br>";
+			/*echo $size_variant;echo "<br>";
 			echo $color_variant;echo "<br>";
 			echo $price_variant;echo "<br>";
 			echo $quantity_variant;echo "<br>";
-			echo $store_info_id_variant;echo "<br>";
+			echo $store_info_id_variant;echo "<br>";*/
+			
+			
+			$adding_variant_res = $con->query("select * from store_info where store_info_id='$store_info_id_variant'");
+			$product_id_variant = array();
+			$seller_user_name_variant = array();
+			$category_variant = array();
+			$sub_category_variant = array();
+			$product_name_variant = array();
+			$product_brand_variant = array();
+			$product_description_variant = array();
+			while($adding_variant_ele = $adding_variant_res->fetch_assoc())
+			{
+				$product_id_variant[] = $adding_variant_ele['store_product_id'];
+				$seller_user_name_variant[] = $adding_variant_ele['seller_user_name'];
+				$category_variant[] = $adding_variant_ele['category'];
+				$sub_category_variant[] = $adding_variant_ele['sub_category'];
+				$product_name_variant[] = $adding_variant_ele['product_name'];
+				$product_brand_variant[] = $adding_variant_ele['product_brand'];
+				$product_description_variant[] = $adding_variant_ele['product_description'];
+			}
+			
+			$con->query("insert into store_info(seller_user_name,category,sub_category,product_name,product_brand,product_description,price,quantity,color,size,store_product_id) 
+			values('".mysqli_real_escape_string($con,$user)."','".mysqli_real_escape_string($con,$category_variant[0])."','".mysqli_real_escape_string($con,$sub_category_variant[0])."','".mysqli_real_escape_string($con,$product_name_variant[0])."'
+			,'".mysqli_real_escape_string($con,$product_brand_variant[0])."','".mysqli_real_escape_string($con,$product_description_variant[0])."','".mysqli_real_escape_string($con,$price_variant)."','".mysqli_real_escape_string($con,$quantity_variant)."'
+			,'".mysqli_real_escape_string($con,$color_variant)."','".mysqli_real_escape_string($con,$size_variant)."','".mysqli_real_escape_string($con,$product_id_variant[0])."')");
+			
+			
+			
 		}
 
 
