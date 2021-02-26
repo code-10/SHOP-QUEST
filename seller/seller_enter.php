@@ -357,6 +357,7 @@
   					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$approved_product_name[$ai]?></div>
   					
 						<div class="collapse m-2" id="collapse_m<?=$ac?>">
+							
 							<div class="card-body">
 								<p class="card-text">store_info_id : <?=$approved_store_info_id[$ai]?></p>	
     								<p class="card-text">category : <?=$approved_category[$ai]?></p>
@@ -431,18 +432,13 @@
 											</form>
   										</div>
 									</div>
-										
 									<!--add variant end-->		
-							
-							
+								</div>
+							</div>
 						</div>
-											
-						
-					</div>				
-								
+					</div>
 				</div>
 			</div>
-	
 			<?php $ac++; } ?>
 			
 			
