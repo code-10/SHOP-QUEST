@@ -327,8 +327,6 @@
 				$product_id_a=array();
 				$store_unique_type_id_a=array();
 				
-				$stock_quantity_a=array();
-				$stock_quantity_status_a=array();
 		
 		
 				while($ele_a = $approved_res->fetch_assoc())
@@ -341,9 +339,7 @@
       					$store_info_id_a[]=$ele_a['store_info_id'];
 					$product_id_a[]=$ele_a['product_id'];
 					$store_unique_type_id_a[]=$ele_a['store_unique_type_id'];
-					
-					$stock_quantity_a[]=$ele_a['stock_quantity'];
-					$stock_quantity_status_a[]=$ele_a['stock_quantity_status'];
+
 					
 				}
 		
@@ -369,15 +365,17 @@
 					<?php
 					
 						//to get all unique_products with same product id
-						$unique_product_sql = "select up.unique_type_id,up.quantity,up.price,up.color,up.size,s.approved from unique_product as up,store_info as s where s.store_unique_type_id=up.unique_type_id and s.store_product_id='$product_id_a[$ai]' and up.seller_user_name='$approved_user'";
+						$unique_product_sql = "select up.unique_type_id,up.quantity,up.price,up.color,up.size,s.approved,s.stock_quantity,s.stock_quantity_status from unique_product as up,store_info as s where s.store_unique_type_id=up.unique_type_id and s.store_product_id='$product_id_a[$ai]' and up.seller_user_name='$approved_user'";
 						$unique_product_res = $con->query($unique_product_sql);
 					
-						$unique_type_id_to_keep_count=array();
+						$unique_type_id_up=array();
 						$is_approved_again=array();
 						$price_up=array();
   						$quantity_up=array();
   						$color_up=array();
   						$size_up=array();
+						$stock_quantity_up=array();
+						$stock_quantity_status_up=array();
 									   
 						while($unique_product_ele = $unique_product_res->fetch_assoc())
 						{
@@ -385,13 +383,15 @@
   							$color_up[]=$unique_product_ele['color'];
   							$size_up[]=$unique_product_ele['size'];	
 							$quantity_up[]=$unique_product_ele['quantity'];	
-							$unique_type_id_to_keep_count[]=$unique_product_ele['unique_type_id'];	
+							$unique_type_id_up[]=$unique_product_ele['unique_type_id'];	
 							$is_approved_again[]=$unique_product_ele['approved'];	
+							$stock_quantity_up[]=$unique_product_ele['stock_quantity'];
+							$stock_quantity_status_up[]=$unique_product_ele['stock_quantity_status'];
 						}
 									   
 									   
 									   
-						$uc = count($unique_type_id_to_keep_count);			   
+						$uc = count($unique_type_id_up);			   
 	
 					?>
 							<div class="row">
@@ -413,7 +413,10 @@
     													<p class="card-text">price : <?=$price_up[$upl]?></p>	
 													<p class="card-text">quantity : <?=$quantity_up[$upl]?></p>
 													<?php if($is_approved_again[$upl]==1) { ?>
-														<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
+														<p>
+															<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
+															<?php if($stock_quantity_status_up[$upl]==1) { ?><i class="spinner-grow spinner-grow-sm" role="status"></i><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock updated</strong><?php } ?>
+														</p>
 													<?php } ?>
 													<a href="#" class="btn btn-primary mt-2">Add stock</a>
 												</div>
