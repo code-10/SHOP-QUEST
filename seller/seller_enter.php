@@ -426,17 +426,29 @@
         																		<input type="text" class="form-control" id="inputsize" placeholder="size" name="v_size" required>
 																		</div>	
     																	</div>	
-    																	<div class="form-group">
-        																	<label for="inputcolor">color</label>
+    																	<div class="form-group row">
+																		<div class="col-sm-4">
+        																		<label for="inputcolor">color</label>
+																		</div>
+																		<div class="col-sm-8">
         																		<input type="text" class="form-control" id="inputcolor" placeholder="color" name="v_color" required>
+																		</div>
     																	</div>
-    																	<div class="form-group">
-        																	<label for="inputcolor">Price</label>
+    																	<div class="form-group row">
+																		<div class="col-sm-4">
+        																		<label for="inputcolor">Price</label>
+																		</div>
+																		<div class="col-sm-8">
         																		<input type="number" class="form-control" id="inputprice" placeholder="price" name="v_price" required>
+																		</div>
     																	</div>
-    																	<div class="form-group">
-        																	<label for="inputqty">quantity</label>
+    																	<div class="form-group row">
+																		<div class="col-sm-4">
+        																		<label for="inputqty">quantity</label>
+																		</div>
+																		<div class="col-sm-8">
         																		<input type="number" class="form-control" id="inputqty" placeholder="quantity" name="v_qty" required>
+																		</div>
     																	</div>
   																</div>
 																<div class="form-group m-2 col-12">
