@@ -411,12 +411,11 @@
 													<p class="card-text">color : <?=$color_up[$upl]?></p>
     													<p class="card-text">size  : <?=$size_up[$upl]?></p>
     													<p class="card-text">price : <?=$price_up[$upl]?></p>	
-													<p class="card-text">quantity : <?=$quantity_up[$upl]?></p>
+													<p class="card-text">quantity : <?=$quantity_up[$upl]?> 
+														<?php if($stock_quantity_status_up[$upl]==1) { ?><i class="spinner-grow spinner-grow-sm" role="status"></i><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock UpToDate</strong><?php } ?>
+													</p>
 													<?php if($is_approved_again[$upl]==1) { ?>
-														<p>
-															<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
-															<?php if($stock_quantity_status_up[$upl]==1) { ?><i class="spinner-grow spinner-grow-sm" role="status"></i><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock updated</strong><?php } ?>
-														</p>
+														<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 													<?php } ?>
 													<a href="#" class="btn btn-primary mt-2">Add stock</a>
 												</div>
