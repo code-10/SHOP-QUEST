@@ -140,6 +140,20 @@
                 	die();
 		}
 
+		if(isset($_POST['add_variant']))
+		{
+			$size_variant = $_POST['v_size'];
+			$color_variant = $_POST['v_color'];
+			$price_variant = $_POST['v_price'];
+			$quantity = $_POST['v_quantity'];
+			
+			echo $size_variant;echo "<br>";
+			echo $color_variant;echo "<br>";
+			echo $price_variant;echo "<br>";
+			echo $quantity_variant;echo "<br>";
+			
+		}
+
 
 ?>
 
@@ -415,7 +429,7 @@
 													<!--add variant-->
 													<div class="collapse m-2" id="collapse_v<?=$cc?>">
   														<div class="card card-body" style="padding:8px;">
-															<form method="POST" action="#" class="input-group d-flex justify-content-center">
+															<form method="POST" action="seller_enter.php" class="input-group d-flex justify-content-center">
 																<p>Add variant details</p>
 																<div class="form-group m-2 col-12">
     																	<div class="form-group row">
@@ -447,7 +461,7 @@
         																		<label for="inputqty">quantity</label>
 																		</div>
 																		<div class="col-sm-8">
-        																		<input type="number" class="form-control" id="inputqty" placeholder="quantity" name="v_qty" required>
+        																		<input type="number" class="form-control" id="inputqty" placeholder="quantity" name="v_quantity" required>
 																		</div>
     																	</div>
   																</div>
@@ -460,7 +474,7 @@
 																	<input type="hidden" name="v_sub_category" value="<?=$sub_category[$k]?>" />-->
   																</div>
 								
-																<button class="btn btn-dark" name="submit_variant" type="submit">Add Variant</button>
+																<button class="btn btn-dark" name="add_variant" type="submit">Add Variant</button>
 															</form>
   														</div>
 													</div>
