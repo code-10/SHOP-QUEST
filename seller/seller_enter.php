@@ -401,14 +401,62 @@
 					?>
 							<div class="row">
 								<?php $cc=0; for($upl=0;$upl<=$uc;$upl++) { ?>	
+								
 									<?php if($upl==$uc) { ?>
+								
+									<!--variant logic start-->
+								
 										<div class="col-12 col-sm-4">
 											<div class="card border-dark m-4">
   												<div class="card-body text-center">
-    													<a href="#" class="btn btn-primary">Add a Variant</a>
+    													<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_v<?=$cc?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
+														Add a Variant
+													</button>
+													<!--add variant-->
+													<div class="collapse m-2" id="collapse_v<?=$cc?>">
+  														<div class="card card-body" style="padding:8px;">
+															<form method="POST" action="#" class="input-group d-flex justify-content-center">
+																<p>Add variant details</p>
+																<div class="form-group m-2 col-12">
+    																	<div class="form-group">
+        																	<label for="inputsize">size</label>
+        																		<input type="text" class="form-control" id="inputsize" placeholder="size" name="v_size" required>
+    																	</div>	
+    																	<div class="form-group">
+        																	<label for="inputcolor">color</label>
+        																		<input type="text" class="form-control" id="inputcolor" placeholder="color" name="v_color" required>
+    																	</div>
+    																	<div class="form-group">
+        																	<label for="inputcolor">Price</label>
+        																		<input type="number" class="form-control" id="inputprice" placeholder="price" name="v_price" required>
+    																	</div>
+    																	<div class="form-group">
+        																	<label for="inputqty">quantity</label>
+        																		<input type="number" class="form-control" id="inputqty" placeholder="quantity" name="v_qty" required>
+    																	</div>
+  																</div>
+																<div class="form-group m-2 col-12">
+																	<!--<input type="hidden" name="v_product_brand" value="<?=$product_brand[$k]?>" />
+																	<input type="hidden" name="v_product_name" value="<?=$product_name[$k]?>" />
+																	<input type="hidden" name="v_product_description" value="<?=$product_description[$k]?>" />
+																	<input type="hidden" name="v_seller_user_name" value="<?=$_SESSION['user_name']?>" />
+																	<input type="hidden" name="v_category" value="<?=$category[$k]?>" />
+																	<input type="hidden" name="v_sub_category" value="<?=$sub_category[$k]?>" />-->
+  																</div>
+								
+																<button class="btn btn-dark" name="submit_variant" type="submit">Add Variant</button>
+															</form>
+  														</div>
+													</div>
+													
+													<!--add variant end-->
+													
   												</div>
 											</div>
 										</div>
+								
+									<!--variant logic end-->
+								
 									<?php } else { ?>
 										<div class="col-12 col-sm-4">
 											<div class="card border-dark m-4">
@@ -416,6 +464,9 @@
 													<p class="card-text">color : <?=$color_up[$upl]?></p>
     													<p class="card-text">size  : <?=$size_up[$upl]?></p>
     													<p class="card-text">price : <?=$price_up[$upl]?></p>
+													
+													<!--add stock logic start-->
+												
 													<?php if($stock_quantity_up[$upl]>0) { ?>
 														<p class="card-text">New quantity to add : <?=$stock_quantity_up[$upl]?> <i class="spinner-grow spinner-grow-sm" role="status"></i></p>	
     													<?php } ?>
@@ -448,12 +499,17 @@
 															</form>
   														</div>
 													</div>	
+													
+													<!--add stock logic end-->
 												</div>
 											</div>
 										</div>
 									<?php } ?>			
 								<?php $cc++; } ?>
 							</div>
+								
+					
+								
 								
 								
 							</div>
