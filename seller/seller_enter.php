@@ -501,9 +501,13 @@
 															<form method="POST" action="seller_enter.php" class="input-group d-flex justify-content-center">
 																<p>Add quantity of stock</p>
 																<div class="form-group m-2 col-12">
-    																	<div class="form-group">
-        																	<label for="inputqty">quantity</label>
+    																	<div class="form-group row">
+																		<div class="col-sm-4">
+        																		<label for="inputqty">quantity</label>
+																		</div>
+																		<div class="col-sm-8">
         																		<input type="number" min="1" max="10" class="form-control" id="inputqty" placeholder="quantity" name="stock_quantity" required>
+																		</div>
     																	</div>
   																</div>
 																<div class="form-group m-2 col-12">
