@@ -136,7 +136,7 @@
 			$sql_stock = "update store_info set stock_quantity = '$quantity_to_add',stock_quantity_status = 1 where store_info_id = '$store_info_id_sent'";
 			$con->query($sql_stock);
 			
-			header("Location:seller_enter.php?my_sell_requests=yes&&show_stat=1");
+			header("Location:seller_enter.php?my_sell_requests=yes&&show_stat=1&&stock_variant=yes");
                 	die();
 		}
 
@@ -416,7 +416,7 @@
 													<p class="card-text">color : <?=$color_up[$upl]?></p>
     													<p class="card-text">size  : <?=$size_up[$upl]?></p>
     													<p class="card-text">price : <?=$price_up[$upl]?></p>
-													<?php if($stock_quantity[$k]>0) { ?>
+													<?php if($stock_quantity_up[$upl]>0) { ?>
 														<p class="card-text">New quantity to add : <?=$stock_quantity_up[$upl]?> <i class="spinner-grow spinner-grow-sm" role="status"></i></p>	
     													<?php } ?>
 													<p class="card-text">quantity : <?=$quantity_up[$upl]?> 
