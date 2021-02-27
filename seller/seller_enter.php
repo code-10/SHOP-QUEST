@@ -420,7 +420,7 @@
     									<p class="card-text">size  : <?=$variant_size_v[$vi]?></p>
     									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
 										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
-										<h6 class="card-text">Status&nbsp&nbsp : processing</h6>
+										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-info">processing</span></h6>
 									</div>
 								</div>
 							</div>
@@ -443,7 +443,7 @@
     									<p class="card-text">size  : <?=$variant_size_v[$vi]?></p>
     									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
 										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
-										<h6 class="card-text">Status&nbsp&nbsp : rejected</h6>
+										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-danger">rejected</span></h6>
 									</div>
 								</div>
 							</div>
