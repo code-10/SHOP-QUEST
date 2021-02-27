@@ -386,7 +386,7 @@
 							
 						<!--waiting variant start-->	
 						<div class="card m-4 border-dark">
-  							<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Processing</div>
+  							<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_wa<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Processing</div>
   		
 								<div class="collapse m-2" id="collapse_m<?=$ac?>">
 								</div>
@@ -398,7 +398,7 @@
 							
 						<!--approved variant start-->
 						<div class="card m-4 border-dark">
-  							<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Approved</div>
+  							<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_ap<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Approved</div>
   		
 								<div class="collapse m-2" id="collapse_m<?=$ac?>">
 								</div>
@@ -411,7 +411,7 @@
 	
 						<!--rejected variant start-->
 						<div class="card m-4 border-dark">
-  							<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Rejected</div>
+  							<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_re<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Rejected</div>
   		
 								<div class="collapse m-2" id="collapse_m<?=$ac?>">
 								</div>
