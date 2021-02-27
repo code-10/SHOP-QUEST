@@ -103,26 +103,6 @@
 		header("Location:sell_request.php?sell_request_main=yes");
                 die();
 	}
-	$admin_update=$_GET['admin_update'];
-	$qty=$_GET['qty'];
-	//admin_update
-	if($admin_update=="yes")
-	{	
-		$con->query("update store_info set quantity=quantity+'$qty',approved=1 where store_info_id='$storeinfoid'");
-		$res=$con->query("select  store_unique_type_id from store_info where store_info_id='$storeinfoid'");
-		 $ele = $res->fetch_assoc();
-  		$uniq_id=$ele['store_unique_type_id'];
-		$con->query("update unique_product set quantity=quantity+'$qty' where unique_type_id='$uniq_id'");
-		
-		header("Location:sell_request.php?sell_request_main=yes");
-                die();
-	}
-	else if($admin_update=="no")
-	{
-		$con->query("update store_info set approved=1 where store_info_id='$storeinfoid'");
-		header("Location:sell_request.php?sell_request_main=yes");
-                die();
-	}
 	
 	
 	
@@ -267,7 +247,7 @@
       $sql2="insert into products(product_id,product_name,sub_cat_id,product_brand,product_description,rating) values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$productname)."','".mysqli_real_escape_string($con,$subcategoryid)."','".mysqli_real_escape_string($con,$productbrand)."','".mysqli_real_escape_string($con,$productdescription)."','".mysqli_real_escape_string($con,$rating)."')";
       $sql3="insert into unique_product(product_id,price,quantity,seller_user_name,color,size) values('".mysqli_real_escape_string($con,$product_id_c_use)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$sellername)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')";
       
- 	$sql4="update store_info set store_product_id='".mysqli_real_escape_string($con,$product_id_c_use)."',admin_sub_category='".mysqli_real_escape_string($con,$subcategoryid)."',admin_product_name='".mysqli_real_escape_string($con,$productname)."',admin_product_brand='".mysqli_real_escape_string($con,$productbrand)."',admin_product_description='".mysqli_real_escape_string($con,$productdescription)."',admin_price='".mysqli_real_escape_string($con,$price)."',admin_quantity='".mysqli_real_escape_string($con,$quantity)."',admin_color='".mysqli_real_escape_string($con,$color)."',admin_size='".mysqli_real_escape_string($con,$size)."'";  
+ 	$sql4="update store_info set store_product_id='".mysqli_real_escape_string($con,$product_id_c_use)."' where store_info_id='$storeinfoid'";  
 	    
 	$sql5="update store_info set store_unique_type_id = (select unique_type_id from unique_product where product_id='$product_id_c_use' and seller_user_name='$sellername') where store_info_id='$storeinfoid'";
 	
@@ -331,113 +311,32 @@
 		$res4i = $con->query($sql4);
 		$res4 = $res4i->num_rows;
 	
-		$dynamic_quantity = array();
-		$res = $con->query("select up.quantity from unique_product as up,store_info as si where up.unique_type_id=si.store_unique_type_id;");
-		while($ele = $res->fetch_assoc())
-			$dynamic_quantity[]=$ele['quantity'];
-	
-	?>
-	
-	<?
-		
-		//queries are for updating stock
-		$update_stock_u=$_GET['update_stock'];
-		$store_info_id_u=$_GET['store_info_id'];
-		$update_unique_type_id_u=$_GET['update_unique_type_id'];
-		$stock_quantity_u=$_GET['stock_quantity'];
-	
-		if($update_stock_u=="yes")
-		{
-			$existing_quantity=array();
-			$check_existing=$con->query("select quantity from unique_product where unique_type_id='$update_unique_type_id_u'");
-			while($ele_check = $check_existing->fetch_assoc())
-				$existing_quantity[]=$ele_check['quantity'];
-			
-			$existing_quantity_value=$existing_quantity[0];
-			$update_stock_quantity_u=$existing_quantity_value+$stock_quantity_u;
-			
-			$con->query("update unique_product set quantity='$update_stock_quantity_u' where unique_type_id='$update_unique_type_id_u'");
-			
-			$con->query("update store_info set stock_quantity=0,stock_quantity_status=0 where store_info_id='$store_info_id_u'");
-			
-			header("Location:sell_request.php?sell_request_main=yes&&aprstatus=1");
-                	die();
-			
-		}
-		else if($update_stock_u=="no")
-		{
-			$con->query("update store_info set stock_quantity=0,stock_quantity_status=0 where store_info_id='$store_info_id_u'");
-			
-			header("Location:sell_request.php?sell_request_main=yes&&aprstatus=1");
-                	die();
-		}
-	
-	
 	?>
 
 	
-	<div class="text-center m-4">
+		<div class="text-center m-4">
             <a <?php if($aprstatus==0) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=0" role="button">Pending<span class="badge badge-light ml-2"><?=$res0;?></span></a>
-	    <a <?php if($aprstatus==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=1" role="button">Approved<span class="badge badge-light ml-2 mr-2"><?=$res1;?></span> - Add Stock <span class="badge badge-warning ml-2"><?=$res4?>/<?=$res1;?></span></a>
+	    	<a <?php if($aprstatus==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=1" role="button">Approved<span class="badge badge-light ml-2 mr-2"><?=$res1;?></span></a>
             <a <?php if($aprstatus==2) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=2" role="button">Rejected<span class="badge badge-light ml-2"><?=$res2;?></span></a>
-	</div>
+		</div>
 	
 	
-      <?php if($sell_request_main=="yes") { ?>
+      	<?php if($sell_request_main=="yes") { ?>
+    	
+			<p>under construction</p>
+	
+		<?php } else if($admin_check_sell=="yes") { ?>
       
-	<? $q=0;$c=0; for($i=0;$i<$n;$i++) { ?>
-	
-	<? if($aprstatus!=$approved[$i]&&!($aprstatus==0 && $approved[$i]>2)) 
-		 continue; ?>
-<div class="card m-4">
-  <div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$c?>" aria-expanded="false" aria-controls="collapseExample">seller name : <?=$seller_name[$i]?> <strong><?php if($stock_quantity_status[$i]==1) { ?> <span class="badge badge-warning ml-2">Stock Request - Awaiting Admin</span> <?php } ?></strong></div>
-  
-<div class="collapse m-2" id="collapse_m<?=$c?>">	
-<div class="card-body">
-    <p class="card-text">Product name : <?=$product_name[$i]?></p>
-    <p class="card-text">category : <?=$category[$i]?></p>
-    <p class="card-text">sub category : <?=$sub_category[$i]?></p>
-    <p class="card-text">product brand  : <?=$product_brand[$i]?></p>
-    <p class="card-text">product description : <?=$product_description[$i]?></p>
-    <p class="card-text">price : <?=$price[$i]?></p>
-    <p class="card-text">color : <?=$color[$i]?></p>
-    <p class="card-text">size  : <?=$size[$i]?></p>
-   
-    
-    <? if($approved[$i]==1) { ?>
-	<p class="card-text">quantity : <?=$dynamic_quantity[$q]?> <?php if($stock_quantity_status[$i]==1) { ?><i class="spinner-grow spinner-grow-sm" role="status"></i><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock updated</strong><?php } ?></p>
-	<?php $q++; ?>
-	<?php if($stock_quantity[$i]>0) { ?>
-		<p class="card-text">request quantity to add : <?=$stock_quantity[$i]?> <a href="sell_request.php?update_stock=yes&&store_info_id=<?=$storeinfoid[$i]?>&&update_unique_type_id=<?=$store_unique_type_id[$i]?>&&stock_quantity=<?=$stock_quantity[$i]?>" class="btn btn-success btn-sm ml-2" role="button" aria-pressed="true">Update Stock</a> <a href="sell_request.php?update_stock=no&&store_info_id=<?=$storeinfoid[$i]?>&&update_unique_type_id=<?=$store_unique_type_id[$i]?>&&stock_quantity=<?=$stock_quantity[$i]?>" class="btn btn-danger btn-sm ml-2" role="button" aria-pressed="true">Reject</a></p>	
-    	<?php } ?>
-    	<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
-	
-    <? } else if($approved[$i]==2) { ?>
-	 <p class="card-text">quantity : <?=$quantity[$i]?></p>
-	 <h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6> 
-    <? } else if($approved[$i]==0){ ?>
-    	<h6 class="card-text">Status&nbsp&nbsp - waiting for approval<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
-    	<a href='sell_request.php?admin_check_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' class="btn btn-success m-2">Edit and Approve</a>
-    	<a href='sell_request.php?admin_reject_sell=yes&&storeinfoid=<?=$storeinfoid[$i]?>' name="reject_application" class="btn btn-danger m-2">Reject</a>
-    <? } ?>
-	</div>
-</div>
-</div> 
-		
-  <? $c++;} ?>   
-  
-  <?php } else if($admin_check_sell=="yes") { ?>
-      
-       <form class="jumbotron m-4" method="POST" action="sell_request.php">
-         <!--seller name-->
-     <div class="form-group">
-        <label for="inputsellername">Seller name</label>
-        <input type="text" class="form-control" id="inputsellername" placeholder="" value="<?=$seller_name[0]?>" name="seller_name" required>
-    </div>
-         <!--sub cat id-->
-     <div class="form-group">
-	    <label for="cat_name">category and sub category name</label>
-    		<select class="form-control" id="qty" name="sub_cat_id">
+       		<form class="jumbotron m-4" method="POST" action="sell_request.php">
+         	<!--seller name-->
+     		<div class="form-group">
+        		<label for="inputsellername">Seller name</label>
+        		<input type="text" class="form-control" id="inputsellername" placeholder="" value="<?=$seller_name[0]?>" name="seller_name" required>
+    		</div>
+         	<!--sub cat id-->
+     		<div class="form-group">
+	    		<label for="cat_name">category and sub category name</label>
+    			<select class="form-control" id="qty" name="sub_cat_id">
 		      <?php for($i=0;$i<$cats;$i++) { ?>
     			<option value="<?=$sub_cats_id[$i]?>"><?=$cats_name[$i]?> - <?=$sub_cats_name[$i]?></option>
                       <?php } ?>
@@ -446,7 +345,7 @@
          <!--product id-->
      <div class="form-group">
         <label for="inputproduct_id">product id</label>
-        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$product_id_c_use?>" disabled>
+        <input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$product_id_c_use?>">
     </div>
          <!--product name-->
     <div class="form-group">

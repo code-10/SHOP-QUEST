@@ -12,6 +12,7 @@
             die(); 
       	} 
 
+	$user = $_SESSION['user_name'];
 
 		$con=getCon();
 
@@ -19,14 +20,14 @@
       	$seller_enter_main=$_GET['seller_enter_main'];
       	$sell_a_product=$_GET['sell_a_product'];
       	$my_sell_requests=$_GET['my_sell_requests'];
+	$stock_variant=$_GET['stock_variant'];
 	$edit=$_GET['edit'];
 	$store_info_id_a=$_GET['store_info_id_a'];
 	$store_info_id_d=$_GET['store_info_id_d'];
 	$show_stat=$_GET['show_stat'];
 
 
-	
-	
+
 
 
 
@@ -52,7 +53,7 @@
 
 		if(isset($_POST['sell_a_product']))
 		{
-				$approved=0;
+			$approved=0;
       			$seller=$_SESSION['user_name'];
       			$category=$_POST['cat'];
       			$subcategory=$_POST['subcat'];
@@ -124,19 +125,32 @@
 	
 		}
 
-		if(isset($_POST['add_stock'])) 
+		
+		if(isset($_POST['add_variant']))
 		{
-			//$unique_type_id_to_add=$_POST['store_unique_type_id_send'];
-			$quantity_to_add=$_POST['stock_quantity'];
-			$store_info_id_sent=$_POST['store_info_id_send'];
+			$variant_size = $_POST['v_size'];
+			$variant_color = $_POST['v_color'];
+			$variant_price = $_POST['v_price'];
+			$variant_quantity = $_POST['v_quantity'];
+			$variant_store_info_id = $_POST['v_store_info_id'];
+			$variant_store_product_id = $_POST['v_store_product_id'];
 			
-			$sql_stock = "update store_info set stock_quantity = '$quantity_to_add',stock_quantity_status = 1 where store_info_id = '$store_info_id_sent'";
-			$con->query($sql_stock);
+			/*echo $variant_size;echo "<br>";
+			echo $variant_color;echo "<br>";
+			echo $variant_price;echo "<br>";
+			echo $variant_quantity;echo "<br>";
+			echo $variant_store_info_id;echo "<br>";
+			echo $variant_store_product_id;echo "<br>";*/
 			
-			header("Location:seller_enter.php?my_sell_requests=yes&&show_stat=1");
+			$con->query("insert into variant(price,color,size,quantity,store_info_id,store_product_id,variant_approved) values('".mysqli_real_escape_string($con,$variant_price)."','".mysqli_real_escape_string($con,$variant_color)."',
+			'".mysqli_real_escape_string($con,$variant_size)."','".mysqli_real_escape_string($con,$variant_quantity)."','".mysqli_real_escape_string($con,$variant_store_info_id)."','".mysqli_real_escape_string($con,$variant_store_product_id)."',0)");
+			
+			header("Location:seller_enter.php?my_sell_requests=yes&&show_stat=1&&stock_variant=yes");
                 	die();
+			
+			
 		}
-
+		
 
 ?>
 
@@ -177,27 +191,27 @@
 	
       <?php } else if($sell_a_product=="yes") { ?>
       		
-	    <a class="btn btn-dark m-4" href="seller_enter.php?seller_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
-            <form class="jumbotron m-4" method="POST" action="seller_enter.php">
-		  			<label for="category">Category</label>
-                  	<div class="form-group">
+	    			<a class="btn btn-dark m-4" href="seller_enter.php?seller_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
+            			<form class="jumbotron m-4" method="POST" action="seller_enter.php">
+		  		<label for="category">Category</label>
+                  		<div class="form-group">
     					<select class="form-control" id="category" name="cat">
-							<option value="notselected">Choose...</option>
-                              	<?php for($i=0;$i<$c;$i++) { ?>
+						<option value="notselected">Choose...</option>
+                              				<?php for($i=0;$i<$c;$i++) { ?>
 					      			<option value="<?=$categories[$i]?>"><?=$i+1?> - <?=$categories[$i]?></option>
 				      			<?php } ?>
     					</select>
-  		  			</div>
+  		  		</div>
 		  			<label for="sub_category">Sub_Category</label>
-                  	<div class="form-group">
-    						<select class="form-control" id="category" name="subcat">
-								<option value="notselected">Choose...</option>
-                              	<?php for($j=0;$j<$sc;$j++) { ?>
+                  		<div class="form-group">
+    					<select class="form-control" id="category" name="subcat">
+						<option value="notselected">Choose...</option>
+                              				<?php for($j=0;$j<$sc;$j++) { ?>
 					      			<option value="<?=$sub_categories[$j]?>"><?=$j+1?> - <?=$sub_categories[$j]?></option>
-								<?php } ?>
-    						</select>
-  		   			</div>
-					<div class="form-group">
+							<?php } ?>
+    					</select>
+  		   		</div>
+				<div class="form-group">
         				<label for="inputpro">product</label>
         					<input type="text" class="form-control" id="inputpro" placeholder="product name" name="pro" required>
     		   		</div>
@@ -235,45 +249,39 @@
 	
 	<?php
 	
-		$sql0 = "select * from store_info where approved=0";
+		$user = $_SESSION['user_name'];
+	
+		$sql0 = "select * from store_info where approved=0 and seller_user_name='$user'";
 		$res0i = $con->query($sql0);
 		$res0 = $res0i->num_rows;
 		//echo $res0;echo "<br>";
 	
-		$sql1 = "select * from store_info where approved=1";
+		$sql1 = "select * from store_info where approved=1 and seller_user_name='$user'";
 		$res1i = $con->query($sql1);
 		$res1 = $res1i->num_rows;
 		//echo $res1;echo "<br>";
 	
-		$sql2 = "select * from store_info where approved=2";
+		$sql2 = "select * from store_info where approved=2 and seller_user_name='$user'";
 		$res2i = $con->query($sql2);
 		$res2 = $res2i->num_rows;
 		//echo $res2;echo "<br>";	
-	
-		$dynamic_quantity = array();
-		$res = $con->query("select up.quantity from unique_product as up,store_info as si where up.unique_type_id=si.store_unique_type_id;");
-		while($ele = $res->fetch_assoc())
-			$dynamic_quantity[]=$ele['quantity'];
-	
-		$sql4 = "select * from store_info where stock_quantity_status=1";
-		$res4i = $con->query($sql4);
-		$res4 = $res4i->num_rows;
 	
 	?>
 	
 	
 	<div class="text-center m-4">
             <a <?php if($show_stat==0) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=0" role="button">Pending<span class="badge badge-light ml-2"><?=$res0;?></span></a>
-	    <a <?php if($show_stat==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=1" role="button">Approved <span class="badge badge-light ml-2 mr-2"><?=$res1;?></span> - Add Stock <span class="badge badge-warning ml-2"><?=$res4?>/<?=$res1;?></span> - Add Variant <span class="badge badge-info ml-2"><? echo"0"; ?>/<? echo"0"; ?></span></a>
+	    <a <?php if($show_stat==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=1&&stock_variant=yes" role="button">Approved <span class="badge badge-light ml-2 mr-2"><?=$res1;?></span></a>
             <a <?php if($show_stat==2) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="seller_enter.php?my_sell_requests=yes&&show_stat=2" role="button">Rejected<span class="badge badge-light ml-2"><?=$res2;?></span></a>
 	</div>
 			
+		<?php if($stock_variant!="yes") { ?>	
 			
 			<?php $q=0;$c=0;$cc=0; for($k=0;$k<$n;$k++) { ?>
-	
-			<?php if($show_stat!=$approved[$k]&&!($show_stat==0 && $approved[$k]>2)) continue; ?>
-		 		
-				<div class="card m-4 border-dark">
+
+				<?php if(($approved[$k]==2&&$show_stat==2)||($approved[$k]==0&&$show_stat==0)) { ?>
+
+					<div class="card m-4 border-dark">
   					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$cc?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$product_name[$k]?> <strong><?php if($stock_quantity_status[$k]==1) { ?> <span class="badge badge-warning ml-2">Stock Request - Awaiting Admin</span> <?php } ?></strong></div>
   					
 					<div class="collapse m-2" id="collapse_m<?=$cc?>">
@@ -282,169 +290,248 @@
     						<p class="card-text">category : <?=$category[$k]?></p>
     						<p class="card-text">sub category : <?=$sub_category[$k]?></p>
     						<p class="card-text">product brand  : <?=$product_brand[$k]?></p>
-    						<p class="card-text">product description : <?=$product_description[$k]?></p>
-
+    						<p class="card-text">product description : <?=$product_description[$k]?></p>					
+	
+    				<? if($approved[$k]==2&&$show_stat==2) { ?>
 					
-    				<? if($approved[$k]==1) { ?>			
-							
-					<!--get all unique products-->
-						<?php  
-							
-							$get_unique_type_id=array();
-							$get_unique = $con->query("select * from unique_product where product_id='$store_product_id[$k]'");
-							while($get_unique_ele = $get_unique->fetch_assoc())
-								$get_unique_type_id[]=$get_unique_ele['unique_type_id'];
-							
-							$cov = count($get_unique_type_id);
-		
-						?>	
-							
-					<!--get all unique products end-->
-							
-					<!--variant logic start-->	
-							
-					<div class="row">
-						<?php for($zz=0;$zz<=$cov;$zz++) { ?>
-						<?php if($zz==$cov) { ?>
-						<div class="col-12 col-sm-6">
-							<div class="card border-dark m-4">
-  								<div class="card-body text-center">
-    									<a href="#" class="btn btn-primary">Add a Variant</a>
-  								</div>
-							</div>
-						</div>
-						<?php } else { ?>
-						<div class="col-12 col-sm-6">
-							<div class="card border-dark m-4">
-  								<div class="card-body">
-									<?php
-										$get_unique_details_price = array();
-										$get_unique_details_color = array();
-										$get_unique_details_size = array();
-										$get_unique_details_quantity = array();
-		
-										for($lo=0;$lo<$cov;$lo++){
-											$get_unique_details_res = $con->query("select * from unique_product where unique_type_id='$get_unique_type_id[$lo]'");
-											while($get_unique_details_ele = $get_unique_details_res->fetch_assoc())
-											{
-												$get_unique_details_price[] = $get_unique_details_ele['price'];
-												$get_unique_details_color[] = $get_unique_details_ele['color'];
-												$get_unique_details_size[] = $get_unique_details_ele['size'];
-												$get_unique_details_quantity[] = $get_unique_details_ele['quantity'];
-											}
-											
-											//echo '<p class="card-text">price : '.$get_unique_details_price[0].'</p>
-    											      //<p class="card-text">color : '.$get_unique_details_color[0].'</p>
-											      //<p class="card-text">size : '.$get_unique_details_size[0].'</p>
-											      //<p class="card-text">quantity : '.$get_unique_details_quantity[0].'</p>';
-										}
-							      		?>
-    									<a href="#" class="btn btn-primary text-center">Add Stock</a>
-  								</div>
-							</div>
-						</div>
-						<?php } ?>
-						<?php } ?>
-					</div>
-					<!--variant logic end-->
-							
-							
-							
-					<p class="card-text">quantity : <?=$dynamic_quantity[$q]?> <?php if($stock_quantity_status[$k]==1) { ?><i class="spinner-grow spinner-grow-sm" role="status"></i><?php }else{ ?><i class="fa fa-check-circle ml-2 mr-2" style="color:green;font-size:20px;"></i><strong>stock updated</strong><?php } ?></p>
-					<?php $q++; ?>
-					<?php if($stock_quantity[$k]>0) { ?>
-						<p class="card-text">quantity to add : <?=$stock_quantity[$k]?> <i class="spinner-grow spinner-grow-sm" role="status"></i></p>	
-    					<?php } ?>
-					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
-					
-					<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_s<?=$cc?>" aria-expanded="false" aria-controls="collapseExample" <?php if($stock_quantity_status[$k]==1&&$stock_quantity[$k]>0) { ?> disabled <?php } ?> >
-						Add stock
-					</button>
-						
-					<div class="collapse m-2" id="collapse_s<?=$cc?>">
-  					<div class="card card-body" style="padding:8px;">
-						<form method="POST" action="seller_enter.php" class="input-group d-flex justify-content-center">
-								<p>Add quantity of stock</p>
-								<div class="form-group m-2 col-12">
-    									<div class="form-group">
-        									<label for="inputqty">quantity</label>
-        										<input type="number" min="1" max="10" class="form-control" id="inputqty" placeholder="quantity" name="stock_quantity" required>
-    									</div>
-  								</div>
-								<div class="form-group m-2 col-12">
-									<input type="hidden" name="store_unique_type_id_send" value="<?=$store_unique_type_id[$k]?>" />
-									<input type="hidden" name="store_info_id_send" value="<?=$store_info_id[$k]?>" />
-  								</div>
-								
-								<button class="btn btn-dark" name="add_stock" type="submit">Add stock</button>
-						</form>
-  					</div>
-				</div>	
-						
-					<button class="btn btn-primary btn-sm mt-4" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_v<?=$c?>" aria-expanded="false" aria-controls="collapseExample" <?php if($got_status[0]==1||$got_status[0]==2||$got_status[0]==3||$got_status[0]==4) { ?> disabled <?php } ?> >
-						Add a Variant
-					</button>
-					<!--add variant-->
-					<div class="collapse m-2" id="collapse_v<?=$c?>">
-  					<div class="card card-body" style="padding:8px;">
-						<form method="POST" action="seller_enter.php" class="input-group d-flex justify-content-center">
-								<p>Add variant details</p>
-								<div class="form-group m-2 col-12">
-    									<div class="form-group">
-        									<label for="inputsize">size</label>
-        										<input type="text" class="form-control" id="inputsize" placeholder="size" name="v_size" required>
-    									</div>	
-    									<div class="form-group">
-        									<label for="inputcolor">color</label>
-        										<input type="text" class="form-control" id="inputcolor" placeholder="color" name="v_color" required>
-    									</div>
-    									<div class="form-group">
-        									<label for="inputcolor">Price</label>
-        										<input type="number" class="form-control" id="inputprice" placeholder="price" name="v_price" required>
-    									</div>
-    									<div class="form-group">
-        									<label for="inputqty">quantity</label>
-        										<input type="number" class="form-control" id="inputqty" placeholder="quantity" name="v_qty" required>
-    									</div>
-  								</div>
-								<div class="form-group m-2 col-12">
-									<input type="hidden" name="v_product_brand" value="<?=$product_brand[$k]?>" />
-									<input type="hidden" name="v_product_name" value="<?=$product_name[$k]?>" />
-									<input type="hidden" name="v_product_description" value="<?=$product_description[$k]?>" />
-									<input type="hidden" name="v_seller_user_name" value="<?=$_SESSION['user_name']?>" />
-									<input type="hidden" name="v_category" value="<?=$category[$k]?>" />
-									<input type="hidden" name="v_sub_category" value="<?=$sub_category[$k]?>" />
-  								</div>
-								
-								<button class="btn btn-dark" name="submit_variant" type="submit">Add Variant</button>
-						</form>
-  					</div>
-				</div>
-				<!--add variant end-->
-						
-    				<? } else if($approved[$k]==2){ ?>
 					<p class="card-text">price : <?=$price[$k]?></p>
     					<p class="card-text">color : <?=$color[$k]?></p>
 					<p class="card-text">size  : <?=$size[$k]?></p>	
 							
 					<p class="card-text">quantity : <?=$quantity[$k]?></p>
+							
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6>
-				<? } else { ?>	
+							
+				<? } else if($approved[$k]==0&&$show_stat==0){ ?>	
+								
 					<p class="card-text">price : <?=$price[$k]?></p>
     					<p class="card-text">color : <?=$color[$k]?></p>
 					<p class="card-text">size  : <?=$size[$k]?></p>			
 							
+					<p class="card-text">quantity : <?=$quantity[$k]?></p>		
+							
     					<h6 class="card-text">Status - waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
     				<? } ?>
-					
+				<? } ?>	
 					</div>
 				</div>
 					
-			</div>
-				
- 		 <?php $c++;$cc++; } ?>
+			</div>	
 	
-      <?php } ?>
+ 		 	<?php $c++;$cc++; } ?>
+	
+		<?php } else if($stock_variant=="yes") { ?>
+	
+			<?php
+	
+				$approved_sql = "select c.cat_name,sc.sub_cat_name,p.product_id,s.store_info_id,p.product_name,p.product_brand,p.product_description,up.unique_type_id,up.price,up.quantity,up.color,up.size from categories as c,sub_categories as sc,products as p,unique_product as up,store_info as s where s.store_unique_type_id=up.unique_type_id and p.product_id=up.product_id and p.sub_cat_id=sc.sub_cat_id and sc.cat_id=c.cat_id and s.seller_user_name='$user'";
+				$approved_res = $con->query($approved_sql);
+				
+				$approved_store_info_id=array();
+				$approved_store_product_id=array();
+				$approved_category=array();
+				$approved_sub_category=array();
+				$approved_product_name=array();
+				$approved_product_brand=array();
+				$approved_product_description=array();
+				$approved_color=array();
+				$approved_size=array();
+				$approved_price=array();
+				$approved_quantity=array();
+		
+				while($approved_ele = $approved_res->fetch_assoc())
+				{
+					$approved_store_info_id[]=$approved_ele['store_info_id'];
+					$approved_category[]=$approved_ele['cat_name'];
+					$approved_sub_category[]=$approved_ele['sub_cat_name'];
+					$approved_store_product_id[]=$approved_ele['product_id'];
+					$approved_product_name[]=$approved_ele['product_name'];
+					$approved_product_brand[]=$approved_ele['product_brand'];
+					$approved_product_description[]=$approved_ele['product_description'];
+					$approved_color[]=$approved_ele['color'];
+					$approved_size[]=$approved_ele['size'];
+					$approved_price[]=$approved_ele['price'];
+					$approved_quantity[]=$approved_ele['quantity'];
+				}
+		
+				$approved_count=count($approved_store_info_id);
+			?>
+	
+	
+			<?php $ac=0; for($ai=0;$ai<$approved_count;$ai++) { ?>
+				
+				<div class="card m-4 border-dark">
+  					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$approved_product_name[$ai]?></div>
+  					
+						<div class="collapse m-2" id="collapse_m<?=$ac?>">
+							
+							<div class="card-body">
+								<p class="card-text">store_info_id : <?=$approved_store_info_id[$ai]?></p>	
+    							<p class="card-text">category : <?=$approved_category[$ai]?></p>
+    							<p class="card-text">sub category : <?=$approved_sub_category[$ai]?></p>
+    							<p class="card-text">product brand  : <?=$approved_product_brand[$ai]?></p>
+    							<p class="card-text">product description : <?=$approved_product_description[$ai]?></p>	
+							</div>
+					
+						<div class="col-12 col-sm-4">
+							<div class="card border-dark m-4">
+  								<div class="card-body">
+									<p class="card-text">color : <?=$approved_color[$ai]?></p>
+    								<p class="card-text">size  : <?=$approved_size[$ai]?></p>
+    								<p class="card-text">price : <?=$approved_price[$ai]?></p>
+									<p class="card-text">quantity : <?=$approved_quantity[$ai]?></p>
+									<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">approved</span></h6>
+								</div>
+							</div>
+						</div>
+							
+							
+						<?php
+							
+							$variant_res = $con->query("select * from variant where store_info_id='$approved_store_info_id[$ai]'");
+							
+							$variant_approved_v=array();
+							$variant_price_v=array();
+							$variant_color_v=array();
+							$variant_size_v=array();
+							$variant_quantity_v=array();
+							$variant_id_v=array();
+															   
+							while($variant_ele = $variant_res->fetch_assoc())
+							{
+								$variant_approved_v[]=$variant_ele['variant_approved'];
+								$variant_price_v[]=$variant_ele['price'];
+								$variant_color_v[]=$variant_ele['color'];
+								$variant_size_v[]=$variant_ele['size'];
+								$variant_quantity_v[]=$variant_ele['quantity'];
+								$variant_id_v[]=$variant_ele['variant_id'];
+							}
+				
+							$vc = count($variant_id_v);
+									   
+							
+															   
+						?>	
+							
+						<?php for($vi=0;$vi<$vc;$vi++) { ?>	
+							
+						<!--waiting variant start-->	
+						<?php if($variant_approved_v[$vi]==0) { ?>
+							<div class="col-12 col-sm-4">
+								<div class="card border-dark m-4">
+  									<div class="card-body">
+										<p class="card-text">color : <?=$variant_color_v[$vi]?></p>
+    									<p class="card-text">size  : <?=$variant_size_v[$vi]?></p>
+    									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
+										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
+										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-info">processing</span></h6>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
+						<!--waiting variant end-->		
+							
+							
+						<!--approved variant start-->
+							
+						<!--approved variant end-->
+					
+						
+	
+						<!--rejected variant start-->
+						<?php if($variant_approved_v[$vi]==2) { ?>
+							<div class="col-12 col-sm-4">
+								<div class="card border-dark m-4">
+  									<div class="card-body">
+										<p class="card-text">color : <?=$variant_color_v[$vi]?></p>
+    									<p class="card-text">size  : <?=$variant_size_v[$vi]?></p>
+    									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
+										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
+										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-danger">rejected</span></h6>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
+						<!--rejected variant end-->
+	
+						<?php } ?>	
+					
+
+
+							
+					
+						<div class="col-12 col-sm-4">
+							<div class="card border-dark m-4">
+  								<div class="card-body text-center">
+    									<button class="btn btn-primary btn-sm" style="display:block;" type="button" data-toggle="collapse" data-target="#collapse_v<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">
+										Add a Variant
+									</button>
+									<!--add variant-->
+									<div class="collapse m-2" id="collapse_v<?=$ac?>">
+  										<div class="card card-body" style="padding:8px;">
+											<form method="POST" action="seller_enter.php" class="input-group d-flex justify-content-center">
+												<p>Add variant details</p>
+													<div class="form-group m-2 col-12">
+    														<div class="form-group row">
+															<div class="col-sm-4">
+        															<label for="inputsize">size</label>
+															</div>
+															<div class="col-sm-8">
+        															<input type="text" class="form-control" id="inputsize" placeholder="size" name="v_size" required>
+															</div>	
+    														</div>	
+    														<div class="form-group row">
+															<div class="col-sm-4">
+        															<label for="inputcolor">color</label>
+															</div>
+															<div class="col-sm-8">
+       																<input type="text" class="form-control" id="inputcolor" placeholder="color" name="v_color" required>
+															</div>
+    														</div>
+    														<div class="form-group row">
+															<div class="col-sm-4">
+        															<label for="inputcolor">Price</label>
+															</div>
+															<div class="col-sm-8">
+        															<input type="number" class="form-control" id="inputprice" placeholder="price" name="v_price" required>
+															</div>
+    														</div>
+    														<div class="form-group row">
+															<div class="col-sm-4">
+        															<label for="inputqty">quantity</label>
+															</div>
+															<div class="col-sm-8">
+        															<input type="number" class="form-control" id="inputqty" placeholder="quantity" name="v_quantity" required>
+															</div>
+    														</div>
+  													</div>
+													<div class="form-group m-2 col-12">
+														<input type="hidden" name="v_store_info_id" value="<?=$approved_store_info_id[$ai]?>" />
+														<input type="hidden" name="v_store_product_id" value="<?=$approved_store_product_id[$ai]?>" />
+  													</div>
+							
+													<button class="btn btn-dark" name="add_variant" type="submit">Add Variant</button>
+											</form>
+  										</div>
+									</div>
+									<!--add variant end-->		
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php $ac++; } ?>
+			
+			
+	
+      		<?php } ?>
+	
+	
+	<?php } ?>
+	
+	
+	
   
 
       
