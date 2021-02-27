@@ -376,16 +376,56 @@
     								<p class="card-text">size  : <?=$approved_size[$ai]?></p>
     								<p class="card-text">price : <?=$approved_price[$ai]?></p>
 									<p class="card-text">quantity : <?=$approved_quantity[$ai]?></p>
-									<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
+									<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">approved</span></h6>
 								</div>
 							</div>
 						</div>
 							
 							
+						<?php
 							
+							$variant_res = $con->query("select * from variant where store_info_id='$approved_store_info_id[$ai]'");
+							
+							$variant_approved_v[]=array();
+							$variant_price_v[]=array();
+							$variant_color_v[]=array();
+							$variant_size_v[]=array();
+							$variant_quantity_v[]=array();
+							$variant_id_v[]=array();
+															   
+							while($variant_ele = $variant_res->fetch_assoc())
+							{
+								$variant_approved_v[]=$variant_ele['variant_approved'];
+								$variant_price_v[]=$variant_ele['price'];
+								$variant_color_v[]=$variant_ele['color'];
+								$variant_size_v[]=$variant_ele['size'];
+								$variant_quantity_v[]=$variant_ele['quantity'];
+								$variant_id_v[]=$variant_id_v['variant_id'];
+							}
+				
+							$vc = count($variant_id_v);
+															   	
+															   
+						?>	
+							
+							
+						<?php for($vi=0;$vi<$vc;$vi++) { ?>	
 							
 						<!--waiting variant start-->	
+						<?php if($variant_approved_v[$vi]==0) { ?>
 							<p><span class="badge badge-primary ml-5">Processing</span></p>
+							<div class="col-12 col-sm-4">
+								<div class="card border-dark m-4">
+  									<div class="card-body">
+										<p class="card-text">color : <?=$variant_color_v[$vi]?></p>
+    									<p class="card-text">size  : <?=$variant_size_v[$vi]?></p>
+    									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
+										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
+										<h6 class="card-text">Status&nbsp&nbsp processing</h6>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
 						<!--waiting variant end-->		
 							
 							
@@ -396,9 +436,23 @@
 						
 	
 						<!--rejected variant start-->
+						<?php if($variant_approved_v[$vi]==2) { ?>
 							<p><span class="badge badge-danger ml-5">Rejected</span></p>
+							<div class="col-12 col-sm-4">
+								<div class="card border-dark m-4">
+  									<div class="card-body">
+										<p class="card-text">color : <?=$variant_color_v[$vi]?></p>
+    									<p class="card-text">size  : <?=$variant_size_v[$vi]?></p>
+    									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
+										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
+										<h6 class="card-text">Status&nbsp&nbsp rejected</h6>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
 						<!--rejected variant end-->
 	
+						<?php } ?>	
 					
 
 
