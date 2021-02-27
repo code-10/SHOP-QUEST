@@ -385,18 +385,18 @@
 							
 							
 						<!--waiting variant start-->	
-							<span class="badge badge-primary">Processing</span>
+							<p><span class="badge badge-primary">Processing</span></p>
 						<!--waiting variant end-->		
 							
 							
 						<!--approved variant start-->
-							<span class="badge badge-success">Approved</span>
+							<p><span class="badge badge-success">Approved</span></p>
 						<!--approved variant end-->
 					
 						
 	
 						<!--rejected variant start-->
-							<span class="badge badge-danger">Rejected</span>
+							<p><span class="badge badge-danger">Rejected</span></p>
 						<!--rejected variant end-->
 	
 					
