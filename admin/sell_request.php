@@ -331,54 +331,12 @@
 		$res4i = $con->query($sql4);
 		$res4 = $res4i->num_rows;
 	
-		$dynamic_quantity = array();
-		$res = $con->query("select up.quantity from unique_product as up,store_info as si where up.unique_type_id=si.store_unique_type_id;");
-		while($ele = $res->fetch_assoc())
-			$dynamic_quantity[]=$ele['quantity'];
-	
-	?>
-	
-	<?
-		
-		//queries are for updating stock
-		$update_stock_u=$_GET['update_stock'];
-		$store_info_id_u=$_GET['store_info_id'];
-		$update_unique_type_id_u=$_GET['update_unique_type_id'];
-		$stock_quantity_u=$_GET['stock_quantity'];
-	
-		if($update_stock_u=="yes")
-		{
-			$existing_quantity=array();
-			$check_existing=$con->query("select quantity from unique_product where unique_type_id='$update_unique_type_id_u'");
-			while($ele_check = $check_existing->fetch_assoc())
-				$existing_quantity[]=$ele_check['quantity'];
-			
-			$existing_quantity_value=$existing_quantity[0];
-			$update_stock_quantity_u=$existing_quantity_value+$stock_quantity_u;
-			
-			$con->query("update unique_product set quantity='$update_stock_quantity_u' where unique_type_id='$update_unique_type_id_u'");
-			
-			$con->query("update store_info set stock_quantity=0,stock_quantity_status=0 where store_info_id='$store_info_id_u'");
-			
-			header("Location:sell_request.php?sell_request_main=yes&&aprstatus=1");
-                	die();
-			
-		}
-		else if($update_stock_u=="no")
-		{
-			$con->query("update store_info set stock_quantity=0,stock_quantity_status=0 where store_info_id='$store_info_id_u'");
-			
-			header("Location:sell_request.php?sell_request_main=yes&&aprstatus=1");
-                	die();
-		}
-	
-	
 	?>
 
 	
 	<div class="text-center m-4">
             <a <?php if($aprstatus==0) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=0" role="button">Pending<span class="badge badge-light ml-2"><?=$res0;?></span></a>
-	    <a <?php if($aprstatus==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=1" role="button">Approved<span class="badge badge-light ml-2 mr-2"><?=$res1;?></span> - Add Stock <span class="badge badge-warning ml-2"><?=$res4?>/<?=$res1;?></span></a>
+	    <a <?php if($aprstatus==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=1" role="button">Approved<span class="badge badge-light ml-2 mr-2"><?=$res1;?></span></a>
             <a <?php if($aprstatus==2) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&aprstatus=2" role="button">Rejected<span class="badge badge-light ml-2"><?=$res2;?></span></a>
 	</div>
 	
@@ -390,7 +348,7 @@
 	<? if($aprstatus!=$approved[$i]&&!($aprstatus==0 && $approved[$i]>2)) 
 		 continue; ?>
 <div class="card m-4">
-  <div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$c?>" aria-expanded="false" aria-controls="collapseExample">seller name : <?=$seller_name[$i]?> <strong><?php if($stock_quantity_status[$i]==1) { ?> <span class="badge badge-warning ml-2">Stock Request - Awaiting Admin</span> <?php } ?></strong></div>
+  <div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$c?>" aria-expanded="false" aria-controls="collapseExample">sold by <?=$seller_name[$i]?> <strong><?php if($stock_quantity_status[$i]==1) { ?> <span class="badge badge-warning ml-2">Stock Request - Awaiting Admin</span> <?php } ?></strong></div>
   
 <div class="collapse m-2" id="collapse_m<?=$c?>">	
 <div class="card-body">
