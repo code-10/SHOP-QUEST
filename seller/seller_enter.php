@@ -411,6 +411,8 @@
 															   
 							print_r($variant_id_v);
 							echo "<br><br>";
+									   
+							unset($variant_id_v);
 															   
 						?>	
 							
