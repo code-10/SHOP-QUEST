@@ -408,10 +408,11 @@
 							}
 				
 							$vc = count($variant_id_v);
-															   	
+															   
+							print_r($variant_res->fetch_assoc());
+							echo "<br><br>";
 															   
 						?>	
-							
 							
 						<?php for($vi=0;$vi<$vc;$vi++) { ?>	
 							
