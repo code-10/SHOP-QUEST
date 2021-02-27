@@ -412,7 +412,6 @@
 						<?php for($vi=0;$vi<$vc;$vi++) { ?>	
 							
 						<!--waiting variant start-->	
-						<p><span class="badge badge-primary ml-5">Processing</span></p>
 						<?php if($variant_approved_v[$vi]==0) { ?>
 							<div class="col-12 col-sm-4">
 								<div class="card border-dark m-4">
@@ -430,13 +429,12 @@
 							
 							
 						<!--approved variant start-->
-							<p><span class="badge badge-success ml-5">Approved</span></p>
+							
 						<!--approved variant end-->
 					
 						
 	
 						<!--rejected variant start-->
-						<p><span class="badge badge-danger ml-5">Rejected</span></p>
 						<?php if($variant_approved_v[$vi]==2) { ?>
 							<div class="col-12 col-sm-4">
 								<div class="card border-dark m-4">
