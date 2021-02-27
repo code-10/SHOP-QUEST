@@ -410,6 +410,8 @@
 							$vc = count($variant_id_v);
 									   
 							unset($variant_id_v);
+							unset($variant_approved_v);
+							unset($variant_price);
 															   
 						?>	
 							
