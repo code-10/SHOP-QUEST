@@ -404,7 +404,7 @@
 								$variant_color_v[]=$variant_ele['color'];
 								$variant_size_v[]=$variant_ele['size'];
 								$variant_quantity_v[]=$variant_ele['quantity'];
-								$variant_id_v[]=$variant_id_v['variant_id'];
+								$variant_id_v[]=$variant_ele['variant_id'];
 							}
 				
 							$vc = count($variant_id_v);
