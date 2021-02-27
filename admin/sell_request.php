@@ -43,7 +43,13 @@
   
   
   
-  
+  	<div class="p-4" style="background-color:black;color:white;">
+        <div class="text-center">
+              <h4>Seller requests</h4>
+        </div>
+    </div>
+     
+	<a class="btn btn-dark m-4" href="admin_enter.php?admin_enter_main=yes" role="button"><i class="fa fa-arrow-circle-left mr-2"></i>Back to main menu</a>
   
   
   
