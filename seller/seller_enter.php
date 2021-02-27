@@ -390,12 +390,12 @@
 							
 							$variant_res = $con->query("select * from variant where store_info_id='$approved_store_info_id[$ai]'");
 							
-							$variant_approved_v[]=array();
-							$variant_price_v[]=array();
-							$variant_color_v[]=array();
-							$variant_size_v[]=array();
-							$variant_quantity_v[]=array();
-							$variant_id_v[]=array();
+							$variant_approved_v=array();
+							$variant_price_v=array();
+							$variant_color_v=array();
+							$variant_size_v=array();
+							$variant_quantity_v=array();
+							$variant_id_v=array();
 															   
 							while($variant_ele = $variant_res->fetch_assoc())
 							{
@@ -409,9 +409,7 @@
 				
 							$vc = count($variant_id_v);
 									   
-							unset($variant_id_v);
-							unset($variant_approved_v);
-							unset($variant_price);
+							
 															   
 						?>	
 							
