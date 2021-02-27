@@ -5,13 +5,13 @@
 
 	$con=getCon();
       
-      session_start(); 
+      /*session_start(); 
 
       if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
       {
             header("Location:../index.php");
             die(); 
-      }
+      }*/
 
 ?>
 
