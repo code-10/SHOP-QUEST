@@ -363,22 +363,64 @@
 							
 							<div class="card-body">
 								<p class="card-text">store_info_id : <?=$approved_store_info_id[$ai]?></p>	
-    								<p class="card-text">category : <?=$approved_category[$ai]?></p>
-    								<p class="card-text">sub category : <?=$approved_sub_category[$ai]?></p>
-    								<p class="card-text">product brand  : <?=$approved_product_brand[$ai]?></p>
-    								<p class="card-text">product description : <?=$approved_product_description[$ai]?></p>	
+    							<p class="card-text">category : <?=$approved_category[$ai]?></p>
+    							<p class="card-text">sub category : <?=$approved_sub_category[$ai]?></p>
+    							<p class="card-text">product brand  : <?=$approved_product_brand[$ai]?></p>
+    							<p class="card-text">product description : <?=$approved_product_description[$ai]?></p>	
 							</div>
 					
 						<div class="col-12 col-sm-4">
 							<div class="card border-dark m-4">
   								<div class="card-body">
 									<p class="card-text">color : <?=$approved_color[$ai]?></p>
-    									<p class="card-text">size  : <?=$approved_size[$ai]?></p>
-    									<p class="card-text">price : <?=$approved_price[$ai]?></p>
+    								<p class="card-text">size  : <?=$approved_size[$ai]?></p>
+    								<p class="card-text">price : <?=$approved_price[$ai]?></p>
 									<p class="card-text">quantity : <?=$approved_quantity[$ai]?></p>
+									<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">Success</span></h6>
 								</div>
 							</div>
 						</div>
+							
+							
+							
+							
+						<!--waiting variant start-->	
+						<div class="card m-4 border-dark">
+  							<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Processing</div>
+  		
+								<div class="collapse m-2" id="collapse_m<?=$ac?>">
+								</div>
+							
+							</div>
+						</div>
+						<!--waiting variant end-->		
+							
+							
+						<!--approved variant start-->
+						<div class="card m-4 border-dark">
+  							<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Approved</div>
+  		
+								<div class="collapse m-2" id="collapse_m<?=$ac?>">
+								</div>
+							
+							</div>
+						</div>
+						<!--approved variant end-->
+					
+						
+	
+						<!--rejected variant start-->
+						<div class="card m-4 border-dark">
+  							<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Rejected</div>
+  		
+								<div class="collapse m-2" id="collapse_m<?=$ac?>">
+								</div>
+							
+							</div>
+						</div>
+						<!--rejected variant end-->
+	
+					
 							
 					
 						<div class="col-12 col-sm-4">
