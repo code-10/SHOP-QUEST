@@ -412,8 +412,8 @@
 						<?php for($vi=0;$vi<$vc;$vi++) { ?>	
 							
 						<!--waiting variant start-->	
+						<p><span class="badge badge-primary ml-5">Processing</span></p>
 						<?php if($variant_approved_v[$vi]==0) { ?>
-							<p><span class="badge badge-primary ml-5">Processing</span></p>
 							<div class="col-12 col-sm-4">
 								<div class="card border-dark m-4">
   									<div class="card-body">
@@ -421,7 +421,7 @@
     									<p class="card-text">size  : <?=$variant_size_v[$vi]?></p>
     									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
 										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
-										<h6 class="card-text">Status&nbsp&nbsp processing</h6>
+										<h6 class="card-text">Status&nbsp&nbsp : processing</h6>
 									</div>
 								</div>
 							</div>
@@ -436,8 +436,8 @@
 						
 	
 						<!--rejected variant start-->
+						<p><span class="badge badge-danger ml-5">Rejected</span></p>
 						<?php if($variant_approved_v[$vi]==2) { ?>
-							<p><span class="badge badge-danger ml-5">Rejected</span></p>
 							<div class="col-12 col-sm-4">
 								<div class="card border-dark m-4">
   									<div class="card-body">
@@ -445,7 +445,7 @@
     									<p class="card-text">size  : <?=$variant_size_v[$vi]?></p>
     									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
 										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
-										<h6 class="card-text">Status&nbsp&nbsp rejected</h6>
+										<h6 class="card-text">Status&nbsp&nbsp : rejected</h6>
 									</div>
 								</div>
 							</div>
