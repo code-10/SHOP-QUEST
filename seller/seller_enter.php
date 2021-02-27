@@ -409,7 +409,7 @@
 				
 							$vc = count($variant_id_v);
 															   
-							print_r($variant_res->fetch_assoc());
+							print_r($variant_id_v);
 							echo "<br><br>";
 															   
 						?>	
