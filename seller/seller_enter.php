@@ -388,7 +388,7 @@
 						<div class="card m-4 border-dark">
   							<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_wa<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Processing</div>
   		
-								<div class="collapse m-2" id="collapse_m<?=$ac?>">
+								<div class="collapse m-2" id="collapse_wa<?=$ac?>">
 								</div>
 							
 							</div>
@@ -400,7 +400,7 @@
 						<div class="card m-4 border-dark">
   							<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_ap<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Approved</div>
   		
-								<div class="collapse m-2" id="collapse_m<?=$ac?>">
+								<div class="collapse m-2" id="collapse_ap<?=$ac?>">
 								</div>
 							
 							</div>
@@ -413,7 +413,7 @@
 						<div class="card m-4 border-dark">
   							<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_re<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Rejected</div>
   		
-								<div class="collapse m-2" id="collapse_m<?=$ac?>">
+								<div class="collapse m-2" id="collapse_re<?=$ac?>">
 								</div>
 							
 							</div>
