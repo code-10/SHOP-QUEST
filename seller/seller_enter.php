@@ -385,18 +385,18 @@
 							
 							
 						<!--waiting variant start-->	
-							<p><span class="badge badge-primary">Processing</span></p>
+							<p><span class="badge badge-primary ml-5">Processing</span></p>
 						<!--waiting variant end-->		
 							
 							
 						<!--approved variant start-->
-							<p><span class="badge badge-success">Approved</span></p>
+							<p><span class="badge badge-success ml-5">Approved</span></p>
 						<!--approved variant end-->
 					
 						
 	
 						<!--rejected variant start-->
-							<p><span class="badge badge-danger">Rejected</span></p>
+							<p><span class="badge badge-danger ml-5">Rejected</span></p>
 						<!--rejected variant end-->
 	
 					
