@@ -145,6 +145,10 @@
 			$con->query("insert into variant(price,color,size,quantity,store_info_id,store_product_id,variant_approved) values('".mysqli_real_escape_string($con,$variant_price)."','".mysqli_real_escape_string($con,$variant_color)."',
 			'".mysqli_real_escape_string($con,$variant_size)."','".mysqli_real_escape_string($con,$variant_quantity)."','".mysqli_real_escape_string($con,$variant_store_info_id)."','".mysqli_real_escape_string($con,$variant_store_product_id)."',0)");
 			
+			header("Location:seller_enter.php?my_sell_requests=yes&&show_stat=1&&stock_variant=yes");
+                	die();
+			
+			
 		}
 		
 
