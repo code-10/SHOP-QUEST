@@ -16,6 +16,8 @@
       	$sell_request_main=$_GET['sell_request_main'];
 	$status=$_GET['status'];
 	$stock_variant=$_GET['stock_variant'];
+	$admin_check_sell=$_GET['admin_check_sell'];
+      	$admin_reject_sell=$_GET['admin_reject_sell'];
 	
 
 ?>
@@ -177,6 +179,11 @@
 					<p class="card-text">quantity : <?=$quantity[$k]?></p>		
 							
     					<h6 class="card-text">Status - waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
+							
+					<a href='sell_request.php?admin_check_sell=yes&&storeinfoid=<?=$store_info_id[$k]?>' class="btn btn-success m-2">Edit and Approve</a>
+    					<a href='sell_request.php?admin_reject_sell=yes&&storeinfoid=<?=$store_info_id[$k]?>' name="reject_application" class="btn btn-danger m-2">Reject</a>
+    
+		
     				<? } ?>
 				<? } ?>	
 					</div>
