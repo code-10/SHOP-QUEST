@@ -110,9 +110,7 @@
 			$seller_user_name[]=$ele['seller_user_name'];
   		}
   
-  		$n=count($product_name);
-	
-		print_r($store_info_id);	
+  		$n=count($product_name);	
 			
 	?>
 	
@@ -166,7 +164,7 @@
       				$check_seller_name[]=$check_ele['seller_user_name'];
   			}				
   
-  			$n=count($check_store_info_id);
+  			$check_n=count($check_store_info_id);
       
       		}
       	
