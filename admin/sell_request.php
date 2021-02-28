@@ -105,6 +105,7 @@
 		$store_unique_type_id=array();
 		$stock_quantity=array();
 		$stock_quantity_status=array();
+		$seller_user_name=array();
   
   		while($ele = $res->fetch_assoc())
   		{
@@ -123,6 +124,7 @@
 			$stock_quantity[]=$ele['stock_quantity'];
 			$stock_quantity_status[]=$ele['stock_quantity_status'];
 			$store_product_id[]=$ele['store_product_id'];
+			$seller_user_name[]=$ele['seller_user_name'];
   		}
   
   		$n=count($product_name);
@@ -142,20 +144,21 @@
 			
 			<?php $q=0;$c=0;$cc=0; for($k=0;$k<$n;$k++) { ?>
 
-				<?php if(($approved[$k]==2&&$show_stat==2)||($approved[$k]==0&&$show_stat==0)) { ?>
+				<?php if(($approved[$k]==2&&$status==2)||($approved[$k]==0&&$status==0)) { ?>
 
 					<div class="card m-4 border-dark">
-  					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$cc?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$product_name[$k]?> <strong><?php if($stock_quantity_status[$k]==1) { ?> <span class="badge badge-warning ml-2">Stock Request - Awaiting Admin</span> <?php } ?></strong></div>
+  					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$cc?>" aria-expanded="false" aria-controls="collapseExample">Sold by <?=$seller_user_name[$k]?>  </div>
   					
 					<div class="collapse m-2" id="collapse_m<?=$cc?>">
 						<div class="card-body">
-						<p class="card-text">store_info_id : <?=$store_info_id[$k]?></p>	
+						<p class="card-text">store_info_id : <?=$store_info_id[$k]?></p>
+						<p class="card-text">product name : <?=$product_name[$k]?></p>
     						<p class="card-text">category : <?=$category[$k]?></p>
     						<p class="card-text">sub category : <?=$sub_category[$k]?></p>
     						<p class="card-text">product brand  : <?=$product_brand[$k]?></p>
     						<p class="card-text">product description : <?=$product_description[$k]?></p>					
 	
-    				<? if($approved[$k]==2&&$show_stat==2) { ?>
+    				<? if($approved[$k]==2&&$status==2) { ?>
 					
 					<p class="card-text">price : <?=$price[$k]?></p>
     					<p class="card-text">color : <?=$color[$k]?></p>
@@ -165,7 +168,7 @@
 							
 					<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-danger">Rejected</span></h6>
 							
-				<? } else if($approved[$k]==0&&$show_stat==0){ ?>	
+				<? } else if($approved[$k]==0&&$status==0){ ?>	
 								
 					<p class="card-text">price : <?=$price[$k]?></p>
     					<p class="card-text">color : <?=$color[$k]?></p>
