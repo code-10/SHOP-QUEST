@@ -117,64 +117,6 @@
 	
 	<?php
 	
-		$check_store_info_id=$_GET['store_info_id'];
-			
-		echo "printing...".$check_store_info_id;	
-			
-		if($admin_reject_sell=="yes")
-		{
-			$con->query("update store_info set approved=2 where store_info_id='$check_store_info_id'");
-			header("Location:sell_request.php?sell_request_main=yes");
-                	die();
-		}
-	
-		if($admin_check_sell=="yes"){
-      
-      			//check by admin
-        		$con=getCon();
-        		$check_sql="select * from store_info where store_info_id='$check_store_info_id'";
-    
-        		$check_res=$con->query($check_sql);
-  
-  			$check_category=array();
-  			$check_subcategory=array();
-			$check_product_name=array();
-  			$check_product_brand=array();
-  			$check_product_description=array();
-  			$check_price=array();
-  			$check_quantity=array();
-  			$check_color=array();
-  			$check_size=array();
-  			$check_approved=array();
-  			$check_store_info_id=array();
-  			$check_seller_name=array();
-  
-  			while($check_ele = $check_res->fetch_assoc())
-  			{
-      				$check_category[]=$check_ele['category'];
-	      			$check_subcategory[]=$check_ele['sub_category'];
-      				$check_product_name[]=$check_ele['product_name'];
-      				$check_product_brand[]=$check_ele['product_brand'];
-      				$check_product_description[]=$check_ele['product_description'];
-      				$check_price[]=$check_ele['price'];
-      				$check_quantity[]=$check_ele['quantity'];
-      				$check_color[]=$check_ele['color'];
-      				$check_size[]=$check_ele['size'];
-      				$check_approved[]=$check_ele['approved'];
-      				$check_store_info_id[]=$check_ele['store_info_id'];
-      				$check_seller_name[]=$check_ele['seller_user_name'];
-  			}				
-  
-  			$check_n=count($check_store_info_id);
-      
-      		}
-      	
-			
-	?>
-	
-	
-	<?php
-	
 		$sql0 = "select * from store_info where approved=0";
 		$res0i = $con->query($sql0);
 		$res0 = $res0i->num_rows;
@@ -261,6 +203,67 @@
 	
 	<?php } else if($admin_check_sell=="yes") { ?>
 		
+	
+	<?php
+	
+		$check_store_info_id=$_GET['store_info_id'];	
+			
+		echo "printing...".$check_store_info_id;			   
+						   
+		if($admin_reject_sell=="yes")
+		{
+			$con->query("update store_info set approved=2 where store_info_id='$check_store_info_id'");
+			header("Location:sell_request.php?sell_request_main=yes");
+                	die();
+		}
+	
+		if($admin_check_sell=="yes"){
+      
+      			//check by admin
+        		$con=getCon();
+        		$check_sql="select * from store_info where store_info_id='$check_store_info_id'";
+    
+        		$check_res=$con->query($check_sql);
+  
+  			$check_category=array();
+  			$check_subcategory=array();
+			$check_product_name=array();
+  			$check_product_brand=array();
+  			$check_product_description=array();
+  			$check_price=array();
+  			$check_quantity=array();
+  			$check_color=array();
+  			$check_size=array();
+  			$check_approved=array();
+  			$check_store_info_id=array();
+  			$check_seller_name=array();
+  
+  			while($check_ele = $check_res->fetch_assoc())
+  			{
+      				$check_category[]=$check_ele['category'];
+	      			$check_subcategory[]=$check_ele['sub_category'];
+      				$check_product_name[]=$check_ele['product_name'];
+      				$check_product_brand[]=$check_ele['product_brand'];
+      				$check_product_description[]=$check_ele['product_description'];
+      				$check_price[]=$check_ele['price'];
+      				$check_quantity[]=$check_ele['quantity'];
+      				$check_color[]=$check_ele['color'];
+      				$check_size[]=$check_ele['size'];
+      				$check_approved[]=$check_ele['approved'];
+      				$check_store_info_id[]=$check_ele['store_info_id'];
+      				$check_seller_name[]=$check_ele['seller_user_name'];
+  			}				
+  
+  			$check_n=count($check_store_info_id);
+      
+      		}
+      	
+			
+	?>
+	
+	
+	
+	
 		<form class="jumbotron m-4" method="POST" action="sell_request.php">
          		<!--seller name-->
      			<div class="form-group">
