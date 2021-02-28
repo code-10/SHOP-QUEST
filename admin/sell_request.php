@@ -117,11 +117,11 @@
 	
 	<?php
 	
-		$store_info_id=$_GET['store_info_id'];
+		$check_store_info_id=$_GET['store_info_id'];
 			
 		if($admin_reject_sell=="yes")
 		{
-			$con->query("update store_info set approved=2 where store_info_id='$store_info_id'");
+			$con->query("update store_info set approved=2 where store_info_id='$check_store_info_id'");
 			header("Location:sell_request.php?sell_request_main=yes");
                 	die();
 		}
@@ -129,7 +129,6 @@
 		if($admin_check_sell=="yes"){
       
       			//check by admin
-      			$check_store_info_id=$_GET['store_info_id'];
         		$con=getCon();
         		$check_sql="select * from store_info where store_info_id='$check_store_info_id'";
     
