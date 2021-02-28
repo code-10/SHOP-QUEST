@@ -14,7 +14,7 @@
       	}*/
 
       	$sell_request_main=$_GET['sell_request_main'];
-	
+	$status=$_GET['status'];
 	
 
 ?>
