@@ -22,7 +22,8 @@
 
 	$admin_verify_product=$_POST['admin_verify_product'];
 	
-
+	$variant_approve = $_GET['variant_approve'];
+	echo $variant_approve;
 ?>
 
 <body>
@@ -274,6 +275,9 @@
 							$variant_size_v=array();
 							$variant_quantity_v=array();
 							$variant_id_v=array();
+									   
+							$variant_store_product_id_v=array();
+							$variant_store_info_id_v=array();
 															   
 							while($variant_ele = $variant_res->fetch_assoc())
 							{
@@ -283,6 +287,9 @@
 								$variant_size_v[]=$variant_ele['size'];
 								$variant_quantity_v[]=$variant_ele['quantity'];
 								$variant_id_v[]=$variant_ele['variant_id'];
+								
+								$variant_store_product_id_v[]=$variant_ele['store_product_id'];
+								$variant_store_info_id_v[]=$variant_ele['store_info_id'];
 							}
 				
 							$vc = count($variant_id_v);
@@ -303,8 +310,8 @@
     									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
 										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
 										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-info">processing</span></h6>
-										<a class="btn btn-success btn-sm" href="#" role="button">Approve Variant</a>
-										<a class="btn btn-danger btn-sm" href="#" role="button">Reject Variant</a>
+										<a class="btn btn-success btn-sm" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=yes&&variant_color=<?=$variant_color_v[$vi]?>&&variant_size_v=<?=$variant_size_v[$vi]?>&&variant_price_v=<?=$variant_price_v[$vi]?>&&variant_quantity_v=<?=$variant_quantity_v[$vi]?>&&variant_store_product_id_v<?=$variant_store_product_id_v[$vi]?>&&variant_store_info_id_v=<?=$variant_store_info_id_v[$vi]?>" role="button">Approve Variant</a>
+										<a class="btn btn-danger btn-sm" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=no" role="button">Reject Variant</a>
 									</div>
 								</div>
 							</div>
