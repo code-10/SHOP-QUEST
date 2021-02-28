@@ -110,7 +110,7 @@
 			$seller_user_name[]=$ele['seller_user_name'];
   		}
   
-  		$n=count($product_name);	
+  		$n=count($store_info_id);	
 			
 	?>
 	
@@ -210,6 +210,7 @@
   					
 					<div class="collapse m-2" id="collapse_m<?=$cc?>">
 						<div class="card-body">
+						<?php echo $store_info_id[$k]; ?>
 						<p class="card-text">store_info_id : <?=$store_info_id[$k]?></p>
 						<p class="card-text">product name : <?=$product_name[$k]?></p>
     						<p class="card-text">category : <?=$category[$k]?></p>
