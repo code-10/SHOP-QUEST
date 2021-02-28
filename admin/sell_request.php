@@ -368,7 +368,7 @@
         			<input type="number" class="form-control" id="inputapprove" placeholder="" value="1" name="approve" required> 
     			</div>     
 		       
-    			<input type="hidden" name="store_info_id" value="<?=$store_info_id[0]?>" />
+    			<input type="hidden" name="verify_store_info_id" value="<?=$check_store_info_id[0]?>" />
 			<input type="hidden" name="admin_verify_product" value="yes" />
 	       
     			<button type="submit" name="verify_product" class="btn btn-dark">Approve</button>
@@ -397,7 +397,7 @@
   
       				//For Store info
       				$approved=$_POST['approve'];
-      				$verify_store_info_id=$_POST['store_info_id'];
+      				$verify_store_info_id=$_POST['verify_store_info_id'];
       				//$done=1;      
 				
       				//for updating store info
