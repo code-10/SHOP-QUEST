@@ -129,9 +129,9 @@
 		if($admin_check_sell=="yes"){
       
       			//check by admin
-      			$store_info_id=$_GET['store_info_id'];
+      			$check_store_info_id=$_GET['store_info_id'];
         		$con=getCon();
-        		$check_sql="select * from store_info where store_info_id='$store_info_id'";
+        		$check_sql="select * from store_info where store_info_id='$check_store_info_id'";
     
         		$check_res=$con->query($check_sql);
   
@@ -210,7 +210,6 @@
   					
 					<div class="collapse m-2" id="collapse_m<?=$cc?>">
 						<div class="card-body">
-						<?php echo $store_info_id[$k]; ?>
 						<p class="card-text">store_info_id : <?=$store_info_id[$k]?></p>
 						<p class="card-text">product name : <?=$product_name[$k]?></p>
     						<p class="card-text">category : <?=$category[$k]?></p>
