@@ -311,7 +311,7 @@
          		<!--product id-->
      			<div class="form-group">
         			<label for="inputproduct_id">product id</label>
-        			<input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$product_id_c_use?>" disabled>
+        			<input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$product_id_c_use?>">
     			</div>
          		<!--product name-->
     			<div class="form-group">
