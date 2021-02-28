@@ -239,7 +239,7 @@
 			<?php
 	
 				//variant check
-				echo $variant_approve;
+				//echo $variant_approve;
 		
 				$variant_approve_size=$_GET['variant_size_v'];
 				echo $variant_approve_size;echo "<br>";
