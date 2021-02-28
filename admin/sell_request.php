@@ -407,7 +407,7 @@
 				
       				$sql3="insert into unique_product(product_id,price,quantity,seller_user_name,color,size) values('".mysqli_real_escape_string($con,$productid)."','".mysqli_real_escape_string($con,$price)."','".mysqli_real_escape_string($con,$quantity)."','".mysqli_real_escape_string($con,$sellername)."','".mysqli_real_escape_string($con,$color)."','".mysqli_real_escape_string($con,$size)."')";
       
-				$sql4="update store_info set store_unique_type_id = (select unique_type_id from unique_product where product_id='$productid' and seller_user_name='$sellername') where store_info_id='$verify_store_info_id'";
+				$sql4="update store_info set store_product_id='".mysqli_real_escape_string($con,$productid)."',store_unique_type_id = (select unique_type_id from unique_product where product_id='$productid' and seller_user_name='$sellername') where store_info_id='$verify_store_info_id'";
 	
 	      
       				if($con->query($sql2)===True)
