@@ -198,11 +198,147 @@
 	
 		<?php } else if($stock_variant=="yes") { ?>
 			
-			echo "under contruction";
+			<?php
 	
-		<?php } ?>
+				$approved_sql = "select c.cat_name,sc.sub_cat_name,p.product_id,s.store_info_id,p.product_name,p.product_brand,p.product_description,up.unique_type_id,up.price,up.quantity,up.color,up.size from categories as c,sub_categories as sc,products as p,unique_product as up,store_info as s where s.store_unique_type_id=up.unique_type_id and p.product_id=up.product_id and p.sub_cat_id=sc.sub_cat_id and sc.cat_id=c.cat_id";
+				$approved_res = $con->query($approved_sql);
+				
+				$approved_store_info_id=array();
+				$approved_store_product_id=array();
+				$approved_category=array();
+				$approved_sub_category=array();
+				$approved_product_name=array();
+				$approved_product_brand=array();
+				$approved_product_description=array();
+				$approved_color=array();
+				$approved_size=array();
+				$approved_price=array();
+				$approved_quantity=array();
+		
+				while($approved_ele = $approved_res->fetch_assoc())
+				{
+					$approved_store_info_id[]=$approved_ele['store_info_id'];
+					$approved_category[]=$approved_ele['cat_name'];
+					$approved_sub_category[]=$approved_ele['sub_cat_name'];
+					$approved_store_product_id[]=$approved_ele['product_id'];
+					$approved_product_name[]=$approved_ele['product_name'];
+					$approved_product_brand[]=$approved_ele['product_brand'];
+					$approved_product_description[]=$approved_ele['product_description'];
+					$approved_color[]=$approved_ele['color'];
+					$approved_size[]=$approved_ele['size'];
+					$approved_price[]=$approved_ele['price'];
+					$approved_quantity[]=$approved_ele['quantity'];
+				}
+		
+				$approved_count=count($approved_store_info_id);
+			?>
 	
 	
+			<?php $ac=0; for($ai=0;$ai<$approved_count;$ai++) { ?>
+				
+				<div class="card m-4 border-dark">
+  					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$approved_product_name[$ai]?></div>
+  					
+						<div class="collapse m-2" id="collapse_m<?=$ac?>">
+							
+							<div class="card-body">
+								<p class="card-text">store_info_id : <?=$approved_store_info_id[$ai]?></p>	
+    							<p class="card-text">category : <?=$approved_category[$ai]?></p>
+    							<p class="card-text">sub category : <?=$approved_sub_category[$ai]?></p>
+    							<p class="card-text">product brand  : <?=$approved_product_brand[$ai]?></p>
+    							<p class="card-text">product description : <?=$approved_product_description[$ai]?></p>	
+							</div>
+					
+						<div class="col-12 col-sm-4">
+							<div class="card border-dark m-4">
+  								<div class="card-body">
+									<p class="card-text">color : <?=$approved_color[$ai]?></p>
+    								<p class="card-text">size  : <?=$approved_size[$ai]?></p>
+    								<p class="card-text">price : <?=$approved_price[$ai]?></p>
+									<p class="card-text">quantity : <?=$approved_quantity[$ai]?></p>
+									<h6 class="card-text">Status&nbsp&nbsp<span class="badge badge-success">approved</span></h6>
+								</div>
+							</div>
+						</div>
+							
+							
+						<?php
+							
+							$variant_res = $con->query("select * from variant where store_info_id='$approved_store_info_id[$ai]'");
+							
+							$variant_approved_v=array();
+							$variant_price_v=array();
+							$variant_color_v=array();
+							$variant_size_v=array();
+							$variant_quantity_v=array();
+							$variant_id_v=array();
+															   
+							while($variant_ele = $variant_res->fetch_assoc())
+							{
+								$variant_approved_v[]=$variant_ele['variant_approved'];
+								$variant_price_v[]=$variant_ele['price'];
+								$variant_color_v[]=$variant_ele['color'];
+								$variant_size_v[]=$variant_ele['size'];
+								$variant_quantity_v[]=$variant_ele['quantity'];
+								$variant_id_v[]=$variant_ele['variant_id'];
+							}
+				
+							$vc = count($variant_id_v);
+									   
+							
+															   
+						?>	
+							
+						<?php for($vi=0;$vi<$vc;$vi++) { ?>	
+							
+						<!--waiting variant start-->	
+						<?php if($variant_approved_v[$vi]==0) { ?>
+							<div class="col-12 col-sm-4">
+								<div class="card border-dark m-4">
+  									<div class="card-body">
+										<p class="card-text">color : <?=$variant_color_v[$vi]?></p>
+    									<p class="card-text">size  : <?=$variant_size_v[$vi]?></p>
+    									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
+										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
+										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-info">processing</span></h6>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
+						<!--waiting variant end-->		
+							
+							
+						<!--approved variant start-->
+							
+						<!--approved variant end-->
+					
+						
+	
+						<!--rejected variant start-->
+						<?php if($variant_approved_v[$vi]==2) { ?>
+							<div class="col-12 col-sm-4">
+								<div class="card border-dark m-4">
+  									<div class="card-body">
+										<p class="card-text">color : <?=$variant_color_v[$vi]?></p>
+    									<p class="card-text">size  : <?=$variant_size_v[$vi]?></p>
+    									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
+										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
+										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-danger">rejected</span></h6>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
+						<!--rejected variant end-->
+	
+						<?php } ?>
+	
+				
+					</div>
+				</div>
+			</div>			
+							
+							
+		<?php $ac++; } ?>
 	
 	<?php } else if($admin_check_sell=="yes") { ?>
 		
