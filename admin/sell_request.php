@@ -304,7 +304,7 @@
 										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
 										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-info">processing</span></h6>
 										<a class="btn btn-success btn-sm" href="#" role="button">Approve Variant</a>
-										<a class="btn btn-success btn-sm" href="#" role="button">Reject Variant</a>
+										<a class="btn btn-danger btn-sm" href="#" role="button">Reject Variant</a>
 									</div>
 								</div>
 							</div>
