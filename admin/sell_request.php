@@ -19,6 +19,8 @@
 	$admin_check_sell=$_GET['admin_check_sell'];
 	$admin_reject_sell=$_GET['admin_reject_sell'];
 	$admin_edit_sell=$_GET['admin_edit_sell'];
+
+	$admin_verify_product=$_POST['admin_verify_product'];
 	
 
 ?>
