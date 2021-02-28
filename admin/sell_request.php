@@ -424,7 +424,7 @@
 							{	
 								if($con->query($sql5)===True)
 								{
-              								header("Location:sell_request.php?sell_request_main=yes");
+              								header("Location:sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes");
                 							die();
 								}
 						        }
