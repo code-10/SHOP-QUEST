@@ -23,7 +23,6 @@
 	$admin_verify_product=$_POST['admin_verify_product'];
 	
 	$variant_approve = $_GET['variant_approve'];
-	echo $variant_approve;
 ?>
 
 <body>
@@ -235,6 +234,15 @@
 		
 				$approved_count=count($approved_store_info_id);
 			?>
+	
+	
+			<?php
+	
+				//variant check
+				echo $variant_approve;
+				
+			?>
+			
 	
 	
 			<?php $ac=0; for($ai=0;$ai<$approved_count;$ai++) { ?>
