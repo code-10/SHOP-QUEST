@@ -134,6 +134,62 @@
 	?>
 	
 	
+	<?php
+	
+		$store_info_id=$_GET['store_info_id'];
+			
+		if($admin_reject_sell=="yes")
+		{
+			$con->query("update store_info set approved=2 where store_info_id='$store_info_id'");
+			header("Location:sell_request.php?sell_request_main=yes");
+                	die();
+		}
+	
+		if($admin_check_sell=="yes"){
+      
+      			//check by admin
+      			$store_info_id=$_GET['store_info_id'];
+        		$con=getCon();
+        		$check_sql="select * from store_info where store_info_id='$store_info_id'";
+    
+        		$check_res=$con->query($check_sql);
+  
+  			$check_category=array();
+  			$check_subcategory=array();
+			$check_product_name=array();
+  			$check_product_brand=array();
+  			$check_product_description=array();
+  			$check_price=array();
+  			$check_quantity=array();
+  			$check_color=array();
+  			$check_size=array();
+  			$check_approved=array();
+  			$check_store_info_id=array();
+  			$check_seller_name=array();
+  
+  			while($check_ele = $check_res->fetch_assoc())
+  			{
+      				$check_category[]=$check_ele['category'];
+	      			$check_subcategory[]=$check_ele['sub_category'];
+      				$check_product_name[]=$check_ele['product_name'];
+      				$check_product_brand[]=$check_ele['product_brand'];
+      				$check_product_description[]=$check_ele['product_description'];
+      				$check_price[]=$check_ele['price'];
+      				$check_quantity[]=$check_ele['quantity'];
+      				$check_color[]=$check_ele['color'];
+      				$check_size[]=$check_ele['size'];
+      				$check_approved[]=$check_ele['approved'];
+      				$check_store_info_id[]=$check_ele['store_info_id'];
+      				$check_seller_name[]=$check_ele['seller_user_name'];
+  			}				
+  
+  			$n=count($check_store_info_id);
+      
+      		}
+      	
+			
+	?>
+	
 	<div class="text-center m-4">
             <a <?php if($status==0) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&status=0" role="button">Pending<span class="badge badge-light ml-2"><?=$res0;?></span></a>
 	    <a <?php if($status==1) { ?> class="btn btn-dark m-2" <?php } else { ?> class="btn btn-primary m-2" <?php } ?> href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes" role="button">Approved<span class="badge badge-light ml-2"><?=$res1;?></span></a>
@@ -180,8 +236,8 @@
 							
     					<h6 class="card-text">Status - waiting for Approval&nbsp&nbsp<div class="spinner-grow spinner-grow-sm" role="status"></div></h6>
 							
-					<a href='sell_request.php?admin_check_sell=yes&&storeinfoid=<?=$store_info_id[$k]?>' class="btn btn-success m-2">Edit and Approve</a>
-    					<a href='sell_request.php?admin_reject_sell=yes&&storeinfoid=<?=$store_info_id[$k]?>' name="reject_application" class="btn btn-danger m-2">Reject</a>
+					<a href='sell_request.php?admin_check_sell=yes&&store_info_id=<?=$store_info_id[$k]?>' class="btn btn-success m-2">Edit and Approve</a>
+    					<a href='sell_request.php?admin_reject_sell=yes&&store_info_id=<?=$store_info_id[$k]?>' name="reject_application" class="btn btn-danger m-2">Reject</a>
     
 		
     				<? } ?>
@@ -200,6 +256,84 @@
 		<?php } ?>
 	
 	
+	
+	<?php } else if($admin_check_sell=="yes") { ?>
+	
+		<form class="jumbotron m-4" method="POST" action="sell_request.php">
+         		<!--seller name-->
+     			<div class="form-group">
+        			<label for="inputsellername">Seller name</label>
+        			<input type="text" class="form-control" id="inputsellername" placeholder="" value="<?=$check_seller_name[0]?>" name="seller_name" required>
+    			</div>
+         		<!--sub cat id-->
+     			<div class="form-group">
+	    			<label for="cat_name">category and sub category name</label>
+    				<select class="form-control" id="qty" name="sub_cat_id">
+		      			<?php for($i=0;$i<$cats;$i++) { ?>
+    						<option value="<?=$sub_cats_id[$i]?>"><?=$cats_name[$i]?> - <?=$sub_cats_name[$i]?></option>
+                      			<?php } ?>
+    				</select>	
+    			</div> 
+         		<!--product id-->
+     			<div class="form-group">
+        			<label for="inputproduct_id">product id</label>
+        			<input type="number" class="form-control" id="inputproduct_id" placeholder="product id" name="product_id" value="<?=$product_id_c_use?>" disabled>
+    			</div>
+         		<!--product name-->
+    			<div class="form-group">
+        			<label for="inputproduct_name">product name</label>
+        			<input type="text" class="form-control" id="inputproduct_name" placeholder="" value="<?=$check_product_name[0]?>" name="product_name" required>
+    			</div>
+         		<!--product brand-->
+    			<div class="form-group">
+        			<label for="inputbrand">product brand</label>
+        			<input type="text" class="form-control" id="inputbrand" placeholder="" value="<?=$check_product_brand[0]?>" name="product_brand" required>
+    			</div>     
+		        <!--product description-->
+     			<div class="form-group">
+        			<label for="inputdesc">product Description</label>
+        			<input type="text" class="form-control" id="inputdesc" placeholder="" value="<?=$check_product_description[0]?>" name="product_description" required>
+    			</div>    
+         		<!--product rating-->
+     			<div class="form-group">
+        			<label for="inputrating">product rating</label>
+        			<input type="number" class="form-control" id="inputrating" placeholder="rating" name="rating" value="0" disabled>
+    			</div>     
+         		<!--price-->
+    			<div class="form-group">
+        			<label for="inputprice">price</label>
+        			<input type="number" class="form-control" id="inputprice" placeholder="" value="<?=$check_price[0]?>" name="price" required>
+    			</div>     
+         		<!--size-->
+    			<div class="form-group">
+        			<label for="inputsize">size</label>
+        			<input type="text" class="form-control" id="inputsize" placeholder="" value="<?=$check_size[0]?>" name="size" required>
+    			</div>
+         		<!--color-->
+    			<div class="form-group">
+        			<label for="inputcolor">color</label>
+			        <input type="text" class="form-control" id="inputcolor" placeholder="" value="<?=$check_color[0]?>" name="color" required>
+    			</div>	
+         		<!--quantity-->
+    			<div class="form-group">
+        			<label for="inputqty">quantity</label>
+        			<input type="number" class="form-control" id="inputqty" placeholder="" value="<?=$check_quantity[0]?>" name="qty" required> 
+    			</div>
+         		<!--storeinfoid-->
+    			<div class="form-group">
+        			<label for="inputstoreinfoid">store info id</label>
+        			<input type="number" class="form-control" id="inputstoreinfoid" placeholder="" value="<?=$check_store_info_id[0]?>" name="storeinfoid" required> 
+    			</div>
+         		<!--approve status-->
+    			<div class="form-group">
+        			<label for="inputapprove">approve status - [1/0]</label>
+        			<input type="number" class="form-control" id="inputapprove" placeholder="" value="1" name="approve" required> 
+    			</div>     
+		       
+    			<input type="hidden" name="store_info_id" value="<?=$store_info_id[0]?>" />	       
+	       
+    			<button type="submit" name="verify_product" class="btn btn-dark">Approve</button>
+    		</form>     		
 	
 	<?php } ?>
   
