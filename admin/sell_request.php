@@ -205,7 +205,7 @@
 
 				<?php if(($approved[$k]==2&&$status==2)||($approved[$k]==0&&$status==0)) { ?>
 
-					echo "printing...";echo "<br>"; print_r($store_info_id);
+					<?php echo "printing...";echo "<br>"; print_r($store_info_id); ?>
 				
 					<div class="card m-4 border-dark">
   					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$cc?>" aria-expanded="false" aria-controls="collapseExample">Sold by <?=$seller_user_name[$k]?>  </div>
