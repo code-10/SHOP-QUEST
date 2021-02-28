@@ -47,7 +47,7 @@
   
   
 	
-	 <div class="jumbotron">
+	 <div class="p-4 mb-4" style="background-color:black;color:white;">
         <div class="text-center">
               <h4>Seller requests</h4>
         </div>
