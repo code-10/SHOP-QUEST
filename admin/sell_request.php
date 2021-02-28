@@ -112,6 +112,8 @@
   
   		$n=count($product_name);
 	
+		print_r($store_info_id);	
+			
 	?>
 	
 	
