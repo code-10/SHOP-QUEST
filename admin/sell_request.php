@@ -339,9 +339,9 @@
 				</div>
 			</div>			
 			
-			<?php } ?>
+			<?php $ac++;} ?>
 					
-		<?php $ac++; } ?>
+		<?php } ?>
 	
 	<?php } else if($admin_check_sell=="yes") { ?>
 		
