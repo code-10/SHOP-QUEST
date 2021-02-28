@@ -119,6 +119,8 @@
 	
 		$check_store_info_id=$_GET['store_info_id'];
 			
+		echo $check_store_info_id;
+			
 		if($admin_reject_sell=="yes")
 		{
 			$con->query("update store_info set approved=2 where store_info_id='$check_store_info_id'");
