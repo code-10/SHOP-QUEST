@@ -206,9 +206,7 @@
 	
 	<?php
 	
-		$check_store_info_id=$_GET['store_info_id'];	
-			
-		echo "printing...".$check_store_info_id;			   
+		$check_store_info_id=$_GET['store_info_id'];				   
 						   
 		if($admin_reject_sell=="yes")
 		{
@@ -257,6 +255,36 @@
   			$check_n=count($check_store_info_id);
       
       		}
+			
+		
+		//to get product id
+		$product_id_res=$con->query("select count(*) as pc from products");
+
+		$product_id_c=Array();
+
+		while($pic=$product_id_res->fetch_assoc())
+			$product_id_c[]=$pic['pc'];
+
+		$product_id_c_use=$product_id_c[0]+1;
+		//
+			
+			
+		//to get cat_id to fill in add category and subcategory
+      		$cats_id=Array();
+      		$cats_name=Array();
+      		$sub_cats_id=Array();
+      		$sub_cats_name=Array();
+      		$cats_f=$con->query("select s.cat_id,s.cat_name,sc.sub_cat_id,sc.sub_cat_name from categories as s,sub_categories as sc where sc.cat_id=s.cat_id");
+			
+      		while($catt=$cats_f->fetch_assoc()){
+           		$cats_id[]=$catt['cat_id'];
+           		$cats_name[]=$catt['cat_name'];
+	     		$sub_cats_id[]=$catt['sub_cat_id'];
+           		$sub_cats_name[]=$catt['sub_cat_name'];
+	        }
+
+      		$cats=count($cats_id);
+      		//   
       	
 			
 	?>
