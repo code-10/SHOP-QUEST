@@ -293,6 +293,8 @@
 	
 	
 	
+	
+	
 		<form class="jumbotron m-4" method="POST" action="sell_request.php">
          		<!--seller name-->
      			<div class="form-group">
@@ -364,10 +366,17 @@
         			<input type="number" class="form-control" id="inputapprove" placeholder="" value="1" name="approve" required> 
     			</div>     
 		       
-    			<input type="hidden" name="store_info_id" value="<?=$store_info_id[0]?>" />	       
+    			<input type="hidden" name="store_info_id" value="<?=$store_info_id[0]?>" />
+			<input type="hidden" name="admin_verify_product" value="yes" />
 	       
     			<button type="submit" name="verify_product" class="btn btn-dark">Approve</button>
     		</form>     		
+	
+	<?php } else if($admin_verify_product=="yes") { ?>
+	
+        	<?php  
+			echo "working";
+		?>
 	
 	<?php } ?>
   
