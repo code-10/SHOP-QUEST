@@ -200,7 +200,7 @@
 			
 			<?php
 	
-				$approved_sql = "select c.cat_name,sc.sub_cat_name,p.product_id,s.store_info_id,p.product_name,p.product_brand,p.product_description,up.unique_type_id,up.price,up.quantity,up.color,up.size from categories as c,sub_categories as sc,products as p,unique_product as up,store_info as s where s.store_unique_type_id=up.unique_type_id and p.product_id=up.product_id and p.sub_cat_id=sc.sub_cat_id and sc.cat_id=c.cat_id";
+				$approved_sql = "select c.cat_name,sc.sub_cat_name,p.product_id,s.seller_user_name,s.store_info_id,p.product_name,p.product_brand,p.product_description,up.unique_type_id,up.price,up.quantity,up.color,up.size from categories as c,sub_categories as sc,products as p,unique_product as up,store_info as s where s.store_unique_type_id=up.unique_type_id and p.product_id=up.product_id and p.sub_cat_id=sc.sub_cat_id and sc.cat_id=c.cat_id";
 				$approved_res = $con->query($approved_sql);
 				
 				$approved_store_info_id=array();
@@ -214,6 +214,7 @@
 				$approved_size=array();
 				$approved_price=array();
 				$approved_quantity=array();
+				$approved_seller_user_name=array();
 		
 				while($approved_ele = $approved_res->fetch_assoc())
 				{
@@ -228,6 +229,7 @@
 					$approved_size[]=$approved_ele['size'];
 					$approved_price[]=$approved_ele['price'];
 					$approved_quantity[]=$approved_ele['quantity'];
+					$approved_seller_user_name[]=$approved_ele['seller_user_name'];
 				}
 		
 				$approved_count=count($approved_store_info_id);
@@ -237,7 +239,7 @@
 			<?php $ac=0; for($ai=0;$ai<$approved_count;$ai++) { ?>
 				
 				<div class="card m-4 border-dark">
-  					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$approved_product_name[$ai]?></div>
+  					<div class="card-header" type="button" data-toggle="collapse" data-target="#collapse_m<?=$ac?>" aria-expanded="false" aria-controls="collapseExample">Product name : <?=$approved_product_name[$ai]?> - Sold by : <?=$approved_seller_user_name[$ai]?></div>
   					
 						<div class="collapse m-2" id="collapse_m<?=$ac?>">
 							
