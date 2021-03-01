@@ -398,8 +398,10 @@
 								$variant_color_v_up=array();
 								$variant_size_v_up=array();
 								$variant_quantity_v_up=array();	
-													
-								$variant_res_up = $con->query("select * from unique_product where unique_type_id='$variant_store_unique_type_id_v[$vi]'");
+										
+								$variant_sql_up = "select * from unique_product where unique_type_id='$variant_store_unique_type_id_v[$vi]'";	
+								var_dump($variant_sql_up);
+								$variant_res_up = $con->query($variant_sql_up);
 					 					   		   
 								while($variant_ele_up = $variant_res_up->fetch_assoc())
 								{
@@ -409,7 +411,7 @@
 									$variant_quantity_v_up[]=$variant_ele_up['quantity'];
 								}	
 							
-								echo "what?";
+								echo "what?";echo "<br>";
 								print_r($variant_price_v_up);echo "<br>";
 								print_r($variant_color_v_up);echo "<br>";
 								print_r($variant_size_v_up);echo "<br>";
