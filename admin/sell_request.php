@@ -393,7 +393,7 @@
 							
 							
 						<!--approved variant start-->
-							
+						<?php
 							//to get details of approved products from unique_product
 							$variant_price_v_up=array();
 							$variant_color_v_up=array();
@@ -412,7 +412,7 @@
 								$variant_quantity_v_up[]=$variant_ele_up['quantity'];
 							}	
 							
-							
+						?>
 							<?php if($variant_approved_v[$vi]==1) { ?>
 							<div class="col-12 col-sm-4">
 								<div class="card border-dark m-4">
