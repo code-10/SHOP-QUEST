@@ -244,7 +244,7 @@
 							
 							<figure class="figure">
         							<a href='product_description.php?product_id=<?=$product_id?>&&product_name=<?=$product_name?>&&show=<?=$c?>'>
-          								<img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:60%;height:50%;" alt="product" onerror="this.src='../assets/black.png';">
+          								<img src="..." class="figure-img img-fluid rounded mx-auto d-block" style="width:50%;height:100%;" alt="product" onerror="this.src='../assets/black.png';">
 									<p style="margin-bottom:0px;color:black;"><?=$product_color[$c];?>, <?=$product_size[$c];?></p>
 									<p style="margin-bottom:0px;color:black;"><?=$product_price[$c];?></p>
         							</a>
