@@ -315,7 +315,7 @@
 				
 							$vc = count($variant_id_v);
 									   
-							
+							print_r($variant_size_v);
 															   
 						?>	
 							
