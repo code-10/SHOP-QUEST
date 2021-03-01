@@ -301,7 +301,7 @@
 					}
 					
 					//to update variant
-					$con->query("update variant set variant_approved=2,store_unique_type_id='$variant_approve_store_unique_type_id[0]' where variant_id='$variant_approve_variant_id'");
+					$con->query("update variant set variant_approved=1,store_unique_type_id='$variant_approve_store_unique_type_id[0]' where variant_id='$variant_approve_variant_id'");
 					
 				}
 				
