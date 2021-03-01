@@ -268,12 +268,12 @@
 						$variant_approve_store_info_id[]=$variant_approve_ele['store_info_id'];
 					}
 					
-					print_r($variant_approve_size[0]);echo "<br>";
+					/*print_r($variant_approve_size[0]);echo "<br>";
 					print_r($variant_approve_color[0]);echo "<br>";
 					print_r($variant_approve_price[0]);echo "<br>";
 					print_r($variant_approve_quantity[0]);echo "<br>";
 					print_r($variant_approve_store_product_id[0]);echo "<br>";
-					print_r($variant_approve_store_info_id[0]);echo "<br>";
+					print_r($variant_approve_store_info_id[0]);echo "<br>";*/
 					
 					
 					$variant_approve_seller_user_name = array();
@@ -283,7 +283,26 @@
 						$variant_approve_seller_user_name[]=$variant_approve_seller_user_name_ele['seller_user_name']; 	
 					}
 					
-					echo "seller ".$variant_approve_seller_user_name[0];
+					//echo "seller ".$variant_approve_seller_user_name[0];
+					
+					//to insert into unique_product table
+					$con->query("insert into unique_product(product_id,price,quantity,seller_user_name,color,size) values('".mysqli_real_escape_string($con,$variant_approve_store_product_id[0])."',
+					'".mysqli_real_escape_string($con,$variant_approve_price[0])."','".mysqli_real_escape_string($con,$variant_approve_quantity[0])."',
+					'".mysqli_real_escape_string($con,$variant_approve_seller_user_name[0])."','".mysqli_real_escape_string($con,$variant_approve_color[0])."'
+					,'".mysqli_real_escape_string($con,$variant_approve_size[0])."')");
+					
+					
+					//to display dynamic content
+					$variant_approve_store_unique_type_id=array();
+					$variant_approve_store_unique_type_id_res = $con->query("select * from unique_product where product_id='$variant_approve_store_product_id[0]' and seller_user_name='$variant_approve_seller_user_name[0]' ORDER BY unique_type_id DESC LIMIT 1");
+					while($variant_approve_store_unique_type_id_ele = $variant_approve_store_unique_type_id_res->fetch_assoc())
+					{
+						$variant_approve_store_unique_type_id[]=$variant_approve_store_unique_type_id_ele['unique_type_id']; 	
+					}
+					
+					//to update variant
+					$con->query("update variant set variant_approved=2,store_unique_type_id='$variant_approve_store_unique_type_id[0]' where variant_id='$variant_approve_variant_id'");
+					
 				}
 				
 			?>
