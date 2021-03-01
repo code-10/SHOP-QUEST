@@ -7,11 +7,11 @@
       
       	session_start(); 
 
-      	/*if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
+      	if(!(isset($_SESSION['user_name']))||($_SESSION['user_name']!="root"))
       	{
         	header("Location:../index.php");
             die(); 
-      	}*/
+      	}
 
       	$sell_request_main=$_GET['sell_request_main'];
 	$status=$_GET['status'];
@@ -411,6 +411,8 @@
 									$variant_quantity_v_up[]=$variant_ele_up['quantity'];
 								}	
 							
+								header("Location:sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes");
+                						die();
 								
 								/*print_r($variant_price_v_up);echo "<br>";
 								print_r($variant_color_v_up);echo "<br>";
