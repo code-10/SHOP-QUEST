@@ -391,7 +391,7 @@
 							
 							
 						<!--approved variant start-->
-							
+							<?php echo $variant_store_unique_type_id_v[$vi]; ?>
 						<!--approved variant end-->
 					
 						
