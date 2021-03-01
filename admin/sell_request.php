@@ -241,6 +241,8 @@
 				//variant check
 				//echo $variant_approve;
 		
+				$variant_approve_variant_id=$_GET['variant_id_v'];
+				echo $variant_approve_variant_id;echo "<br>";
 				$variant_approve_size=$_GET['variant_size_v'];
 				echo $variant_approve_size;echo "<br>";
 				$variant_approve_color=$_GET['variant_color_v'];
@@ -314,8 +316,6 @@
 							}
 				
 							$vc = count($variant_id_v);
-									   
-							print_r($variant_size_v);
 															   
 						?>	
 							
@@ -330,8 +330,8 @@
     									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
 										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
 										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-info">processing</span></h6>
-										<a class="btn btn-success btn-sm" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=yes&&variant_color_v=<?=$variant_color_v[$vi]?>&&variant_size_v=<?=$variant_size_v[$vi]?>&&variant_price_v=<?=$variant_price_v[$vi]?>&&variant_quantity_v=<?=$variant_quantity_v[$vi]?>&&variant_store_product_id_v=<?=$variant_store_product_id_v[$vi]?>&&variant_store_info_id_v=<?=$variant_store_info_id_v[$vi]?>" role="button">Approve Variant</a>
-										<a class="btn btn-danger btn-sm" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=no" role="button">Reject Variant</a>
+										<a class="btn btn-success btn-sm" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=yes&&variant_id_v=<?=$variant_id_v[$vi]?>&&variant_color_v=<?=$variant_color_v[$vi]?>&&variant_size_v=<?=$variant_size_v[$vi]?>&&variant_price_v=<?=$variant_price_v[$vi]?>&&variant_quantity_v=<?=$variant_quantity_v[$vi]?>&&variant_store_product_id_v=<?=$variant_store_product_id_v[$vi]?>&&variant_store_info_id_v=<?=$variant_store_info_id_v[$vi]?>" role="button">Approve Variant</a>
+										<a class="btn btn-danger btn-sm" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=no&&variant_id_v=<?=$variant_id_v[$vi]?>" role="button">Reject Variant</a>
 									</div>
 								</div>
 							</div>
