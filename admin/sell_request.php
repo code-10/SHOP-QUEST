@@ -315,6 +315,8 @@
 				
 							$vc = count($variant_id_v);
 									   
+							print_r($variant_store_product_id_v);
+									   
 							
 															   
 						?>	
