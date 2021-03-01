@@ -320,7 +320,7 @@
 						?>	
 							
 						<?php for($vi=0;$vi<$vc;$vi++) { ?>	
-							
+							<div class="row">
 						<!--waiting variant start-->	
 						<?php if($variant_approved_v[$vi]==0) { ?>
 							<div class="col-12 col-sm-4">
@@ -361,7 +361,7 @@
 							</div>
 						<?php } ?>
 						<!--rejected variant end-->
-	
+							</div>
 						<?php } ?>
 	
 				
