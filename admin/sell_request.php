@@ -322,8 +322,8 @@
     									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
 										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
 										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-info">processing</span></h6>
-										<a class="btn btn-success btn-sm" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=yes&&variant_id_v=<?=$variant_id_v[$vi]?>" role="button">Approve Variant</a>
-										<a class="btn btn-danger btn-sm" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=no&&variant_id_v=<?=$variant_id_v[$vi]?>" role="button">Reject Variant</a>
+										<a class="btn btn-success btn-sm m-2" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=yes&&variant_id_v=<?=$variant_id_v[$vi]?>" role="button">Approve Variant</a>
+										<a class="btn btn-danger btn-sm m-2" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=no&&variant_id_v=<?=$variant_id_v[$vi]?>" role="button">Reject Variant</a>
 									</div>
 								</div>
 							</div>
