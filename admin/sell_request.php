@@ -243,10 +243,48 @@
 		
 				$variant_approve_variant_id=$_GET['variant_id_v'];
 		
-				$variant_approve_res =  $con->query("select * from variant where variant_id='$variant_approve_variant_id'");
-				
-				print_r($variant_approve_res->fetch_assoc());
-			
+				if($variant_approve=="no")
+				{
+					$con->query("update variant set variant_approved=2 where variant_id='$variant_approve_variant_id'");
+				}
+				else if($variant_approve=="yes")
+				{
+					$variant_approve_size=array();
+					$variant_approve_color=array();
+					$variant_approve_price=array();
+					$variant_approve_quantity=array();
+					$variant_approve_store_product_id=array();
+					$variant_approve_store_info_id=array();
+					
+					$variant_approve_res =  $con->query("select * from variant where variant_id='$variant_approve_variant_id'");
+					
+					while($variant_approve_ele = $variant_approve_res->fetch_assoc())
+					{
+						$variant_approve_size[]=$variant_approve_ele['size'];
+						$variant_approve_color[]=$variant_approve_ele['color'];
+						$variant_approve_price[]=$variant_approve_ele['price'];
+						$variant_approve_quantity[]=$variant_approve_ele['quantity'];
+						$variant_approve_store_product_id[]=$variant_approve_ele['store_product_id'];
+						$variant_approve_store_info_id[]=$variant_approve_ele['store_info_id'];
+					}
+					
+					print_r($variant_approve_size[0]);echo "<br>";
+					print_r($variant_approve_color[0]);echo "<br>";
+					print_r($variant_approve_price[0]);echo "<br>";
+					print_r($variant_approve_quantity[0]);echo "<br>";
+					print_r($variant_approve_store_product_id[0]);echo "<br>";
+					print_r($variant_approve_store_info_id[0]);echo "<br>";
+					
+					
+					$variant_approve_seller_user_name = array();
+					$variant_approve_seller_user_name_res = $con->query("select * from store_info where store_info_id='$variant_approve_store_info_id[0]'");
+					while($variant_approve_seller_user_name_ele = $variant_approve_seller_user_name_res->fetch_assoc())
+					{
+						$variant_approve_seller_user_name[]=$variant_approve_seller_user_name_ele['seller_user_name']; 	
+					}
+					
+					echo "seller ".$variant_approve_seller_user_name[0];
+				}
 				
 			?>
 			
