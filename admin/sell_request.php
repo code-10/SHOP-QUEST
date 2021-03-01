@@ -362,6 +362,7 @@
 								$variant_id_v[]=$variant_ele['variant_id'];
 								
 								$variant_store_product_id_v[]=$variant_ele['store_product_id'];
+								$variant_store_unique_type_id_v[]=$variant_ele['store_unique_type_id'];
 								$variant_store_info_id_v[]=$variant_ele['store_info_id'];
 							}
 				
