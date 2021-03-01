@@ -349,6 +349,7 @@
 							$variant_id_v=array();
 									   
 							$variant_store_product_id_v=array();
+							$variant_store_unique_type_id_v=array();
 							$variant_store_info_id_v=array();
 															   
 							while($variant_ele = $variant_res->fetch_assoc())
