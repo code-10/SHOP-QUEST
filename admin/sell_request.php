@@ -393,29 +393,31 @@
 							
 							
 						<!--approved variant start-->
-						<?php
+						<?php if($variant_approved_v[$vi]==1) { ?>
+							
+							
+							<?php
 							//to get details of approved products from unique_product
-							$variant_price_v_up=array();
-							$variant_color_v_up=array();
-							$variant_size_v_up=array();
-							$variant_quantity_v_up=array();	
+								$variant_price_v_up=array();
+								$variant_color_v_up=array();
+								$variant_size_v_up=array();
+								$variant_quantity_v_up=array();	
+													
+								$variant_res_up = $con->query("select * from unique_product where unique_type_id='$variant_store_unique_type_id_v[$vi]'");
+					 			
+								print_r($variant_res_up->fetch_assoc());		   
+										   
+								while($variant_ele_up = $variant_res_up->fetch_assoc())
+								{
+									$variant_price_v_up[]=$variant_ele_up['price'];
+									$variant_color_v_up[]=$variant_ele_up['color'];
+									$variant_size_v_up[]=$variant_ele_up['size'];
+									$variant_quantity_v_up[]=$variant_ele_up['quantity'];
+								}	
 							
-							echo $variant_store_unique_type_id_v[$vi];			
-										
-							$variant_res_up = $con->query("select * from unique_product where unique_type_id='$variant_store_unique_type_id_v[$vi]'");
-				 			
-							print_r($variant_res_up->fetch_assoc());		   
-									   
-							while($variant_ele_up = $variant_res_up->fetch_assoc())
-							{
-								$variant_price_v_up[]=$variant_ele_up['price'];
-								$variant_color_v_up[]=$variant_ele_up['color'];
-								$variant_size_v_up[]=$variant_ele_up['size'];
-								$variant_quantity_v_up[]=$variant_ele_up['quantity'];
-							}	
+							?>
 							
-						?>
-							<?php if($variant_approved_v[$vi]==1) { ?>
+							
 							<div class="col-12 col-sm-4">
 								<div class="card border-dark m-4">
   									<div class="card-body">
