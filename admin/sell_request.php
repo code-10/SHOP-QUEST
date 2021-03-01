@@ -374,8 +374,9 @@
 							$variant_color_v_up=array();
 							$variant_size_v_up=array();
 							$variant_quantity_v_up=array();	
-									   
-									   
+							
+							$variant_res_up = $con->query("select * from unique_product where unique_type_id='$variant_store_unique_type_id_v[0]'");
+				 			
 							while($variant_ele_up = $variant_res_up->fetch_assoc())
 							{
 								$variant_price_v_up[]=$variant_ele_up['price'];
