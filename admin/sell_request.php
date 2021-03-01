@@ -377,6 +377,8 @@
 							
 							$variant_res_up = $con->query("select * from unique_product where unique_type_id='$variant_store_unique_type_id_v[0]'");
 				 			
+							print_r($variant_res_up->fetch_assoc());		   
+									   
 							while($variant_ele_up = $variant_res_up->fetch_assoc())
 							{
 								$variant_price_v_up[]=$variant_ele_up['price'];
