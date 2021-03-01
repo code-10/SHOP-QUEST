@@ -89,8 +89,6 @@
   		$store_info_id=array();
 		$store_product_id=array();
 		$store_unique_type_id=array();
-		$stock_quantity=array();
-		$stock_quantity_status=array();
 		$seller_user_name=array();
   
   		while($ele = $res->fetch_assoc())
@@ -107,8 +105,6 @@
       			$approved[]=$ele['approved'];
       			$store_info_id[]=$ele['store_info_id'];
 			$store_unique_type_id[]=$ele['store_unique_type_id'];
-			$stock_quantity[]=$ele['stock_quantity'];
-			$stock_quantity_status[]=$ele['stock_quantity_status'];
 			$store_product_id[]=$ele['store_product_id'];
 			$seller_user_name[]=$ele['seller_user_name'];
   		}
@@ -404,9 +400,7 @@
 								$variant_quantity_v_up=array();	
 													
 								$variant_res_up = $con->query("select * from unique_product where unique_type_id='$variant_store_unique_type_id_v[$vi]'");
-					 			
-								print_r($variant_res_up->fetch_assoc());		   
-										   
+					 					   		   
 								while($variant_ele_up = $variant_res_up->fetch_assoc())
 								{
 									$variant_price_v_up[]=$variant_ele_up['price'];
@@ -414,6 +408,12 @@
 									$variant_size_v_up[]=$variant_ele_up['size'];
 									$variant_quantity_v_up[]=$variant_ele_up['quantity'];
 								}	
+							
+								echo "what?";
+								print_r($variant_price_v_up);echo "<br>";
+								print_r($variant_color_v_up);echo "<br>";
+								print_r($variant_size_v_up);echo "<br>";
+								print_r($variant_quantity_v_up);echo "<br>";
 							
 							?>
 							
