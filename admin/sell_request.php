@@ -299,6 +299,9 @@
 					//to update variant
 					$con->query("update variant set variant_approved=1,store_unique_type_id='$variant_approve_store_unique_type_id[0]' where variant_id='$variant_approve_variant_id'");
 					
+					header("Location:sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes");
+                			die();
+					
 				}
 				
 			?>
@@ -411,8 +414,6 @@
 									$variant_quantity_v_up[]=$variant_ele_up['quantity'];
 								}	
 							
-								header("Location:sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes");
-                						die();
 								
 								/*print_r($variant_price_v_up);echo "<br>";
 								print_r($variant_color_v_up);echo "<br>";
