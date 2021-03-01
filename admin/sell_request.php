@@ -367,6 +367,24 @@
 							}
 				
 							$vc = count($variant_id_v);
+									   
+							
+							//to get details of approved products from unique_product
+							$variant_price_v_up=array();
+							$variant_color_v_up=array();
+							$variant_size_v_up=array();
+							$variant_quantity_v_up=array();	
+									   
+									   
+							while($variant_ele_up = $variant_res_up->fetch_assoc())
+							{
+								$variant_price_v_up[]=$variant_ele_up['price'];
+								$variant_color_v_up[]=$variant_ele_up['color'];
+								$variant_size_v_up[]=$variant_ele_up['size'];
+								$variant_quantity_v_up[]=$variant_ele_up['quantity'];
+							}		   
+									   
+							
 															   
 						?>	
 							
@@ -391,7 +409,19 @@
 							
 							
 						<!--approved variant start-->
-							<?php echo $variant_store_unique_type_id_v[$vi]; ?>
+							<?php if($variant_approved_v[$vi]==1) { ?>
+							<div class="col-12 col-sm-4">
+								<div class="card border-dark m-4">
+  									<div class="card-body">
+										<p class="card-text">color : <?=$variant_color_v_up[$vi]?></p>
+    									<p class="card-text">size  : <?=$variant_size_v_up[$vi]?></p>
+    									<p class="card-text">price : <?=$variant_price_v_up[$vi]?></p>
+										<p class="card-text">quantity : <?=$variant_quantity_v_up[$vi]?></p>
+										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-success">approved</span></h6>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
 						<!--approved variant end-->
 					
 						
