@@ -370,18 +370,7 @@
 							
 															   
 						?>	
-							
-							<script>
-								function edit_info() 
-								{
-  									var x = document.getElementById("edit");
-  									if (x.style.display === "none") {
-    										x.style.display = "block";
-  									} else {
-    										x.style.display = "none";
-  									}
-								}
-							</script>	
+								
 							
 						<?php for($vi=0;$vi<$vc;$vi++) { ?>	
 						<!--waiting variant start-->	
@@ -396,14 +385,10 @@
 										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-info">processing</span></h6>
 										<a class="btn btn-success btn-sm m-2" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=yes&&variant_id_v=<?=$variant_id_v[$vi]?>" role="button">Approve Variant</a>
 										<a class="btn btn-danger btn-sm m-2" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=no&&variant_id_v=<?=$variant_id_v[$vi]?>" role="button">Reject Variant</a>
-										<button type="button" class="btn btn-dark btn-sm m-3" onclick="edit_info()">Edit</button>
 									</div>
 								</div>
 							</div>
-							
-							<div id="edit" class="col-12 col-sm-4">
-								
-							</div>
+					
 						<?php } ?>
 						<!--waiting variant end-->		
 							
