@@ -402,15 +402,7 @@
 							</div>
 							
 							<div id="edit" class="col-12 col-sm-4">
-								<div class="card border-dark m-4">
-  									<div class="card-body">
-										<p class="card-text">color : <?=$variant_color_v[$vi]?></p>
-    									<p class="card-text">size  : <?=$variant_size_v[$vi]?></p>
-    									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
-										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
-										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-info">processing</span></h6>
-									</div>
-								</div>
+								
 							</div>
 						<?php } ?>
 						<!--waiting variant end-->		
