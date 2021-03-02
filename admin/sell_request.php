@@ -371,6 +371,18 @@
 															   
 						?>	
 							
+							<script>
+								function edit_info() 
+								{
+  									var x = document.getElementById("edit");
+  									if (x.style.display === "none") {
+    										x.style.display = "block";
+  									} else {
+    										x.style.display = "none";
+  									}
+								}
+							</script>	
+							
 						<?php for($vi=0;$vi<$vc;$vi++) { ?>	
 						<!--waiting variant start-->	
 						<?php if($variant_approved_v[$vi]==0) { ?>
@@ -384,6 +396,19 @@
 										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-info">processing</span></h6>
 										<a class="btn btn-success btn-sm m-2" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=yes&&variant_id_v=<?=$variant_id_v[$vi]?>" role="button">Approve Variant</a>
 										<a class="btn btn-danger btn-sm m-2" href="sell_request.php?sell_request_main=yes&&status=1&&stock_variant=yes&&variant_approve=no&&variant_id_v=<?=$variant_id_v[$vi]?>" role="button">Reject Variant</a>
+										<button type="button" class="btn btn-dark btn-sm m-3" onclick="edit_info()">Edit</button>
+									</div>
+								</div>
+							</div>
+							
+							<div id="edit" class="col-12 col-sm-4">
+								<div class="card border-dark m-4">
+  									<div class="card-body">
+										<p class="card-text">color : <?=$variant_color_v[$vi]?></p>
+    									<p class="card-text">size  : <?=$variant_size_v[$vi]?></p>
+    									<p class="card-text">price : <?=$variant_price_v[$vi]?></p>
+										<p class="card-text">quantity : <?=$variant_quantity_v[$vi]?></p>
+										<h6 class="card-text">Status&nbsp&nbsp: <span class="badge badge-info">processing</span></h6>
 									</div>
 								</div>
 							</div>
