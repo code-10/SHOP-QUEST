@@ -6,7 +6,7 @@ function getCon()
     $server = "us-cdbr-east-06.cleardb.net";
     $username = "bc375827ce1f9f";
     $password = "64e8c706";
-    $db = substr($url["path"], 1);
+    $db = "doc_shop_shop";
 
     $con = new mysqli($server, $username, $password, $db);
 
