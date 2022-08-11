@@ -3,9 +3,9 @@
 function getCon()
 {
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-    $server = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
+    $server = "us-cdbr-east-06.cleardb.net";
+    $username = "bc375827ce1f9f";
+    $password = "64e8c706";
     $db = substr($url["path"], 1);
 
     $con = new mysqli($server, $username, $password, $db);
