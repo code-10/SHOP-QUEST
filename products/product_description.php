@@ -172,7 +172,6 @@
 	}
 	
 	$t=count((array)$unique_type_id);
-	print_r((array)$show);
 	
 	$remaining_quantity=$con->query("select quantity from unique_product where unique_type_id='$unique_type_id[$show]'")->fetch_assoc()['quantity'];
 	
