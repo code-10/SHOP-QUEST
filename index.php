@@ -94,6 +94,8 @@
                     		$categories[]=$ele['cat_name'];
                 	}
   
+					print_r($res->fetch_assoc());
+
             	   ?>
         
 		<!--github repo-->
