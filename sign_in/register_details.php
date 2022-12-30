@@ -18,12 +18,12 @@ if (isset($_POST['register_user']))
         
     }
     
-    if (rowExists('commonpasswords', 'possible_password', $p) || $u == $p)
-    {
-        $commonpassword = true;
-        header("Location:sign_in.php?signinwhich=register&&commonpassword=" . $commonpassword . "user_name=" . $u . "email=" . $e);
-        die();
-    }
+    //if (rowExists('commonpasswords', 'possible_password', $p) || $u == $p)
+    //{
+        //$commonpassword = true;
+        //header("Location:sign_in.php?signinwhich=register&&commonpassword=" . $commonpassword . "user_name=" . $u . "email=" . $e);
+        //die();
+    //}
     
     $p = password_hash($p, PASSWORD_DEFAULT);
 
