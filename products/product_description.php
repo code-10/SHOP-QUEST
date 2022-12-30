@@ -138,7 +138,7 @@
     }
     
     	$n=count((array)$product_description);
-		print_r($product_brand);
+		print_r($n);
      if(isset($_SESSION['user_name']))
      {
 	$nolog=False;     
