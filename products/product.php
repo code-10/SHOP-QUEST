@@ -131,10 +131,6 @@
     $sub_cat_id=$_GET['sub_cat_id'];
     $sub_cat_name=$_GET['sub_cat_name'];
     $id_s=$_GET['id_s'];
-
-    print_r($sub_cat_id);
-    print_r($sub_cat_name);
-    print_r($id_s);
     
   ?>
    
