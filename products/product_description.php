@@ -122,11 +122,11 @@
     $con = getCon();
     $res1= $con->query("select * from products where product_id='$product_id'");
   
-    $product_description=Array();
-    $product_price=Array();
-    $product_rating=Array();
-    $product_brand=Array();
-    $product_rating_no=Array();
+    $product_description=array();
+    $product_price=array();
+    $product_rating=array();
+    $product_brand=array();
+    $product_rating_no=array();
         
     while($ele = $res1->fetch_assoc())
     {
@@ -157,11 +157,11 @@
 	//to display unique_products
 	$res2=$con->query("select * from unique_product where product_id='$product_id'");
 	
-	$product_price=Array();
-	$product_color=Array();
-	$product_size=Array();
-	$unique_type_id=Array();
-	$product_seller=Array();
+	$product_price=array();
+	$product_color=array();
+	$product_size=array();
+	$unique_type_id=array();
+	$product_seller=array();
 	
 	while($ele = $res2->fetch_assoc())
 	{
