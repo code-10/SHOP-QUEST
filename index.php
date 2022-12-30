@@ -88,11 +88,12 @@
   
                 	$con = getCon();
                 	$categories=Array();
+					$category_id = Array();
                 	$res = $con->query("select * from categories");
                 	
 			while($ele = $res->fetch_assoc()){
                     		$categories[]=$ele['cat_name'];
-							echo $ele['cat_id'];
+							$category_id[] = $ele['cat_id'];
                 	}
 
             	   ?>
@@ -116,7 +117,7 @@
 			<?php $c=1; for($i=0;$i<8;$i++) { ?>
 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-3">
 					<div class="card text-center">
-						<a href='sub_categories/sub_category.php?cat_id=<?=$c;?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link">
+						<a href='sub_categories/sub_category.php?cat_id=<?=$category_id[$c-1];?>&&cat_name=<?=$categories[$c-1];?>' class="stretched-link">
   						<img class="card-img-top" src="assets/categories/cat<?=$i+1?>.png" alt="Category" onerror="this.src='assets/black.png';">
   							<div class="text-center">
     								<p class="card-title mob" style="color:black;"><?=$categories[$i];?></p>
