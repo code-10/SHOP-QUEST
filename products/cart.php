@@ -6,8 +6,7 @@
 
       $con=getCon();
 
-	echo $_POST['show'];
-	echo $_POST['unique_type_id'];
+	echo $_SESSION['user_name'];
 
       $user=$_SESSION['user_name'];
       $show=$_POST['show'];
