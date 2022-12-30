@@ -138,7 +138,7 @@
     }
     
     	$n=count($product_description);
-		print_r($res1->fetch_assoc());
+		print_r($product_description);
      if(isset($_SESSION['user_name']))
      {
 	$nolog=False;     
