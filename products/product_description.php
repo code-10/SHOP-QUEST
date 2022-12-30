@@ -138,7 +138,6 @@
     }
     
     	$n=count((array)$product_description);
-		print_r($n);
      if(isset($_SESSION['user_name']))
      {
 	$nolog=False;     
@@ -172,7 +171,7 @@
 		$product_seller[]=$ele['seller_user_name'];
 	}
 	
-	$t=count($unique_type_id);
+	$t=count((array)$unique_type_id);
 	
 	$remaining_quantity=$con->query("select quantity from unique_product where unique_type_id='$unique_type_id[$show]'")->fetch_assoc()['quantity'];
 	
