@@ -137,7 +137,7 @@
 		$product_rating_no[]=$ele['rating_no'];
     }
     
-    	$n=count($product_description);
+    	$n=count((array)$product_description);
 		print_r($product_brand);
      if(isset($_SESSION['user_name']))
      {
