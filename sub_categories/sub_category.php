@@ -73,11 +73,6 @@
     }
     
     $n = count($sub_cat_id);
-    print_r($sub_cat_name);
-    print_r($sub_cat_id);
-    echo $cat_id;
-    echo $cat_name;
-    print_r($res->fetch_assoc());
      
   ?>
  
