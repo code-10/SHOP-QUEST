@@ -92,9 +92,8 @@
                 	
 			while($ele = $res->fetch_assoc()){
                     		$categories[]=$ele['cat_name'];
+							echo $ele['cat_id'];
                 	}
-  
-					print_r($res->fetch_assoc());
 
             	   ?>
         
